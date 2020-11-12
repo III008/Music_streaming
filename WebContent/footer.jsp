@@ -8,7 +8,9 @@
 </head>
 <body>
 	<footer>
+<!-- 		<img src="http://localhost:9000/MyCGV/images/B_980x240.png"> -->
 		<img src="http://localhost:9000/MyCGV/images/B_980x240.png">
+		<img src="http://localhost:9020/MyCGV/images/B_980x240.png"><!-- 우현-->
 		
 		<nav>
 			<ul>
