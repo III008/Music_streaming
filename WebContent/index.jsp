@@ -35,7 +35,7 @@
 				<img src="http://localhost:9000/MyCGV/images/h3_event.gif">
 			</div>
 			<article>
-				<img src="http://localhost:9000/MyCGV/images/15893602293300.jpg">
+				<img src="http://localhost:9000/MyCGV/images/15893602293300.jpg">z
 				<img src="http://localhost:9000/MyCGV/images/15832984008920.jpg">
 				<img src="http://localhost:9000/MyCGV/images/15827922236270.jpg">
 				<img src="http://localhost:9000/MyCGV/images/15856157808830.jpg">
