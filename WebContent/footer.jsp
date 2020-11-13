@@ -8,9 +8,8 @@
 </head>
 <body>
 	<footer>
-	<!-- 	<img src="http://localhost:9000/MyCGV/images/B_980x240.png"> -->
-		<img src="http://localhost:9200/MyCGV/images/B_980x240.png"><!--dw -->
-		<img src="http://localhost:9000/MyCGV/images/B_980x240.png">
+		<img src="http://localhost:9200/MyCGV/images/B_980x240.png">
+
 		
 		<nav>
 			<ul>
