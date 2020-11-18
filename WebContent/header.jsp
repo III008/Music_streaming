@@ -55,9 +55,9 @@ header>div>nav>ul>li.login>a {
 	font-size: 18px;
 	margin-top: 30px;
 	margin-bottom: 25px;
-	 border:2px solid gray; 
-	 border-right:black; 
-	 border-left:black; 
+	border:2px solid gray; 
+	border-right:black; 
+	border-left:black; 
 }
 
 header>div>nav>ul>li.logo>a {
@@ -79,27 +79,27 @@ header>div>nav>ul>li>a:hover{
 					<li class="logo"><a href="#">SIST</a>
 						<div></div></li>
 					<li class="login"><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/login.png"
 								width="28" height="30"></label>로그인</a>
 						<div></div></li>
 					<li><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/music.png"
 								width="28" height="30"></label>최신차트</a>
 						<div></div></li>
 					<li><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/magazine.png"
 								width="28" height="30"></label>매거진</a>
 						<div></div></li>
 					<li><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/music_video.png"
 								width="28" height="30"></label>뮤직비디오</a>
 						<div></div></li>
 					<li><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/board.png"
 								width="28" height="30"></label>게시판</a>
 						<div></div></li>
 					<li><a href="#"><label><img
-								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								src="http://localhost:9000/Music_streaming/images/notice_2.png"
 								width="28" height="30"></label>공지사항</a>
 						<div></div></li>
 				</ul>

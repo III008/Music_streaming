@@ -12,7 +12,6 @@ div.content {
 	height: 1800px;
 	/* 	border: 1px solid red; */
 }
-
 section {
 	/* 	float:center; */
 	width: 1300px;
