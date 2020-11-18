@@ -1,49 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html><!--이미지 추가 작업-->
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>2차프로젝트</title>
+<style>
+html {
+	height: 100%;
+}
+body {
+	padding-left: 250px;
+}
+header {
+	position: fixed;
+	float: left;
+	background-color: black;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 230px;
+	padding: 0 10px;
+	/* border: 2px solid red; */
+	/* 	margin:auto; */
+}
+
+header>div>nav>ul {
+	text-align: left;
+	padding-top: 20px;
+	/* 	border: 2px solid green; */
+}
+
+header>div>nav>ul>img {
+	float: left;
+	padding: 10px 20px;
+	/* 	border: 2px solid blue; */
+}
+
+header>div>nav>ul>li>a {
+	display: block;
+	color: white;
+	font-size: 18px;
+	padding: 14px 15px;
+	text-decoration: none;
+}
+
+header>div>nav>ul>li.logo>a {
+	font-size: 35px;
+	font-weight: bold;
+}
+
+header>div>nav>ul>li.login>a {
+	font-size: 18px;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	 border:2px solid gray; 
+	 border-right:black; 
+	 border-left:black; 
+}
+
+header>div>nav>ul>li.logo>a {
+	/* border: 2px solid yellow; */
+	border-width: 2px 0;
+	line-height: 40px;
+}
+header>div>nav>ul>li>a:hover{
+	color:red;
+	font-weight:1000px;
+}
+</style>
 </head>
 <body>
 	<header>
-		<nav>
-			<ul>
-				<li><a href="http://localhost:9000/MyCGV/login/login.jsp">로그인</a>
-				<div></div></li>
-				<li><a href="http://localhost:9000/MyCGV/join/join.jsp">회원가입</a>
-				<div></div></li>
-				<li><a href="http://localhost:9000/MyCGV/mypage/mypage.jsp">MyCGV</a>
-				<div></div></li>
-				<li><a href="http://localhost:9000/MyCGV/board/board_list.jsp">게시판</a>
-				<div></div></li>
-				<li><a href="http://localhost:9000/MyCGV/notice/notice_list.jsp">공지사항</a>
-				<div></div></li>
-				<li><a href="">Club서비스</a>
-				<div></div></li>
-				<li><a href="">고객센터</a>
-				<div></div></li>
-				<li><a href="http://localhost:9000/MyCGV/admin/admin.jsp">Admin</a>
-				<div></div></li> 
-			</ul>
-		</nav>
-		<a href="http://localhost:9000/MyCGV/index.jsp">
-		<img src="http://localhost:9000/MyCGV/images/h1_cgv.png"></a>
 		<div>
-			<img src="http://localhost:9000/MyCGV/images/h2_cultureplex.png">
 			<nav>
 				<ul>
-					<li><a href="">영화</a></li>
-					<li><a href="">예매</a></li>
-					<li><a href="">극장</a></li>
-					<li><a href="">이벤트/컬쳐</a></li>
+					<li class="logo"><a href="#">SIST</a>
+						<div></div></li>
+					<li class="login"><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>로그인</a>
+						<div></div></li>
+					<li><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>최신차트</a>
+						<div></div></li>
+					<li><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>매거진</a>
+						<div></div></li>
+					<li><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>뮤직비디오</a>
+						<div></div></li>
+					<li><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>게시판</a>
+						<div></div></li>
+					<li><a href="#"><label><img
+								src="http://localhost:9000/Music_streaming/images/addmusic.png"
+								width="28" height="30"></label>공지사항</a>
+						<div></div></li>
 				</ul>
 			</nav>
 		</div>
-
-
 	</header>
-
 </body>
 </html>
