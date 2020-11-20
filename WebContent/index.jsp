@@ -224,6 +224,7 @@ div.content>section.release>table.tb tr td>button{
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			</div>
+
 		</section>
 	</div>
 	<!-- footer -->
