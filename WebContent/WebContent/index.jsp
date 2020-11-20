@@ -126,7 +126,6 @@ div.content>section.release>table.tb tr td>button{
 		padding:12px 0;	
 }
 </style>
-</head>
 <body>
 	<!-- header -->
 	<jsp:include page="header.jsp" />
