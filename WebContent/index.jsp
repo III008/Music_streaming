@@ -126,6 +126,10 @@ div.content>section.release>table.tb tr td>button{
 		padding:12px 0;	
 }
 </style>
+=======
+<title>Insert title hereff</title>
+</head>
+>>>>>>> refs/heads/master
 <body>
 	<!-- header -->
 	<jsp:include page="header.jsp" />
