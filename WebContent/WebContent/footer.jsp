@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html> <!--이미지 아이콘 추가 해당 주석 추후 삭제-->
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,22 +13,27 @@ div.foot1 {
 	height: 200px;
 	clear: both;
 }
+
 footer {
 	width: 80%;
 	margin: auto;
 }
+
 footer nav>ul {
 	padding-top: 70px;
 }
+
 footer nav>ul>li {
 	display: inline;
 }
+
 footer nav>ul>li>div {
 	display: inline-block;
 	background-color: lightgray;
 	width: 2px;
 	height: 7px;
 }
+
 footer>nav>ul>li>a {
 	text-decoration: none;
 	font-size: 13px;
@@ -36,6 +41,7 @@ footer>nav>ul>li>a {
 	padding: 0 10px 0 3px;
 	font-size: 13px;
 }
+
 footer>nav>ul>li>a:hover {
 	text-decoration: underline;
 }
@@ -81,6 +87,7 @@ footer>nav>ul>li>a:hover {
 
 </body>
 </html>
+
 
 
 

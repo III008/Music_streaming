@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<!-- dddddㅇㅇㅇㅇㅇㅇ -->
+
 <head>
 <meta charset="UTF-8">
 <title>Index</title>
@@ -13,6 +13,7 @@ div.content {
 	padding-left: 120px;
 	display: inline-block;
 }
+
 /**매거진 크기 설정**/
 section.section1>div>img {
 	border: 1px solid white;
@@ -21,68 +22,84 @@ section.section1>div>img {
 	height: 320px;
 	margin: 6px 8px;
 }
+
 div.content>section.section1, div.content>section.section2, div.content>section.section3
 	{
 	text-align: center;
 }
+
 div.content>section.section1>div {
 	display: inline-block;
 }
+
 div.content>section.section1>div>div>a>p.title {
 	text-align: left;
 	font-size: 15px;
 }
+
 div.content>section.section1>div>div>a>p.date {
 	text-align: left;
 	font-size: 13px;
 }
+
 div.content>section.section1>div>div>a {
 	text-decoration: none;
 }
+
 div.content>section.section1>div>div>a:hover {
 	text-decoration: underline;
 }
+
 section.section2>div>img {
 	border: 1px solid white;
 	border-radius: 18px;
 	width: 550px;
 	height: 350px;
 }
+
 section.section2>div>iframe, section.section3>div>iframe {
 	border: 1px solid white;
 	border-radius: 18px;
 }
+
 section.section3>div:last-child>iframe {
 	margin-bottom: 100px;
 }
+
 section.section2>div {
 	margin: auto;
 	display: inline-block;
 }
+
 section.section3>div>span {
 	display: inline-block;
 	background-color: gray;
 	width: 3px;
 	height: 150px;
 }
+
 section.section3 span.aaa {
 	padding-top: 100px;
 	margin-bottom: 30px;
 }
+
 section.section3 span.ccc {
 	padding-top: 100px;
 	margin-bottom: 130px;
 }
+
 div.content>div>img {
 	width: 300px;
 	height: 300px;
 }
+
 section.release {
 	background: rgb(242, 242, 242);
 	width: 100%;
 	padding-bottom:15px;
 	margin-top:15px;
 }
+
 div.content>section.release>table.tb {
 	border-collapse:collapse;
 	margin-left:auto;
@@ -96,6 +113,7 @@ div.content>section.release>table.tb tr td{
 div.content>section.release>table.tb tr:nth-child(2)>td>a{
 	font-size:30px;
 }
+
 div.content>section.release>table.tb tr td>button{
 		background-color:rgb(126,1,228);
 		border:1px solid white;
@@ -108,7 +126,6 @@ div.content>section.release>table.tb tr td>button{
 		padding:12px 0;	
 }
 </style>
-</head>
 <body>
 	<!-- header -->
 	<jsp:include page="header.jsp" />
@@ -206,7 +223,6 @@ div.content>section.release>table.tb tr td>button{
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			</div>
-
 		</section>
 	</div>
 	<!-- footer -->

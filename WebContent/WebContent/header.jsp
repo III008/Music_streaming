@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html><!--이미지 추가 작업-->
+<html>
 <head>
 <meta charset="UTF-8">
 <title>header</title>
@@ -9,6 +9,7 @@
 body {
 		margin: 0px;
 }
+
 header {
 	background-image: url("http://localhost:9000/Music/images/header.png");
 	width: 170px;
@@ -23,32 +24,38 @@ header>div>nav>div>a>img {
 	height: 140px;
 	/* border:1px solid red; */
 }
+
 nav>ul {
 	margin: auto;
 	padding: 0 0 0 0;
 /* 	border:1px solid blue;  */
 	
 }
+
 nav>ul>li {
 	list-style-type: none;
 	padding: 10px 5px 5px 10px;
 	clear: both;
 }
+
 nav>ul>li>a {
 	font-size: 16px;
 	font-family: "나눔바른고딕";
 	text-decoration: none;
 	color: white;
 }
+
 nav>ul>li>a>span {
 	/* border:1px solid violet;  */
 	display: inline-block;
 	margin: 14px 0 0 12px;
 	font-weight:bold;
 }
+
 nav>ul>li>a>span:hover {
 	text-decoration: underline;
 }
+
 nav>ul>li>a>img {
 	display: inline-block;
 	width: 50px;
@@ -60,6 +67,7 @@ nav>ul>li:first-child {
 	text-align: center;
 	padding :auto;
 }
+
 nav>ul>li:first-child>button {
 	padding: 8px 40px;
 	font-size: 20px;
@@ -68,6 +76,7 @@ nav>ul>li:first-child>button {
 	border: 1px solid lightgray;
 	border-radius:12px;
 }
+
 nav>ul>li:first-child>button:hover {
 	text-decoration: underline;
 }
