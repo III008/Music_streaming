@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html> <!--이미지 아이콘 추가 해당 주석 추후 삭제-->
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,57 +13,27 @@ div.foot1 {
 	height: 200px;
 	clear: both;
 }
-<<<<<<< HEAD
 
-footer>nav>ul>di {
-	display: inline;
-}
-
-footer>nav>ul>li {
-	display: inline;
-}
-
-footer>nav>ul>li>a {
-	text-decoration: none;
-	font-szie: 13px;
-	font-weight: bold;
-	color: #333;
-	padding: 0 8px 0 3px;
-}
-
-footer>nav>ul>li>div {
-	background-color: gray;
-	width: 1px;
-	height: 10px;
-	display: inline-block;
-}
-
-footer>nav {
-	/* border:1px solid red; */
-	padding: 20px 0;
-	text-align: center;
-}
-
-footer>div.info {
-	width: 1600px;
-=======
 footer {
 	width: 80%;
->>>>>>> refs/heads/master
 	margin: auto;
 }
+
 footer nav>ul {
 	padding-top: 70px;
 }
+
 footer nav>ul>li {
 	display: inline;
 }
+
 footer nav>ul>li>div {
 	display: inline-block;
 	background-color: lightgray;
 	width: 2px;
 	height: 7px;
 }
+
 footer>nav>ul>li>a {
 	text-decoration: none;
 	font-size: 13px;
@@ -71,6 +41,7 @@ footer>nav>ul>li>a {
 	padding: 0 10px 0 3px;
 	font-size: 13px;
 }
+
 footer>nav>ul>li>a:hover {
 	text-decoration: underline;
 }
@@ -116,6 +87,7 @@ footer>nav>ul>li>a:hover {
 
 </body>
 </html>
+
 
 
 
