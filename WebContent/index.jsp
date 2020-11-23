@@ -9,9 +9,10 @@
 /*  index.jsp  -- body--*/
 div.content {
 	width: 100%;
-	height: 1800px;
+	height: 1900px;
 	/* 	border: 1px solid red; */
 }
+
 section {
 	/* 	float:center; */
 	width: 1300px;
@@ -36,7 +37,7 @@ section.section1 article img {
 	width: 300px;
 	height: 300px;
 	/* border: 2px solid blue; */
-	margin: 20px 8px 1px 8px;
+	margin: 30px 8px 20px 8px;
 }
 
 section.section1 article {
@@ -46,26 +47,21 @@ section.section1 article {
 	margin: 30px 8px;
 }
 
-section.section1 article.art1 {
-/* 	border: 2px solid red; */
-}
-
 section.section2 div:last-child iframe, section.section3 div:last-child iframe
 	{
 	/* 	border: 2px solid blue; */
-	margin: 30px 17px;
+	margin: 30px 19px;
 }
 
 section.section4{
-	text-align:center;
-	height:100px;
+	padding:50px 100px;
 }
 
 section.section1 article a {
 /* 	border:1px solid blue; */
 	text-decoration:none;
 	text-align:center;
-	color:gray;
+	color:gray; 
 	font-size:15px;
 	font-weight:800;
 }
@@ -81,7 +77,9 @@ section.section1 article a:hover{
 	<div class="content">
 	
 		<section class="section4">
-			<h1>스트리밍서비스에 오신것을 환영합니다.</h1>
+		<div>
+			<h1></h1>
+		</div>
 		</section>
 		
 		<section class="section1">
@@ -95,22 +93,22 @@ section.section1 article a:hover{
 			<article class="art1">
 				<img
 					src="http://localhost:9000/Music_streaming/images/magazineTest_1.gif">
-				<a href="#">소개글1------------</a>
+				<a href="#">관리자 소개글 등록1</a>
 			</article>
 			<article class="art1">
 				<img
 					src="http://localhost:9000/Music_streaming/images/magazineTest_2.jpg">
-				<a href="#">소개글2</a>
+				<a href="#">관리자 소개글 등록2</a>
 			</article>
 			<article class="art1">
 				<img
 					src="http://localhost:9000/Music_streaming/images/magazineTest_3.jpg">
-				<a href="#">소개글3</a>
+				<a href="#">관리자 소개글 등록3</a>
 			</article>
 			<article class="art1">
 				<img
 					src="http://localhost:9000/Music_streaming/images/magazineTest_4.png">
-				<a href="#">소개글4</a>
+				<a href="#">관리자 소개글 등록4</a>
 			</article>
 		</section>
 
@@ -162,9 +160,8 @@ section.section1 article a:hover{
 
 		<!--추후 광고글-->
 		<section class="section4">
-			<h1>광고글</h1>
-			<p>지금 바로 로그인하고 한땀 한땀 만든 플레이리스트 듣기! K-Pop부터 클래식까지 모든 장르를 아우르는 건
-				기본. 수천 개의 플레이리스트가 트렌드에 맞게 업데이트.</p>
+			<h1>지금 바로 로그인하고 한땀 한땀 만든 플레이리스트 듣기!</h1>
+				<p>K-Pop부터 클래식까지 모든 장르를 아우르는 건 기본. 수천 개의 플레이리스트가 트렌드에 맞게 업데이트.</p>
 			<img src="http://localhost:9000/Music_streaming/images/bottom_ad.PNG">
 		</section>
 

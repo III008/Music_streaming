@@ -46,7 +46,7 @@ footer>nav {
 }
 
 footer>div.info {
-	width: 1500px;
+	width: 1600px;
 	margin: auto;
 }
 
