@@ -5,9 +5,7 @@
 /**
 	footer
 */
-	footer {
-		padding-left:170px;
-	}
+
 	footer>section.sc1, footer>section.sc2 {
 		background-color:rgb(242,242,242);
 		border:1px solid rgb(231,231,231);
@@ -31,9 +29,7 @@
 /**
 	로그인, 회원가입, 게시판, 공지사항 등 공통 스타일 정의
 */
-	section.section_1 {
-		padding-left:170px;
-	}
+
 	section.section_1>div>h1 {
 		width:20%; font-size:25px; padding:40px 0 20px 60px;
 	}
