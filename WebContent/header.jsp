@@ -97,7 +97,7 @@ nav>ul>li:first-child>button:hover {
 							src="http://localhost:9000/Music/images/login.png"><span>마이페이지</span></a></li>
 					<li><a href="#"><img
 							src="http://localhost:9000/Music/images/music.png"><span>차트</span></a></li>
-					<li><a href="#"><img
+					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp"><img
 							src="http://localhost:9000/Music/images/music_video.png"><span>뮤직비디오</span></a></li>
 					<li><a href="#"><img
 							src="http://localhost:9000/Music/images/magazine.png"><span>메거진</span></a></li>

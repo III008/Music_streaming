@@ -15,8 +15,7 @@ div.foot1 {
 }
 
 footer {
-	width: 80%;
-	margin: auto;
+	padding-left:170px;
 }
 
 footer nav>ul {
