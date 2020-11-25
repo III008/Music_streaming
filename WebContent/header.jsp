@@ -26,13 +26,16 @@ header {
 html {
 	height: 100%;
 }
+
+/*각자 해상도에따라 패딩 다르게 되야 할수도 있음*/
 body {
 	padding-left: 190px;
 }
+
 header {
 	position: fixed;
 	float: left;
-	background-color: black;
+	background:black;
 	left: 0;
 	top: 0;
 	bottom: 0;
@@ -80,21 +83,22 @@ nav>ul>li>a>img {
 	height: 50px;
 	float: left;
 }
-/**로그인버튼**/
-nav>ul>li:first-child {
-	text-align: center;
-	padding :auto;
-}
-nav>ul>li:first-child>button {
+/**로그인**/
+nav>ul>li>a.login_click{
 	padding: 8px 40px;
 	font-size: 20px;
 	font-weight: bold;
 	background-color: lightgray;
 	border: 1px solid lightgray;
 	border-radius:12px;
+	color:black;
 }
-nav>ul>li:first-child>button:hover {
-	text-decoration: underline;
+nav>ul>li>a.login_click>span{
+	float:center;
+}
+nav>ul>li>a.login_click>span:hover {
+	color:red;
+	text-decoration: none;
 }
 </style>
 </head>
@@ -108,7 +112,7 @@ nav>ul>li:first-child>button:hover {
 					</a>
 				</div>
 				<ul>
-					<li><button type="button">로그인</button></li>
+					<li><a href="http://localhost:9000/Music_streaming/login/login.jsp" class="login_click"><span>로그인</span></a></li>
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
 					</li>
@@ -117,8 +121,8 @@ nav>ul>li:first-child>button:hover {
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a>
 					</li>
-					<li><a href="#">
-						<img src="http://localhost:9000/Music_streaming/images/magazine.png"><span>메거진</span></a>
+					<li><a href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/magazine.png"><span>매거진</span></a>
 					</li>
 					<li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">
 						<img src="http://localhost:9000/Music_streaming/images/board.png"><span>게시판</span></a>
