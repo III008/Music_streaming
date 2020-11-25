@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html><!--이미지 추가 작업-->
+<html>
 <head>
 <meta charset="UTF-8">
 <title>header</title>
@@ -10,12 +10,13 @@ body {
 		margin: 0px;
 }
 header {
-	background-image: url("http://localhost:9000/Music/images/header.png");
+	background-image:url("http://localhost:9000/Music_streaming/images/header.png");
 	width: 170px;
 	float: left;
 	position: fixed;
 	height:100%;
 	z-index:4;
+	background-color:black;
 }
 /**로고이미지**/
 header>div>nav>div>a>img {
@@ -78,24 +79,30 @@ nav>ul>li:first-child>button:hover {
 		<div>
 			<nav>
 				<div>
-					<a href=""><img
-						src="http://localhost:9000/Music/images/logo.jpg"></a>
+					<a href="http://localhost:9000/Music_streaming/index.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
+					</a>
 				</div>
 				<ul>
-
 					<li><button type="button">로그인</button></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/login.png"><span>마이페이지</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/music.png"><span>차트</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/music_video.png"><span>뮤직비디오</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/magazine.png"><span>메거진</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/board.png"><span>게시판</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/notice_2.png"><span>공지사항</span></a></li>
+					<li><a href="#">
+						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
+					</li>
+					<li><a href="#">
+						<img src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a>
+					</li>
+					<li><a href="#">
+						<img src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a>
+					</li>
+					<li><a href="#">
+						<img src="http://localhost:9000/Music_streaming/images/magazine.png"><span>메거진</span></a>
+					</li>
+					<li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/board.png"><span>게시판</span></a>
+					</li>
+					<li><a href="#">
+						<img src="http://localhost:9000/Music_streaming/images/notice_2.png"><span>공지사항</span></a>
+					</li>
 				</ul>
 			</nav>
 		</div>

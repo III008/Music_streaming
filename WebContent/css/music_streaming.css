@@ -1,0 +1,301 @@
+	* {
+		margin:0px; padding:0px; font-family:"나눔바른고딕";
+	}
+
+/**
+	footer
+*/
+	footer {
+		padding-left:170px;
+	}
+	footer>section.sc1, footer>section.sc2 {
+		background-color:rgb(242,242,242);
+		border:1px solid rgb(231,231,231);
+	}
+	footer>section.sc1>nav>ul>li {
+		display:inline-block;
+		padding:10px 0 10px 10px;
+	}
+	footer>section.sc1>nav>ul>li>a {
+		margin:10px 5px 0 0; font-size:13px;
+		color:rgb(102,102,102); text-decoration:none;
+	}
+	footer>section.sc2>div.info {
+		font-size:13px;	color:rgb(102,102,102);
+		padding:10px 0 30px 10px;
+	}
+	footer>section.sc2>div.info>div {
+		padding:2px 0;
+	}
+
+/**
+	로그인, 회원가입, 게시판, 공지사항 등 공통 스타일 정의
+*/
+	section.section_1 {
+		padding-left:170px;
+	}
+	section.section_1>div>h1 {
+		width:20%; font-size:25px; padding:40px 0 20px 60px;
+	}
+	section.section_1>div>form,	section.section_1>div>table {
+		width:65%; margin:auto;
+	}
+	.btn_style {
+		background-color:rgb(255,0,80);
+		border:1px solid rgb(255,0,80);
+		font-family:"나눔바른고딕";
+		font-size:14px; font-weight:500;
+		color:white; width:25%; height:30px;
+	}
+	.btn_style_2 {
+		background-color:rgb(213,213,213);
+		border:1px solid rgb(213,213,213);
+		font-family:"나눔바른고딕";
+		font-size:14px; font-weight:500;
+		width:25%; height:30px;
+	}
+
+/**
+	게시판 리스트
+*/	
+	table.board, table.board th, table.board td,
+	table.board_content, table.board_content th, table.board_content td {
+		border:1px solid black;
+		border-collapse:collapse;
+	}
+	table.board th, table.board td,
+	table.board_content th, table.board_content td {
+		padding:5px 0; 
+		color:black;
+		font-size:13px;
+	}
+	table.board th, table.board_content th {
+		background-color:rgb(213,213,213);
+		padding:5px 0;
+	}
+	table.board tr td:nth-child(1),
+	table.board tr td:nth-child(3),
+	table.board tr td:nth-child(4),
+	table.board_content tr:first-child td {
+		text-align:center;
+	}
+	table.board tr td:nth-child(2),
+	table.notice_list tr td:nth-child(2) {
+		text-indent:10px;
+	}
+	table.board tr td:nth-child(2) a,
+	table.notice_list tr td:nth-child(2) a {
+		text-decoration:none;
+	}
+	table.board tr:first-child td {
+		text-align:right;
+		padding:0 15px 10px 0;
+		border:1px solid white;
+		border-bottom:1px solid black;
+	}
+	table.board tr:first-child td a>button,
+	table.board_content tr:last-child td a>button {
+		font-size:12px;
+		border-radius:4px;
+		width:100px;	padding:5px 0;
+		margin-top:10px;
+	}
+	table.notice_content tr:last-child td {
+		text-align:right;
+	}
+	table.board_content tr:last-child td {
+		text-align:center;
+	}
+	table.board tr:last-child td,
+	table.board_content tr:last-child td {
+		border:1px solid white;
+		border-top:1px solid black;
+		margin-right:5px;
+		padding-bottom:100px;
+	}
+	table.board tr:hover {
+		background-color:rgb(213,213,213);
+	}
+	table.board tr:first-child:hover,
+	table.board tr:last-child:hover {
+		background-color:white;
+	}
+	table.board_content tr:nth-child(2) td p {
+		padding:5px 20px;
+		height:150px;
+	}
+	
+/**
+	게시판 스타일 - 글쓰기, 수정폼
+*/	
+	form.board_write>ul>li,	form.board_update>ul>li {
+		list-style-type:none; 
+		clear:both;
+		margin-bottom:10px;
+	}
+	form.board_write>ul>li>label,
+	form.board_update>ul>li>label {
+		background-color:rgb(213,213,213);
+		display:inline-block;
+		width:100px; height:20px; padding:5px 0;
+		text-indent:10px; text-align:center;
+		border-radius:4px;
+		color:black; font-size:14px;
+		font-weight:600;
+		float:left;
+		margin-right:10px;
+	}
+	form.board_write>ul>li>input[type="text"],
+	form.board_update>ul>li>input[type="text"],
+	form.board_write>ul>li>textarea,
+	form.board_update>ul>li>textarea {
+		border-radius:4px;
+		width:80%;
+		padding:6px 10px;
+		color:black; font-size:13px;
+	}
+	form.board_write>ul>li>textarea,
+	form.board_update>ul>li>textarea {
+		height:150px;
+	}
+	form.board_write>ul>li>input[type="file"],
+	form.board_update>ul>li>input[type="file"] {
+		width:50%; height:50px;
+		padding:3px 0;
+		color:black; font-size:13px;
+	}
+	form.board_write>ul>li:last-child button,
+	form.board_update>ul>li:last-child button {
+		font-size:13px;
+		width:100px; padding:5px 0;
+		border-radius:4px;
+		margin:10px 0 100px 0;
+	}
+	form.board_write>ul>li:last-child,
+	form.board_update>ul>li:last-child {
+		text-align:center;
+	}
+	
+/**
+	게시판 스타일 - 삭제
+*/	
+	form.board_delete img {
+		width:150px; height:150px;
+		margin:20px 0;
+	}
+	form.board_delete div, form.board_delete {
+		text-align:center; margin:auto;
+	}
+	form.board_delete>div {
+		padding-bottom:100px;
+	}
+	form.board_delete>div button {
+		font-size:13px;
+		width:100px; padding:5px 0;
+		border-radius:4px;
+		margin:10px 0;
+		border:1px solid red;
+	}
+
+/**
+	회원가입 스타일
+*/
+	section.section_1 form.join span.red {
+		color:red; font-weight:600;
+	}
+	section.section_1 form.join {
+		/* border:1px solid red; */
+		width:50%;
+	}
+	section.section_1 form.join li {
+		list-style-type:none;
+		clear:left;
+		padding:5px 0;
+	}
+	section.section_1 form.join li>label {
+		border:1px solid gray;
+		display:inline-block;
+		width:19%; padding:7px 0 7px 15px;
+		float:left; margin-right:10px;
+		font-size:14px; border-radius:4px;
+		background-color:rgb(213,213,213);
+	}
+	section.section_1 form.join input.f1 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:8px 10px 8px 10px;
+		width:45%;
+		text-indent:10px;
+	}
+	section.section_1 form.join li>div {
+		font-size:12px;	color:#333;
+		padding:3px 0 3px 164px;
+	}
+	section.section_1 form.join input.addr,
+	section.section_1 form.join input.hp_num,
+	section.section_1 form.join select.hp,
+	section.section_1 form.join select.f3 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:3px 10px 7px 10px;
+	}
+	section.section_1 form.join input.f2 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:8px 10px 8px 10px;
+		width:20%;
+		text-indent:10px;
+	}
+	section.section_1 form.join select.f3 {
+		width:12%;
+	}
+	section.section_1 form.join select.hp {
+		width:10%;
+	}
+	section.section_1 form.join input.hp_num {
+		width:8%;
+	}
+	section.section_1 form.join span.rchk {
+		font-size:15px;
+		padding-left:5px;
+	}
+	section.section_1 form.join li:last-child>button {
+		width:15%; height:40px;
+		padding:10px 0 10px 0;
+	}
+	section.section_1 form.join li:last-child {
+		text-align:center;
+		margin-top:30px;
+		margin-bottom:100px;
+	}
+	section.section_1 form.join button.sub {
+		border:1px solid gray;
+		border-radius:4px;
+		background-color:rgb(213,213,213);
+		font-size:12px;
+		padding:7px 10px;
+	}
+	section.section_1 div.j_title {
+		font-size:12px; padding:10px 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
