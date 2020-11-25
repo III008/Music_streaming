@@ -67,7 +67,7 @@ dt.like_image>img{
 	
 /**하트 사진 빨간색으로 바꾸기**/
 dt.like_image>img:hover{
-	content: url("http://localhost:9000/MyWeb/images/heart_red.PNG")
+	content: url("http://localhost:9000/Music_streaming/images/heart_red.PNG")
 }	
 	
 /**페이징 처리 가운데 정렬**/
@@ -100,25 +100,25 @@ margin-left:80px;
 				<ul class="hot_movie_list">
 				<h2>인기 뮤비</h2>
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/hot_issue1.png"></a>
+							src="http://localhost:9000/Music_streaming/images/hot_issue1.png"></a>
 						<dl>
 							<dt>Stay Gold</dt>
 							<dt>방탄 소년단</dt>
 						</dl></li>
 					<li><a href=""><img
-							src="http://localhost:9000/MyWeb/images/hot_issue2.png"></a>
+							src="http://localhost:9000/Music_streaming/images/hot_issue2.png"></a>
 						<dl>
 							<dt>Happy</dt>
 							<dt>태연 (TAEYEON)</dt>
 						</dl></li>
-					<li><a href="http://localhost:9000/MyWeb/movie/movie_content.jsp"><img
-							src="http://localhost:9000/MyWeb/images/hot_issue3.png"></a>
+					<li><a href="http://localhost:9000/Music_streaming/movie/movie_content.jsp"><img
+							src="http://localhost:9000/Music_streaming/images/hot_issue3.png"></a>
 						<dl>
 							<dt>How You Like That</dt>
 							<dt>BLACKPINK</dt>
 						</dl></li>
 					<li><a href=""><img
-							src="http://localhost:9000/MyWeb/images/hot_issue4.png"></a>
+							src="http://localhost:9000/Music_streaming/images/hot_issue4.png"></a>
 						<dl>
 							<dt>CAN’T STOP ME</dt>
 							<dt>TWICE(트와이스)</dt>
@@ -131,151 +131,151 @@ margin-left:80px;
 			<ul class="entire_movie_list">
 				<h2>전체 영상</h2>
 				<li><a href="#"><img
-						src="http://localhost:9000/MyWeb/images/entire_movie1.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie1.PNG"></a>
 					<dl>
 						<dt>MAGO</dt>
 						<dt>여자친구 (GFRIEND)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie2.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie2.PNG"></a>
 					<dl>
 						<dt>DON'T TOUCH ME</dt>
 						<dt>환불원정대</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie3.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie3.PNG"></a>
 					<dl>
 						<dt>AYA</dt>
 						<dt>마마무(Mamamamoo)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie4.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie4.PNG"></a>
 					<dl>
 						<dt>딩가딩가 (Dingga)</dt>
 						<dt>마마무(Mamamamoo)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie5.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie5.PNG"></a>
 					<dl>
 						<dt>I CAN’T STOP ME</dt>
 						<dt>TWICE (트와이스)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie6.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie6.PNG"></a>
 					<dl>
 						<dt>Lovesick Girls</dt>
 						<dt>BLACKPINK</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie7.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie7.PNG"></a>
 					<dl>
 						<dt>HERO</dt>
 						<dt>임영웅</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie8.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie8.PNG"></a>
 					<dl>
 						<dt>SO BAD</dt>
 						<dt>STAYC(스테이씨)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie9.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie9.PNG"></a>
 					<dl>
 						<dt> When We Disco (Duet with 선미)</dt>
 						<dt>박진영</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie10.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie10.PNG"></a>
 					<dl>
 						<dt>Dynamite (B-side)</dt>
 						<dt>방탄소년단</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie11.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie11.PNG"></a>
 					<dl>
 						<dt>이데아 (IDEA:理想)</dt>
 						<dt>태민 (TAEMIN)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie12.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie12.PNG"></a>
 					<dl>
 						<dt>Dynamite</dt>
 						<dt>방탄소년단</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie13.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie13.PNG"></a>
 					<dl>
 						<dt>뻔한남자</dt>
 						<dt>이승기</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie14.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie14.PNG"></a>
 					<dl>
 						<dt>How You Like That</dt>
 						<dt>BLACKPINK</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie15.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie15.PNG"></a>
 					<dl>
 						<dt>Pit A Pat</dt>
 						<dt>XIA (준수)</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie16.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie16.PNG"></a>
 					<dl>
 						<dt>뻔한남자 (Teaser)</dt>
 						<dt>이승기</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie17.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie17.PNG"></a>
 					<dl>
 						<dt>엄마아리랑</dt>
 						<dt>송가인</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie18.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie18.PNG"></a>
 					<dl>
 						<dt>한 많은 대동강</dt>
 						<dt>송가인</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie19.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie19.PNG"></a>
 					<dl>
 						<dt>용두산 에레지</dt>
 						<dt>송가인</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie20.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie20.PNG"></a>
 					<dl>
 						<dt>진정인가요</dt>
 						<dt>송가인, 김소유</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 				<li><a href=""><img
-						src="http://localhost:9000/MyWeb/images/entire_movie21.PNG"></a>
+						src="http://localhost:9000/Music_streaming/images/entire_movie21.PNG"></a>
 					<dl>
 						<dt>단장의 미아리고개</dt>
 						<dt>송가인</dt>
-						<dt class = "like_image"><img src ="http://localhost:9000/MyWeb/images/heart.PNG"><div></div>조회 62,999</dt>
+						<dt class = "like_image"><img src ="http://localhost:9000/Music_streaming/images/heart.PNG"><div></div>조회 62,999</dt>
 					</dl></li>
 
 			</ul>
