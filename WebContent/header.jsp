@@ -83,21 +83,24 @@ nav>ul>li>a>img {
 	height: 50px;
 	float: left;
 }
-/**로그인버튼**/
+/**로그인**/
 nav>ul>li:first-child {
-	text-align: center;
+ 	text-align: center; 
 	padding :auto;
+	
 }
-nav>ul>li:first-child>button {
+nav>ul>li:first-child>a{
 	padding: 8px 40px;
 	font-size: 20px;
 	font-weight: bold;
 	background-color: lightgray;
 	border: 1px solid lightgray;
 	border-radius:12px;
+	text-decoration: none;
 }
-nav>ul>li:first-child>button:hover {
-	text-decoration: underline;
+nav>ul>li:first-child>a:hover {
+	color:red;
+	text-decoration: none;
 }
 </style>
 </head>
@@ -111,7 +114,7 @@ nav>ul>li:first-child>button:hover {
 					</a>
 				</div>
 				<ul>
-					<li><button type="button">로그인</button></li>
+					<li><a href="http://localhost:9000/Music_streaming/login/login.jsp"><span>로그인</span></a></li>
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
 					</li>
