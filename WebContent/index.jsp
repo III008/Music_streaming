@@ -7,7 +7,7 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <style>
-
+/* ss */
 div.content {
 	width: 93.7%;
 	text-align: center;
