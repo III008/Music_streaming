@@ -118,12 +118,7 @@ div.content>section.release>table.tb tr td>button{
 		<section class="release">
 			<table class="tb">
 				<tr>
-<<<<<<< HEAD
 					<th rowspan="3"><img src="http://localhost:9000/Music_streaming/images/represent.png"></th>
-=======
-					<th rowspan="3"><img
-						src="http://localhost:9000/Music_streaming/images/represent.png"></th>
->>>>>>> refs/heads/dh1
 					<td><button>GENRE</button></td>
 				</tr>
 				<tr>

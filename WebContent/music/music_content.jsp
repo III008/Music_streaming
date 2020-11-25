@@ -147,7 +147,7 @@
 	div section.section4 table tr div#comment_write label {
 		font-size:20px;
 	}
-	.btn_style {
+	body.music_content .btn_style {
 		background-color:rgb(255,17,80);
 		border:rgb(255,17,80);
 		border-radius:4px;
@@ -158,7 +158,7 @@
 		width:120px; height:50px;
 		padding:8px 0;
 	}
-	.btn_style2 {
+	body.music_content .btn_style2 {
 		background-color:white;
 		border:1px solid white;
 		font-family:"맑은고딕";
@@ -169,7 +169,7 @@
 	}
 </style>
 </head>
-<body>
+<body class="music_content">
 	<!-- header -->
 	<jsp:include page="../header.jsp"/>
 	

@@ -79,24 +79,17 @@ nav>ul>li:first-child>button:hover {
 		<div>
 			<nav>
 				<div>
-<<<<<<< HEAD
 					<a href="http://localhost:9000/Music_streaming/index.jsp">
 						<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
 					</a>
-=======
-					<a href=""><img
-						src="http://localhost:9000/Music_streaming/images/logo.jpg"></a>
->>>>>>> refs/heads/dh1
 				</div>
 				<ul>
 					<li><button type="button">로그인</button></li>
-<<<<<<< HEAD
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
 					</li>
-					<li><a href="#">
-						<img src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a>
-					</li>
+					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp"><img
+							src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a></li>
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a>
 					</li>
@@ -109,20 +102,6 @@ nav>ul>li:first-child>button:hover {
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/notice_2.png"><span>공지사항</span></a>
 					</li>
-=======
-					<li><a href="#"><img
-							src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a></li>
-					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp"><img
-							src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music_streaming/images/magazine.png"><span>메거진</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music_streaming/images/board.png"><span>게시판</span></a></li>
-					<li><a href="#"><img
-							src="http://localhost:9000/Music_streaming/images/notice_2.png"><span>공지사항</span></a></li>
->>>>>>> refs/heads/dh1
 				</ul>
 			</nav>
 		</div>
