@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 <style>
 div.movie_list{
-width: 93.7%;
-padding-left: 120px;
 }
 .section1>div>h1 {
 	display: inline-block;
