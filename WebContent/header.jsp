@@ -110,17 +110,17 @@ nav>ul>li:first-child>button:hover {
 				<ul>
 					<li><button type="button">로그인</button></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/login.png"><span>마이페이지</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/music.png"><span>차트</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a></li>
 					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp"><img
-							src="http://localhost:9000/Music/images/music_video.png"><span>뮤직비디오</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/magazine.png"><span>메거진</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/magazine.png"><span>메거진</span></a></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/board.png"><span>게시판</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/board.png"><span>게시판</span></a></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/Music/images/notice_2.png"><span>공지사항</span></a></li>
+							src="http://localhost:9000/Music_streaming/images/notice_2.png"><span>공지사항</span></a></li>
 
 
 				</ul>

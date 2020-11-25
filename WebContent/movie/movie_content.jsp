@@ -44,14 +44,33 @@ display:inline-block;
 }
 
 div.part2>div:first-child{
-border:1px solid red;
 font-weight:bold;
 font-size:20px;
 }
 
 div.same_artist{
-border:1px solid red;
 width:1300px;
+display:inline-block;
+text-align:left;
+font-size:30px;
+margin-top:8px;
+font-weight:bold;
+}
+
+.a{
+margin-top:35px;
+margin-left:10px;
+display:inline-block;
+clear:both;
+font-weight:bold;
+font-size:25px;
+}
+.i2{
+float:left;
+}
+
+.intro{
+clear:both;
 }
 </style>
 </head>
@@ -74,9 +93,10 @@ width:1300px;
 			<div class = "part2">
 				<div>[MV] HOW LIKE THAT</div>
 				<div>2020.06.26</div>
-				<div>   <img class="i1" src="http://localhost:9000/MyWeb/images/views.png"><label>45,165</label></div>
-				<div> <img src = "http://localhost:9000/MyWeb/images/blackpink.png"> <span>BLACKPINK</span></div>
-				<div>"How You Like That"은 전매특허
+				<div>
+				<div>   <img class="i1" src="http://localhost:9000/Music_streaming/images/views.png"><label>45,165</label></div>
+				<div> <img class ="i2" src = "http://localhost:9000/Music_streaming/images/blackpink.png"> <span class= "a">BLACKPINK</span></div></div>
+				<div class = "intro">"How You Like That"은 전매특허
             'BLACKPINK'만의 개성과 카리스마 넘치는 사운드가 돋보이는 힙합곡이다. 몽환적이고 웅장한 오케스트라 사운드가
             도입부부터 분위기를 압도하며, 'BLACKPINK'의 강렬한 지휘가 시작된다. 결연해진 감정의 변화를 따라 고조되는 보컬과
             마침내 토해낸 "How You Like That"의 폭발적인 드롭 파트는, 곡의 분위기를 단숨에 반전시킨다. 곡이
@@ -87,31 +107,31 @@ width:1300px;
 			<div>
 				<ul class="recommend_movie_list">
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/recommend_movie1.png"></a>
+							src="http://localhost:9000/Music_streaming/images/recommend_movie1.png"></a>
 						<dl>
 							<dt>- 뚜두뚜두 (DDU-DU DDU-DU)</dt>
 							<dt>BLACKPINK</dt>
 						</dl></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/recommend_movie2.png"></a>
+							src="http://localhost:9000/Music_streaming/images/recommend_movie2.png"></a>
 						<dl>
 							<dt>- 휘파람</dt>
 							<dt>BLACKPINK</dt>
 						</dl></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/recommend_movie3.png"></a>
+							src="http://localhost:9000/Music_streaming/images/recommend_movie3.png"></a>
 						<dl>
 							<dt>- 마지막처럼</dt>
 							<dt>BLACKPINK</dt>
 						</dl></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/recommend_movie4.png"></a>
+							src="http://localhost:9000/Music_streaming/images/recommend_movie4.png"></a>
 						<dl>
 							<dt>- Lovesick Girls</dt>
 							<dt>BLACKPINK</dt>
 						</dl></li>
 					<li><a href="#"><img
-							src="http://localhost:9000/MyWeb/images/recommend_movie5.png"></a>
+							src="http://localhost:9000/Music_streaming/images/recommend_movie5.png"></a>
 						<dl>
 							<dt>- Ice Cream (with Selena Gomez)</dt>
 							<dt>BLACKPINK</dt>
