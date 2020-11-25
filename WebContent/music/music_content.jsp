@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style>
 	div.content {
-		width: 93.7%;
+		width:95%;
 		display: inline-block;
 		text-align:center;
 		padding:50px 0;
@@ -16,7 +16,7 @@
 	div.content>section.section2, 
 	div.content>section.section3,
 	div.content>section.section4 {
-		width:106.5%;
+		margin:auto;
 		text-align: center;
 	}
 	/* div.sticky_bar.on {
@@ -41,16 +41,16 @@
 	div section.section4 table td {
 		border-collapse:collapse;
 	}
+	div section.section1 table td,
+	div section.section3 table td,
+	div section.section4 table td {
+		padding:10px 8px;
+	}
 	div section.section1 table {
 		display:inline-block;
 		width:65%;
 		text-align:left;
 		border-bottom:1px solid lightgray;
-	}
-	div section.section1 table td,
-	div section.section3 table td,
-	div section.section4 table td {
-		padding:10px 8px;
 	}
 	div section.section1 table td#music_image img {
 		width:400px; height:400px;

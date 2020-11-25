@@ -7,15 +7,17 @@
 <title>Insert title here</title>
 <style>
 	div.content {
-		width: 93.7%;
+		width:75%;
+		padding:30px 0;
 		text-align: center;
 		display: inline-block;
 	}
 	div.content>section.section1, 
 	div.content>section.section2, 
 	div.content>section.section3 {
+		margin:auto;
+		padding-top:10px;
 		text-align: center;
-		padding-right:120px;
 	}
 	div section.section1 img { 
 		width:65px; height:65px;
@@ -37,8 +39,9 @@
 	}
 	div.line {
 		border:1px solid rgb(242,242,242);
-		width:107.2%;
-		padding-left:110px;
+		width:133%;
+		/* width:107.2%; */
+		/* padding-left:110px; */
 	}
 	/* div section.section1 {
 		margin-left:-1200px;
