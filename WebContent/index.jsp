@@ -29,7 +29,7 @@
 					<a href="#" class="subtitle">매거진></a>
 				</h1>
 			</div>
-			<!--매거진 테스트용 이미지-->
+			<!--매거진 테스트용 이미지--
 			<article class="art1">
 				<img
 					src="http://localhost:9000/Music_streaming/images/magazineTest_1.gif">

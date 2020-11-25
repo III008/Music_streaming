@@ -14,15 +14,15 @@
 		<div>
 			<nav>
 				<ul>
-					<li class="logo"><a href="#">SIST</a>
+					<li class="logo"><a href="http://localhost:9000/Music_streaming/index.jsp">SIST</a>
 						<div></div></li>
-					<li class="login"><a href="#"><label><img
+					<li class="login"><a href="http://localhost:9000/Music_streaming/login/login.jsp"><label><img
 								src="http://localhost:9000/Music_streaming/images/login.png"></label>로그인</a>
 						<div></div></li>
 					<li><a href="#"><label><img
 								src="http://localhost:9000/Music_streaming/images/music.png"></label>최신차트</a>
 						<div></div></li>
-					<li><a href="#"><label><img
+					<li><a href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp"><label><img
 								src="http://localhost:9000/Music_streaming/images/magazine.png"></label>매거진</a>
 						<div></div></li>
 					<li><a href="#"><label><img
