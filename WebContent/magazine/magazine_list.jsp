@@ -125,59 +125,59 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 
 		<section class="magazine_list">
 			<ul>
-				<li class="list_item"><a href="#"> <img
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
 						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
 				</a>
 					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
 					</div> <span>2020.11.22</span></li>
 				<li class="list_item"><a href="#"> <img
 						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
 				</a>
 					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
+					</div> <span>2020.11.22</span></li>
+				<li class="list_item"><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> <img
+						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
+				</a>
+					<div class="info">
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
 					</div> <span>2020.11.22</span></li>
 				<li class="list_item"><a href="#"> <img
 						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
 				</a>
 					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
-					</div> <span>2020.11.22</span></li>
-				<li class="list_item"><a href="#"> <img
-						src="http://localhost:9000/Music_streaming/images/magazine_example.png">
-				</a>
-					<div class="info">
-						<a href="#"> 헬러윈 파티 현장 스케치 </a>
+						<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp"> 헬러윈 파티 현장 스케치 </a>
 					</div> <span>2020.11.22</span></li>
 			</ul>
 		</section>
