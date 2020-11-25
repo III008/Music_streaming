@@ -13,6 +13,7 @@
 div.content_menu {
 	margin: auto;
 }
+
 /*메거진 메인 헤더 부분*/
 div.content_menu>div.magazine_head {
 	height: 375px;
@@ -23,7 +24,7 @@ div.content_menu>div.magazine_head {
 	padding:50px 0 0 0 ;
 }
 div.content_menu>div.magazine_head>h2{
-	margin-left:95px;
+	padding-bottom:30px;'
 	height:50px;
 }
 
@@ -56,10 +57,20 @@ div.content_menu>div.magazine_head>table.tb tr:nth-child(2)>td {
 	font-size: 30px;
 }
 
-div.content_menu>section.magazine_list>ul {
+/*메거진 메인 리스트 부분*/
+div.content_menu>section.magazine_list{
 	height: 1500px;
+	width: 1500px;
+	display: block;
+	margin: auto;
+	border: 2px solid blue;
+	padding:50px 0 0 0 ;
+}
+
+div.content_menu>section.magazine_list>ul {
 	display: block;
 	border: 2px solid gray;
+	padding: 0  100px;
 }
 
 div.content_menu>section.magazine_list>ul>li.list_item {
@@ -111,10 +122,6 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 				</table>
 			</a>
 		</div>
-
-
-
-
 
 		<section class="magazine_list">
 			<ul>
