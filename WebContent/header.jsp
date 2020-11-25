@@ -122,6 +122,7 @@ nav>ul>li:first-child>button:hover {
 					<li><a href="#"><img
 							src="http://localhost:9000/Music/images/notice_2.png"><span>공지사항</span></a></li>
 
+
 				</ul>
 			</nav>
 		</div>

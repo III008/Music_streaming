@@ -47,6 +47,7 @@ footer>nav>ul>li>a:hover {
 </style>
 <body>
 	<div class="foot1">
+
 		<footer>
 			<section class="sc1">
 				<nav>
