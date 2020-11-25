@@ -9,14 +9,14 @@
 body {
 		margin: 0px;
 }
-
 header {
-	background-image: url("http://localhost:9000/Music/images/header.png");
+	background-image:url("http://localhost:9000/Music_streaming/images/header.png");
 	width: 170px;
 	float: left;
 	position: fixed;
 	height:100%;
 	z-index:4;
+	background-color:black;
 }
 /**로고이미지**/
 header>div>nav>div>a>img {
@@ -24,38 +24,32 @@ header>div>nav>div>a>img {
 	height: 140px;
 	/* border:1px solid red; */
 }
-
 nav>ul {
 	margin: auto;
 	padding: 0 0 0 0;
 /* 	border:1px solid blue;  */
 	
 }
-
 nav>ul>li {
 	list-style-type: none;
 	padding: 10px 5px 5px 10px;
 	clear: both;
 }
-
 nav>ul>li>a {
 	font-size: 16px;
 	font-family: "나눔바른고딕";
 	text-decoration: none;
 	color: white;
 }
-
 nav>ul>li>a>span {
 	/* border:1px solid violet;  */
 	display: inline-block;
 	margin: 14px 0 0 12px;
 	font-weight:bold;
 }
-
 nav>ul>li>a>span:hover {
 	text-decoration: underline;
 }
-
 nav>ul>li>a>img {
 	display: inline-block;
 	width: 50px;
@@ -67,7 +61,6 @@ nav>ul>li:first-child {
 	text-align: center;
 	padding :auto;
 }
-
 nav>ul>li:first-child>button {
 	padding: 8px 40px;
 	font-size: 20px;
@@ -76,7 +69,6 @@ nav>ul>li:first-child>button {
 	border: 1px solid lightgray;
 	border-radius:12px;
 }
-
 nav>ul>li:first-child>button:hover {
 	text-decoration: underline;
 }
@@ -87,11 +79,11 @@ nav>ul>li:first-child>button:hover {
 		<div>
 			<nav>
 				<div>
-					<a href=""><img
-						src="http://localhost:9000/Music/images/logo.jpg"></a>
+					<a href="http://localhost:9000/Music_streaming/index.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
+					</a>
 				</div>
 				<ul>
-
 					<li><button type="button">로그인</button></li>
 					<li><a href="#"><img
 							src="http://localhost:9000/Music/images/login.png"><span>마이페이지</span></a></li>
@@ -105,6 +97,7 @@ nav>ul>li:first-child>button:hover {
 							src="http://localhost:9000/Music/images/board.png"><span>게시판</span></a></li>
 					<li><a href="#"><img
 							src="http://localhost:9000/Music/images/notice_2.png"><span>공지사항</span></a></li>
+
 				</ul>
 			</nav>
 		</div>
