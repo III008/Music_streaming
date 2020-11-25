@@ -12,15 +12,15 @@
 	}
 	footer>section.sc1>nav>ul>li {
 		display:inline-block;
-		padding:10px 0 10px 10px;
+		padding:20px 0 20px 20px;
 	}
 	footer>section.sc1>nav>ul>li>a {
-		margin:10px 5px 0 0; font-size:13px;
+		font-size:17px; margin:10px 5px 0 0;
 		color:rgb(102,102,102); text-decoration:none;
 	}
 	footer>section.sc2>div.info {
-		font-size:13px;	color:rgb(102,102,102);
-		padding:10px 0 30px 10px;
+		font-size:17px;	color:rgb(102,102,102);
+		padding:20px 0 30px 20px;
 	}
 	footer>section.sc2>div.info>div {
 		padding:2px 0;
