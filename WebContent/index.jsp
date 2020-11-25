@@ -7,10 +7,11 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <style>
+
 div.content {
 	width: 93.7%;
 	text-align: center;
-	padding-left: 120px;
+	/* padding-left: 120px; */
 	display: inline-block;
 }
 /**매거진 크기 설정**/

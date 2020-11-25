@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>header</title>
 <style>
+
+/*이전 header code*/
+/* 
 body {
 		margin: 0px;
 }
@@ -18,6 +21,27 @@ header {
 	z-index:4;
 	background-color:black;
 }
+ */
+
+html {
+	height: 100%;
+}
+body {
+	padding-left: 190px;
+}
+header {
+	position: fixed;
+	float: left;
+	background-color: black;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 170px;
+	padding: 0 10px;
+}
+
+
 /**로고이미지**/
 header>div>nav>div>a>img {
 	width: 170px;

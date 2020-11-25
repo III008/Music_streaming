@@ -76,5 +76,3 @@ footer>nav>ul>li>a:hover {
 		</div>
 	</body>
 </html>
-
-
