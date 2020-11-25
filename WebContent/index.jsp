@@ -135,7 +135,7 @@ div.content>section.release>table.tb tr td>button{
 			<table class="tb">
 				<tr>
 					<th rowspan="3"><img
-						src="http://localhost:9000/Music/images/represent.png"></th>
+						src="http://localhost:9000/Music_streaming/images/represent.png"></th>
 					<td><button>GENRE</button></td>
 				</tr>
 
@@ -153,28 +153,28 @@ div.content>section.release>table.tb tr td>button{
 		<section class="section1">
 			<h1>메거진</h1>
 			<div>
-				<img src="http://localhost:9000/Music/images/magazine1.png">
+				<img src="http://localhost:9000/Music_streaming/images/magazine1.png">
 				<div>
 					<a href=""><p class="title">넓은 음악적 스펙트럼을 자랑하는 함소윤</p></a> <a
 						href=""><p class="date">2020.11.16</p></a>
 				</div>
 			</div>
 			<div>
-				<img src="http://localhost:9000/Music/images/magazine2.png">
+				<img src="http://localhost:9000/Music_streaming/images/magazine2.png">
 				<div>
 					<a href=""><p class="title">아리아나 그란데의 콜라보레이터</p></a> <a href=""><p
 							class="date">2020.11.12</p></a>
 				</div>
 			</div>
 			<div>
-				<img src="http://localhost:9000/Music/images/magazine3.png">
+				<img src="http://localhost:9000/Music_streaming/images/magazine3.png">
 				<div>
 					<a href=""><p class="title">한국재즈가 있어 따듯한 가을</p></a> <a href=""><p
 							class="date">2020.11.11</p></a>
 				</div>
 			</div>
 			<div>
-				<img src="http://localhost:9000/Music/images/magazine4.png">
+				<img src="http://localhost:9000/Music_streaming/images/magazine4.png">
 				<div>
 					<a href=""><p class="title">이주의 디깅 #83</p></a> <a href=""><p
 							class="date">2020.11.10</p></a>
