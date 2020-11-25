@@ -34,7 +34,7 @@
 		width:20%; font-size:25px; padding:40px 0 20px 60px;
 	}
 	section.section_1>div>form,	section.section_1>div>table {
-		width:65%; margin:auto;
+		width:80%; margin:auto;
 	}
 	.btn_style {
 		background-color:rgb(255,0,80);
@@ -63,7 +63,7 @@
 	table.board_content th, table.board_content td {
 		padding:5px 0; 
 		color:black;
-		font-size:13px;
+		font-size:15px;
 	}
 	table.board th, table.board_content th {
 		background-color:rgb(213,213,213);
