@@ -84,13 +84,9 @@ nav>ul>li>a>img {
 	float: left;
 }
 /**로그인**/
-nav>ul>li:first-child {
- 	text-align: center; 
-	padding :auto;
-	
-}
 nav>ul>li:first-child>a{
 	padding: 8px 40px;
+	text-align:center;
 	font-size: 20px;
 	font-weight: bold;
 	background-color: lightgray;
@@ -100,7 +96,6 @@ nav>ul>li:first-child>a{
 }
 nav>ul>li:first-child>a:hover {
 	color:red;
-	text-decoration: none;
 }
 </style>
 </head>
