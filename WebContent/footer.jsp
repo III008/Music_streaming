@@ -1,64 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html> <!--이미지 아이콘 추가 해당 주석 추후 삭제-->
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-
-</style>
-</head>
-<body>
-	<footer>
-		<nav>
-			<ul>
-				<li><a href="#">회사소개</a>
-					<div></div></li>
-				<li><a href="#">IR</a>
-					<div></div></li>
-				<li><a href="#">채용정보</a>
-					<div></div></li>
-				<li><a href="#">광고/프로모션문의</a>
-					<div></div></li>
-				<li><a href="#">제휴문의</a>
-					<div></div></li>
-				<li><a href="#">출점문의</a>
-					<div></div></li>
-				<li><a href="#">이용약관</a>
-					<div></div></li>
-				<li><a href="#">편성기준</a>
-					<div></div></li>
-				<li><a href="#">개인정보처리방침</a>
-					<div></div></li>
-				<li><a href="#">법적고지</a>
-					<div></div></li>
-				<li><a href="#">이메일주소무단수집거부</a>
-					<div></div></li>
-				<li><a href="#">상생경영</a>
-					<div></div></li>
-				<li><a href="#">사이트맵</a></li>
-			</ul>
-		</nav>
-		<div class="info">
-			<div>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</div>
-			<div>대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662
-				사업자정보확인</div>
-			<div>호스팅사업자 : CJ올리브네트웍스개인정보보호 책임자 : 이동현대표이메일 :
-				cjcgvmaster@cj.netCGV고객센터 : 1544-1122</div>
-		</div>
-	</footer>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<footer>
+			<section class="sc1">
+				<nav>
+					<ul>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">(구)네이버뮤직</a></li>
+						<li><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">네이버 이용약관</a></li>
+						<li><a href="#">VIBE 이용약관</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li><a href="#">결제/환불 안내</a></li>
+						<li><a href="#">톡톡상담</a></li>
+						<li><a href="#">사업자정보 확인</a></li>
+						<li><a href="#">©NAVER Corp.</a></li>
+					</ul>
+				</nav>
+			</section>
+			
+			<section class="sc2">
+				<div class="info">
+					<div>네이버(주) 대표이사 한성숙</div>
+					<div>사업자등록번호 220-81-62517 통신판매업신고번호 제2006-경기성남-0692호</div>
+					<div>주소 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 대표전화 1588-3820 이메일 ccnaver@naver.com 호스팅 서비스 제공 NAVER Business Platform</div>
+				</div>
+			</section>
+		</footer>
+	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
