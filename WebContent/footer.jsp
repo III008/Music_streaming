@@ -2,52 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>footer</title>
-</head>
-<style>
-div.foot1 {
-	background-color: lightgray;
-	width: 100%;
-	height: 200px;
-	clear: both;
-}
-
-footer {
-	padding-left:170px;
-}
-
-footer nav>ul {
-	padding-top: 70px;
-}
-
-footer nav>ul>li {
-	display: inline;
-}
-
-footer nav>ul>li>div {
-	display: inline-block;
-	background-color: lightgray;
-	width: 2px;
-	height: 7px;
-}
-
-footer>nav>ul>li>a {
-	text-decoration: none;
-	font-size: 13px;
-	font-weight: bold;
-	padding: 0 10px 0 3px;
-	font-size: 13px;
-}
-
-footer>nav>ul>li>a:hover {
-	text-decoration: underline;
-}
-</style>
-<body>
-	<div class="foot1">
-
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+	</head>
+	<body>
 		<footer>
 			<section class="sc1">
 				<nav>
@@ -74,6 +34,5 @@ footer>nav>ul>li>a:hover {
 				</div>
 			</section>
 		</footer>
-		</div>
 	</body>
 </html>
