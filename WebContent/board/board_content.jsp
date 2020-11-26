@@ -18,6 +18,8 @@
 					<h1>게시판</h1>
 					<table class="board_content">
 						<tr>
+						</tr>
+						<tr>
 							<th>제목</th>
 							<td>방탄소년단 신곡 너무 좋아요!</td>
 							<th>등록일</th>

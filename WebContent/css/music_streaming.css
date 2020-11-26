@@ -5,22 +5,21 @@
 /**
 	footer
 */
-
 	footer>section.sc1, footer>section.sc2 {
 		background-color:rgb(242,242,242);
 		border:1px solid rgb(231,231,231);
 	}
 	footer>section.sc1>nav>ul>li {
 		display:inline-block;
-		padding:20px 0 20px 20px;
+		padding:15px 0 15px 20px;
 	}
 	footer>section.sc1>nav>ul>li>a {
-		font-size:17px; margin:10px 5px 0 0;
+		font-size:16px; margin:10px 5px 0 0;
 		color:rgb(102,102,102); text-decoration:none;
 	}
 	footer>section.sc2>div.info {
-		font-size:17px;	color:rgb(102,102,102);
-		padding:20px 0 30px 20px;
+		font-size:16px;	color:rgb(102,102,102);
+		padding:15px 0 30px 20px;
 	}
 	footer>section.sc2>div.info>div {
 		padding:2px 0;
@@ -29,7 +28,6 @@
 /**
 	로그인, 회원가입, 게시판, 공지사항 등 공통 스타일 정의
 */
-
 	section.section_1>div>h1 {
 		width:20%; font-size:25px; padding:40px 0 20px 60px;
 	}
@@ -41,29 +39,30 @@
 		border:1px solid rgb(255,0,80);
 		font-family:"나눔바른고딕";
 		font-size:14px; font-weight:500;
-		color:white; width:25%; height:30px;
+		color:white; width:25%; height:35px;
 	}
 	.btn_style_2 {
 		background-color:rgb(213,213,213);
 		border:1px solid rgb(213,213,213);
 		font-family:"나눔바른고딕";
 		font-size:14px; font-weight:500;
-		width:25%; height:30px;
+		width:25%; height:35px;
 	}
 
 /**
-	게시판 리스트
+	게시판 리스트, 콘텐츠
 */	
 	table.board, table.board th, table.board td,
 	table.board_content, table.board_content th, table.board_content td {
-		border:1px solid black;
+		border-top:1px solid black;
+		border-bottom:1px solid black;
 		border-collapse:collapse;
 	}
 	table.board th, table.board td,
 	table.board_content th, table.board_content td {
-		padding:5px 0; 
+		padding:10px 0; 
 		color:black;
-		font-size:15px;
+		font-size:17px;
 	}
 	table.board th, table.board_content th {
 		background-color:rgb(213,213,213);
@@ -75,12 +74,10 @@
 	table.board_content tr:first-child td {
 		text-align:center;
 	}
-	table.board tr td:nth-child(2),
-	table.notice_list tr td:nth-child(2) {
+	table.board tr td:nth-child(2) {
 		text-indent:10px;
 	}
-	table.board tr td:nth-child(2) a,
-	table.notice_list tr td:nth-child(2) a {
+	table.board tr td:nth-child(2) a {
 		text-decoration:none;
 	}
 	table.board tr:first-child td {
@@ -91,16 +88,14 @@
 	}
 	table.board tr:first-child td a>button,
 	table.board_content tr:last-child td a>button {
-		font-size:12px;
+		font-size:13px;
 		border-radius:4px;
 		width:100px;	padding:5px 0;
 		margin-top:10px;
 	}
-	table.notice_content tr:last-child td {
-		text-align:right;
-	}
 	table.board_content tr:last-child td {
 		text-align:center;
+		padding-top:10px;
 	}
 	table.board tr:last-child td,
 	table.board_content tr:last-child td {
@@ -200,7 +195,6 @@
 		color:red; font-weight:600;
 	}
 	section.section_1 form.join {
-		/* border:1px solid red; */
 		width:50%;
 	}
 	section.section_1 form.join li {
@@ -225,7 +219,7 @@
 	}
 	section.section_1 form.join li>div {
 		font-size:12px;	color:#333;
-		padding:3px 0 3px 164px;
+		padding:3px 0 3px 190px;
 	}
 	section.section_1 form.join input.addr,
 	section.section_1 form.join input.hp_num,
@@ -238,38 +232,42 @@
 	section.section_1 form.join input.f2 {
 		border:1px solid gray;
 		border-radius:4px;
-		padding:8px 10px 8px 10px;
-		width:20%;
+		padding:8px 10px;
+		width:19.5%;
 		text-indent:10px;
 	}
 	section.section_1 form.join select.f3 {
 		width:12%;
+		padding:7px 10px;
 	}
 	section.section_1 form.join select.hp {
-		width:10%;
+		width:12%;
+		padding:7px 10px;
 	}
 	section.section_1 form.join input.hp_num {
-		width:8%;
+		width:12%;
+		padding:8px 10px;
 	}
 	section.section_1 form.join span.rchk {
-		font-size:15px;
+		font-size:16px;
 		padding-left:5px;
 	}
 	section.section_1 form.join li:last-child>button {
 		width:15%; height:40px;
 		padding:10px 0 10px 0;
+		
 	}
 	section.section_1 form.join li:last-child {
 		text-align:center;
-		margin-top:30px;
+		margin-top:50px;
 		margin-bottom:100px;
 	}
 	section.section_1 form.join button.sub {
 		border:1px solid gray;
 		border-radius:4px;
 		background-color:rgb(213,213,213);
-		font-size:12px;
-		padding:7px 10px;
+		font-size:13px;
+		padding:8px 10px;
 	}
 	section.section_1 div.j_title {
 		font-size:12px; padding:10px 0;
