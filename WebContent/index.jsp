@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--reset-->
 	<meta charset="UTF-8">
 	<title>Index</title>
 	<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
