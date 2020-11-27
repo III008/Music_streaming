@@ -85,17 +85,16 @@ nav>ul>li>a>img {
 }
 /**로그인**/
 nav>ul>li>a.login_click{
-	padding: 8px 40px;
+	padding: 10px 40px;
+	background-color: white;
+	border-radius:8px;
+	font-weight: 700;
 	font-size: 20px;
-	font-weight: bold;
-	background-color: lightgray;
-	border: 1px solid lightgray;
-	border-radius:12px;
 	color:black;
 }
-nav>ul>li>a.login_click>span{
-	float:center;
-}
+/* nav>ul>li>a.login_click>span{
+	border:2px solid red;
+} */
 nav>ul>li>a.login_click>span:hover {
 	color:red;
 	text-decoration: none;
