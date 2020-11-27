@@ -111,15 +111,16 @@ nav>ul>li>a.login_click>span:hover {
 					</a>
 				</div>
 				<ul>
-
 					<li><a href="http://localhost:9000/Music_streaming/login/login.jsp" class="login_click"><span>로그인</span></a></li>
 					<li><a href="#">
 						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
 					</li>
-					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp"><img
-							src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a></li>
-					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp"><img
-							src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a></li>
+					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a>
+					</li>
+					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">
+						<img src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a>
+					</li>
 					<li><a href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">
 						<img src="http://localhost:9000/Music_streaming/images/magazine.png"><span>매거진</span></a>
 					</li>
