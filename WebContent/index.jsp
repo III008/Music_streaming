@@ -35,7 +35,7 @@ div.content>section.section1>div>div>a>p.title {
 	font-size: 15px;
 }
 div.content>section.section1>div>div>a>p.date {
-	text-align: left;
+	text-align: left;        
 	font-size: 13px;
 }
 div.content>section.section1>div>div>a {

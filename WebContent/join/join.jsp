@@ -7,66 +7,132 @@
 		<title>join</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script>
-		/**
-			유효성 체크
-		*/
-		function joinFormCheck(){
-			var name, id, pass, cpass, email1, email2, email3, phone1, phone2, phone3;
-			
-			name = document.getElementById("name");
-			id = document.getElementById("id");
-			pass = document.getElementById("pass");
-			cpass = document.getElementById("cpass");
-			email1 = document.getElementById("email1");
-			email2 = document.getElementById("email2");
-			email3 = document.getElementById("email3");
-			phone1 = document.getElementById("phone1");
-			phone2 = document.getElementById("phone2");
-			phone3 = document.getElementById("phone3");
-			
-			if(name.value == ""){
-				alert("이름을 입력해주세요.");
-				name.focus();
-				return false;
-			}else if(id.value == ""){
-				alert("아이디를 입력해주세요.");
-				id.focus();
-				return false;
-			}else if(pass.value == ""){
-				alert("비밀번호를 입력해주세요.");
-				pass.focus();
-				return false;
-			}else if(cpass.value == ""){
-				alert("비밀번호 확인란을 입력해주세요.");
-				cpass.focus();
-				return false;
-			}else if(email1.value == ""){
-				alert("이메일 주소를 입력해주세요.");
-				email1.focus();
-				return false;
-			}else if(email3.value == "선택"){
-				alert("이메일 주소를 선택해주세요.");
-				email3.focus();
-				return false;
-			}else if(phone1.value == "선택"){
-				alert("휴대전화 번호를 선택해주세요.");
-				phone1.focus();
-				return false;
-			}else if(phone2.value == ""){
-				alert("휴대전화 번호을 입력해주세요.");
-				phone2.focus();
-				return false;
-			}else if(phone3.value == ""){
-				alert("휴대전화 번호를 입력해주세요.");
-				phone3.focus();
-				return false;
-			}else {
-				joinForm.submit();
+			/**
+				비밀번호, 비밀번호 확인 체크
+			**/
+			function passCheck(){
+				var pass = document.getElementById("pass");
+				var cpass = document.getElementById("cpass");
+				var email1 = document.getElementById("email1");
+				var msg = document.getElementById("msg");
+				
+				if(pass.value != "" && cpass.value != ""){
+					if(pass.value == cpass.value){
+						msg.innerHTML = "패스워드가 동일합니다.";
+						msg.style.color = "blue";
+						email1.focus();
+						return true;
+					}else {
+						msg.innerHTML = "패스워드가 다릅니다. 다시 입력해주세요.";
+						msg.style.color = "blue";
+						pass.value = "";
+						cpass.value = "";
+						pass.focus();
+						return false;
+					}
+				}
 			}
-		}
+			
+			/**
+				유효성 체크
+			*/
+			function joinFormCheck(){
+				var name, id, pass, cpass, email1, email2, email3, phone1, phone2, phone3;
+				
+				name = document.getElementById("name");
+				id = document.getElementById("id");
+				pass = document.getElementById("pass");
+				cpass = document.getElementById("cpass");
+				email1 = document.getElementById("email1");
+				email2 = document.getElementById("email2");
+				email3 = document.getElementById("email3");
+				phone1 = document.getElementById("phone1");
+				phone2 = document.getElementById("phone2");
+				phone3 = document.getElementById("phone3");
+				
+				if(name.value == ""){
+					alert("이름을 입력해주세요.");
+					name.focus();
+					return false;
+				}else if(!ruleCheck(id)){
+					return false;
+				/* }else if(id.value == ""){
+					alert("아이디를 입력해주세요.");
+					id.focus();
+					return false; */
+				}else if(pass.value == ""){
+					alert("비밀번호를 입력해주세요.");
+					pass.focus();
+					return false;
+				}else if(cpass.value == ""){
+					alert("비밀번호 확인란을 입력해주세요.");
+					cpass.focus();
+					return false;
+				}else if(email1.value == ""){
+					alert("이메일 주소를 입력해주세요.");
+					email1.focus();
+					return false;
+				}else if(email3.value == "선택"){
+					alert("이메일 주소를 선택해주세요.");
+					email3.focus();
+					return false;
+				}else if(phone1.value == "선택"){
+					alert("휴대전화 번호를 선택해주세요.");
+					phone1.focus();
+					return false;
+				}else if(phone2.value == ""){
+					alert("휴대전화 번호을 입력해주세요.");
+					phone2.focus();
+					return false;
+				}else if(phone3.value == ""){
+					alert("휴대전화 번호를 입력해주세요.");
+					phone3.focus();
+					return false;
+				}else {
+					/* joinForm.submit(); */
+				}
+			}
 		
-		
-		
+			/**
+				정규식 표현
+			*/
+			function ruleCheck(obj){
+				var regExp = /^[a-zA-Z0-9]{6, 13}$/;
+				
+				if(obj.value == ""){
+					alert("아이디를 입력해주세요.");
+					obj.focus();
+					return false;
+				}else {
+					if(regExp.test(obj.value)){
+						return true;
+					}else {
+						alert("영문자/숫자를 포함하여 4~12자리 이내로 작성해주세요.");
+						obj.focus();
+						return false;
+					}
+				}
+			}
+			
+			/**
+				이메일 주소 선택
+			*/
+			function addrCheck(){
+				var email2 = document.getElementById("email2");
+				var email3 = document.getElementById("email3");
+				
+				if(email3.value != "선택"){
+					if(email3.value != "self"){
+						email2.value = email3.value;
+					}else {
+						email2.value = "";
+						email2.focus();
+						return false;
+					}
+				}
+			}
+			
+			
 		</script>
 	</head>
 	<body>
@@ -99,11 +165,12 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드 확인</label>
-								<input type="password" name="cpass" class="f1" id="cpass">
+								<input type="password" name="cpass" class="f1" id="cpass" onblur="passCheck()">
+								<div id="msg"></div>
 							</li>
 							<li>
 								<label><span class="red">*</span>E-mail</label>
-								<input type="text" name="email1" class="f2" id="email1">@
+								<input type="text" name="email1" class="f2" id="email1"> @
 								<input type="text" name="email2" class="f2" id="email2">
 								<select name="email3" class="f3" id="email3" onchange="addrCheck()">
 									<option value="선택">선택</option>
@@ -137,7 +204,7 @@
 								<input type="radio" name="sms-agr" checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
-								<label><span class="red">*</span>음악취향</label>
+								<label>음악취향</label>
 								<input type="checkbox" name="genre"><span class="rchk">발라드</span>
 								<input type="checkbox" name="genre"><span class="rchk">댄스</span>
 								<input type="checkbox" name="genre"><span class="rchk">랩/힙합</span>

@@ -19,11 +19,11 @@
 					<form name="boardWriteForm" action="#" method="get" class="board_write">
 						<ul>
 							<li>
-								<label>제목</label>
+								<label>제 목</label>
 								<input type="text" name="btitle">
 							</li>
 							<li>
-								<label>내용</label>
+								<label>내 용</label>
 								<textarea name="bcontent"></textarea>
 							</li>
 							<li>

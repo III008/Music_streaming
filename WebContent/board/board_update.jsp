@@ -19,11 +19,11 @@
 					<form name="boardWriteForm" action="#" method="get" class="board_update">
 						<ul>
 							<li>
-								<label>제목</label>
+								<label>제 목</label>
 								<input type="text" name="btitle" value="방탄소년단 신곡 너무 좋아요!">
 							</li>
 							<li>
-								<label>내용</label>
+								<label>내 용</label>
 								<textarea name="bcontent">Dynamite 노래 너무 좋아요! 다음 앨범도 기대됩니다~ </textarea>
 							</li>
 							<li>
