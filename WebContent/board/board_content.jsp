@@ -53,7 +53,7 @@
 				<div>
 					<table class="board_content_title">
 						<tr>
-							<td colspan="3">댓글</td>
+							<td>댓글</td>
 						</tr>
 					</table>
 					<table class="board_content_rp">
@@ -108,7 +108,7 @@
 					</table>
 					<table class="board_content_reg">
 						<tr>
-							<td><textarea></textarea></td>
+							<td><textarea placeholder="댓글을 입력해주세요."></textarea></td>
 							<td><button type="button" class="btn_style">등록</button></td>
 						</tr>
 					</table>
