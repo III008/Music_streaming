@@ -21,13 +21,13 @@
 				height: 100%;
 			}
 			body {
-				padding-left:250px;
+				padding-left:230px;
 			}
 			header {
 				position:fixed;	float:left;
 				background:black;
 				left:0;	top:0; bottom:0;
-				height:100%; width:250px;
+				height:100%; width:230px;
 			}
 			
 			/**로고이미지**/
@@ -45,7 +45,7 @@
 			} */
 			header nav>ul>li {
 				/* border: 1px solid red; */
-				padding:6px 5px 5px 30px;
+				padding:6px 5px 5px 25px;
 				clear: both;
 				margin:10px 0;
 			}
@@ -137,7 +137,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="http://localhost:9000/Music_streaming/notice/notice_list.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/notice_2.png">
 								<span>공지사항</span>
 							</a>
