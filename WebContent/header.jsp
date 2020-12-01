@@ -63,7 +63,7 @@
 				/* border:1px solid violet; */
 				display:inline-block;
 				margin:10px 0;
-				color:rgb(231,231,231); font-size:19px;
+				color:rgb(241,241,241); font-size:19px;
 				font-weight:bold;
 			}
 			nav>ul>li>a>span:hover {
@@ -80,7 +80,7 @@
 			}
 			div.login_click>a {
 				display:inline-block; text-align:center;
-				background-color:rgb(213,213,213); border-radius:4px;
+				background-color:rgb(231,231,231); border-radius:4px;
 				padding:10px 40px; font-size:18px; 
 				color:black; font-weight:600;
 				margin:15px 0; text-decoration:none;
