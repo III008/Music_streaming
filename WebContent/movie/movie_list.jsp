@@ -12,7 +12,7 @@ div.movie_list {
 }
 
 /**리스트 디스플레이 속성 변경**/
-ul.entire_movie_list>li,
+ul.entire_movie_list li,
 ul.hot_movie_list>li {
 	display: inline-block;
 }
@@ -63,25 +63,30 @@ dt.like_image>a>img:hover {
 	url("http://localhost:9000/Music_streaming/images/heart_red.PNG")
 }
 
-/** 인기뮤비 제목 스타일 지정**/
+/** 뮤직비디오 제목 스타일 지정**/
 section.section1>div:first-child>div {
 	display: inline-block;
 	width: 1680px;
 	text-align: left;
 	font-size: 30px;
+	margin:20px 10px;
 }
 /** 인기뮤비 제목 스타일 지정**/
 div.hot_movie>div {
 	display: inline-block;
-	width: 1360px;
+	width: 1400px;
 	text-align: left;
 	font-size: 30px;
+	margin:20px 10px;
 }
 
 /** 전체영상 제목 스타일 지정**/
 div.entire_movie>div:first-child{
-border: 1px solid red;
-font-size: 30px;
+display:inline-block;
+width:1120px;
+text-align:left;
+font-size:30px;
+margin:20px 10px;
 }
 
 </style>
@@ -132,6 +137,7 @@ font-size: 30px;
 			<div class="entire_movie">
 				<div>전체 영상</div>
 				<ul class="entire_movie_list">
+					<div class = "A">
 					<li><a href="#"><img
 							src="http://localhost:9000/Music_streaming/images/entire_movie1.PNG"></a>
 						<dl>
@@ -187,6 +193,8 @@ font-size: 30px;
 								62,999
 							</dt>
 						</dl></li>
+						</div>
+						<div class = "B">
 					<li><a href=""><img
 							src="http://localhost:9000/Music_streaming/images/entire_movie6.PNG"></a>
 						<dl>
@@ -209,6 +217,7 @@ font-size: 30px;
 								62,999
 							</dt>
 						</dl></li>
+						
 					<li><a href=""><img
 							src="http://localhost:9000/Music_streaming/images/entire_movie8.PNG"></a>
 						<dl>
@@ -242,50 +251,7 @@ font-size: 30px;
 								62,999
 							</dt>
 						</dl></li>
-					<li><a href=""><img
-							src="http://localhost:9000/Music_streaming/images/entire_movie11.PNG"></a>
-						<dl>
-							<dt>이데아 (IDEA:理想)</dt>
-							<dt>태민 (TAEMIN)</dt>
-							<dt class="like_image">
-								<a href= ""><img
-									src="http://localhost:9000/Music_streaming/images/heart.PNG"></a><span></span>조회
-								62,999
-							</dt>
-						</dl></li>
-					<li><a href=""><img
-							src="http://localhost:9000/Music_streaming/images/entire_movie12.PNG"></a>
-						<dl>
-							<dt>Dynamite</dt>
-							<dt>방탄소년단</dt>
-							<dt class="like_image">
-								<a href= ""><img
-									src="http://localhost:9000/Music_streaming/images/heart.PNG"></a><span></span>조회
-								62,999
-							</dt>
-						</dl></li>
-					<li><a href=""><img
-							src="http://localhost:9000/Music_streaming/images/entire_movie13.PNG"></a>
-						<dl>
-							<dt>뻔한남자</dt>
-							<dt>이승기</dt>
-							<dt class="like_image">
-								<a href= ""><img
-									src="http://localhost:9000/Music_streaming/images/heart.PNG"></a><span></span>조회
-								62,999
-							</dt>
-						</dl></li>
-					<li><a href=""><img
-							src="http://localhost:9000/Music_streaming/images/entire_movie14.PNG"></a>
-						<dl>
-							<dt>How You Like That</dt>
-							<dt>BLACKPINK</dt>
-							<dt class="like_image">
-								<a href= ""><img
-									src="http://localhost:9000/Music_streaming/images/heart.PNG"></a><span></span>조회
-								62,999
-							</dt>
-						</dl></li>
+						</div>
 				</ul>
 			</div>
 		</section>
