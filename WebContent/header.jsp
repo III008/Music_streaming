@@ -83,7 +83,7 @@
 				background-color:rgb(231,231,231); border-radius:4px;
 				padding:10px 40px; font-size:18px; 
 				color:black; font-weight:600;
-				margin:15px 0; text-decoration:none;
+				margin:15px 0; text-decoration:none; 
 			}
 			div.login_click>a>span:hover {
 				color:rgb(255,0,80);

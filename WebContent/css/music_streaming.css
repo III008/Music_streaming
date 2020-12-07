@@ -331,6 +331,7 @@
 */
 	section.section_1 form.join span.red {
 		color:red; font-weight:600;
+		padding-right:3px;
 	}
 	section.section_1 form.join {
 		width:50%;
@@ -343,21 +344,21 @@
 	section.section_1 form.join li>label {
 		border:1px solid gray;
 		display:inline-block;
-		width:19%; padding:7px 0 7px 15px;
+		width:19%; padding:9px 0 9px 15px;
 		float:left; margin-right:10px;
-		font-size:14px; border-radius:4px;
+		font-size:15px; border-radius:4px;
 		background-color:rgb(213,213,213);
 	}
 	section.section_1 form.join input.f1 {
 		border:1px solid gray;
 		border-radius:4px;
-		padding:8px 10px 8px 10px;
+		padding:10px 10px;
 		width:45%;
 		text-indent:10px;
 	}
 	section.section_1 form.join li>div {
 		font-size:12px;	color:#333;
-		padding:3px 0 3px 190px;
+		padding:5px 0 0px 190px;
 	}
 	section.section_1 form.join input.addr,
 	section.section_1 form.join input.hp_num,
@@ -365,26 +366,26 @@
 	section.section_1 form.join select.f3 {
 		border:1px solid gray;
 		border-radius:4px;
-		padding:3px 10px 7px 10px;
+		padding:10px 10px 10px 10px;
 	}
 	section.section_1 form.join input.f2 {
 		border:1px solid gray;
 		border-radius:4px;
-		padding:8px 10px;
+		padding:10px 10px;
 		width:19.5%;
 		text-indent:10px;
 	}
 	section.section_1 form.join select.f3 {
 		width:12%;
-		padding:7px 10px;
+		padding:9px 10px;
 	}
 	section.section_1 form.join select.hp {
 		width:12%;
-		padding:7px 10px;
+		padding:9px 10px;
 	}
 	section.section_1 form.join input.hp_num {
 		width:12%;
-		padding:8px 10px;
+		padding:9px 10px;
 	}
 	section.section_1 form.join span.rchk {
 		font-size:16px;
@@ -405,7 +406,7 @@
 		border-radius:4px;
 		background-color:rgb(213,213,213);
 		font-size:13px;
-		padding:8px 10px;
+		padding:10px 10px;
 	}
 	section.section_1 div.j_title {
 		font-size:12px; padding:10px 0;
