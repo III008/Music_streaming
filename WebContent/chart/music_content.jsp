@@ -5,6 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("button#unlike").change(function(){
+			if($(this).id == "unlike"){
+				$("#unlike").text("💗");
+				$("#unlike").attr("id","like");
+			}else if($(this).id == "like")
+				$("#like").text("🤍");
+				$("#like").attr("id","unlike");
+		});
+	});
+</script>
 <style>
 	div.content {
 		width:95%;
@@ -51,9 +64,10 @@
 		width:65%;
 		text-align:left;
 		border-bottom:1px solid lightgray;
+		padding-bottom:10px;
 	}
 	div section.section1 table td#music_image img {
-		width:400px; height:400px;
+		width:300px; height:300px;
 	}
 	div section.section1 table td#music_image {
 		text-align:right;
@@ -64,12 +78,12 @@
 		padding-bottom:5px;
 	}
 	div section.section1 table td#song_info>div#title {
-		font-size:70px;
+		font-size:50px;
 		font-weight:900;
 		padding-bottom:50px;
 	}
 	div section.section1 table td#song_info>div#artist {
-		font-size:30px;
+		font-size:25px;
 		font-weight:700;
 		padding-bottom:20px;
 	}
@@ -83,16 +97,18 @@
 		display:inline-block;
 		width:65%;
 		text-align:left;
-		font-size:28px;
+		font-size:23px;
 		font-weight:800;
+		padding:10px 0;
 		/* margin:30px 0 30px -905px; */
 	}
 	div section.section3>div>h3 {
 		display:inline-block;
 		width:65%;
 		text-align:left;
-		font-size:28px;
+		font-size:23px;
 		font-weight:800;
+		padding-bottom:5px;
 		/* margin:0 0 5px -1215px; */
 	}
 	div section.section2 div p.lyrics {
@@ -101,7 +117,7 @@
 		text-align:left;
 		/* height: 220px;
     	overflow: hidden; */
-    	font-size: 22px;
+    	font-size: 20px;
 	    line-height: 22px;
 	    color: #999;
 	    white-space: pre-wrap;
@@ -135,24 +151,24 @@
 		text-align:right;
 	}
 	div section.section4 table tr div#id a {
-		font-size:22px;
+		font-size:20px;
 		font-weight:900;
 	}
 	div section.section4 table tr div#date label,
 	div section.section4 table tr div#reply a {
-		font-size:17px;
+		font-size:15px;
 		color:gray;
 		text-decoration:none;
 	}
 	div section.section4 table tr div#comment_write label {
-		font-size:20px;
+		font-size:18px;
 	}
 	body.music_content .btn_style {
 		background-color:rgb(255,17,80);
 		border:rgb(255,17,80);
 		border-radius:4px;
 		font-family:"맑은고딕";
-		font-size:20px;
+		font-size:17px;
 		font-weight:700;
 		color:white;
 		width:120px; height:50px;
@@ -162,7 +178,7 @@
 		background-color:white;
 		border:1px solid white;
 		font-family:"맑은고딕";
-		font-size:30px;
+		font-size:25px;
 		font-weight:700;
 		width:50px; height:50px;
 		padding:0;
@@ -193,7 +209,7 @@
 						<td id="bar">
 							<button type="button" class="btn_style">재생</button>
 							<button type="button" class="btn_style">MP3 구매</button>
-							<button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button>
+							<button type="button" class="btn_style2" id="unlike">🤍</button>
 							<button type="button" class="btn_style2">···</button>
 						</td>
 					</tr>
@@ -310,7 +326,7 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button></div></td>
+							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div>
 						</tr>
 					</table>
 				</div>
@@ -327,7 +343,7 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button></div></td>
+							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
 						</tr>
 					</table>
 				</div>
@@ -344,7 +360,7 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button></div></td>
+							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
 						</tr>
 					</table>
 				</div>
@@ -361,7 +377,7 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button></div></td>
+							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
 						</tr>
 					</table>
 				</div>
@@ -378,7 +394,7 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" onclick="this.innerHTML='💗'">🤍</button></div></td>
+							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
 						</tr>
 					</table>
 				</div>

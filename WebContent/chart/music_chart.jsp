@@ -19,13 +19,16 @@
 		padding-top:10px;
 		text-align: center;
 	}
+	div section.section1 {
+		padding-bottom:70px;
+	}
 	div section.section1 img { 
-		width:65px; height:65px;
+		width:45px; height:45px;
 		margin: 8px 20px;
 	}
 	div section.section2 img,
 	div section.section3 img{ 
-		width:40px; height:40px;
+		width:25px; height:25px;
 		margin: 8px 13px;
 	}
 	div section.section1 label{
@@ -35,11 +38,11 @@
 	div section.section2 label.top5_1,
 	div section.section3 label.top5_2 {
 		position:absolute;
-		padding-top:13px;
+		padding:9px 0;
 	}
 	div.line {
 		border:1px solid rgb(242,242,242);
-		width:133%;
+		width:133%; 
 		/* width:107.2%; */
 		/* padding-left:110px; */
 	}
@@ -51,28 +54,34 @@
 	div section.section3 {
 		margin-left:-100px;
 	} */
-	div section.section1>div>h1 {
-		display:inline-block;
-		text-align:center;
+	div section.section1>div {
 		width:100%;
-		font-size:40px;
+	}
+	div section.section1>div>h1 {
+		width:10%;
+		font-size:30px;
 		font-weight:1000;
 	}
 	div section.section2>div>h3,
 	div section.section3>div>h3 {
-		display:inline-block;
 		text-align:left;
-		padding-left:70px;
+		padding-left:5%;
+		width:100%;
+		padding-right:28.1%;
+		background-color:#333;
 		/* width:100%; */
 		/* margin:5px 0 5px -1100px; */
-		font-size:23px;
+		font-size:18px;
 		font-weight:1000;
+		color:white;
+		margin:0;
+		height:40px;
 	}
 	div section.section2 div>div.part,
 	div section.section3 div>div.part {
 		display:inline-block;
 		text-align:left;
-		padding:30px 80px 80px 0;
+		padding:50px 80px 40px 0;
 	}
 	div section.section2 div>div.part:last-child,
 	div section.section3 div>div.part:last-child {
@@ -87,12 +96,15 @@
 	div section.section3 table,
 	div section.section3 table td {
 		border-collapse:collapse;
+		background-color:rgb(245, 245, 245);
 	}
 	div section.section2 table,
 	div section.section3 table {
-		border-bottom:1px solid lightgray;
 		border-radius: 10px;
 		width:470px; height:100px;
+		border-style:double;
+		border:4px double rgb(242,242,242);
+		margin-bottom:20px;
 	}
 	div section.section2 table td,
 	div section.section3 table td {
@@ -101,30 +113,32 @@
 	div section.section2 table td#music_image,
 	div section.section3 table td#music_image {
 		width:100px; height:100px;
+		/* border:1px double rgb(255,17,80); */
+		/* border:13px outset; */
 	}
 	div section.section2 table td#music_image img,
 	div section.section3 table td#music_image img {
-		width:200px; height:200px;
+		width:100px; height:100px;
 	}
 	div section.section2 table td#rank,
 	div section.section3 table td#rank {
 		margin-left:0;
 		width:10px; height:auto;
-		padding:0 20px 110px 20px;
+		padding:25px 20px 100px 20px;
 	}
 	div section.section2 table td#rank label,
 	div section.section3 table td#rank label {
-		font-size:30px;
+		font-size:20px;
 		font-weight:900;
 	}
 	div section.section2 table td#artist label,
 	div section.section3 table td#artist label {
-		font-size:18px;
+		font-size:15px;
 		color:gray;
 	}
 	div section.section2 table td#song a,
 	div section.section3 table td#song a {
-		font-size:27px;
+		font-size:20px;
 		text-decoration:none;
 		color:black;
 		font-weight:900;
@@ -144,7 +158,6 @@
 		<section class="section1">
 			<div>
 				<h1>
-					<img src="http://localhost:9000/Music_streaming/images/chart_img1.png">
 					<label>음악 차트</label>
 				</h1>
 			</div>
@@ -153,7 +166,7 @@
 			<div>
 				<div class="line"></div>
 				<h3>
-					<img src="http://localhost:9000/Music_streaming/images/chart_img2.png">
+					<img src="http://localhost:9000/Music_streaming/images/chart_img2.png"> 
 					<label class="top5_1">조회 TOP 5</label>
 				</h3>
 				<div class="line"></div>
@@ -162,7 +175,7 @@
 						<tr>
 							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/mchart1_top1.jpg"></td>
 							<td rowspan="2" id="rank"><label>1</label></td>
-							<td id="song"><a href="http://localhost:9000/Music_streaming/music/music_content.jsp">Dynamite</a></td>
+							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp">Dynamite</a></td>
 						</tr>
 						<tr>
 							<td id="artist"><label>방탄소년단</label></td>
