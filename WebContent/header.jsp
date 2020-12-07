@@ -113,10 +113,10 @@ nav>ul>li>a.login_click>span:hover {
 				</div>
 				<ul>
 					<li><a href="http://localhost:9000/Music_streaming/login/login.jsp" class="login_click"><span>로그인</span></a></li>
-					<li><a href="#">
+					<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">
 						<img src="http://localhost:9000/Music_streaming/images/login.png"><span>마이페이지</span></a>
 					</li>
-					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+					<li><a href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">
 						<img src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a>
 					</li>
 					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">
