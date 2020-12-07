@@ -414,3 +414,238 @@
 	
 	
 	
+/**
+	마이페이지(홈, 내정보수정) 스타일
+*/
+	body.mypage_home div.content,
+	body.mypage_update div.content,
+	body.mypage_musiclist div.content,
+	body.mypage_movielist div.content  {
+		width:97%;
+		display: inline-block;
+		text-align:center;
+		padding:40px 0;
+	}
+	body.mypage_home div.content>section.section1,
+	body.mypage_home div.content>section.section2,
+	body.mypage_home div.content>section.section3,
+	body.mypage_update div.content>section.section1,
+	body.mypage_musiclist div.content>section.section2,
+	body.mypage_movielist div.content>section.section2 {
+		margin:auto;
+		text-align: center;
+	}
+	body.mypage_home div.content h1>div,
+	body.mypage_update div.content h1>div,
+	body.mypage_musiclist div.content h1>div,
+	body.mypage_movielist div.content h1>div {
+		/* width:12px; height:50px; */
+		width:250px;
+		font-size:25px;
+		padding-bottom:30px;
+	}
+	
+	/** 마이페이지 메뉴 바 **/
+	body.mypage_home ul.nav,
+	body.mypage_musiclist ul.nav,
+	body.mypage_movielist ul.nav,
+	body.mypage_update ul.nav {
+	  list-style-type: none;
+	  margin: 0;
+	  margin-right:-3%;
+	  margin-bottom:50px;
+	  padding:0;
+	  overflow: hidden;
+	  padding-left:17%;
+	  background-color: #333;
+	}
+	
+	body.mypage_home ul.nav li,
+	body.mypage_musiclist ul.nav li,
+	body.mypage_movielist ul.nav li,
+	body.mypage_update ul.nav li {
+		padding:0 10%;
+	  	float:left;
+	}
+	
+	body.mypage_home ul.nav li a, .dropbtn,
+	body.mypage_musiclist ul.nav li a,
+	body.mypage_movielist ul.nav li a,
+	body.mypage_update ul.nav li a {
+	  display: inline-block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+	
+	body.mypage_home ul.nav li a:hover, .dropdown:hover .dropbtn,
+	body.mypage_musiclist ul.nav li a:hover,
+	body.mypage_movielist ul.nav li a:hover,
+	body.mypage_update ul.nav li a:hover {
+	  background-color: rgb(255,0,80);
+	}
+	
+	body.mypage_home ul.nav li.dropdown,
+	body.mypage_musiclist ul.nav li.dropdown,
+	body.mypage_movielist ul.nav li.dropdown,
+	body.mypage_update ul.nav li.dropdown {
+	  display: inline-block;
+	}
+	
+	body.mypage_home .dropdown-content,
+	body.mypage_musiclist .dropdown-content,
+	body.mypage_movielist .dropdown-content,
+	body.mypage_update .dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+	
+	body.mypage_home .dropdown-content a,
+	body.mypage_musiclist .dropdown-content a,
+	body.mypage_movielist .dropdown-content a,
+	body.mypage_update .dropdown-content a {
+		background-color:black;
+	  	color:black;
+	 	padding: 12px 16px;
+	  	text-decoration: none;
+	  	display: block;
+	  	text-align: left;
+	}
+	
+	body.mypage_home .dropdown-content a:hover,
+	body.mypage_musiclist .dropdown-content a:hover,
+	body.mypage_movielist .dropdown-content a:hover,
+	body.mypage_update .dropdown-content a:hover {
+		background-color: rgb(255,0,80);
+	}
+	
+	body.mypage_home .dropdown:hover .dropdown-content,
+	body.mypage_musiclist .dropdown:hover .dropdown-content,
+	body.mypage_movielist .dropdown:hover .dropdown-content,
+	body.mypage_update .dropdown:hover .dropdown-content {
+	  display: block;
+	}
+	/*  */
+	
+	/** mypage_home **/
+	body.mypage_home div.content section.section2 div,
+	body.mypage_home div.content section.section3 div {
+		display:inline-block;
+		padding:0 3%;
+	}
+	body.mypage_home div.content section.section2,
+	body.mypage_home div.content section.section3 {
+		width:75%;
+		padding:40px 0;
+		background-color:rgb(245, 245, 245);
+		border:1px solid lightgray;
+		margin-bottom:15px;
+	}
+	body.mypage_home div.content section.section2 div:nth-child(2) {
+		padding-right:20%;
+		padding-left:3%;
+	}
+	body.mypage_home div.content section.section2 div:last-child {
+		padding-left:5%;
+	}
+	body.mypage_home div.content section.section2 img {
+		width:150px; height:150px;
+		border-style:double;
+		border:2px double gray;
+	}
+	body.mypage_home div.content section.section2 table,
+	body.mypage_home div.content section.section2 table td,
+	body.mypage_home div.content section.section3 table,
+	body.mypage_home div.content section.section3 table td {
+		text-align:left;
+		border-collapse:collapse;
+		border-bottom:1px solid lightgray;
+	}
+	body.mypage_home div.content section.section3 table {
+		width:1000px;
+	}
+	body.mypage_home div.content section.section2 table tr td:last-child,
+	body.mypage_home div.content section.section3 table tr td:last-child {
+		font-size:17px;
+		padding:20px 20px;
+	}
+	body.mypage_home div.content section.section2 table tr td:nth-child(2),
+	body.mypage_home div.content section.section3 table tr td:nth-child(2) {
+		font-size:20px;
+		font-weight:1000;
+		padding:20px 5px; 
+	}
+	body.mypage_home div.content section.section2 table tr td:first-child div.vertical,
+	body.mypage_home div.content section.section3 table tr td:first-child div.vertical {
+		width:3px; 
+		border:1px solid rgb(255,0,80);
+	}	
+	
+	/** mypage_update **/
+	body.mypage_update div.content section.section_1>div {
+		text-align:left;
+		padding-top:40px;
+	}
+	
+	/** mypage_musiclist, mypage_movielist **/
+	body.mypage_musiclist div.content>section.section2,
+	body.mypage_movielist div.content>section.section2 {
+		width:90%;
+		padding-left:5%;
+	}
+	body.mypage_musiclist div.content>section.section2 div.section2_header,
+	body.mypage_movielist div.content>section.section2 div.section2_header {
+		text-align:left;
+		padding-bottom:30px;
+	}
+	body.mypage_musiclist div.content>section.section2 div.section2_header label,
+	body.mypage_movielist div.content>section.section2 div.section2_header label {
+		font-size:20px;
+		font-weight:900;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like,
+	body.mypage_movielist div.content>section.section2 table.like {
+		text-align:left;
+		width:100%;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like th,
+	body.mypage_musiclist div.content>section.section2 table.like td,
+	body.mypage_movielist div.content>section.section2 table.like th,
+	body.mypage_movielist div.content>section.section2 table.like td {
+		padding:10px 10px;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like tr:first-child td,
+	body.mypage_movielist div.content>section.section2 table.like tr:first-child td {
+		text-align:right;
+		padding-bottom:30px;
+		padding-left:30px;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2) th,
+	body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2) th {
+		color:rgb(255,0,80);
+	}
+	body.mypage_musiclist div.content>section.section2 table.like td:nth-child(3) img {
+		width:50px; height:50px;
+	}
+	body.mypage_movielist div.content>section.section2 table.like td:nth-child(3) img {
+		width:200px; height:120px;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like td:last-child img {
+		text-align:center;
+		width:30px; height:30px;
+	}
+	body.mypage_musiclist div.content>section.section2 table.like tr:hover,
+	body.mypage_movielist div.content>section.section2 table.like tr:hover {
+		background-color:rgb(245, 245, 245);
+	}
+	body.mypage_musiclist div.content>section.section2 table.like tr:first-child:hover,
+	body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2):hover,
+	body.mypage_movielist div.content>section.section2 table.like tr:first-child:hover,
+	body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
+		background-color:white;
+	}

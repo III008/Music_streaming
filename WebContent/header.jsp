@@ -107,13 +107,13 @@
 					</div>
 					<ul>
 						<li>
-							<a href="#">
+							<a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/mypage.png">
 								<span>마이페이지</span>
 							</a>
 						</li>
 						<li>
-							<a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+							<a href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/music.png">
 								<span>차트</span>
 							</a>
