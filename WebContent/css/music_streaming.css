@@ -54,19 +54,19 @@
 /**
 	게시판 리스트, 공지사항 리스트
 */	
-	table.board, table.notice {
+	table.board, table.notice{
 		border-top:1px solid black;
 		border-bottom:1px solid black;
 		border-collapse:collapse;
 	}
-	table.board td, table.notice td {
+	table.board td, table.notice td{
 		border-top:1px solid rgb(213,213,213);
 	}
 	div.content_notice h1 {
 		margin-bottom:55px;
 	}
 	table.board th, table.board td,
-	table.notice th, table.notice td {
+	table.notice th, table.notice td{
 		padding:12px 0; 
 		color:black;
 		font-size:17px;
@@ -74,19 +74,19 @@
 	table.board td>a, table.notice td>a {
 		color:black;
 	}
-	table.board th, table.notice th {
+	table.board th, table.notice th{
 		background-color:rgb(213,213,213);
 	}
 	table.board tr td:nth-child(1), table.board tr td:nth-child(3),
 	table.board tr td:nth-child(4),	table.notice tr td:nth-child(1),
-	table.notice tr td:nth-child(3), table.notice tr td:nth-child(4) {
+	table.notice tr td:nth-child(3), table.notice tr td:nth-child(4){
 		text-align:center;
 	}
 	table.board tr td:nth-child(2) a,
 	table.notice tr td:nth-child(2) a {
 		text-decoration:none;
 	}
-	table.board tr:first-child td {
+	table.board tr:first-child td{
 		text-align:right;
 		padding:0 15px 10px 0;
 		border:1px solid white;
@@ -99,16 +99,16 @@
 		margin-top:10px;
 	}
 	table.board tr:last-child td,
-	table.notice tr:last-child td {
+	table.notice tr:last-child td{
 		border:1px solid white;
 		border-top:1px solid black;
 		padding:15px 0 100px 0;
 	}
-	table.board tr:hover, table.notice tr:hover {
+	table.board tr:hover, table.notice tr:hover{
 		background-color:rgb(231,231,231);
 	}
 	table.board tr td:nth-child(2):hover,
-	table.notice tr td:nth-child(2):hover  {
+	table.notice tr td:nth-child(2):hover{
 		text-decoration:underline;
 	}
 	table.board tr:first-child:hover,
@@ -118,7 +118,7 @@
 		text-decoration:none;
 	}
 	table.board tr td:first-child, table.board tr td:last-child,
-	table.notice tr td:first-child, table.notice tr td:last-child {
+	table.notice tr td:first-child, table.notice tr td:last-child{
 		width:140px;
 	}
 	table.board tr td:nth-child(3), table.notice tr td:nth-child(3) {
@@ -410,6 +410,5 @@
 	section.section_1 div.j_title {
 		font-size:12px; padding:10px 0;
 	}
-	
 	
 	

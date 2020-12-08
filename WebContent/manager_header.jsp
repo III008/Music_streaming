@@ -2,134 +2,128 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>header</title>
-<style>
-
-/*이전 header code*/
-/* 
-body {
-		margin: 0px;
-}
-header {
-	background-image:url("http://localhost:9000/Music_streaming/images/header.png");
-	width: 170px;
-	float: left;
-	position: fixed;
-	height:100%;
-	z-index:4;
-	background-color:black;
-}
- */
-
-html {
-	height: 100%;
-}
-
-/*각자 해상도에따라 패딩 다르게 되야 할수도 있음*/
-body {
-	padding-left: 190px;
-}
-
-header {
-	position: fixed;
-	float: left;
-	background:black;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	height: 100%;
-	width: 170px;
-	padding: 0 10px;
-}
-
-
-/**로고이미지**/
-header>div>nav>div>a>img {
-	width: 170px;
-	height: 140px;
-	/* border:1px solid red; */
-}
-nav>ul {
-	margin: auto;
-	padding: 0 0 0 0;
-/* 	border:1px solid blue;  */
-	
-}
-nav>ul>li {
-	border: 1px solid red;
-	list-style-type: none;
-	padding: 10px 5px 5px 0;
-	clear: both;
-}
-nav>ul>li>a {
-	font-size: 16px;
-	font-family: "나눔바른고딕";
-	text-decoration: none;
-	color: white;
-}
-nav>ul>li>a>span {
-	/* border:1px solid violet;  */
-	display: inline-block;
-	margin: 14px 0 0 12px;
-	font-weight:bold;
-}
-nav>ul>li>a>span:hover {
-	text-decoration: underline;
-}
-nav>ul>li>a>img {
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	float: left;
-}
-/**로그인**/
-nav>ul>li>a.login_click{
-	padding: 10px 40px;
-	background-color: white;
-	border-radius:8px;
-	font-weight: 700;
-	font-size: 20px;
-	color:black;
-}
-/* nav>ul>li>a.login_click>span{
-	border:2px solid red;
-} */
-nav>ul>li>a.login_click>span:hover {
-	color:red;
-	text-decoration: none;
-}
-</style>
-</head>
-<body>
-	<header>
-		<div>
-			<nav>
-				<div>
-					<a href="http://localhost:9000/Music_streaming/index.jsp">
-						<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
-					</a>
-				</div>
-				<ul>
-					<li><a href="http://localhost:9000/Music_streaming/login/login.jsp" class="login_click"><span>로그인</span></a></li>
+	<head>
+		<meta charset="UTF-8">
+		<title>header</title>
+		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+		<style>
 		
-					<li><a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
-						<img src="http://localhost:9000/Music_streaming/images/music.png"><span>차트</span></a>
-					</li>
-					<li><a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">
-						<img src="http://localhost:9000/Music_streaming/images/music_video.png"><span>뮤직비디오</span></a>
-					</li>
-					<li><a href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">
-						<img src="http://localhost:9000/Music_streaming/images/magazine.png"><span>매거진</span></a>
-					</li>
-
-					<li><a href="#">
-						<img src="http://localhost:9000/Music_streaming/images/notice_2.png"><span>공지사항</span></a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-</body>
+			html {
+				height: 100%;
+			}
+			body {
+				padding-left:230px;
+			}
+			header {
+				position:fixed;	float:left;
+				background:black;
+				left:0;	top:0; bottom:0;
+				height:100%; width:230px;
+			}
+			
+			/**로고이미지**/
+			div.title_img {
+				text-align:center;
+			}
+			div.title_img>a>img {
+				width:200px; height:140px;
+				/* border:1px solid red; */
+			}
+			/* nav>ul {
+				margin: auto;
+				padding: 0 0 0 0;
+				border:1px solid blue;
+			} */
+			header nav>ul>li {
+				/* border: 1px solid red; */
+				padding:6px 5px 5px 25px;
+				clear: both;
+				margin:10px 0;
+			}
+			/* nav>ul>li>a {
+				font-size: 16px;
+				text-decoration: none;
+				color: white;
+			} */
+			nav>ul>li>a>img {
+				width:40px; height:40px; margin-right:15px;
+				display:inline-block; float:left;
+				/* border:1px solid white; */
+			}
+			nav>ul>li>a>span {
+				/* border:1px solid violet; */
+				display:inline-block;
+				margin:10px 0;
+				color:rgb(231,231,231); font-size:19px;
+				font-weight:bold;
+			}
+			nav>ul>li>a>span:hover {
+				/* text-decoration:underline; */
+				color:white;
+			}
+			nav>ul>li>a>span:active {
+				color:rgb(255,0,80);
+			}
+			
+			/**로그인**/
+			div.login_click {
+				text-align:center;
+			}
+			div.login_click>a {
+				display:inline-block; text-align:center;
+				background-color:rgb(213,213,213); border-radius:4px;
+				padding:10px 40px; font-size:18px; 
+				color:black; font-weight:600;
+				margin:15px 0; text-decoration:none;
+			}
+			div.login_click>a>span:hover {
+				color:rgb(255,0,80);
+				text-decoration:none;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>
+				<nav>
+					<div class="title_img">
+						<a href="http://localhost:9000/Music_streaming/index.jsp">
+							<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
+						</a>
+					</div>
+					<div class="login_click">
+						<a href="http://localhost:9000/Music_streaming/login/login.jsp">
+							<span>로그인</span>
+						</a>
+					</div>
+					<ul>
+						<li>
+							<a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+								<img src="http://localhost:9000/Music_streaming/images/music.png">
+								<span>차트</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">
+								<img src="http://localhost:9000/Music_streaming/images/music_video.png">
+								<span>뮤직비디오</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://localhost:9000/Music_streaming/admin/admin_magazine/magazine_list.jsp">
+								<img src="http://localhost:9000/Music_streaming/images/magazine.png">
+								<span>매거진 관리</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://localhost:9000/Music_streaming/admin/admin_notice/notice_list.jsp">
+								<img src="http://localhost:9000/Music_streaming/images/notice_2.png">
+								<span>공지사항 관리</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	</body>
 </html>
