@@ -63,7 +63,7 @@
 				/* border:1px solid violet; */
 				display:inline-block;
 				margin:10px 0;
-				color:rgb(231,231,231); font-size:19px;
+				color:rgb(241,241,241); font-size:19px;
 				font-weight:bold;
 			}
 			nav>ul>li>a>span:hover {
@@ -80,7 +80,7 @@
 			}
 			div.login_click>a {
 				display:inline-block; text-align:center;
-				background-color:rgb(213,213,213); border-radius:4px;
+				background-color:rgb(231,231,231); border-radius:4px;
 				padding:10px 40px; font-size:18px; 
 				color:black; font-weight:600;
 				margin:15px 0; text-decoration:none;
@@ -107,13 +107,13 @@
 					</div>
 					<ul>
 						<li>
-							<a href="#">
+							<a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/mypage.png">
 								<span>마이페이지</span>
 							</a>
 						</li>
 						<li>
-							<a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+							<a href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/music.png">
 								<span>차트</span>
 							</a>
