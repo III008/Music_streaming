@@ -3,94 +3,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<!-- <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css"> -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+<style>
+
 	
-	<style>
-	table.board, table.notice, table.ad_notice{
-		border-top:1px solid black;
-		border-bottom:1px solid black;
-		border-collapse:collapse;
-	}
-	table.board td, table.notice td,table.ad_notice td {
-		border-top:1px solid rgb(213,213,213);
-	}
-	div.content_notice h1 {
-		margin-bottom:55px;
-	}
-	table.board th, table.board td,
-	table.notice th, table.notice td,
-	table.ad_notice th,table.ad_notice td {
-		padding:12px 0; 
-		color:black;
-		font-size:17px;
-	}
-	table.board td>a, table.notice td>a, table.ad_notice td>a {
-		color:black;
-	}
-	table.board th, table.notice th,table.ad_notice th {
-		background-color:rgb(213,213,213);
-	}
-	table.board tr td:nth-child(1), table.board tr td:nth-child(3),
-	table.board tr td:nth-child(4),	table.notice tr td:nth-child(1),
-	table.notice tr td:nth-child(3), table.notice tr td:nth-child(4),
-	table.ad_notice tr td:nth-child(1),table.ad_notice tr td:nth-child(2),
-	table.ad_notice tr td:nth-child(4),table.ad_notice tr td:nth-child(5) {
-		text-align:center;
-	}
-	table.board tr td:nth-child(2) a,
-	table.notice tr td:nth-child(2) a,
-	table.ad_notice tr td:nth-child(3) a {
-		text-decoration:none;
-	}
-	table.board tr:first-child td
-	table.ad_notice tr:first-child td {
-		text-align:right;
-		padding:0 15px 10px 0;
-		border:1px solid white;
-		border-bottom:1px solid black;
-	}
-	table.board tr:first-child td a>button,
-	table.ad_notice tr :first-child td a>button {
-		font-size:13px;
-		border-radius:2px;
-		width:100px;	padding:5px 0;
-		margin-top:10px;
-	}
-	table.board tr:last-child td,
-	table.notice tr:last-child td,
-	table.ad_notice tr td:last-child td {
-		border:1px solid white;
-		border-top:1px solid black;
-		padding:15px 0 100px 0;
-	}
-	table.board tr:hover, table.notice tr:hover,
-	table.ad_notice tr:hober {
-		background-color:rgb(231,231,231);
-	}
-	table.board tr td:nth-child(2):hover,
-	table.notice tr td:nth-child(2):hover,
-	table.ad_notice tr td:nth-child(3):hober  {
-		text-decoration:underline;
-	}
-	table.board tr:first-child:hover,
-	table.board tr:last-child:hover, 
-	table.notice tr:last-child:hover {
-		background-color:white;
-		text-decoration:none;
-	}
-	table.board tr td:first-child, table.board tr td:last-child,
-	table.notice tr td:first-child, table.notice tr td:last-child,
-	table.ad_notice tr td:first-child,table.ad_notice tr td:last-child {
-		width:140px;
-	}
-	table.board tr td:nth-child(3), table.notice tr td:nth-child(3),
-	table.ad_notice tr td:nth-child(4) {
-		width:200px;
-	}
-	
-	</style>
+</style>
 	<script>
 	function allCheck(){
 		var all =document.getElementById("all");
@@ -118,15 +37,13 @@
 		}
 		alert(del_list);
 	}
-	
 </script>
 	</head>
-	<body>
+	<body class="ad_notice_list">
 		<!-- header -->
 		<jsp:include page="../../manager_header.jsp"></jsp:include>
-		
 		<!-- content -->
-		<div class="content_board">
+		<div >
 			<section class="section_1">
 				<div>
 					<h1>공지사항 관리</h1>
@@ -135,9 +52,9 @@
 							<td colspan="5">
 								<input type="checkbox" id="all" onchange="allCheck()">전체선택
 								<a href="notice_write.jsp" id="test">
-									<button type="button" class="btn_style" >공지사항 등록</button>
+									<button type="button" class="ad_btn_style" >공지사항 등록</button>
 								</a>
-									<button type="button" class="btn_style" onclick="chk_delete()">공지사항 삭제</button>
+									<button type="button" class="ad_btn_style" onclick="chk_delete()">공지사항 삭제</button>
 							</td>
 						</tr>
 						<tr>
