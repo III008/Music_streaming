@@ -12,93 +12,93 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 		
 		<!-- content -->
-		<div class="content_board">
+		<div class="content_notice">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
-					<table class="board">
+					<h1>공지사항</h1>
+					<table class="notice_menu">
 						<tr>
-							<td colspan="5">
-								<a href="board_write.jsp">
-									<button type="button" class="btn_style">글쓰기</button>
-								</a>  
-							</td>
+							<td><a href="notice_list.jsp">공지사항</a></td>
+							<td><a href="ask_list.jsp">자주하는 질문</a></td>
 						</tr>
+					</table>
+					
+					<table class="ask">
 						<tr>
 							<th>no</th>
+							<th>분류</th>
 							<th>제목</th>
 							<th>등록일</th>
-							<th>추천</th>
 							<th>조회수</th>
 						</tr>
 						<tr>
 							<td>1</td>
-							<td><a href="board_content.jsp">방탄소년단 신곡 너무 좋아요!</a>
-							<td>2020.11.22</td>
-							<td>0</td>
+							<td>회원 문의</td>
+							<td><a href="ask_content.jsp">비밀번호를 변경하려면 어떻게 해야 하나요?</a></td>
+							<td>2020.12.01</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>2</td>
-							<td><a href="#">여자친구 'MAGO' 너무 신나요!</a>
+							<td>서비스 문의</td>
+							<td><a href="#"></a>바이브 차트의 순위는 어떻게 정해지나요?</td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>3</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">로그인은 어디서 하나요?</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>4</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>5</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>6</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>7</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>8</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>9</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>
 							<td>10</td>
-							<td><a href="#">룰루</a>
+							<td>기타</td>
+							<td><a href="#">룰루</a></td>
 							<td>2020.11.22</td>
-							<td>0</td>
 							<td>70</td>
 						</tr>
 						<tr>

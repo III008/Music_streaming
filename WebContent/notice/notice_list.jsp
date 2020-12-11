@@ -16,9 +16,16 @@
 			<section class="section_1">
 				<div>
 					<h1>공지사항</h1>
+					<table class="notice_menu">
+						<tr>
+							<td><a href="notice_list.jsp">공지사항</a></td>
+							<td><a href="ask_list.jsp">자주하는 질문</a></td>
+						</tr>
+					</table>
+					
 					<table class="notice">
 						<tr>
-							<th>번호</th>
+							<th>no</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>조회수</th>
