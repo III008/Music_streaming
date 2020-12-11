@@ -80,14 +80,14 @@
 			}
 			div.login_click>a {
 				display:inline-block; text-align:center;
-				background-color:rgb(231,231,231); border-radius:4px;
-				padding:10px 40px; font-size:18px; 
+				width:70%; background-color:rgb(231,231,231);
+				border-radius:4px;
+				padding:10px 0; font-size:20px; 
 				color:black; font-weight:600;
-				margin:15px 0; text-decoration:none;
+				margin:15px 0; text-decoration:none; 
 			}
-			div.login_click>a>span:hover {
+			div.login_click>a:hover {
 				color:rgb(255,0,80);
-				text-decoration:none;
 			}
 		</style>
 	</head>
