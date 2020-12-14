@@ -1206,45 +1206,43 @@ div.same_artist {
 	font-weight: bold;
 }
 
-
-
 /**login ÆäÀÌÁö**/
-div.content {
+div.login {
 	margin: auto;
 	padding-top: 150px;
 	height: 715px;
 }
-div.content>section.section1>div>form.login {
+div.login>section.section1>div>form.login {
 	text-align: center;
 }
-section.section1>div>form.login ul>li {
+div.login>section.section1>div>form.login ul>li {
 	 list-style-type: none;
 	padding: 5px;
 }
 
-div.content>div{
+div.login>div{
 text-align:center;
 margin-bottom:50px;
 }
-div.content>div>a{
+div.login>div>a{
 padding: 40px 115px 20px 115px;
 text-decoration: none;
 border-radius:4px;
 background-color:black;
 }
-div.content>div>a>span{
+div.login>div>a>span{
 text-align:center;
 color: white;
 font-size:50px;
 font-weight:900;
 }
-section.section1>div>form.login ul>li>input {
+div.login>section.section1>div>form.login ul>li>input {
 	padding: 20px 10px;
 	border: 1px solid lightgray;
 	border-radius: 4px;
 	width: 500px;
 }
-section.section1>div>form.login ul>li>button {
+div.login>section.section1>div>form.login ul>li>button {
 	padding: 20px 10px;
 	border-radius: 4px;
 	width: 520px;

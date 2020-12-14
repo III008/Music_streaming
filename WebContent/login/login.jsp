@@ -13,7 +13,7 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 
 	<!--content-->
-	<div class="content">
+	<div class="login">
 		<div>
 			<a href="http://localhost:9000/Music_streaming/index.jsp"><span>this my vibe</span></a>
 		</div>
