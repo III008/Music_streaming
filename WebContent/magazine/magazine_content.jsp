@@ -7,60 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <style>
-/*컨텐츠 타이틀 css*/
-	div.content_title{
-	margin:0 0 100px 0;
-	padding:50px 200px 100px 200px;
-	text-align:center;
-	background-color:black;
-	}
-	div.content_title>h1{
-		color:white;
-		padding:0 0 20px 0;
-	}
-	div.content_title>p{
-		margin:0 15%;
-		color:lightgray;
-	}
-	
-	/*컨텐츠 css*/
-	div.magazine_content{
-		margin:auto;
-		
-	}
-	div.magazine_content>div.magazine_subheading{
-	width: 1300px;
-	 margin:auto; 
-	 border:1px solid gray;
-	}
-	div.magazine_content>div.magazine_subheading>h2{
-	text-align:left;
-	}
-	div.magazine_content>section{
-	width: 1300px;
-	display: block;
-	margin: auto;
-	border: 1px solid gray;
-	border-top:none;
-	padding:40px 0 0 0 ;
-	}
-	div.magazine_content>section>img{
-		display:block;
-		margin:auto;
-		width:900px;
-		height:1200px;
-		border-radius:8px;
-		border:2px solid #333;
-	}
-	div.magazine_content>section>p{
-		display:block;
-		margin:auto;
-		width:900px;
-		padding-top:50px;
-		padding-bottom:100px;
-		border-radius:8px;
 
-	}
 
 </style>
 </head>
