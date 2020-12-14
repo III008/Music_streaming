@@ -1531,3 +1531,366 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	table.ad_notice tr td:nth-child(3){
 		width:200px;
 	}
+	
+/** 
+	À½¾ÇÂ÷Æ® 
+**/
+	
+	body.music_chart div.content {
+		width:75%;
+		padding:30px 0;
+		text-align: center;
+		display: inline-block;
+	}
+	body.music_chart div.content>section.section1, 
+	body.music_chart div.content>section.section2, 
+	body.music_chart div.content>section.section3 {
+		margin:auto;
+		padding-top:10px;
+		text-align: center;
+	}
+	body.music_chart div section.section1 {
+		padding-bottom:70px;
+		padding-left:30px;
+	}
+	body.music_chart div section.section1 img { 
+		width:45px; height:45px;
+		margin: 8px 20px;
+	}
+	body.music_chart div section.section2 img,
+	body.music_chart div section.section3 img{ 
+		width:25px; height:25px;
+		margin: 8px 13px;
+	}
+	body.music_chart div section.section1 label{
+		position:absolute;
+		padding-top:15px;
+	}
+	body.music_chart div section.section2 label.top5_1,
+	body.music_chart div section.section3 label.top5_2 {
+		position:absolute;
+		padding:9px 0;
+	}
+	body.music_chart div.line {
+		border:1px solid rgb(242,242,242);
+		width:133%; 
+		/* width:107.2%; */
+		/* padding-left:110px; */
+	}
+	/* body.music_chart div section.section1 {
+		margin-left:-1200px;
+		padding-bottom:25px;
+	}
+	body.music_chart div section.section2,
+	body.music_chart div section.section3 {
+		margin-left:-100px;
+	} */
+	body.music_chart div section.section1>div {
+		width:100%;
+	}
+	body.music_chart div section.section1>div>h1 {
+		width:10%;
+		font-size:30px;
+		font-weight:1000;
+	}
+	body.music_chart div section.section2>div>h3,
+	body.music_chart div section.section3>div>h3 {
+		text-align:left;
+		padding-left:5%;
+		width:100%;
+		padding-right:28.1%;
+		background-color:#333;
+		/* width:100%; */
+		/* margin:5px 0 5px -1100px; */
+		font-size:18px;
+		font-weight:1000;
+		color:white;
+		margin:0;
+		height:40px;
+	}
+	body.music_chart div section.section2 div>div.part,
+	body.music_chart div section.section3 div>div.part {
+		display:inline-block;
+		text-align:left;
+		padding:50px 80px 40px 0;
+	}
+	body.music_chart div section.section2 div>div.part:last-child,
+	body.music_chart div section.section3 div>div.part:last-child {
+		padding-right:0;
+	}
+	body.music_chart div section.section2 div>div:last-child,
+	body.music_chart div section.section3 div>div:last-child {
+		position:absolute;
+	}
+	body.music_chart div section.section2 table,
+	body.music_chart div section.section2 table td,
+	body.music_chart div section.section3 table,
+	body.music_chart div section.section3 table td {
+		border-collapse:collapse;
+		background-color:rgb(245, 245, 245);
+	}
+	body.music_chart div section.section2 table,
+	body.music_chart div section.section3 table {
+		border-radius: 10px;
+		width:470px; height:100px;
+		border-style:double;
+		border:4px double rgb(242,242,242);
+		margin-bottom:20px;
+	}
+	body.music_chart div section.section2 table td,
+	body.music_chart div section.section3 table td {
+		padding:10px 0;
+	}
+	body.music_chart div section.section2 table td#music_image,
+	body.music_chart div section.section3 table td#music_image {
+		width:100px; height:100px;
+		/* border:1px double rgb(255,17,80); */
+		/* border:13px outset; */
+	}
+	body.music_chart div section.section2 table td#music_image img,
+	body.music_chart div section.section3 table td#music_image img {
+		width:100px; height:100px;
+	}
+	body.music_chart div section.section2 table td#rank,
+	body.music_chart div section.section3 table td#rank {
+		margin-left:0;
+		width:10px; height:auto;
+		padding:25px 20px 100px 20px;
+	}
+	body.music_chart div section.section2 table td#rank label,
+	body.music_chart div section.section3 table td#rank label {
+		font-size:20px;
+		font-weight:900;
+	}
+	body.music_chart div section.section2 table td#artist label,
+	body.music_chart div section.section3 table td#artist label {
+		font-size:15px;
+		color:gray;
+	}
+	body.music_chart div section.section2 table td#song a,
+	body.music_chart div section.section3 table td#song a {
+		font-size:20px;
+		text-decoration:none;
+		color:black;
+		font-weight:900;
+	}
+	body.music_chart div section.section2 table td#song a:hover,
+	body.music_chart div section.section3 table td#song a:hover {
+		text-decoration:underline;
+	}
+	
+/** 
+	À½¾Ç ÄÜÅÙÃ÷ 
+**/
+	body.music_content div.content {
+		width:95%;
+		display: inline-block;
+		text-align:center;
+		padding:50px 0;
+	}
+	body.music_content div.content>section.section1, 
+	body.music_content div.content>section.section2, 
+	body.music_content div.content>section.section3,
+	body.music_content div.content>section.section4 {
+		margin:auto;
+		text-align: center;
+	}
+	body.music_content div.sticky_bar.on {
+		visibility:visible;
+	}
+	body.music_content div.sticky_bar {
+		width:106.5%;
+		visibility:hidden;
+		display:inline-block;
+		position: -webkit-sticky;
+  		position: sticky;
+  		top: 0;
+  		padding: 5px;
+  		background-color: #cae8ca;
+  		border: 2px solid #4CAF50;
+	}
+	body.music_content div section.section1 table,
+	body.music_content div section.section1 table td,
+	body.music_content div section.section3 table,
+	body.music_content div section.section3 table td,
+	body.music_content div section.section4 table,
+	body.music_content div section.section4 table td {
+		border-collapse:collapse;
+	}
+	body.music_content div section.section1 table td,
+	body.music_content div section.section3 table td,
+	body.music_content div section.section4 table td {
+		padding:10px 8px;
+	}
+	body.music_content div section.section1 table {
+		display:inline-block;
+		width:65%;
+		text-align:left;
+		border-bottom:1px solid lightgray;
+		padding-bottom:10px;
+	}
+	body.music_content div section.section1 table td#music_image img {
+		width:300px; height:300px;
+	}
+	body.music_content div section.section1 table td#music_image {
+		text-align:right;
+	}
+	body.music_content div section.section1 table td#song_info>div,
+	body.music_content div section.section1 table td#bar {
+		text-align:left;
+		padding-bottom:5px;
+	}
+	body.music_content div section.section1 table td#song_info>div#title {
+		font-size:50px;
+		font-weight:900;
+		padding-bottom:50px;
+	}
+	body.music_content div section.section1 table td#song_info>div#artist {
+		font-size:25px;
+		font-weight:700;
+		padding-bottom:20px;
+	}
+	body.music_content div section.section1 table td#song_info>div#compose {
+		font-size:20px;
+		color:gray;
+		padding-bottom:10px;
+	}
+	body.music_content div section.section2>div>h3 {
+		/* display:inline-block; */
+		display:inline-block;
+		width:65%;
+		text-align:left;
+		font-size:23px;
+		font-weight:800;
+		padding:10px 0;
+		/* margin:30px 0 30px -905px; */
+	}
+	body.music_content div section.section3>div>h3 {
+		display:inline-block;
+		width:65%;
+		text-align:left;
+		font-size:23px;
+		font-weight:800;
+		padding-bottom:5px;
+		/* margin:0 0 5px -1215px; */
+	}
+	body.music_content div section.section2 div p.lyrics {
+		display:inline-block;
+		width:65%;
+		text-align:left;
+		/* height: 220px;
+    	overflow: hidden; */
+    	font-size: 20px;
+	    line-height: 22px;
+	    color: #999;
+	    white-space: pre-wrap;
+	}
+	body.music_content div section.section3 table,
+	body.music_content div section.section4 table {
+		display:inline-block;
+		width:65%;
+		border-bottom:1px solid lightgray;
+	}
+	body.music_content div section.section3 table td {
+		width:100%;
+		padding:10px 20px;
+		text-align:center;
+	}
+	body.music_content div section.section3 table td#comment textarea {
+		border:2px solid black;
+		border-radius:8px;
+		padding:10px 10px;
+		font-size:15px;
+		width:100%; height:80px;
+		resize:none;
+	}
+	body.music_content div section.section4 table {
+		text-align:left;
+	}
+	body.music_content div section.section4 table td {
+		width:100%;
+	}
+	body.music_content div section.section4 table tr div#like {
+		text-align:right;
+	}
+	body.music_content div section.section4 table tr div#id a {
+		font-size:20px;
+		font-weight:900;
+	}
+	body.music_content div section.section4 table tr div#date label,
+	body.music_content div section.section4 table tr div#reply a {
+		font-size:15px;
+		color:gray;
+		text-decoration:none;
+	}
+	body.music_content div section.section4 table tr div#comment_write label {
+		font-size:18px;
+	}
+	body.music_content .btn_style {
+		background-color:rgb(255,17,80);
+		border:rgb(255,17,80);
+		border-radius:4px;
+		font-family:"¸¼Àº°íµñ";
+		font-size:17px;
+		font-weight:700;
+		color:white;
+		width:120px; height:50px;
+		padding:8px 0;
+	}
+	body.music_content .btn_style2 {
+		background-color:white;
+		border:1px solid white;
+		font-family:"¸¼Àº°íµñ";
+		font-size:25px;
+		font-weight:700;
+		width:50px; height:50px;
+		padding:0;
+		cursor:pointer;
+	}
+	body.music_content .btn_like {
+	  	position: relative;
+	 /*  margin: 100px auto; */
+	 /*  display: block; */
+	 	margin:2px 10px;
+	  	width: 50px;
+	  	height: 50px;
+	  	border: 1px solid #e8e8e8;
+	  	border-radius: 44px;
+	  	font-family: notokr-bold,sans-serif;
+	  	font-size: 14px;
+	  	line-height: 16px;
+	  	background-color: #fff;
+	  	color: #DD5D54;
+	  	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
+	  	transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
+	  	cursor: pointer;
+	}
+
+	body.music_content .btn_like:hover {
+	  border: 1px solid rgba(228,89,89,0.3);
+	  background-color: rgba(228,89,89,0.02);
+	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
+	}
+	
+	body.music_content .btn_unlike .img_emoti {
+	    background-position: -30px -120px;
+	}
+	
+	body.music_content .img_emoti {
+	    display: inline-block;
+	    overflow: hidden;
+	    font-size: 0;
+	    line-height: 0;
+	    background: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/img_emoti.png?v=20180410) no-repeat;
+	    text-indent: -9999px;
+	    vertical-align: top;
+	    width: 20px;
+	    height: 17px;
+	    margin-top: 1px;
+	    background-position: 0px -120px;
+	    text-indent: 0;
+	}
+	
+	body.music_content .btn_like .ani_heart_m {
+	    margin: -63px 0 0 -63px;
+	}
