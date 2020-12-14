@@ -321,10 +321,10 @@
 	게시판 스타일 - 글쓰기, 수정폼 / 관리자 노래/뮤비 등록&수정
 */	
 	form.board_write, form.board_update,
-	 form.admin_movie_update,
-	 form.admin_movie_register,
-	 form.admin_music_update,
-	 form.admin_music_register {
+	form.admin_movie_update,
+	form.admin_movie_register,
+	form.admin_music_update,
+	form.admin_music_register {
 		padding-top:50px;
 	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
