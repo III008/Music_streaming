@@ -176,7 +176,7 @@ div a:hover {
 
 		<section class="music">
 			<div>
-				<a href="http://localhost:9000/Music_streaming/music/music_list.jsp">음악></a>
+				<a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">음악></a>
 			</div>
 			<div>
 				<iframe width="700" height="350"
