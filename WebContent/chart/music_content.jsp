@@ -8,14 +8,15 @@
 <script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$("button#unlike").change(function(){
-			if($(this).id == "unlike"){
-				$("#unlike").text("💗");
-				$("#unlike").attr("id","like");
-			}else if($(this).id == "like")
-				$("#like").text("🤍");
-				$("#like").attr("id","unlike");
-		});
+		
+		$('button').click(function(){
+			  if($(this).hasClass('btn_unlike')){
+			    $(this).removeClass('btn_unlike');
+			  }
+			  else{
+			    $(this).addClass('btn_unlike');
+			  }
+			});
 	});
 </script>
 <style>
@@ -32,7 +33,7 @@
 		margin:auto;
 		text-align: center;
 	}
-	/* div.sticky_bar.on {
+	div.sticky_bar.on {
 		visibility:visible;
 	}
 	div.sticky_bar {
@@ -45,7 +46,7 @@
   		padding: 5px;
   		background-color: #cae8ca;
   		border: 2px solid #4CAF50;
-	} */
+	}
 	div section.section1 table,
 	div section.section1 table td,
 	div section.section3 table,
@@ -182,6 +183,54 @@
 		font-weight:700;
 		width:50px; height:50px;
 		padding:0;
+		cursor:pointer;
+	}
+	.btn_like {
+	  	position: relative;
+	 /*  margin: 100px auto; */
+	 /*  display: block; */
+	 	margin:2px 10px;
+	  	width: 50px;
+	  	height: 50px;
+	  	border: 1px solid #e8e8e8;
+	  	border-radius: 44px;
+	  	font-family: notokr-bold,sans-serif;
+	  	font-size: 14px;
+	  	line-height: 16px;
+	  	background-color: #fff;
+	  	color: #DD5D54;
+	  	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
+	  	transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
+	  	cursor: pointer;
+	}
+
+	.btn_like:hover {
+	  border: 1px solid rgba(228,89,89,0.3);
+	  background-color: rgba(228,89,89,0.02);
+	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
+	}
+	
+	.btn_unlike .img_emoti {
+	    background-position: -30px -120px;
+	}
+	
+	.img_emoti {
+	    display: inline-block;
+	    overflow: hidden;
+	    font-size: 0;
+	    line-height: 0;
+	    background: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/img_emoti.png?v=20180410) no-repeat;
+	    text-indent: -9999px;
+	    vertical-align: top;
+	    width: 20px;
+	    height: 17px;
+	    margin-top: 1px;
+	    background-position: 0px -120px;
+	    text-indent: 0;
+	}
+	
+	.btn_like .ani_heart_m {
+	    margin: -63px 0 0 -63px;
 	}
 </style>
 </head>
@@ -191,7 +240,7 @@
 	
 	<!-- content -->
 	<div class="content">
-		<div aria-hidden="true" class="sticky_bar on"></div>
+		
 		<section class="section1">
 			<div>
 				<table class="music_content">
@@ -209,13 +258,16 @@
 						<td id="bar">
 							<button type="button" class="btn_style">재생</button>
 							<button type="button" class="btn_style">MP3 구매</button>
-							<button type="button" class="btn_style2" id="unlike">🤍</button>
+							<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+							</button>
 							<button type="button" class="btn_style2">···</button>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</section>
+		<div aria-hidden="true" class="sticky_bar on"></div>
 		<section class="section2">
 			<div>
 				<h3>가사</h3>
@@ -326,7 +378,12 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
 						</tr>
 					</table>
 				</div>
@@ -343,7 +400,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -360,7 +423,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -377,7 +446,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -394,7 +469,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
