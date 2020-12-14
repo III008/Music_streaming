@@ -5,185 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$("button#unlike").change(function(){
-			if($(this).id == "unlike"){
-				$("#unlike").text("💗");
-				$("#unlike").attr("id","like");
-			}else if($(this).id == "like")
-				$("#like").text("🤍");
-				$("#like").attr("id","unlike");
-		});
+		
+		$('button').click(function(){
+			  if($(this).hasClass('btn_unlike')){
+			    $(this).removeClass('btn_unlike');
+			  }
+			  else{
+			    $(this).addClass('btn_unlike');
+			  }
+			});
 	});
 </script>
-<style>
-	div.content {
-		width:95%;
-		display: inline-block;
-		text-align:center;
-		padding:50px 0;
-	}
-	div.content>section.section1, 
-	div.content>section.section2, 
-	div.content>section.section3,
-	div.content>section.section4 {
-		margin:auto;
-		text-align: center;
-	}
-	/* div.sticky_bar.on {
-		visibility:visible;
-	}
-	div.sticky_bar {
-		width:106.5%;
-		visibility:hidden;
-		display:inline-block;
-		position: -webkit-sticky;
-  		position: sticky;
-  		top: 0;
-  		padding: 5px;
-  		background-color: #cae8ca;
-  		border: 2px solid #4CAF50;
-	} */
-	div section.section1 table,
-	div section.section1 table td,
-	div section.section3 table,
-	div section.section3 table td,
-	div section.section4 table,
-	div section.section4 table td {
-		border-collapse:collapse;
-	}
-	div section.section1 table td,
-	div section.section3 table td,
-	div section.section4 table td {
-		padding:10px 8px;
-	}
-	div section.section1 table {
-		display:inline-block;
-		width:65%;
-		text-align:left;
-		border-bottom:1px solid lightgray;
-		padding-bottom:10px;
-	}
-	div section.section1 table td#music_image img {
-		width:300px; height:300px;
-	}
-	div section.section1 table td#music_image {
-		text-align:right;
-	}
-	div section.section1 table td#song_info>div,
-	div section.section1 table td#bar {
-		text-align:left;
-		padding-bottom:5px;
-	}
-	div section.section1 table td#song_info>div#title {
-		font-size:50px;
-		font-weight:900;
-		padding-bottom:50px;
-	}
-	div section.section1 table td#song_info>div#artist {
-		font-size:25px;
-		font-weight:700;
-		padding-bottom:20px;
-	}
-	div section.section1 table td#song_info>div#compose {
-		font-size:20px;
-		color:gray;
-		padding-bottom:10px;
-	}
-	div section.section2>div>h3 {
-		/* display:inline-block; */
-		display:inline-block;
-		width:65%;
-		text-align:left;
-		font-size:23px;
-		font-weight:800;
-		padding:10px 0;
-		/* margin:30px 0 30px -905px; */
-	}
-	div section.section3>div>h3 {
-		display:inline-block;
-		width:65%;
-		text-align:left;
-		font-size:23px;
-		font-weight:800;
-		padding-bottom:5px;
-		/* margin:0 0 5px -1215px; */
-	}
-	div section.section2 div p.lyrics {
-		display:inline-block;
-		width:65%;
-		text-align:left;
-		/* height: 220px;
-    	overflow: hidden; */
-    	font-size: 20px;
-	    line-height: 22px;
-	    color: #999;
-	    white-space: pre-wrap;
-	}
-	div section.section3 table,
-	div section.section4 table {
-		display:inline-block;
-		width:65%;
-		border-bottom:1px solid lightgray;
-	}
-	div section.section3 table td {
-		width:100%;
-		padding:10px 20px;
-		text-align:center;
-	}
-	div section.section3 table td#comment textarea {
-		border:2px solid black;
-		border-radius:8px;
-		padding:10px 10px;
-		font-size:15px;
-		width:100%; height:80px;
-		resize:none;
-	}
-	div section.section4 table {
-		text-align:left;
-	}
-	div section.section4 table td {
-		width:100%;
-	}
-	div section.section4 table tr div#like {
-		text-align:right;
-	}
-	div section.section4 table tr div#id a {
-		font-size:20px;
-		font-weight:900;
-	}
-	div section.section4 table tr div#date label,
-	div section.section4 table tr div#reply a {
-		font-size:15px;
-		color:gray;
-		text-decoration:none;
-	}
-	div section.section4 table tr div#comment_write label {
-		font-size:18px;
-	}
-	body.music_content .btn_style {
-		background-color:rgb(255,17,80);
-		border:rgb(255,17,80);
-		border-radius:4px;
-		font-family:"맑은고딕";
-		font-size:17px;
-		font-weight:700;
-		color:white;
-		width:120px; height:50px;
-		padding:8px 0;
-	}
-	body.music_content .btn_style2 {
-		background-color:white;
-		border:1px solid white;
-		font-family:"맑은고딕";
-		font-size:25px;
-		font-weight:700;
-		width:50px; height:50px;
-		padding:0;
-	}
-</style>
 </head>
 <body class="music_content">
 	<!-- header -->
@@ -191,7 +27,7 @@
 	
 	<!-- content -->
 	<div class="content">
-		<div aria-hidden="true" class="sticky_bar on"></div>
+		
 		<section class="section1">
 			<div>
 				<table class="music_content">
@@ -209,13 +45,16 @@
 						<td id="bar">
 							<button type="button" class="btn_style">재생</button>
 							<button type="button" class="btn_style">MP3 구매</button>
-							<button type="button" class="btn_style2" id="unlike">🤍</button>
+							<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+							</button>
 							<button type="button" class="btn_style2">···</button>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</section>
+		<!-- <div aria-hidden="true" class="sticky_bar on"></div> -->
 		<section class="section2">
 			<div>
 				<h3>가사</h3>
@@ -326,7 +165,12 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
 						</tr>
 					</table>
 				</div>
@@ -343,7 +187,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -360,7 +210,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -377,7 +233,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -394,7 +256,13 @@ So I’mma light it up like dynamite, woah
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td><div id="like"><button type="button" class="btn_style2" id="unlike">🤍</button></div></td>
+							<td>
+							<div id="like">
+								<button type="button" class="btn_like">
+  								<span class="img_emoti">좋아요</span>
+								</button>
+							</div>
+							</td>
 						</tr>
 					</table>
 				</div>

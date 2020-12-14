@@ -43,6 +43,16 @@ $(document).ready(function(){
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 	});
 	
+	$('button').click(function(){
+		  if($(this).hasClass('btn_like')){
+		    $(this).removeClass('btn_like');
+		    $(this).addClass('btn_unlike');
+		  }
+		  else{
+		    $(this).addClass('btn_like');
+		  }
+		});
+	
 });//ready
 </script>
 </head>
@@ -61,8 +71,7 @@ $(document).ready(function(){
 			    <a href="javascript:void(0)" class="dropbtn">보관함</a>
 				    <div class="dropdown-content">
 				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp">음악</a>
-				      <a href="#">Link2</a>
-				      <a href="#">Link3</a>
+				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp">뮤비</a>
 				    </div>
 				<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_update.jsp">내정보 수정</a></li>
 			  	</li>
@@ -95,8 +104,9 @@ $(document).ready(function(){
 						<td>방탄소년단</td>
 						<td>BE</td>
 						<td>
-							<button type="button" class="btn_style2" id="unlike">🤍</button>
-							<button type="button" class="btn_style2" id="like">💗</button>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
 						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
@@ -107,7 +117,11 @@ $(document).ready(function(){
 						<td>VVS (Feat. JUSTHIS) (Prod. GroovyRoom)</td>
 						<td>미란이, 먼치맨, 쿤디판다(Khundi Panda), 머쉬베놈(MUSHVENOM)</td>
 						<td>쇼미더머니 9 Episode 1</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_unlike">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -117,7 +131,11 @@ $(document).ready(function(){
 						<td><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp">Dynamite</a></td>
 						<td>방탄소년단</td>
 						<td>Dynamite (DayTime Version)</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -127,7 +145,11 @@ $(document).ready(function(){
 						<td>잠이 오질 않네요</td>
 						<td>장범준</td>
 						<td>잠이 오질 않네요</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -137,7 +159,11 @@ $(document).ready(function(){
 						<td>Lovesick Girls</td>
 						<td>BLACKPINK</td>
 						<td>THE ALBUM</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 						</tr>
 					<tr>
@@ -147,7 +173,11 @@ $(document).ready(function(){
 						<td>힘든 건 사랑이 아니다</td>
 						<td>임창정</td>
 						<td>힘든 건 사랑이 아니다</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -157,7 +187,11 @@ $(document).ready(function(){
 						<td>취기를 빌려 (취향저격 그녀 X 산들)</td>
 						<td>산들</td>
 						<td>취기를 빌려 (취향저격 그녀 X 산들)</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -167,7 +201,11 @@ $(document).ready(function(){
 						<td>밤하늘의 별을 (2020)</td>
 						<td>경서</td>
 						<td>밤하늘의 별을 (2020)</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -177,7 +215,11 @@ $(document).ready(function(){
 						<td>Freak (Prod. Slom)</td>
 						<td>릴보이(lIlBOI), 원슈타인, Chillin Homie, 스카이민혁(Skyminhyuk)</td>
 						<td>쇼미더머니 9 Episode 1</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 					<tr>
@@ -187,7 +229,11 @@ $(document).ready(function(){
 						<td>딩가딩가 (Dingga)</td>
 						<td>마마무(Mamamoo)</td>
 						<td>딩가딩가 (Dingga)</td>
-						<td></td>
+						<td>
+							<button type="button" class="btn_like">
+  							<span class="img_emoti">좋아요</span>
+							</button>
+						</td>
 						<td><img src="http://localhost:9000/Music_streaming/images/mypage_movie.png"></td>
 					</tr>
 				</table>
