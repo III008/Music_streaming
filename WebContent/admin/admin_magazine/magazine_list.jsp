@@ -5,13 +5,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<!-- <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css"> -->
+		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 	
 	<style>
 	/**
 	로그인, 회원가입, 게시판, 공지사항 등 공통 스타일 정의
 */
-
 	.btn_style {
 		background-color:rgb(255,0,80);
 		border:1px solid rgb(255,0,80);

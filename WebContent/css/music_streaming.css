@@ -793,3 +793,194 @@
 	body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
 		background-color:white;
 	}
+
+/**login 페이지**/
+div.content {
+	margin: auto;
+	padding-top: 150px;
+	height: 715px;
+}
+div.content>section.section1>div>form.login {
+	text-align: center;
+}
+section.section1>div>form.login ul>li {
+	 list-style-type: none;
+	padding: 5px;
+}
+
+div.content>div{
+text-align:center;
+margin-bottom:50px;
+}
+div.content>div>a{
+padding: 40px 115px 20px 115px;
+text-decoration: none;
+border-radius:4px;
+background-color:black;
+}
+div.content>div>a>span{
+text-align:center;
+color: white;
+font-size:50px;
+font-weight:900;
+}
+section.section1>div>form.login ul>li>input {
+	padding: 20px 10px;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	width: 500px;
+}
+section.section1>div>form.login ul>li>button {
+	padding: 20px 10px;
+	border-radius: 4px;
+	width: 520px;
+	font-family: "나눔바른고딕";
+	font-size: 18px;
+	font-weight: 700;
+	color: white;
+	background-color: rgb(255, 0, 80);
+}
+section.section1>div>form li:last-child>a{
+	text-decoration: none;
+	color:gray;
+}
+	
+	/*컨텐츠 타이틀 css*/
+	div.content_title{
+	margin:0 0 100px 0;
+	padding:50px 200px 100px 200px;
+	text-align:center;
+	background-color:black;
+	}
+	div.content_title>h1{
+		color:white;
+		padding:0 0 20px 0;
+	}
+	div.content_title>p{
+		margin:0 15%;
+		color:lightgray;
+	}
+	
+	/*magazine content*/
+	div.magazine_content{
+		margin:auto;
+		
+	}
+	div.magazine_content>div.magazine_subheading{
+	width: 1300px;
+	 margin:auto; 
+	 border:1px solid gray;
+	}
+	div.magazine_content>div.magazine_subheading>h2{
+	text-align:left;
+	}
+	div.magazine_content>section{
+	width: 1300px;
+	display: block;
+	margin: auto;
+	border: 1px solid gray;
+	border-top:none;
+	padding:40px 0 0 0 ;
+	}
+	div.magazine_content>section>img{
+		display:block;
+		margin:auto;
+		width:900px;
+		height:1200px;
+		border-radius:8px;
+		border:2px solid #333;
+	}
+	div.magazine_content>section>p{
+		display:block;
+		margin:auto;
+		width:900px;
+		padding-top:50px;
+		padding-bottom:100px;
+		border-radius:8px;
+	}
+	
+/**
+	magazine_list 
+*/
+/* 전체구조*/
+div.content_menu {
+	margin: auto;
+}
+
+/*메거진 메인 헤더 부분*/
+div.content_menu>div.magazine_head {
+	height: 450px;
+	width: 1110px;
+	display: block;
+	margin: auto;
+	padding:50px 0 0 0 ;
+	border-bottom:2px solid #333;
+}
+div.content_menu>div.magazine_head>h2{
+	padding-bottom:50px;
+	height:50px;
+	font-size:30px;
+}
+div.content_menu>div.magazine_head>section>a>img.head_img{
+	width: 400px;
+	height: 320px;
+	border-radius:8px;
+	float:left;
+}
+div.content_menu>div.magazine_head>section>h2{
+	padding:50px 0;
+}
+
+div.content_menu>div.magazine_head>section>h2>a{
+	text-decoration: none;
+	color:black;
+}
+div.content_menu>div.magazine_head>section>h2>a:hover{
+	text-decoration:underline;
+}
+div.content_menu>div.magazine_head>section>p>a{
+	color:gray;
+	text-decoration: none;
+}
+
+/*메거진 메인 리스트 */
+div.content_menu>section.magazine_list{
+	height: 1500px;
+	width: 1500px;
+	display: block;
+	margin: auto;
+	padding:50px 0 0 0 ;
+}
+
+div.content_menu>section.magazine_list>ul {
+	display: block;
+	padding: 0  100px;
+}
+
+div.content_menu>section.magazine_list>ul>li.list_item {
+	margin-left:85px;
+	float: left;
+	padding: 35px 10px;
+	list-style-type: none;	
+}
+
+div.content_menu>section.magazine_list>ul>li.list_item>span{
+	font-size:12px;
+	color:gray;
+}
+
+div.content_menu>section.magazine_list>ul>li.list_item>div.info a {
+	text-decoration: none;
+	color:black;
+}
+
+div.content_menu>section.magazine_list>ul>li.list_item>div.info a:hover
+	{
+	text-decoration: underline;
+}
+
+div.content_menu>section.magazine_list>ul>li.list_item>a>img {
+	height: 300px;
+	width: 300px;
+	border-radius:8px;
+}
