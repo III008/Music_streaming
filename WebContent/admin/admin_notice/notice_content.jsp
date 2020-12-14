@@ -20,13 +20,14 @@
 						<tr>
 							<td colspan="7">
 								<a href="notice_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="notice_update.jsp"><button type="button" class="btn_style">수정하기</button></a>
 							</td>
 						</tr>
 						<tr>
 							<th colspan="7">[VIBE 업데이트] Windows 10에서 만나는 VIBE</th>
 						</tr>
 						<tr>
-							<td>Anthony Stark</td>
+							<td>Admin</td>
 							<td>추천</td>
 							<td>0</td>
 							<td>조회</td>
@@ -46,19 +47,7 @@
 			</section>
 			
 			<section class="section_2">
-				<div>
-					<table class="notice_content_title">
-						<tr>
-							<td colspan="2">댓글</td>
-						</tr>
-					</table>
-					<table class="notice_content_reg">
-						<tr>
-							<td><textarea placeholder="관리자만 댓글을 입력할 수 있습니다."></textarea></td>
-							<td><button type="button" class="btn_style">등록</button></td>
-						</tr>
-					</table>
-				</div>
+	
 			</section>
  		</div>
 		

@@ -19,11 +19,11 @@
 					<table class="board_content">
 						<tr>
 							<td colspan="4">
-								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="magazine_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
-								<a href="board_update.jsp"><button type="button" class="btn_style">수정</button></a>
-								<a href="board_delete.jsp"><button type="button" class="btn_style_2">삭제</button></a>
+								<a href="magazine_update.jsp"><button type="button" class="btn_style">수정</button></a>
+								<a href="magazine_delete.jsp"><button type="button" class="btn_style_2">삭제</button></a>
 							</td>
 						</tr>
 						<tr>
@@ -37,11 +37,11 @@
 							<td>조회</td>
 							<td>70</td>
 							<td>등록일</td>
-							<td>20.11.22</td>
+							<td>2020.12.05</td>
 						</tr>
 						<tr>
 							<td colspan="7">
-								<p> 서버연동 <br>
+								<p> 매거진  <br>
 								</p>
 							</td>
 						</tr>

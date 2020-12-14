@@ -15,7 +15,7 @@
 		<div class="content_board">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
+					<h1>매거진 등록</h1>
 					<form name="boardWriteForm" action="#" method="get" class="board_write">
 						<ul>
 							<li>
@@ -33,7 +33,7 @@
 							<li>
 								<button type="button" class="btn_style">등록</button>
 								<button type="reset" class="btn_style_2">취소</button>
-								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="magazine_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</li>
 						</ul>
 					</form>

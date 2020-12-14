@@ -16,24 +16,22 @@ div.content_menu {
 
 /*메거진 메인 헤더 부분*/
 div.content_menu>div.magazine_head {
-	height: 420px;
+	height: 450px;
 	width: 1110px;
 	display: block;
 	margin: auto;
-	border: 2px solid blue;
 	padding:50px 0 0 0 ;
+	border-bottom:2px solid #333;
 }
 div.content_menu>div.magazine_head>h2{
 	padding-bottom:50px;
 	height:50px;
 	font-size:30px;
-	border:2px solid blue;
 }
 div.content_menu>div.magazine_head>section>a>img.head_img{
 	width: 400px;
 	height: 320px;
 	border-radius:8px;
-	border:2px solid red;
 	float:left;
 }
 div.content_menu>div.magazine_head>section>h2{
@@ -41,7 +39,6 @@ div.content_menu>div.magazine_head>section>h2{
 }
 
 div.content_menu>div.magazine_head>section>h2>a{
-	border:2px solid red;
 	text-decoration: none;
 	color:black;
 }
@@ -59,13 +56,11 @@ div.content_menu>section.magazine_list{
 	width: 1500px;
 	display: block;
 	margin: auto;
-	border: 2px solid blue;
 	padding:50px 0 0 0 ;
 }
 
 div.content_menu>section.magazine_list>ul {
 	display: block;
-	border: 2px solid gray;
 	padding: 0  100px;
 }
 

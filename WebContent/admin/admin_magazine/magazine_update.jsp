@@ -15,16 +15,16 @@
 		<div class="content_board">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
+					<h1>매거진 관리</h1>
 					<form name="boardWriteForm" action="#" method="get" class="board_update">
 						<ul>
 							<li>
 								<label>제 목</label>
-								<input type="text" name="btitle" value="방탄소년단 신곡 너무 좋아요!">
+								<input type="text" name="btitle" value="매거진등록 미완성">
 							</li>
 							<li>
 								<label>내 용</label>
-								<textarea name="bcontent">Dynamite 노래 너무 좋아요! 다음 앨범도 기대됩니다~ </textarea>
+								<textarea name="bcontent">매거진 </textarea>
 							</li>
 							<li>
 								<label>파일첨부</label>
@@ -33,8 +33,8 @@
 							<li>
 								<button type="button" class="btn_style">수정완료</button>
 								<button type="reset" class="btn_style_2">취소</button>
-								<a href="board_content.jsp"><button type="button" class="btn_style_2">이전페이지</button></a>
-								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="magazine_content.jsp"><button type="button" class="btn_style_2">이전페이지</button></a>
+								<a href="magazine_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</li>
 						</ul>
 					</form>

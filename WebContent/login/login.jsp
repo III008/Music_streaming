@@ -10,13 +10,11 @@
 <style>
 
 div.content {
-	border: 2px solid red;
 	margin: auto;
 	padding-top: 150px;
 	height: 715px;
 }
 div.content>section.section1>div>form.login {
-	border: 2px solid blue;
 	text-align: center;
 }
 section.section1>div>form.login ul>li {
