@@ -55,55 +55,6 @@ $(document).ready(function(){
 	
 });//ready
 </script>
-<style>
-	.btn_like .img_emoti {
-	    background-position: -30px -120px;
-	}
-	
-	.img_emoti {
-	    display: inline-block;
-	    overflow: hidden;
-	    font-size: 0;
-	    line-height: 0;
-	    background: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/img_emoti.png?v=20180410) no-repeat;
-	    text-indent: -9999px;
-	    vertical-align: top;
-	    width: 20px;
-	    height: 17px;
-	    margin-top: 1px;
-	    background-position: 0px -120px;
-	    text-indent: 0;
-	}
-	
-	.btn_unlike {
-	  	position: relative;
-	 /*  margin: 100px auto; */
-	 /*  display: block; */
-	 	margin:2px 10px;
-	  	width: 50px;
-	  	height: 50px;
-	  	border: 1px solid #e8e8e8;
-	  	border-radius: 44px;
-	  	font-family: notokr-bold,sans-serif;
-	  	font-size: 14px;
-	  	line-height: 16px;
-	  	background-color: #fff;
-	  	color: #DD5D54;
-	  	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
-	  	transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
-	  	cursor: pointer;
-	}
-
-	.btn_unlike:hover {
-	  border: 1px solid rgba(228,89,89,0.3);
-	  background-color: rgba(228,89,89,0.02);
-	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
-	}
-	
-	.btn_unlike .ani_heart_m {
-	    margin: -63px 0 0 -63px;
-	}
-</style>
 </head>
 <body>
 <body class="mypage_musiclist">
