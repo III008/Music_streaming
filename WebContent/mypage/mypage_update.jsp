@@ -23,7 +23,7 @@
 				}else{
 					$("#msg").append("패스워드가 다릅니다. 다시 입력해주세요").css("color","red");
 					$("#pass").val("");
-					$("#cpass").val();
+					$("#cpass").val("");
 					$("#pass").focus();
 					return false;
 				}
@@ -162,10 +162,7 @@
 							</li>    
 							<li>
 								<label><span class="red">*</span>아이디</label>
-								<input type="text" name="id" class="f1" id="id">
-								<button type="button" class="sub">ID중복검사</button>
-								<div>아이디는 영문, 숫자 조합으로 하셔야 합니다. [4자리 이상 12자리 이하]</div>
-								<div>아이디는 <span class="red">소문자</span>로 저장 됩니다.</div>
+								<div>hong</div>
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드</label>
@@ -181,7 +178,7 @@
 								<label><span class="red">*</span>E-mail</label>
 								<input type="text" name="email1" class="f2" id="email1"> @
 								<input type="text" name="email2" class="f2" id="email2">
-								<select name="email3" class="f3" id="email3" onchange="addrCheck()">
+								<select name="email3" class="f3" id="email3">
 									<option value="선택">선택</option>
 									<option value="naver.com">네이버</option>
 									<option value="gmail.com">구글</option>
