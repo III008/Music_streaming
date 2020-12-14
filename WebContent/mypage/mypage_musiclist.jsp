@@ -44,8 +44,9 @@ $(document).ready(function(){
 	});
 	
 	$('button').click(function(){
-		  if($(this).hasClass('btn_unlike')){
-		    $(this).removeClass('btn_unlike');
+		  if($(this).hasClass('btn_like')){
+		    $(this).removeClass('btn_like');
+		    $(this).addClass('btn_unlike');
 		  }
 		  else{
 		    $(this).addClass('btn_like');
@@ -55,32 +56,7 @@ $(document).ready(function(){
 });//ready
 </script>
 <style>
-	.btn_like {
-	  	position: relative;
-	 /*  margin: 100px auto; */
-	 /*  display: block; */
-	 	margin:2px 10px;
-	  	width: 50px;
-	  	height: 50px;
-	  	border: 1px solid #e8e8e8;
-	  	border-radius: 44px;
-	  	font-family: notokr-bold,sans-serif;
-	  	font-size: 14px;
-	  	line-height: 16px;
-	  	background-color: #fff;
-	  	color: #DD5D54;
-	  	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
-	  	transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
-	  	cursor: pointer;
-	}
-
-	.btn_like:hover {
-	  border: 1px solid rgba(228,89,89,0.3);
-	  background-color: rgba(228,89,89,0.02);
-	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
-	}
-	
-	.btn_unlike .img_emoti {
+	.btn_like .img_emoti {
 	    background-position: -30px -120px;
 	}
 	
@@ -99,7 +75,32 @@ $(document).ready(function(){
 	    text-indent: 0;
 	}
 	
-	.btn_like .ani_heart_m {
+	.btn_unlike {
+	  	position: relative;
+	 /*  margin: 100px auto; */
+	 /*  display: block; */
+	 	margin:2px 10px;
+	  	width: 50px;
+	  	height: 50px;
+	  	border: 1px solid #e8e8e8;
+	  	border-radius: 44px;
+	  	font-family: notokr-bold,sans-serif;
+	  	font-size: 14px;
+	  	line-height: 16px;
+	  	background-color: #fff;
+	  	color: #DD5D54;
+	  	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.03);
+	  	transition: border .2s ease-out,box-shadow .1s ease-out,background-color .4s ease-out;
+	  	cursor: pointer;
+	}
+
+	.btn_unlike:hover {
+	  border: 1px solid rgba(228,89,89,0.3);
+	  background-color: rgba(228,89,89,0.02);
+	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
+	}
+	
+	.btn_unlike .ani_heart_m {
 	    margin: -63px 0 0 -63px;
 	}
 </style>
@@ -119,8 +120,7 @@ $(document).ready(function(){
 			    <a href="javascript:void(0)" class="dropbtn">보관함</a>
 				    <div class="dropdown-content">
 				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp">음악</a>
-				      <a href="#">Link2</a>
-				      <a href="#">Link3</a>
+				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp">뮤비</a>
 				    </div>
 				<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_update.jsp">내정보 수정</a></li>
 			  	</li>
