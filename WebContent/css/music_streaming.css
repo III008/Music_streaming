@@ -1,585 +1,493 @@
-* {
-	margin: 0px;
-	padding: 0px;
-	font-family: "나눔바른고딕";
-}
+	* {
+		margin: 0px; padding: 0px; font-family: "나눔바른고딕";
+	}
+	
 /**
 	header
 */
-html {
-	height: 100%;
-}
+	html {
+		height:100%;
+	}
+	body {
+		padding-left:230px;
+	}
+	header {
+		position:fixed;
+		float:left;
+		background:black;
+		left:0;
+		top:0;
+		bottom:0;
+		height:100%;
+		width:230px;
+	}
+	
+	/**로고이미지**/
+	div.title_img {
+		text-align:center;
+	}
+	div.title_img>a>img {
+		width:200px;
+		height:140px;
+		/* border:1px solid red; */
+	}
+	header nav>ul>li {
+		/* border: 1px solid red; */
+		padding:6px 5px 5px 25px;
+		clear:both;
+		margin:10px 0;
+	}
+	nav>ul>li>a>img {
+		width:40px;
+		height:40px;
+		margin-right:15px;
+		display:inline-block;
+		float:left;
+		/* border:1px solid white; */
+	}
+	nav>ul>li>a>span {
+		/* border:1px solid violet; */
+		display:inline-block;
+		margin:10px 0;
+		color:rgb(241, 241, 241);
+		font-size:19px;
+		font-weight:bold;
+	}
+	nav>ul>li>a>span:hover {
+		/* text-decoration:underline; */
+		color:white;
+	}
+	nav>ul>li>a>span:active {
+		color:rgb(255, 0, 80);
+	}
+	
+	/**로그인**/
+	div.login_click {
+		text-align:center;
+	}
+	
+	div.login_click>a {
+		display:inline-block;
+		text-align:center;
+		width:70%;
+		background-color:rgb(231, 231, 231);
+		border-radius:4px;
+		padding:10px 0;
+		font-size:20px;
+		color:black;
+		font-weight:600;
+		margin:15px 0;
+		text-decoration:none;
+	}
+	
+	div.login_click>a:hover {
+		color:rgb(255, 0, 80);
+	}
 
-body {
-	padding-left: 230px;
-}
-
-header {
-	position: fixed;
-	float: left;
-	background: black;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	height: 100%;
-	width: 230px;
-}
-
-/**로고이미지**/
-div.title_img {
-	text-align: center;
-}
-
-div.title_img>a>img {
-	width: 200px;
-	height: 140px;
-	/* border:1px solid red; */
-}
-/* nav>ul {
-				margin: auto;
-				padding: 0 0 0 0;
-				border:1px solid blue;
-			} */
-header nav>ul>li {
-	/* border: 1px solid red; */
-	padding: 6px 5px 5px 25px;
-	clear: both;
-	margin: 10px 0;
-}
-/* nav>ul>li>a {
-				font-size: 16px;
-				text-decoration: none;
-				color: white;
-			} */
-nav>ul>li>a>img {
-	width: 40px;
-	height: 40px;
-	margin-right: 15px;
-	display: inline-block;
-	float: left;
-	/* border:1px solid white; */
-}
-
-nav>ul>li>a>span {
-	/* border:1px solid violet; */
-	display: inline-block;
-	margin: 10px 0;
-	color: rgb(241, 241, 241);
-	font-size: 19px;
-	font-weight: bold;
-}
-
-nav>ul>li>a>span:hover {
-	/* text-decoration:underline; */
-	color: white;
-}
-
-nav>ul>li>a>span:active {
-	color: rgb(255, 0, 80);
-}
-
-/**로그인**/
-div.login_click {
-	text-align: center;
-}
-
-div.login_click>a {
-	display: inline-block;
-	text-align: center;
-	width: 70%;
-	background-color: rgb(231, 231, 231);
-	border-radius: 4px;
-	padding: 10px 0;
-	font-size: 20px;
-	color: black;
-	font-weight: 600;
-	margin: 15px 0;
-	text-decoration: none;
-}
-
-div.login_click>a:hover {
-	color: rgb(255, 0, 80);
-}
 
 /**
 	index
-	*/
-div.content {
-	text-align: center;
-}
-
-table.tb {
-	border-collapse: collapse;
-	margin: auto;
-	height: 120px;
-}
-
-table.tb img {
-	display: block;
-}
-
-section.magazine>div {
-	background-color: RGB(242, 242, 242);
-	margin: 20px 0;
-	padding: 25px 0;
-}
-
-table.tb tr td {
-	background-color: RGB(255, 255, 255);
-	text-align: left;
-	text-indent: 28px;
-}
-
-table.tb tr td>button {
-	background-color: rgb(126, 1, 228);
-	color: white;
-	width: 15%;
-	padding: 10px 0;
-	font-size: 20px;
-}
-
-table.tb tr:nth-child(2)>td {
-	font-weight: bold;
-	font-size: 28px;
-}
-
-section.magazine2 img {
-	width: 340px;
-	height: 320px;
-}
-
-section.magazine2>div:nth-child(2) div {
-	display: inline-block;
-}
-
-section.magazine2>div:first-child {
-	width: 1375px;
-	display: inline-block;
-	text-align: left;
-	font-size: 30px;
-	margin-bottom: 20px;
-}
-
-section.music>div:first-child {
-	display: inline-block;
-	text-align: left;
-	font-size: 30px;
-	width: 1260px;
-	margin: 25px 0;
-}
-
-section.movie>div:first-child {
-	display: inline-block;
-	text-align: left;
-	font-size: 30px;
-	width: 1140px;
-	margin: 25px 0;
-}
-
-section.music img {
-	width: 550px;
-	height: 350px;
-}
-
-div a {
-	text-decoration: none;
-}
-
-div a:hover {
-	text-decoration: underline;
-}
-
+*/
+	div.content {
+		text-align:center;
+	}
+	table.tb {
+		border-collapse:collapse;
+		margin:auto;
+		height:120px;
+	}
+	table.tb img {
+		display:block;
+	}
+	section.magazine>div {
+		background-color:RGB(242, 242, 242);
+		margin:20px 0;
+		padding:25px 0;
+	}
+	table.tb tr td {
+		background-color:RGB(255, 255, 255);
+		text-align:left;
+		text-indent:28px;
+	}
+	table.tb tr td>button {
+		background-color:rgb(126, 1, 228);
+		color:white;
+		width:15%;
+		padding:10px 0;
+		font-size:20px;
+	}
+	table.tb tr:nth-child(2)>td {
+		font-weight:bold;
+		font-size:28px;
+	}
+	section.magazine2 img {
+		width:340px;
+		height:320px;
+	}
+	section.magazine2>div:nth-child(2) div {
+		display:inline-block;
+	}
+	section.magazine2>div:first-child {
+		width:1375px;
+		display:inline-block;
+		text-align:left;
+		font-size:30px;
+		margin-bottom:20px;
+	}
+	section.music>div:first-child {
+		display:inline-block;
+		text-align:left;
+		font-size:30px;
+		width:1260px;
+		margin:25px 0;
+	}
+	section.movie>div:first-child {
+		display:inline-block;
+		text-align:left;
+		font-size:30px;
+		width:1140px;
+		margin:25px 0;
+	}
+	section.music img {
+		width:550px;
+		height:350px;
+	}
+	div a {
+		text-decoration:none;
+	}
+	div a:hover {
+		text-decoration:underline;
+	}
+	
+	
 /**
 	footer
 */
-footer>section.sc1, footer>section.sc2 {
-	background-color: rgb(242, 242, 242);
-	border: 1px solid rgb(231, 231, 231);
-}
-
-footer>section.sc1>nav>ul>li {
-	display: inline-block;
-	padding: 15px 0 15px 20px;
-}
-
-footer>section.sc1>nav>ul>li>a {
-	font-size: 16px;
-	margin: 10px 5px 0 0;
-	color: rgb(102, 102, 102);
-	text-decoration: none;
-}
-
-footer>section.sc2>div.info {
-	font-size: 16px;
-	color: rgb(102, 102, 102);
-	padding: 15px 0 30px 20px;
-}
-
-footer>section.sc2>div.info>div {
-	padding: 2px 0;
-}
-
+	footer>section.sc1, footer>section.sc2 {
+		background-color:rgb(242, 242, 242);
+		border:1px solid rgb(231, 231, 231);
+	}
+	footer>section.sc1>nav>ul>li {
+		display:inline-block;
+		padding:15px 0 15px 20px;
+	}
+	footer>section.sc1>nav>ul>li>a {
+		font-size:16px;
+		margin:10px 5px 0 0;
+		color:rgb(102, 102, 102);
+		text-decoration:none;
+	}
+	footer>section.sc2>div.info {
+		font-size:16px;
+		color:rgb(102, 102, 102);
+		padding:15px 0 30px 20px;
+	}
+	footer>section.sc2>div.info>div {
+		padding:2px 0;
+	}
+	
+	
 /**
 	로그인, 회원가입, 게시판, 공지사항 등 공통 스타일 정의
 */
-section.section_1>div>h1 {
-	width: 20%;
-	font-size: 25px;
-	padding: 40px 0 20px 60px;
-}
-
-section.section_1>div>form, section.section_1>div>table, table.board_content_rp,
+	section.section_1>div>h1 {
+		width:20%;
+		font-size:25px;
+		padding:40px 0 20px 60px;
+	}
+	section.section_1>div>form, section.section_1>div>table, table.board_content_rp,
 	table.board_content_reg, table.board_content_title, table.notice_content_rp,
-	table.notice_content_reg, table.notice_content_title, section.section_1>div>div.notice_menu1
-	{
-	width: 80%;
-	margin: auto;
-}
-
-.btn_style {
-	background-color: rgb(255, 0, 80);
-	border: 1px solid rgb(255, 0, 80);
-	font-family: "나눔바른고딕";
-	font-size: 14px;
-	font-weight: 500;
-	color: white;
-	width: 25%;
-	height: 35px;
-}
-
-.btn_style_2 {
-	background-color: rgb(213, 213, 213);
-	border: 1px solid rgb(213, 213, 213);
-	font-family: "나눔바른고딕";
-	font-size: 14px;
-	font-weight: 500;
-	width: 25%;
-	height: 35px;
-}
-
+	table.notice_content_reg, table.notice_content_title,
+	section.section_1>div>div.notice_menu1 {
+		width:80%;
+		margin:auto;
+	}
+	.btn_style {
+		background-color:rgb(255, 0, 80);
+		border:1px solid rgb(255, 0, 80);
+		font-family:"나눔바른고딕";
+		font-size:14px;
+		font-weight:500;
+		color:white;
+		width:25%;
+		height:35px;
+	}
+	.btn_style_2 {
+		background-color:rgb(213, 213, 213);
+		border:1px solid rgb(213, 213, 213);
+		font-family:"나눔바른고딕";
+		font-size:14px;
+		font-weight:500;
+		width:25%;
+		height:35px;
+	}
+	
+	
 /**
 	게시판 리스트, 공지사항 리스트
 */
-table.board, table.notice, table.ask, table.admin_movie_list {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	border-collapse: collapse;
-}
-
-table.board td, table.notice td, table.ask td, table.admin_movie_list td
-	{
-	border-top: 1px solid rgb(213, 213, 213);
-}
-
-table.board th, table.notice th, table.ask th {
-	border-bottom: 1px solid #333;
-}
-
-table.board th, table.board td, table.notice th, table.notice td, table.ask th,
-	table.ask td, table.admin_movie_list th, table.admin_movie_list td {
-	padding: 12px 0;
-	color: black;
-	font-size: 17px;
-}
-
-table.board td>a, table.notice td>a, table.ask td>a, table.admin_movie_list td>a
-	{
-	color: black;
-}
-
-table.board th, table.notice th, table.ask th {
-	/* background-color:rgb(213,213,213); */
-	color: rgb(255, 0, 80);
-	/* font-size:17px; */
-}
-
-table.board tr td:first-child, table.board tr td:nth-child(3), table.board tr td:nth-child(4),
+	table.board, table.notice, table.ask, table.admin_movie_list {
+		border-top:1px solid black;
+		border-bottom:1px solid black;
+		border-collapse:collapse;
+	}
+	table.board td, table.notice td, table.ask td, table.admin_movie_list td {
+		border-top:1px solid rgb(213, 213, 213);
+	}
+	table.board th, table.notice th, table.ask th {
+		border-bottom:1px solid #333;
+	}
+	table.board th, table.board td, table.notice th, table.notice td, table.ask th,
+		table.ask td, table.admin_movie_list th, table.admin_movie_list td {
+		padding:12px 0;
+		color:black;
+		font-size:17px;
+	}
+	table.board td>a, table.notice td>a, table.ask td>a, table.admin_movie_list td>a {
+		color:black;
+	}
+	table.board th, table.notice th, table.ask th {
+		/* background-color:rgb(213,213,213); */
+		color:rgb(255, 0, 80);
+		/* font-size:17px; */
+	}
+	table.board tr td:first-child, table.board tr td:nth-child(3), table.board tr td:nth-child(4),
 	table.board tr td:last-child, table.notice tr td:first-child, table.notice tr td:nth-child(3),
 	table.notice tr td:last-child, table.ask tr td:first-child, table.ask tr td:nth-child(2),
 	table.ask tr td:nth-child(4), table.ask tr td:last-child, table.admin_movie_list tr td:nth-child(1),
-	table.admin_movie_list tr td:nth-child(3), table.admin_movie_list tr td:nth-child(4)
-	{
-	text-align: center;
-}
-
-table.board tr td:nth-child(2) a, table.notice tr td:nth-child(2) a,
-	table.ask tr td:nth-child(3) a, table.admin_movie_list tr td:nth-child(2) a
-	{
-	text-decoration: none;
-}
-
-table.board tr:first-child td, table.admin_movie_list tr:first-child td
-	{
-	text-align: right;
-	padding: 0 15px 10px 0;
-	border: 1px solid white;
-	border-bottom: 1px solid black;
-}
-
-table.board tr:first-child td a>button, table.admin_movie_list tr:first-child td a>button
-	{
-	font-size: 13px;
-	border-radius: 2px;
-	width: 100px;
-	padding: 5px 0;
-	margin-top: 10px;
-}
-
-table.board tr:last-child td, table.notice tr:last-child td, table.ask tr:last-child td,
+	table.admin_movie_list tr td:nth-child(3), table.admin_movie_list tr td:nth-child(4) {
+		text-align:center;
+	}
+	
+	table.board tr td:nth-child(2) a, table.notice tr td:nth-child(2) a,
+	table.ask tr td:nth-child(3) a, table.admin_movie_list tr td:nth-child(2) a	{
+		text-decoration:none;
+	}
+	table.board tr:first-child td, table.admin_movie_list tr:first-child td {
+		text-align:right;
+		padding:0 15px 10px 0;
+		border:1px solid white;
+		border-bottom:1px solid black;
+	}
+	table.board tr:first-child td a>button, table.admin_movie_list tr:first-child td a>button {
+		font-size:13px;
+		border-radius:2px;
+		width:100px;
+		padding:5px 0;
+		margin-top:10px;
+	}
+	table.board tr:last-child td, table.notice tr:last-child td, table.ask tr:last-child td,
 	table.admin_movie_list tr:last-child td {
-	border: 1px solid white;
-	border-top: 1px solid black;
-	padding: 15px 0 100px 0;
-}
-
-table.board tr:hover, table.notice tr:hover, table.ask tr:hover, table.admin_movie_list tr:hover
-	{
-	background-color: rgb(240, 240, 240);
-}
-
-table.board tr td:nth-child(2):hover, table.notice tr td:nth-child(2):hover,
-	table.ask tr td:nth-child(3):hover, table.admin_movie_list  tr td:nth-child(2):hover
-	{
-	text-decoration: underline;
-}
-
-table.board tr:first-child:hover, table.board tr:nth-child(2), table.board tr:last-child:hover,
+		border:1px solid white;
+		border-top:1px solid black;
+		padding:15px 0 100px 0;
+	}
+	table.board tr:hover, table.notice tr:hover, table.ask tr:hover, table.admin_movie_list tr:hover {
+		background-color:rgb(240, 240, 240);
+	}
+	table.board tr td:nth-child(2):hover, table.notice tr td:nth-child(2):hover,
+	table.ask tr td:nth-child(3):hover, table.admin_movie_list  tr td:nth-child(2):hover {
+		text-decoration:underline;
+	}
+	table.board tr:first-child:hover, table.board tr:nth-child(2), table.board tr:last-child:hover,
 	table.notice tr:first-child:hover, table.notice tr:last-child:hover,
-	table.ask tr:first-child:hover, table.ask tr:last-child:hover, table.admin_movie_list tr:first-child:hover,
-	table.admin_movie_list tr:last-child:hover {
-	background-color: white;
-	text-decoration: none;
-}
-
-table.board tr td:first-child, table.notice tr td:first-child, table.ask tr td:first-child,
+	table.ask tr:first-child:hover, table.ask tr:last-child:hover,
+	table.admin_movie_list tr:first-child:hover, table.admin_movie_list tr:last-child:hover {
+		background-color:white;
+		text-decoration:none;
+	}
+	table.board tr td:first-child, table.notice tr td:first-child, table.ask tr td:first-child,
 	table.admin_movie_list tr td:first-child {
-	width: 80px;
-}
-
-table.board tr td:last-child, table.notice tr td:last-child, table.ask tr td:last-child,
+		width:80px;
+	}
+	table.board tr td:last-child, table.notice tr td:last-child, table.ask tr td:last-child,
 	table.admin_movie_list tr td:last-child {
-	width: 100px;
-}
-
-table.ask tr td:nth-child(2) {
-	width: 120px;
-}
-
-table.board tr td:nth-child(3), table.notice tr td:nth-child(3), table.ask tr td:nth-child(4),
+		width:100px;
+	}
+	table.ask tr td:nth-child(2) {
+		width:120px;
+	}
+	table.board tr td:nth-child(3), table.notice tr td:nth-child(3), table.ask tr td:nth-child(4),
 	table.admin_movie_list tr td:nth-child(3) {
-	width: 180px;
-}
-
-table.notice_menu {
-	/* border:1px solid red; */
-	padding: 20px 0 40px 0;
-}
-
-table.notice_menu td {
-	/* border:1px solid blue; */
-	width: 50%;
-}
-
-table.notice_menu td>a {
-	text-decoration: none;
-	color: #333;
-	display: inline-block;
-	width: 100%;
-	padding: 10px 0;
-	font-size: 17px;
-	text-align: center;
-	font-weight: bold;
-	background-color: rgb(231, 231, 231);
-}
-
-table.notice_menu td>a:hover {
-	color: white;
-	background-color: rgb(255, 0, 80);
-}
-
+		width:180px;
+	}
+	table.notice_menu {
+		/* border:1px solid red; */
+		padding:20px 0 40px 0;
+	}
+	table.notice_menu td {
+		/* border:1px solid blue; */
+		width:50%;
+	}
+	table.notice_menu td>a {
+		text-decoration:none;
+		color:#333;
+		display:inline-block;
+		width:100%;
+		padding:10px 0;
+		font-size:17px;
+		text-align:center;
+		font-weight:bold;
+		background-color:rgb(231, 231, 231);
+	}
+	table.notice_menu td>a:hover {
+		color:white;
+		background-color:rgb(255, 0, 80);
+	}
+	
+	
 /**
 	게시판 콘텐츠, 공지사항 콘텐츠
 */
-table.board_content tr:first-child td a>button, table.notice_content tr:first-child td a>button,
+	table.board_content tr:first-child td a>button, table.notice_content tr:first-child td a>button,
 	table.admin_movie_info tr:first-child td a>button {
-	font-size: 13px;
-	border-radius: 2px;
-	width: 100px;
-	padding: 5px 0;
-	margin: 10px 0 20px 0;
-}
-
-table.admin_movie_info tr:first-child td a>button, table.board_content tr:first-child td:first-child a>button,
-	table.notice_content tr:first-child td:first-child a>button, table.admin_movie_info tr:first-child td:first-child a>button
-	{
-	margin-left: 10px;
-}
-
-table.board_content tr:first-child td:last-child, table.admin_movie_info tr:first-child td:last-child
-	{
-	text-align: right;
-}
-
-table.board_content tr:first-child td:last-child a:last-child>button {
-	margin-right: 10px;
-}
-
-table.board_content tr:nth-child(2) th, table.notice_content tr:nth-child(2) th,
+		font-size:13px;
+		border-radius:2px;
+		width:100px;
+		padding:5px 0;
+		margin:10px 0 20px 0;
+	}
+	
+	table.admin_movie_info tr:first-child td a>button, table.board_content tr:first-child td:first-child a>button,
+	table.notice_content tr:first-child td:first-child a>button, table.admin_movie_info tr:first-child td:first-child a>button {
+		margin-left:10px;
+	}
+	table.board_content tr:first-child td:last-child, table.admin_movie_info tr:first-child td:last-child {
+		text-align:right;
+	}
+	table.board_content tr:first-child td:last-child a:last-child>button {
+		margin-right:10px;
+	}
+	table.board_content tr:nth-child(2) th, table.notice_content tr:nth-child(2) th,
 	table.admin_movie_info tr:nth-child(2) th {
-	text-align: left;
-	padding: 15px 0 10px 10px;
-	font-size: 23px;
-	border-top: 1px solid gray;
-}
-
-table.board_content tr:nth-child(3) td, table.notice_content tr:nth-child(3) td,
+		text-align:left;
+		padding:15px 0 10px 10px;
+		font-size:23px;
+		border-top:1px solid gray;
+	}
+	table.board_content tr:nth-child(3) td, table.notice_content tr:nth-child(3) td,
 	table.admin_movie_info tr:nth-child(3) td {
-	color: gray;
-	padding: 5px 0;
-}
-
-table.board_content tr:nth-child(4) td, table.notice_content tr:nth-child(4) td,
+		color:gray;
+		padding:5px 0;
+	}
+	table.board_content tr:nth-child(4) td, table.notice_content tr:nth-child(4) td,
 	table.admin_movie_info  tr:nth-child(4) td {
-	text-align: left;
-	padding: 20px 0 50px 10px;
-	border-top: 1px solid lightgray;
-	border-bottom: 1px solid gray;
-}
-
-table.board_content tr:nth-child(3) td:first-child, table.notice_content tr:nth-child(3) td:first-child,
+		text-align:left;
+		padding:20px 0 50px 10px;
+		border-top:1px solid lightgray;
+		border-bottom:1px solid gray;
+	}
+	table.board_content tr:nth-child(3) td:first-child, table.notice_content tr:nth-child(3) td:first-child,
 	table.admin_movie_info  tr:nth-child(3) td:first-child {
-	width: 180px;
-	padding-left: 10px;
-	font-size: 18px;
-	font-weight: 700;
-	/* border:1px solid green; */
-}
-
-table.board_content tr:nth-child(3) td:nth-child(2), table.board_content tr:nth-child(3) td:nth-child(3),
+		width:180px;
+		padding-left:10px;
+		font-size:18px;
+		font-weight:700;
+		/* border:1px solid green; */
+	}
+	table.board_content tr:nth-child(3) td:nth-child(2), table.board_content tr:nth-child(3) td:nth-child(3),
 	table.board_content tr:nth-child(3) td:nth-child(4), table.board_content tr:nth-child(3) td:nth-child(5),
 	table.notice_content tr:nth-child(3) td:nth-child(2), table.notice_content tr:nth-child(3) td:nth-child(3),
 	table.notice_content tr:nth-child(3) td:nth-child(4), table.notice_content tr:nth-child(3) td:nth-child(5),
 	table.admin_movie_info tr:nth-child(3) td:nth-child(2) {
-	width: 50px;
-	font-size: 16px;
-	text-align: center;
-	font-weight: bold;
-	/* border:1px solid red; */
-}
-
-table.board_content tr:nth-child(3) td:nth-child(6), table.notice_content tr:nth-child(3) td:nth-child(6)
-	{
-	width: 80px;
-	font-size: 16px;
-	text-align: center;
-	font-weight: bold;
-	/* border:1px solid blue; */
-}
-
-table.board_content tr:nth-child(3) td:last-child, table.notice_content tr:nth-child(3) td:last-child
-	{
-	font-size: 16px;
-	font-weight: bold;
-	/* border:1px solid tomato; */
-}
-
-section.section_2 {
-	margin-bottom: 100px;
-}
-
-table.board_content_title, table.notice_content_title {
-	font-size: 18px;
-	font-weight: 600;
-	margin-top: 10px;
-	margin-bottom: 15px;
-	padding-left: 5px;
-}
-
-table.board_content_rp {
-	/* border:1px solid black; */
-	margin-bottom: 5px;
-	padding: 5px 0 5px 0;
-	background-color: rgb(242, 242, 242);
-}
-
-table.board_content_rp img {
-	width: 25px;
-	height: 25px;
-	padding: 5px 5px 5px 10px;
-}
-
-table.board_content_rp tr:first-child td:first-child {
-	border: 1px solid red;
-	width: 45px;
-}
-
-table.board_content_rp tr:first-child td:nth-child(2) {
-	border: 1px solid green;
-	width: 130px;
-	font-size: 17px;
-	font-weight: bold;
-}
-
-table.board_content_rp tr:first-child td:nth-child(3) {
-	border: 1px solid blue;
-	font-size: 15px;
-}
-
-table.board_content_rp tr:last-child td {
-	border: 1px solid orange;
-	padding: 5px 0 5px 10px;
-	font-size: 17px;
-}
-
-table.board_content_reg td:first-child, table.notice_content_reg td:first-child
-	{
-	border: 1px solid blue;
-	width: 92%;
-	padding: 0 0 10px 0;
-}
-
-table.board_content_reg td:last-child, table.notice_content_reg td:last-child
-	{
-	border: 1px solid red;
-	text-align: center;
-}
-
-table.board_content_reg textarea, table.notice_content_reg textarea {
-	border: 1px solid gray;
-	margin-top: 15px;
-	width: 98%;
-	height: 80px;
-	font-size: 15px;
-	padding: 5px 5px;
-}
-
-table.notice_content_reg textarea {
-	margin-left: 5px;
-}
-
-table.board_content_reg td>button, table.notice_content_reg td>button {
-	font-size: 14px;
-	border-radius: 2px;
-	width: 80px;
-	padding: 5px 0;
-}
-
+		width:50px;
+		font-size:16px;
+		text-align:center;
+		font-weight:bold;
+		/* border:1px solid red; */
+	}
+	table.board_content tr:nth-child(3) td:nth-child(6), table.notice_content tr:nth-child(3) td:nth-child(6) {
+		width:80px;
+		font-size:16px;
+		text-align:center;
+		font-weight:bold;
+		/* border:1px solid blue; */
+	}
+	table.board_content tr:nth-child(3) td:last-child, table.notice_content tr:nth-child(3) td:last-child {
+		font-size:16px;
+		font-weight:bold;
+		/* border:1px solid tomato; */
+	}
+	section.section_2 {
+		margin-bottom:100px;
+	}
+	table.board_content_title, table.notice_content_title {
+		font-size:18px;
+		font-weight:600;
+		margin-top:10px;
+		margin-bottom:15px;
+		padding-left:5px;
+	}
+	table.board_content_rp {
+		/* border:1px solid black; */
+		margin-bottom:5px;
+		padding:5px 0;
+		background-color:rgb(242, 242, 242);
+	}
+	table.board_content_rp img {
+		width:25px;		height:25px;
+		padding:5px 5px 5px 10px;
+	}
+	table.board_content_rp tr:first-child td:first-child {
+		border:1px solid red;
+		width:45px;
+	}
+	table.board_content_rp tr:first-child td:nth-child(2) {
+		border:1px solid green;
+		width:130px;
+		font-size:17px;
+		font-weight:bold;
+	}
+	table.board_content_rp tr:first-child td:nth-child(3) {
+		border:1px solid blue;
+		font-size:15px;
+	}
+	table.board_content_rp tr:last-child td {
+		border:1px solid orange;
+		padding:5px 0 5px 10px;
+		font-size:17px;
+	}
+	table.board_content_reg td:first-child, table.notice_content_reg td:first-child {
+		border:1px solid blue;
+		width:92%;
+		padding-bottom:10px;
+	}
+	table.board_content_reg td:last-child, table.notice_content_reg td:last-child {
+		border:1px solid red;
+		text-align:center;
+	}
+	table.board_content_reg textarea, table.notice_content_reg textarea {
+		border:1px solid gray;
+		margin-top:15px;
+		width:98%;
+		height:80px;
+		font-size:15px;
+		padding:5px 5px;
+	}
+	table.notice_content_reg textarea {
+		margin-left:5px;
+	}
+	table.board_content_reg td>button, table.notice_content_reg td>button {
+		font-size:14px;
+		border-radius:2px;
+		width:80px;
+		padding:5px 0;
+	}
+	
+	
 /**
 	게시판 스타일 - 글쓰기, 수정폼 / 관리자 노래/뮤비 등록&수정
 */	
 	form.board_write, form.board_update,
-	form.admin_movie_update,
-	form.admin_movie_register,
-	form.admin_music_update,
-	form.admin_music_register {
+	form.admin_movie_update, form.admin_movie_register,
+	form.admin_music_update, form.admin_music_register {
 		padding-top:50px;
 	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
 	form.board_write, form.board_update, form.admin_movie_update, form.admin_movie_register,
 	form.admin_music_update, form.admin_music_register {
-	padding-top: 50px;
-}
-
+		padding-top:50px;
+	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
 	form.board_write>ul>li:nth-child(3), form.board_update>ul>li:first-child,
 	form.board_update>ul>li:nth-child(2), form.board_update>ul>li:nth-child(3),
@@ -590,817 +498,772 @@ table.board_content_reg td>button, table.notice_content_reg td>button {
 	form.admin_music_update>ul>li:first-child, form.admin_music_update>ul>li:nth-child(2),
 	form.admin_music_update>ul>li:nth-child(3), form.admin_music_update>ul>li:nth-child(4),
 	form.admin_music_register>ul>li:first-child, form.admin_music_register>ul>li:nth-child(2),
-	form.admin_music_register>ul>li:nth-child(3), form.admin_music_register>ul>li:nth-child(4)
-	{
-	padding: 5px 0 5px 50px;
-}
-
-form.board_write>ul>li, form.board_update>ul>li, form.admin_movie_update>ul>li,
-	form.admin_movie_register>ul>li, form.admin_music_update>ul>li, form.admin_music_register>ul>li
-	{
-	list-style-type: none;
-	clear: both;
-	margin-bottom: 5px;
-}
-
-form.board_write>ul>li>label, form.board_update>ul>li>label, form.admin_movie_update>ul>li>label,
+	form.admin_music_register>ul>li:nth-child(3), form.admin_music_register>ul>li:nth-child(4) {
+		padding:5px 0 5px 50px;
+	}
+	
+	form.board_write>ul>li, form.board_update>ul>li, form.admin_movie_update>ul>li,
+	form.admin_movie_register>ul>li, form.admin_music_update>ul>li, form.admin_music_register>ul>li {
+		list-style-type:none;
+		clear:both;
+		margin-bottom:5px;
+	}
+	form.board_write>ul>li>label, form.board_update>ul>li>label, form.admin_movie_update>ul>li>label,
 	form.admin_movie_register>ul>li>label, form.admin_music_update>ul>li>label,
 	form.admin_music_register>ul>li>label {
-	background-color: rgb(213, 213, 213);
-	display: inline-block;
-	width: 100px;
-	height: 20px;
-	padding: 5px 0;
-	text-align: center;
-	float: left;
-	border-radius: 4px;
-	font-weight: 600;
-	color: black;
-	font-size: 14px;
-	margin-right: 10px;
-}
-
-form.board_write>ul>li>input[type="text"], form.board_update>ul>li>input[type="text"],
+		background-color:rgb(213, 213, 213);
+		display:inline-block;
+		width:100px;
+		height:20px;
+		padding:7px 0;
+		text-align:center;
+		float:left;
+		border-radius:4px;
+		font-weight:600;
+		color:black;
+		font-size:16px;
+		margin-right:10px;
+	}
+	form.board_write>ul>li>input[type="text"], form.board_update>ul>li>input[type="text"],
 	form.board_write>ul>li>textarea, form.board_update>ul>li>textarea, form.admin_movie_update>ul>li>input[type="text"],
 	form.admin_movie_update>ul>li>textarea, form.admin_movie_register>ul>li>input[type="text"],
 	form.admin_movie_register>ul>li>textarea, form.admin_music_update>ul>li>input[type="text"],
 	form.admin_music_update>ul>li>textarea, form.admin_music_register>ul>li>input[type="text"],
 	form.admin_music_register>ul>li>textarea {
-	border-radius: 4px;
-	width: 80%;
-	padding: 6px 10px;
-	color: black;
-	font-size: 13px;
-	border: 1px solid gray;
-}
-
-form.board_write>ul>li>textarea, form.board_update>ul>li>textarea, form.admin_movie_update>ul>li>textarea,
+		border-radius:4px;
+		width:80%;
+		padding:7px 10px;
+		color:black;
+		font-size:14px;
+		border:1px solid gray;
+	}
+	form.board_write>ul>li>textarea, form.board_update>ul>li>textarea, form.admin_movie_update>ul>li>textarea,
 	form.admin_movie_register>ul>li>textarea, form.admin_music_update>ul>li>textarea,
 	form.admin_music_register>ul>li>textarea {
-	height: 150px;
-}
-
-form.board_write>ul>li>input[type="file"], form.board_update>ul>li>input[type="file"],
+		height:150px;
+	}
+	form.board_write>ul>li>input[type="file"], form.board_update>ul>li>input[type="file"],
 	form.admin_movie_update>ul>li>input[type="file"], form.admin_movie_register>ul>li>input[type="file"],
-	form.admin_music_update>ul>li>input[type="file"], form.admin_music_register>ul>li>input[type="file"]
-	{
-	width: 50%;
-	height: 50px;
-	padding: 3px 0;
-	color: black;
-	font-size: 13px;
-}
-
-form.board_write>ul>li:last-child button, form.board_update>ul>li:last-child button,
+	form.admin_music_update>ul>li>input[type="file"], form.admin_music_register>ul>li>input[type="file"] {
+		width:50%;
+		height:50px;
+		padding:3px 0;
+		color:black;
+		font-size:13px;
+	}
+	form.board_write>ul>li:last-child button, form.board_update>ul>li:last-child button,
 	form.admin_movie_update>ul>li:last-child button, form.admin_movie_register>ul>li:last-child button,
-	form.admin_music_update>ul>li:last-child button, form.admin_music_register>ul>li:last-child button
-	{
-	font-size: 13px;
-	width: 100px;
-	padding: 5px 0;
-	border-radius: 4px;
-	margin: 10px 0 100px 0;
-}
-
-form.board_write>ul>li:last-child, form.board_update>ul>li:last-child,
+	form.admin_music_update>ul>li:last-child button, form.admin_music_register>ul>li:last-child button {
+		font-size:13px;
+		width:100px;
+		padding:5px 0;
+		margin:10px 0 100px 0;
+	}
+	form.board_write>ul>li:last-child, form.board_update>ul>li:last-child,
 	form.admin_movie_update>ul>li:last-child, form.admin_movie_register>ul>li:last-child,
-	form.admin_music_update>ul>li:last-child, form.admin_music_register>ul>li:last-child
-	{
-	text-align: center;
-}
-
+	form.admin_music_update>ul>li:last-child, form.admin_music_register>ul>li:last-child {
+		text-align:center;
+	}
+	
+	
 /**
 	게시판 스타일 - 삭제 / 관리자 음악&뮤비 삭제
 */
-form.board_delete, form.admin_movie_delete, form.admin_music_delete {
-	padding-top: 50px;
-}
-
-form.board_delete img, form.admin_movie_delete img, form.admin_music_delete img
-	{
-	width: 120px;
-	height: 120px;
-	margin: 20px 0;
-}
-
-form.board_delete div, form.board_delete, form.admin_movie_delete div,
-	form.admin_movie_delete, form.admin_music_delete div, form.admin_music_delete
-	{
-	text-align: center;
-	margin: auto;
-}
-
-form.board_delete>div, form.admin_movie_delete, form.admin_music_delete
-	{
-	padding-bottom: 100px;
-}
-
-form.board_delete>div button, form.admin_movie_delete>div button, form.admin_music_delete>div button
-	{
-	font-size: 13px;
-	width: 100px;
-	padding: 5px 0;
-	border-radius: 4px;
-	margin: 10px 0;
-}
-
+	form.board_delete, form.admin_movie_delete, form.admin_music_delete {
+		padding-top:50px;
+	}
+	form.board_delete img, form.admin_movie_delete img, form.admin_music_delete img {
+		width:120px;
+		height:120px;
+		margin:20px 0;
+	}
+	form.board_delete div, form.board_delete, form.admin_movie_delete div,
+	form.admin_movie_delete, form.admin_music_delete div, form.admin_music_delete {
+		text-align:center;
+		margin:auto;
+	}
+	form.board_delete>div, form.admin_movie_delete, form.admin_music_delete {
+		padding-bottom:100px;
+	}
+	form.board_delete>div button, form.admin_movie_delete>div button, form.admin_music_delete>div button {
+		font-size:13px;
+		width:100px;
+		padding:5px 0;
+		margin:10px 0;
+	}
+	
+	
 /**
 	회원가입 스타일
 */
-section.section_1 form.join span.red {
-	color: red;
-	font-weight: 600;
-	padding-right: 3px;
-}
-
-section.section_1 form.join {
-	width: 50%;
-}
-
-section.section_1 form.join li {
-	list-style-type: none;
-	clear: left;
-	padding: 5px 0;
-}
-
-section.section_1 form.join li>label {
-	border: 1px solid gray;
-	display: inline-block;
-	width: 19%;
-	padding: 9px 0 9px 15px;
-	float: left;
-	margin-right: 10px;
-	font-size: 15px;
-	border-radius: 4px;
-	background-color: rgb(213, 213, 213);
-}
-
-section.section_1 form.join input.f1 {
-	border: 1px solid gray;
-	border-radius: 4px;
-	padding: 10px 10px;
-	width: 45%;
-	text-indent: 10px;
-}
-
-section.section_1 form.join li>div {
-	font-size: 12px;
-	color: #333;
-	padding: 5px 0 0px 190px;
-}
-
-section.section_1 form.join input[name="bfile"] {
-	padding: 5px 0;
-	font-size: 15px;
-}
-
-section.section_1 form.join input.addr, section.section_1 form.join input.hp_num,
-	section.section_1 form.join select.hp, section.section_1 form.join select.f3
-	{
-	border: 1px solid gray;
-	border-radius: 4px;
-	padding: 10px 10px 10px 10px;
-}
-
-section.section_1 form.join input.f2 {
-	border: 1px solid gray;
-	border-radius: 4px;
-	padding: 10px 10px;
-	width: 19.5%;
-	text-indent: 10px;
-}
-
-section.section_1 form.join select.f3 {
-	width: 12%;
-	padding: 9px 10px;
-}
-
-section.section_1 form.join select.hp {
-	width: 12%;
-	padding: 9px 10px;
-}
-
-section.section_1 form.join input.hp_num {
-	width: 12%;
-	padding: 9px 10px;
-}
-
-section.section_1 form.join span.rchk {
-	font-size: 16px;
-	display: inline-block;
-	padding: 9px 0 9px 5px;
-}
-
-section.section_1 form.join li:last-child {
-	text-align: center;
-	margin: 50px 0 100px 0;
-}
-
-section.section_1 form.join li:last-child>button {
-	width: 15%;
-	height: 40px;
-	padding: 10px 0;
-}
-
-section.section_1 form.join button.sub {
-	border: 1px solid gray;
-	border-radius: 4px;
-	background-color: rgb(213, 213, 213);
-	font-size: 13px;
-	padding: 10px 10px;
-}
-
-section.section_1 div.j_title {
-	font-size: 12px;
-	padding: 10px 0;
-}
-
+	section.section_1 form.join span.red {
+		color:red;
+		font-weight:600;
+		padding-right:3px;
+	}
+	section.section_1 form.join {
+		width:50%;
+	}
+	section.section_1 form.join li {
+		list-style-type:none;
+		clear:left;
+		padding:5px 0;
+	}
+	section.section_1 form.join li>label {
+		border:1px solid gray;
+		display:inline-block;
+		width:19%;
+		padding:9px 0 9px 15px;
+		float:left;
+		margin-right:10px;
+		font-size:15px;
+		border-radius:4px;
+		background-color:rgb(213, 213, 213);
+	}
+	section.section_1 form.join input.f1 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:10px 10px;
+		width:45%;
+		text-indent:10px;
+	}
+	section.section_1 form.join li>div {
+		font-size:12px;
+		color:#333;
+		padding:5px 0 0px 190px;
+	}
+	section.section_1 form.join input[name="bfile"] {
+		padding:5px 0;
+		font-size:15px;
+	}
+	section.section_1 form.join input.addr, section.section_1 form.join input.hp_num,
+	section.section_1 form.join select.hp, section.section_1 form.join select.f3 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:10px 10px 10px 10px;
+	}
+	section.section_1 form.join input.f2 {
+		border:1px solid gray;
+		border-radius:4px;
+		padding:10px 10px;
+		width:19.5%;
+		text-indent:10px;
+	}
+	section.section_1 form.join select.f3 {
+		width:12%;
+		padding:9px 10px;
+	}
+	section.section_1 form.join select.hp {
+		width:12%;
+		padding:9px 10px;
+	}
+	section.section_1 form.join input.hp_num {
+		width:12%;
+		padding:9px 10px;
+	}
+	section.section_1 form.join span.rchk {
+		font-size:16px;
+		display:inline-block;
+		padding:9px 0 9px 5px;
+	}
+	section.section_1 form.join li:last-child {
+		text-align:center;
+		margin:50px 0 100px 0;
+	}
+	section.section_1 form.join li:last-child>button {
+		width:15%;
+		height:40px;
+		padding:10px 0;
+	}
+	section.section_1 form.join button.sub {
+		border:1px solid gray;
+		border-radius:4px;
+		background-color:rgb(213, 213, 213);
+		font-size:13px;
+		padding:10px 10px;
+	}
+	section.section_1 div.j_title {
+		font-size:12px;
+		padding:10px 0;
+	}
+	
+	
 /**
 	마이페이지(홈, 내정보수정) 스타일
 */
-body.mypage_home div.content, body.mypage_update div.content, body.mypage_musiclist div.content,
+	body.mypage_home div.content, body.mypage_update div.content, body.mypage_musiclist div.content,
 	body.mypage_movielist div.content {
-	width: 97%;
-	display: inline-block;
-	text-align: center;
-	padding: 40px 0;
-}
-
-body.mypage_home div.content>section.section1, body.mypage_home div.content>section.section2,
+		width: 97%;
+		display: inline-block;
+		text-align: center;
+		padding: 40px 0;
+	}
+	
+	body.mypage_home div.content>section.section1, body.mypage_home div.content>section.section2,
 	body.mypage_home div.content>section.section3, body.mypage_update div.content>section.section1,
-	body.mypage_musiclist div.content>section.section2, body.mypage_movielist div.content>section.section2
-	{
-	margin: auto;
-	text-align: center;
-}
-
-body.mypage_home div.content h1>div, body.mypage_update div.content h1>div,
-	body.mypage_musiclist div.content h1>div, body.mypage_movielist div.content h1>div
-	{
-	/* width:12px; height:50px; */
-	width: 250px;
-	font-size: 25px;
-	padding-bottom: 30px;
-}
-
-/** 마이페이지 메뉴 바 **/
-body.mypage_home ul.nav, body.mypage_musiclist ul.nav, body.mypage_movielist ul.nav,
+	body.mypage_musiclist div.content>section.section2, body.mypage_movielist div.content>section.section2 {
+		margin: auto;
+		text-align: center;
+	}
+	
+	body.mypage_home div.content h1>div, body.mypage_update div.content h1>div,
+	body.mypage_musiclist div.content h1>div, body.mypage_movielist div.content h1>div {
+		/* width:12px; height:50px; */
+		width: 250px;
+		font-size: 25px;
+		padding-bottom: 30px;
+	}
+	
+	/** 마이페이지 메뉴 바 **/
+	body.mypage_home ul.nav, body.mypage_musiclist ul.nav, body.mypage_movielist ul.nav,
 	body.mypage_update ul.nav {
-	list-style-type: none;
-	margin: 0;
-	margin-right: -3%;
-	margin-bottom: 50px;
-	padding: 0;
-	overflow: hidden;
-	padding-left: 17%;
-	background-color: #333;
-}
-
-body.mypage_home ul.nav li, body.mypage_musiclist ul.nav li, body.mypage_movielist ul.nav li,
+		list-style-type: none;
+		margin: 0;
+		margin-right: -3%;
+		margin-bottom: 50px;
+		padding: 0;
+		overflow: hidden;
+		padding-left: 17%;
+		background-color: #333;
+	}
+	
+	body.mypage_home ul.nav li, body.mypage_musiclist ul.nav li, body.mypage_movielist ul.nav li,
 	body.mypage_update ul.nav li {
-	padding: 0 10%;
-	float: left;
-}
-
-body.mypage_home ul.nav li a, .dropbtn, body.mypage_musiclist ul.nav li a,
+		padding: 0 10%;
+		float: left;
+	}
+	
+	body.mypage_home ul.nav li a, .dropbtn, body.mypage_musiclist ul.nav li a,
 	body.mypage_movielist ul.nav li a, body.mypage_update ul.nav li a {
-	display: inline-block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-body.mypage_home ul.nav li a:hover, .dropdown:hover .dropbtn, body.mypage_musiclist ul.nav li a:hover,
-	body.mypage_movielist ul.nav li a:hover, body.mypage_update ul.nav li a:hover
-	{
-	background-color: rgb(255, 0, 80);
-}
-
-body.mypage_home ul.nav li.dropdown, body.mypage_musiclist ul.nav li.dropdown,
-	body.mypage_movielist ul.nav li.dropdown, body.mypage_update ul.nav li.dropdown
-	{
-	display: inline-block;
-}
-
-body.mypage_home .dropdown-content, body.mypage_musiclist .dropdown-content,
-	body.mypage_movielist .dropdown-content, body.mypage_update .dropdown-content
-	{
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-body.mypage_home .dropdown-content a, body.mypage_musiclist .dropdown-content a,
-	body.mypage_movielist .dropdown-content a, body.mypage_update .dropdown-content a
-	{
-	background-color: black;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-body.mypage_home .dropdown-content a:hover, body.mypage_musiclist .dropdown-content a:hover,
-	body.mypage_movielist .dropdown-content a:hover, body.mypage_update .dropdown-content a:hover
-	{
-	background-color: rgb(255, 0, 80);
-}
-
-body.mypage_home .dropdown:hover .dropdown-content, body.mypage_musiclist .dropdown:hover .dropdown-content,
-	body.mypage_movielist .dropdown:hover .dropdown-content, body.mypage_update .dropdown:hover .dropdown-content
-	{
-	display: block;
-}
-/*  */
-
-/** mypage_home **/
-body.mypage_home div.content section.section2 div, body.mypage_home div.content section.section3 div
-	{
-	display: inline-block;
-	padding: 0 3%;
-}
-
-body.mypage_home div.content section.section2, body.mypage_home div.content section.section3
-	{
-	width: 75%;
-	padding: 40px 0;
-	background-color: rgb(245, 245, 245);
-	border: 1px solid lightgray;
-	margin-bottom: 15px;
-}
-
-body.mypage_home div.content section.section2 div:nth-child(2) {
-	padding-right: 20%;
-	padding-left: 3%;
-}
-
-body.mypage_home div.content section.section2 div:last-child {
-	padding-left: 5%;
-}
-
-body.mypage_home div.content section.section2 img {
-	width: 150px;
-	height: 150px;
-	border-style: double;
-	border: 2px double gray;
-}
-
-body.mypage_home div.content section.section2 table, body.mypage_home div.content section.section2 table td,
-	body.mypage_home div.content section.section3 table, body.mypage_home div.content section.section3 table td
-	{
-	text-align: left;
-	border-collapse: collapse;
-	border-bottom: 1px solid lightgray;
-}
-
-body.mypage_home div.content section.section3 table {
-	width: 1000px;
-}
-
-body.mypage_home div.content section.section2 table tr td:last-child,
-	body.mypage_home div.content section.section3 table tr td:last-child {
-	font-size: 17px;
-	padding: 20px 20px;
-}
-
-body.mypage_home div.content section.section2 table tr td:nth-child(2),
-	body.mypage_home div.content section.section3 table tr td:nth-child(2)
-	{
-	font-size: 20px;
-	font-weight: 1000;
-	padding: 20px 5px;
-}
-
-body.mypage_home div.content section.section2 table tr td:first-child div.vertical,
-	body.mypage_home div.content section.section3 table tr td:first-child div.vertical
-	{
-	width: 3px;
-	border: 1px solid rgb(255, 0, 80);
-}
-
-/** mypage_update **/
-body.mypage_update div.content section.section_1>div {
-	text-align: left;
-	padding-top: 40px;
-}
-
-/** mypage_musiclist, mypage_movielist **/
-body.mypage_musiclist div.content>section.section2, body.mypage_movielist div.content>section.section2
-	{
-	width: 90%;
-	padding-left: 5%;
-}
-
-body.mypage_musiclist div.content>section.section2 div.section2_header,
-	body.mypage_movielist div.content>section.section2 div.section2_header
-	{
-	text-align: left;
-	padding-bottom: 30px;
-}
-
-body.mypage_musiclist div.content>section.section2 div.section2_header label,
-	body.mypage_movielist div.content>section.section2 div.section2_header label
-	{
-	font-size: 20px;
-	font-weight: 900;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like, body.mypage_movielist div.content>section.section2 table.like
-	{
-	text-align: left;
-	width: 100%;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like th, body.mypage_musiclist div.content>section.section2 table.like td,
-	body.mypage_movielist div.content>section.section2 table.like th, body.mypage_movielist div.content>section.section2 table.like td
-	{
-	padding: 10px 10px;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like tr:first-child td,
-	body.mypage_movielist div.content>section.section2 table.like tr:first-child td
-	{
-	text-align: right;
-	padding-bottom: 30px;
-	padding-left: 30px;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2) th,
-	body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2) th
-	{
-	color: rgb(255, 0, 80);
-}
-
-body.mypage_musiclist div.content>section.section2 table.like td:nth-child(3) img
-	{
-	width: 50px;
-	height: 50px;
-}
-
-body.mypage_movielist div.content>section.section2 table.like td:nth-child(3) img
-	{
-	width: 200px;
-	height: 120px;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like td:last-child img
-	{
-	text-align: center;
-	width: 30px;
-	height: 30px;
-}
-
-body.mypage_musiclist div.content>section.section2 table.like tr:hover,
-	body.mypage_movielist div.content>section.section2 table.like tr:hover
-	{
-	background-color: rgb(245, 245, 245);
-}
-
-body.mypage_musiclist div.content>section.section2 table.like tr:first-child:hover,
-	body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2):hover,
-	body.mypage_movielist div.content>section.section2 table.like tr:first-child:hover,
-	body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
-		background-color:white;
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	body.mypage_home ul.nav li a:hover, .dropdown:hover .dropbtn, body.mypage_musiclist ul.nav li a:hover,
+	body.mypage_movielist ul.nav li a:hover, body.mypage_update ul.nav li a:hover {
+		background-color: rgb(255, 0, 80);
+	}
+	
+	body.mypage_home ul.nav li.dropdown, body.mypage_musiclist ul.nav li.dropdown,
+	body.mypage_movielist ul.nav li.dropdown, body.mypage_update ul.nav li.dropdown {
+		display: inline-block;
+	}
+	
+	body.mypage_home .dropdown-content, body.mypage_musiclist .dropdown-content,
+	body.mypage_movielist .dropdown-content, body.mypage_update .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+	
+	body.mypage_home .dropdown-content a, body.mypage_musiclist .dropdown-content a,
+	body.mypage_movielist .dropdown-content a, body.mypage_update .dropdown-content a {
+		background-color: black;
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+	}
+	
+	body.mypage_home .dropdown-content a:hover, body.mypage_musiclist .dropdown-content a:hover,
+	body.mypage_movielist .dropdown-content a:hover, body.mypage_update .dropdown-content a:hover{
+		background-color: rgb(255, 0, 80);
+	}
+	
+	body.mypage_home .dropdown:hover .dropdown-content, body.mypage_musiclist .dropdown:hover .dropdown-content,
+	body.mypage_movielist .dropdown:hover .dropdown-content, body.mypage_update .dropdown:hover .dropdown-content {
+		display: block;
 	}
 
-/**
-	뮤비 리스트 - 스타일
-*/
-div.movie_list {
-	text-align: center;
-}
-
-ul.entire_movie_list li, ul.hot_movie_list>li {
-	display: inline-block;
-}
-
-ul.entire_movie_list img {
-	width: 220px;
-	heigth: 150px;
-}
-
-div.hot_movie {
-	background-color: rgb(245, 245, 245);
-}
-
-section.section2 dt {
-	font-size: 13px;
-}
-
-div.entire_movie {
-	border-top: 4px solid #bfbfbf;
-	border-bottom: 1px solid #bfbfbf;
-	border-right: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
-}
-
-ul.entire_movie_list span {
-	background-color: lightgray;
-	width: 2px;
-	height: 10px;
-	display: inline-block;
-	margin: 0 3px;
-	padding-top: 5px;
-}
-
-dt.like_image>a>img {
-	margin-top: 3px;
-	width: 20px;
-	height: 20px;
-}
-
-dt.like_image>a>img:hover {
-	content:
-		url("http://localhost:9000/Music_streaming/images/heart_red.PNG")
-}
-
-section.section1>div:first-child>div {
-	display: inline-block;
-	width: 1680px;
-	text-align: left;
-	font-size: 30px;
-	margin: 20px 10px;
-}
-
-div.hot_movie>div {
-	display: inline-block;
-	width: 1400px;
-	text-align: left;
-	font-size: 30px;
-	margin: 20px 10px;
-}
-
-div.entire_movie>div:first-child {
-	display: inline-block;
-	width: 1120px;
-	text-align: left;
-	font-size: 30px;
-	margin: 20px 10px;
-}
-
-div.entire_movie {
-	padding-bottom: 40px;
-}
-
-/**
-	뮤비 컨텐츠 - 스타일
-*/
-div.movie_info {
-	text-align: center;
-}
-
-section.section1>div:first-child {
-	display: inline-block;
-	font-weight: bold;
-	font-size: 30px;
-	width: 1200px;
-	text-align: left;
-	margin-bottom: 7px;
-}
-
-div.movie_detail {
-	width: 1200px;
-	display: inline-block;
-	text-align: left;
-}
-
-div.movie_detail>div:first-child {
-	font-weight: bold;
-	font-size: 20px;
-}
-
-div.movie_detail img {
-	float: left;
-}
-
-div.movie_detail span {
-	margin-top: 35px;
-	margin-left: 10px;
-	display: inline-block;
-	clear: both;
-	font-weight: bold;
-	font-size: 25px;
-}
-
-div.movie_detail>div:nth-child(4) {
-	clear: both;
-	font-size: 18px;
-	padding-top: 10px;
-}
-
-ul.recommend_movie_list>li {
-	display: inline-block;
-}
-
-div.same_artist {
-	width: 1300px;
-	display: inline-block;
-	text-align: left;
-	font-size: 30px;
-	margin-top: 50px;
-	font-weight: bold;
-}
-
-/**login 페이지**/
-div.login {
-	margin: auto;
-	padding-top: 150px;
-	height: 715px;
-}
-div.login>section.section1>div>form.login {
-	text-align: center;
-}
-div.login>section.section1>div>form.login ul>li {
-	 list-style-type: none;
-	padding: 5px;
-}
-
-div.login>div{
-text-align:center;
-margin-bottom:50px;
-}
-div.login>div>a{
-padding: 40px 115px 20px 115px;
-text-decoration: none;
-border-radius:4px;
-background-color:black;
-}
-div.login>div>a>span{
-text-align:center;
-color: white;
-font-size:50px;
-font-weight:900;
-}
-div.login>section.section1>div>form.login ul>li>input {
-	padding: 20px 10px;
-	border: 1px solid lightgray;
-	border-radius: 4px;
-	width: 500px;
-}
-div.login>section.section1>div>form.login ul>li>button {
-	padding: 20px 10px;
-	border-radius: 4px;
-	width: 520px;
-	font-family: "나눔바른고딕";
-	font-size: 18px;
-	font-weight: 700;
-	color: white;
-	background-color: rgb(255, 0, 80);
-}
-section.section1>div>form li:last-child>a{
-	text-decoration: none;
-	color:gray;
-}
 	
-	/*컨텐츠 타이틀 css*/
-	div.content_title{
-	margin:0 0 100px 0;
-	padding:50px 200px 100px 200px;
+	/** mypage_home **/
+	body.mypage_home div.content section.section2 div, body.mypage_home div.content section.section3 div {
+		display: inline-block;
+		padding: 0 3%;
+	}
+	
+	body.mypage_home div.content section.section2, body.mypage_home div.content section.section3 {
+		width: 75%;
+		padding: 40px 0;
+		background-color: rgb(245, 245, 245);
+		border: 1px solid lightgray;
+		margin-bottom: 15px;
+	}
+	
+	body.mypage_home div.content section.section2 div:nth-child(2) {
+		padding-right: 20%;
+		padding-left: 3%;
+	}
+	
+	body.mypage_home div.content section.section2 div:last-child {
+		padding-left: 5%;
+	}
+	
+	body.mypage_home div.content section.section2 img {
+		width: 150px;
+		height: 150px;
+		border-style: double;
+		border: 2px double gray;
+	}
+	
+	body.mypage_home div.content section.section2 table, body.mypage_home div.content section.section2 table td,
+		body.mypage_home div.content section.section3 table, body.mypage_home div.content section.section3 table td
+		{
+		text-align: left;
+		border-collapse: collapse;
+		border-bottom: 1px solid lightgray;
+	}
+	
+	body.mypage_home div.content section.section3 table {
+		width: 1000px;
+	}
+	
+	body.mypage_home div.content section.section2 table tr td:last-child,
+		body.mypage_home div.content section.section3 table tr td:last-child {
+		font-size: 17px;
+		padding: 20px 20px;
+	}
+	
+	body.mypage_home div.content section.section2 table tr td:nth-child(2),
+		body.mypage_home div.content section.section3 table tr td:nth-child(2)
+		{
+		font-size: 20px;
+		font-weight: 1000;
+		padding: 20px 5px;
+	}
+	
+	body.mypage_home div.content section.section2 table tr td:first-child div.vertical,
+		body.mypage_home div.content section.section3 table tr td:first-child div.vertical
+		{
+		width: 3px;
+		border: 1px solid rgb(255, 0, 80);
+	}
+	
+	/** mypage_update **/
+	body.mypage_update div.content section.section_1>div {
+		text-align: left;
+		padding-top: 40px;
+	}
+	
+	/** mypage_musiclist, mypage_movielist **/
+	body.mypage_musiclist div.content>section.section2, body.mypage_movielist div.content>section.section2
+		{
+		width: 90%;
+		padding-left: 5%;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 div.section2_header,
+		body.mypage_movielist div.content>section.section2 div.section2_header
+		{
+		text-align: left;
+		padding-bottom: 30px;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 div.section2_header label,
+		body.mypage_movielist div.content>section.section2 div.section2_header label
+		{
+		font-size: 20px;
+		font-weight: 900;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like, body.mypage_movielist div.content>section.section2 table.like
+		{
+		text-align: left;
+		width: 100%;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like th, body.mypage_musiclist div.content>section.section2 table.like td,
+		body.mypage_movielist div.content>section.section2 table.like th, body.mypage_movielist div.content>section.section2 table.like td
+		{
+		padding: 10px 10px;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like tr:first-child td,
+		body.mypage_movielist div.content>section.section2 table.like tr:first-child td
+		{
+		text-align: right;
+		padding-bottom: 30px;
+		padding-left: 30px;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2) th,
+		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2) th
+		{
+		color: rgb(255, 0, 80);
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like td:nth-child(3) img
+		{
+		width: 50px;
+		height: 50px;
+	}
+	
+	body.mypage_movielist div.content>section.section2 table.like td:nth-child(3) img
+		{
+		width: 200px;
+		height: 120px;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like td:last-child img
+		{
+		text-align: center;
+		width: 30px;
+		height: 30px;
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like tr:hover,
+		body.mypage_movielist div.content>section.section2 table.like tr:hover
+		{
+		background-color: rgb(245, 245, 245);
+	}
+	
+	body.mypage_musiclist div.content>section.section2 table.like tr:first-child:hover,
+		body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2):hover,
+		body.mypage_movielist div.content>section.section2 table.like tr:first-child:hover,
+		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
+			background-color:white;
+		}
+	
+	/**
+		뮤비 리스트 - 스타일
+	*/
+	div.movie_list {
+		text-align: center;
+	}
+	
+	ul.entire_movie_list li, ul.hot_movie_list>li {
+		display: inline-block;
+	}
+	
+	ul.entire_movie_list img {
+		width: 220px;
+		heigth: 150px;
+	}
+	
+	div.hot_movie {
+		background-color: rgb(245, 245, 245);
+	}
+	
+	section.section2 dt {
+		font-size: 13px;
+	}
+	
+	div.entire_movie {
+		border-top: 4px solid #bfbfbf;
+		border-bottom: 1px solid #bfbfbf;
+		border-right: 1px solid #ffffff;
+		border-left: 1px solid #ffffff;
+	}
+	
+	ul.entire_movie_list span {
+		background-color: lightgray;
+		width: 2px;
+		height: 10px;
+		display: inline-block;
+		margin: 0 3px;
+		padding-top: 5px;
+	}
+	
+	dt.like_image>a>img {
+		margin-top: 3px;
+		width: 20px;
+		height: 20px;
+	}
+	
+	dt.like_image>a>img:hover {
+		content:
+			url("http://localhost:9000/Music_streaming/images/heart_red.PNG")
+	}
+	
+	section.section1>div:first-child>div {
+		display: inline-block;
+		width: 1680px;
+		text-align: left;
+		font-size: 30px;
+		margin: 20px 10px;
+	}
+	
+	div.hot_movie>div {
+		display: inline-block;
+		width: 1400px;
+		text-align: left;
+		font-size: 30px;
+		margin: 20px 10px;
+	}
+	
+	div.entire_movie>div:first-child {
+		display: inline-block;
+		width: 1120px;
+		text-align: left;
+		font-size: 30px;
+		margin: 20px 10px;
+	}
+	
+	div.entire_movie {
+		padding-bottom: 40px;
+	}
+	
+	/**
+		뮤비 컨텐츠 - 스타일
+	*/
+	div.movie_info {
+		text-align: center;
+	}
+	
+	section.section1>div:first-child {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 30px;
+		width: 1200px;
+		text-align: left;
+		margin-bottom: 7px;
+	}
+	
+	div.movie_detail {
+		width: 1200px;
+		display: inline-block;
+		text-align: left;
+	}
+	
+	div.movie_detail>div:first-child {
+		font-weight: bold;
+		font-size: 20px;
+	}
+	
+	div.movie_detail img {
+		float: left;
+	}
+	
+	div.movie_detail span {
+		margin-top: 35px;
+		margin-left: 10px;
+		display: inline-block;
+		clear: both;
+		font-weight: bold;
+		font-size: 25px;
+	}
+	
+	div.movie_detail>div:nth-child(4) {
+		clear: both;
+		font-size: 18px;
+		padding-top: 10px;
+	}
+	
+	ul.recommend_movie_list>li {
+		display: inline-block;
+	}
+	
+	div.same_artist {
+		width: 1300px;
+		display: inline-block;
+		text-align: left;
+		font-size: 30px;
+		margin-top: 50px;
+		font-weight: bold;
+	}
+	
+	/**login 페이지**/
+	div.login {
+		margin: auto;
+		padding-top: 150px;
+		height: 715px;
+	}
+	div.login>section.section1>div>form.login {
+		text-align: center;
+	}
+	div.login>section.section1>div>form.login ul>li {
+		 list-style-type: none;
+		padding: 5px;
+	}
+	
+	div.login>div{
 	text-align:center;
+	margin-bottom:50px;
+	}
+	div.login>div>a{
+	padding: 40px 115px 20px 115px;
+	text-decoration: none;
+	border-radius:4px;
 	background-color:black;
 	}
-	div.content_title>h1{
-		color:white;
-		padding:0 0 20px 0;
+	div.login>div>a>span{
+	text-align:center;
+	color: white;
+	font-size:50px;
+	font-weight:900;
 	}
-	div.content_title>p{
-		margin:0 15%;
-		color:lightgray;
+	div.login>section.section1>div>form.login ul>li>input {
+		padding: 20px 10px;
+		border: 1px solid lightgray;
+		border-radius: 4px;
+		width: 500px;
 	}
-	
-	/*magazine content*/
-	div.magazine_content{
-		margin:auto;
+	div.login>section.section1>div>form.login ul>li>button {
+		padding: 20px 10px;
+		border-radius: 4px;
+		width: 520px;
+		font-family: "나눔바른고딕";
+		font-size: 18px;
+		font-weight: 700;
+		color: white;
+		background-color: rgb(255, 0, 80);
+	}
+	section.section1>div>form li:last-child>a{
+		text-decoration: none;
+		color:gray;
+	}
 		
+		/*컨텐츠 타이틀 css*/
+		div.content_title{
+		margin:0 0 100px 0;
+		padding:50px 200px 100px 200px;
+		text-align:center;
+		background-color:black;
+		}
+		div.content_title>h1{
+			color:white;
+			padding:0 0 20px 0;
+		}
+		div.content_title>p{
+			margin:0 15%;
+			color:lightgray;
+		}
+		
+		/*magazine content*/
+		div.magazine_content{
+			margin:auto;
+			
+		}
+		div.magazine_content>div.magazine_subheading{
+		width: 1300px;
+		 margin:auto; 
+		 border:1px solid gray;
+		}
+		div.magazine_content>div.magazine_subheading>h2{
+		text-align:left;
+		}
+		div.magazine_content>section{
+		width: 1300px;
+		display: block;
+		margin: auto;
+		border: 1px solid gray;
+		border-top:none;
+		padding:40px 0 0 0 ;
+		}
+		div.magazine_content>section>img{
+			display:block;
+			margin:auto;
+			width:900px;
+			height:1200px;
+			border-radius:8px;
+			border:2px solid #333;
+		}
+		div.magazine_content>section>p{
+			display:block;
+			margin:auto;
+			width:900px;
+			padding-top:50px;
+			padding-bottom:100px;
+			border-radius:8px;
+		}
+		
+	/**
+		magazine_list 
+	*/
+	/* 전체구조*/
+	div.content_menu {
+		margin: auto;
 	}
-	div.magazine_content>div.magazine_subheading{
-	width: 1300px;
-	 margin:auto; 
-	 border:1px solid gray;
+	
+	/*메거진 메인 헤더 부분*/
+	div.content_menu>div.magazine_head {
+		height: 450px;
+		width: 1110px;
+		display: block;
+		margin: auto;
+		padding:50px 0 0 0 ;
+		border-bottom:2px solid #333;
 	}
-	div.magazine_content>div.magazine_subheading>h2{
-	text-align:left;
+	div.content_menu>div.magazine_head>h2{
+		padding-bottom:50px;
+		height:50px;
+		font-size:30px;
 	}
-	div.magazine_content>section{
-	width: 1300px;
-	display: block;
-	margin: auto;
-	border: 1px solid gray;
-	border-top:none;
-	padding:40px 0 0 0 ;
-	}
-	div.magazine_content>section>img{
-		display:block;
-		margin:auto;
-		width:900px;
-		height:1200px;
+	div.content_menu>div.magazine_head>section>a>img.head_img{
+		width: 400px;
+		height: 320px;
 		border-radius:8px;
-		border:2px solid #333;
+		float:left;
 	}
-	div.magazine_content>section>p{
-		display:block;
-		margin:auto;
-		width:900px;
-		padding-top:50px;
-		padding-bottom:100px;
+	div.content_menu>div.magazine_head>section>h2{
+		padding:50px 0;
+	}
+	
+	div.content_menu>div.magazine_head>section>h2>a{
+		text-decoration: none;
+		color:black;
+	}
+	div.content_menu>div.magazine_head>section>h2>a:hover{
+		text-decoration:underline;
+	}
+	div.content_menu>div.magazine_head>section>p>a{
+		color:gray;
+		text-decoration: none;
+	}
+	
+	/*메거진 메인 리스트 */
+	div.content_menu>section.magazine_list{
+		height: 1500px;
+		width: 1500px;
+		display: block;
+		margin: auto;
+		padding:50px 0 0 0 ;
+	}
+	
+	div.content_menu>section.magazine_list>ul {
+		display: block;
+		padding: 0  100px;
+	}
+	
+	div.content_menu>section.magazine_list>ul>li.list_item {
+		margin-left:85px;
+		float: left;
+		padding: 35px 10px;
+		list-style-type: none;	
+	}
+	
+	div.content_menu>section.magazine_list>ul>li.list_item>span{
+		font-size:12px;
+		color:gray;
+	}
+	
+	div.content_menu>section.magazine_list>ul>li.list_item>div.info a {
+		text-decoration: none;
+		color:black;
+	}
+	
+	div.content_menu>section.magazine_list>ul>li.list_item>div.info a:hover
+		{
+		text-decoration: underline;
+	}
+	
+	div.content_menu>section.magazine_list>ul>li.list_item>a>img {
+		height: 300px;
+		width: 300px;
 		border-radius:8px;
 	}
 	
-/**
-	magazine_list 
-*/
-/* 전체구조*/
-div.content_menu {
-	margin: auto;
-}
-
-/*메거진 메인 헤더 부분*/
-div.content_menu>div.magazine_head {
-	height: 450px;
-	width: 1110px;
-	display: block;
-	margin: auto;
-	padding:50px 0 0 0 ;
-	border-bottom:2px solid #333;
-}
-div.content_menu>div.magazine_head>h2{
-	padding-bottom:50px;
-	height:50px;
-	font-size:30px;
-}
-div.content_menu>div.magazine_head>section>a>img.head_img{
-	width: 400px;
-	height: 320px;
-	border-radius:8px;
-	float:left;
-}
-div.content_menu>div.magazine_head>section>h2{
-	padding:50px 0;
-}
-
-div.content_menu>div.magazine_head>section>h2>a{
-	text-decoration: none;
-	color:black;
-}
-div.content_menu>div.magazine_head>section>h2>a:hover{
-	text-decoration:underline;
-}
-div.content_menu>div.magazine_head>section>p>a{
-	color:gray;
-	text-decoration: none;
-}
-
-/*메거진 메인 리스트 */
-div.content_menu>section.magazine_list{
-	height: 1500px;
-	width: 1500px;
-	display: block;
-	margin: auto;
-	padding:50px 0 0 0 ;
-}
-
-div.content_menu>section.magazine_list>ul {
-	display: block;
-	padding: 0  100px;
-}
-
-div.content_menu>section.magazine_list>ul>li.list_item {
-	margin-left:85px;
-	float: left;
-	padding: 35px 10px;
-	list-style-type: none;	
-}
-
-div.content_menu>section.magazine_list>ul>li.list_item>span{
-	font-size:12px;
-	color:gray;
-}
-
-div.content_menu>section.magazine_list>ul>li.list_item>div.info a {
-	text-decoration: none;
-	color:black;
-}
-
-div.content_menu>section.magazine_list>ul>li.list_item>div.info a:hover
-	{
-	text-decoration: underline;
-}
-
-div.content_menu>section.magazine_list>ul>li.list_item>a>img {
-	height: 300px;
-	width: 300px;
-	border-radius:8px;
-}
-
+	
 /**
 	관리자 magazine_list
 */
-
 	table.ad_notice {
 		border-top:1px solid black;
 		border-bottom:1px solid black;
@@ -1464,10 +1327,11 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	table.ad_notice tr td:nth-child(3){
 		width:200px;
 	}
+	
+	
 /**
 관리자 notice_list
 */	
-
 	table.ad_notice {
 		border-top:1px solid black;
 		border-bottom:1px solid black;
@@ -1476,7 +1340,6 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	table.ad_notice td{
 		border-top:1px solid rgb(213,213,213);
 	}
-	
 	table.ad_notice th, table.ad_notice td {
 		padding:12px 0; 
 		color:black;
@@ -1488,7 +1351,6 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	table.ad_notice th{
 		background-color:rgb(213,213,213);
 	}
-	
 	table.ad_notice tr td:nth-child(1),table.ad_notice tr td:nth-child(2),
 	table.ad_notice tr td:nth-child(4),table.ad_notice tr td:nth-child(5){
 		text-align:center;
@@ -1532,10 +1394,10 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 		width:200px;
 	}
 	
+
 /** 
 	음악차트 
 **/
-	
 	body.music_chart div.content {
 		width:75%;
 		padding:30px 0;
@@ -1679,12 +1541,13 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 		text-decoration:underline;
 	}
 	
+	
 /** 
 	음악 콘텐츠 
 **/
 	body.music_content div.content {
 		width:95%;
-		display: inline-block;
+		display:inline-block;
 		text-align:center;
 		padding:50px 0;
 	}
