@@ -21,10 +21,10 @@
 					<form name="joinForm" action="joinProc.jsp" method="get" class="join">
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
-							<li>
+							<!-- <li>
 								<label>프로필사진</label>
 								<input type="file" name="bfile">
-							</li>
+							</li> -->
 							<li>
 								<label><span class="red">*</span>성명</label>
 								<input type="text" name="name" class="f1" id="name">
@@ -43,14 +43,14 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드 확인</label>
-								<input type="password" name="cpass" class="f1" id="cpass" onblur="passCheck()">
+								<input type="password" name="cpass" class="f1" id="cpass">
 								<div id="msg"></div>
 							</li>
 							<li>
 								<label><span class="red">*</span>E-mail</label>
 								<input type="text" name="email1" class="f2" id="email1"> @
 								<input type="text" name="email2" class="f2" id="email2">
-								<select name="email3" class="f3" id="email3" onchange="addrCheck()">
+								<select name="email3" class="f3" id="email3">
 									<option value="선택">선택</option>
 									<option value="naver.com">네이버</option>
 									<option value="gmail.com">구글</option>
@@ -66,15 +66,15 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
-								<select name="cp1" class="hp" id="phone1">
+								<select name="cp1" class="cp" id="cp1">
 									<option value="선택">선택</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="017">017</option>
 								</select>
-								- <input type="text" name="cp2" class="hp_num" id="phone2">
-								- <input type="text" name="cp3" class="hp_num" id="phone3">
+								- <input type="text" name="cp2" class="cp_num" id="cp2">
+								- <input type="text" name="cp3" class="cp_num" id="cp3">
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 SMS</label>
@@ -83,13 +83,13 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>음악취향</label>
-								<input type="checkbox" name="genre"><span class="rchk">발라드</span>
-								<input type="checkbox" name="genre"><span class="rchk">댄스</span>
-								<input type="checkbox" name="genre"><span class="rchk">랩/힙합</span>
-								<input type="checkbox" name="genre"><span class="rchk">R&B</span>
-								<input type="checkbox" name="genre"><span class="rchk">인디</span>
-								<input type="checkbox" name="genre"><span class="rchk">EDM</span>
-								<input type="checkbox" name="genre"><span class="rchk">트롯</span>
+								<input type="checkbox" name="genre" value="발라드"><span class="rchk">발라드</span>
+								<input type="checkbox" name="genre" value="댄스"><span class="rchk">댄스</span>
+								<input type="checkbox" name="genre" value="랩/힙합"><span class="rchk">랩/힙합</span>
+								<input type="checkbox" name="genre" value="R&B"><span class="rchk">R&B</span>
+								<input type="checkbox" name="genre" value="인디"><span class="rchk">인디</span>
+								<input type="checkbox" name="genre" value="EDM"><span class="rchk">EDM</span>
+								<input type="checkbox" name="genre" value="트롯"><span class="rchk">트롯</span>
 							</li>
 							<li>
 								<button type="button" class="btn_style" id="btnJoin">가입하기</button>

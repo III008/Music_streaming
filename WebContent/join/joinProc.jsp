@@ -1,31 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.music.vo.*, com.music.dao.*"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="vo" class="com.music.vo.MusicMemberVO"></jsp:useBean> <!-- 객체 생성 -->
+<jsp:setProperty name="vo" property="*"></jsp:setProperty>
+
 <%
-	request.setCharacterEncoding("UTF-8");
-	String name = request.getParameter("name");
-	String id = request.getParameter("id");
-	String pass = request.getParameter("pass");
-	String email1 = request.getParameter("email1");
-	String email2 = request.getParameter("email2");
-	String email_agr = request.getParameter("email_agr");
-	String cp1 = request.getParameter("cp1");
-	String cp2 = request.getParameter("cp2");
-	String cp3 = request.getParameter("cp3");
-	String sms_agr = request.getParameter("sms_agr");
-	String genre = request.getParameter("genre");
+	//DB 연동 후 저장
+	MusicMemberDAO dao = new MusicMemberDAO();
+	boolean join_result = dao.getInsert(vo);
 
-	String email = email1 + "@" + email2;
-	String phone = cp1 + "-" + cp2 + "-" + cp3;
-	String genre_list = String.join(",", genre);
-	
+	//페이지 이동
+	if(join_result) {
+		//회원가입 성공
+		response.sendRedirect("joinSuccess.jsp");
+	}else {
+		//회원가입 실패 - 서버 연동 시 에러발생 : 에러페이지를 별도로 생성 후 호출
+		response.sendRedirect("../errorPage.jsp");
+	}
+ 	
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

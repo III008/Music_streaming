@@ -25,20 +25,20 @@ $(document).ready(function(){
 			alert("이메일 주소를 선택해주세요.");
 			$("#email3").focus();
 			return false;
-		}else if($("#phone1").val() == "선택"){
+		}else if($("#cp1").val() == "선택"){
 			alert("휴대전화 번호를 선택해주세요.");
-			$("#phone1").focus();
+			$("#cp1").focus();
 			return false;
-		}else if($("#phone2").val() == ""){
+		}else if($("#cp2").val() == ""){
 			alert("휴대전화 번호을 입력해주세요.");
-			$("#phone2").focus();
+			$("#cp2").focus();
 			return false;
-		}else if($("#phone3").val() == ""){
+		}else if($("#cp3").val() == ""){
 			alert("휴대전화 번호를 입력해주세요.");
-			$("#phone3").focus();
+			$("#cp3").focus();
 			return false;
 		}else {
-			/* joinForm.submit(); */
+			joinForm.submit();
 		} 
 	});//유효성
 	

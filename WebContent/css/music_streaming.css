@@ -636,8 +636,8 @@
 		padding:5px 0;
 		font-size:15px;
 	}
-	section.section_1 form.join input.addr, section.section_1 form.join input.hp_num,
-	section.section_1 form.join select.hp, section.section_1 form.join select.f3 {
+	section.section_1 form.join input.addr, section.section_1 form.join input.cp_num,
+	section.section_1 form.join select.cp, section.section_1 form.join select.f3 {
 		border:1px solid gray;
 		border-radius:4px;
 		padding:10px 10px 10px 10px;
@@ -653,11 +653,11 @@
 		width:12%;
 		padding:9px 10px;
 	}
-	section.section_1 form.join select.hp {
+	section.section_1 form.join select.cp {
 		width:12%;
 		padding:9px 10px;
 	}
-	section.section_1 form.join input.hp_num {
+	section.section_1 form.join input.cp_num {
 		width:12%;
 		padding:9px 10px;
 	}
@@ -685,6 +685,13 @@
 	section.section_1 div.j_title {
 		font-size:12px;
 		padding:10px 0;
+	}
+	div.content_joinSuc h2 {
+		text-align:center;
+		margin:80px 0 10px 0;
+	}
+	div.content_joinSuc h3 {
+		text-align:center;
 	}
 	
 	
@@ -931,9 +938,9 @@
 			background-color:white;
 		}
 	
-	/**
-		¹Âºñ ¸®½ºÆ® - ½ºÅ¸ÀÏ
-	*/
+/**
+	¹Âºñ ¸®½ºÆ® - ½ºÅ¸ÀÏ
+*/
 	div.movie_list {
 		text-align: center;
 	}
@@ -1010,9 +1017,9 @@
 		padding-bottom: 40px;
 	}
 	
-	/**
-		¹Âºñ ÄÁÅÙÃ÷ - ½ºÅ¸ÀÏ
-	*/
+/**
+	¹Âºñ ÄÁÅÙÃ÷ - ½ºÅ¸ÀÏ
+*/
 	div.movie_info {
 		text-align: center;
 	}
@@ -1084,20 +1091,20 @@
 	}
 	
 	div.login>div{
-	text-align:center;
-	margin-bottom:50px;
+		text-align:center;
+		margin-bottom:50px;
 	}
 	div.login>div>a{
-	padding: 40px 115px 20px 115px;
-	text-decoration: none;
-	border-radius:4px;
-	background-color:black;
+		padding: 40px 115px 20px 115px;
+		text-decoration: none;
+		border-radius:4px;
+		background-color:black;
 	}
 	div.login>div>a>span{
-	text-align:center;
-	color: white;
-	font-size:50px;
-	font-weight:900;
+		text-align:center;
+		color: white;
+		font-size:50px;
+		font-weight:900;
 	}
 	div.login>section.section1>div>form.login ul>li>input {
 		padding: 20px 10px;
@@ -1120,63 +1127,63 @@
 		color:gray;
 	}
 		
-		/*ÄÁÅÙÃ÷ Å¸ÀÌÆ² css*/
-		div.content_title{
+	/*ÄÁÅÙÃ÷ Å¸ÀÌÆ² css*/
+	div.content_title{
 		margin:0 0 100px 0;
 		padding:50px 200px 100px 200px;
 		text-align:center;
 		background-color:black;
-		}
-		div.content_title>h1{
-			color:white;
-			padding:0 0 20px 0;
-		}
-		div.content_title>p{
-			margin:0 15%;
-			color:lightgray;
-		}
-		
-		/*magazine content*/
-		div.magazine_content{
-			margin:auto;
-			
-		}
-		div.magazine_content>div.magazine_subheading{
+	}
+	div.content_title>h1{
+		color:white;
+		padding:0 0 20px 0;
+	}
+	div.content_title>p{
+		margin:0 15%;
+		color:lightgray;
+	}
+	
+	/*magazine content*/
+	div.magazine_content{
+		margin:auto;
+	}
+	div.magazine_content>div.magazine_subheading{
 		width: 1300px;
-		 margin:auto; 
-		 border:1px solid gray;
-		}
-		div.magazine_content>div.magazine_subheading>h2{
+		margin:auto; 
+		border:1px solid gray;
+	}
+	div.magazine_content>div.magazine_subheading>h2{
 		text-align:left;
-		}
-		div.magazine_content>section{
+	}
+	div.magazine_content>section{
 		width: 1300px;
 		display: block;
 		margin: auto;
 		border: 1px solid gray;
 		border-top:none;
 		padding:40px 0 0 0 ;
-		}
-		div.magazine_content>section>img{
-			display:block;
-			margin:auto;
-			width:900px;
-			height:1200px;
-			border-radius:8px;
-			border:2px solid #333;
-		}
-		div.magazine_content>section>p{
-			display:block;
-			margin:auto;
-			width:900px;
-			padding-top:50px;
-			padding-bottom:100px;
-			border-radius:8px;
-		}
+	}
+	div.magazine_content>section>img{
+		display:block;
+		margin:auto;
+		width:900px;
+		height:1200px;
+		border-radius:8px;
+		border:2px solid #333;
+	}
+	div.magazine_content>section>p{
+		display:block;
+		margin:auto;
+		width:900px;
+		padding-top:50px;
+		padding-bottom:100px;
+		border-radius:8px;
+	}
+
 		
-	/**
-		magazine_list 
-	*/
+/**
+	magazine_list 
+*/
 	/* ÀüÃ¼±¸Á¶*/
 	div.content_menu {
 		margin: auto;
