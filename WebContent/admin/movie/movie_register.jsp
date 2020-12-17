@@ -18,6 +18,10 @@
 					<form name="movieRegisterForm" action="#" method="get" class="admin_movie_register">
 						<ul>
 							<li>
+								<label>가수명</label>
+								<input type="text" name="register_movie_singer">
+							</li>
+							<li>
 								<label>제 목</label>
 								<input type="text" name="register_movie_title">
 							</li>

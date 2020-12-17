@@ -19,6 +19,8 @@
 				<form name="movieUpdateForm" action="#" method="get"
 					class="admin_movie_update">
 					<ul>
+						<li><label>가수명</label> <input type="text"
+							name="update_movie_singer" value="BLACKPINK"></li>
 						<li><label>제목</label> <input type="text"
 							name="update_movie_title" value="HOW LIKE THAT"></li>
 						<li><label>영상주소</label> <input type="text"
