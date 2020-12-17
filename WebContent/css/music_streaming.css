@@ -1716,50 +1716,55 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	}
 	body.music_content div section.section1 table {
 		display:inline-block;
-		width:65%;
+		width:100%;
 		text-align:left;
 		border-bottom:1px solid lightgray;
 		padding-bottom:10px;
 	}
 	body.music_content div section.section1 table td#music_image img {
-		width:300px; height:300px;
+		width:250px; height:250px;
 	}
 	body.music_content div section.section1 table td#music_image {
 		text-align:right;
 	}
-	body.music_content div section.section1 table td#song_info>div,
-	body.music_content div section.section1 table td#bar {
+	body.music_content div section.section1 table td#song_info>div {
 		text-align:left;
 		padding-bottom:5px;
 	}
-	body.music_content div section.section1 table td#song_info>div#title {
-		font-size:50px;
+	body.music_content div section.section1 table td#bar {
+		text-align:left;
+		padding-bottom:5px;
+		padding-left:10px;
+	}
+	body.music_content div section.section1 table td#song_info>div#song {
+		font-size:25px;
 		font-weight:900;
-		padding-bottom:50px;
+		padding-bottom:20px;
 	}
 	body.music_content div section.section1 table td#song_info>div#artist {
-		font-size:25px;
+		font-size:20px;
 		font-weight:700;
 		padding-bottom:20px;
 	}
-	body.music_content div section.section1 table td#song_info>div#compose {
-		font-size:20px;
+	body.music_content div section.section1 table td#song_info>div#lyricist,
+	body.music_content div section.section1 table td#song_info>div#composer {
+		font-size:16px;
 		color:gray;
 		padding-bottom:10px;
 	}
 	body.music_content div section.section2>div>h3 {
 		/* display:inline-block; */
 		display:inline-block;
-		width:65%;
+		width:75%;
 		text-align:left;
 		font-size:23px;
 		font-weight:800;
-		padding:10px 0;
+		padding:10px 0 30px 0;
 		/* margin:30px 0 30px -905px; */
 	}
 	body.music_content div section.section3>div>h3 {
 		display:inline-block;
-		width:65%;
+		width:75%;
 		text-align:left;
 		font-size:23px;
 		font-weight:800;
@@ -1768,7 +1773,7 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	}
 	body.music_content div section.section2 div p.lyrics {
 		display:inline-block;
-		width:65%;
+		width:75%;
 		text-align:left;
 		/* height: 220px;
     	overflow: hidden; */
@@ -1780,7 +1785,7 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 	body.music_content div section.section3 table,
 	body.music_content div section.section4 table {
 		display:inline-block;
-		width:65%;
+		width:75%;
 		border-bottom:1px solid lightgray;
 	}
 	body.music_content div section.section3 table td {
@@ -1826,7 +1831,7 @@ div.content_menu>section.magazine_list>ul>li.list_item>a>img {
 		font-size:17px;
 		font-weight:700;
 		color:white;
-		width:120px; height:50px;
+		width:100px; height:40px;
 		padding:8px 0;
 	}
 	body.music_content .btn_style2 {
