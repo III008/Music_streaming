@@ -4,7 +4,7 @@
     
 <%
 	MusicBoardDAO dao = new MusicBoardDAO();
-	/* ArrayList<MusicBoardVO> list = dao.getList(); */
+	ArrayList<MusicBoardVO> list = dao.getList();
 %>
 
 <!DOCTYPE html>
@@ -38,13 +38,15 @@
 							<th>추천</th>
 							<th>조회수</th>
 						</tr>
+						<% for(MusicBoardVO vo : list) { %>
 						<tr>
-							<td>1</td>
-							<td><a href="board_content.jsp">방탄소년단 신곡 너무 좋아요!</a>
-							<td>2020.11.22</td>
-							<td>0</td>
-							<td>70</td>
+							<td><%= vo.getRno() %></td>
+							<td><a href="board_content.jsp?nid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a>
+							<td><%= vo.getBdate() %></td>
+							<td><%= vo.getBrec() %></td>
+							<td><%= vo.getBhits() %></td>
 						</tr>
+						<% } %>
 						<tr>
 							<td colspan="5"> << 1 2 3 4 5 6 7 8 9 10 >> </td>
 						</tr>

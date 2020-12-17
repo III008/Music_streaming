@@ -2,16 +2,21 @@ package com.music.vo;
 
 public class MusicMemberVO {
 	int rno;
-	String name, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr;
+	String bfile, name, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
 	String[] genre;
 	String email, cp, genre_list;
-	
 	
 	public int getRno() {
 		return rno;
 	}
 	public void setRno(int rno) {
 		this.rno = rno;
+	}
+	public String getBfile() {
+		return bfile;
+	}
+	public void setBfile(String bfile) {
+		this.bfile = bfile;
 	}
 	public String getName() {
 		return name;
@@ -75,6 +80,12 @@ public class MusicMemberVO {
 	}
 	public String[] getGenre() {
 		return genre;
+	}
+	public String getMdate() {
+		return mdate;
+	}
+	public void setMdate(String mdate) {
+		this.mdate = mdate;
 	}
 	public void setGenre(String[] genre) {
 		this.genre = genre;

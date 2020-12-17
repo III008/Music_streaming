@@ -21,10 +21,10 @@
 					<form name="joinForm" action="joinProc.jsp" method="get" class="join">
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
-							<!-- <li>
+							<li>
 								<label>프로필사진</label>
 								<input type="file" name="bfile">
-							</li> -->
+							</li>
 							<li>
 								<label><span class="red">*</span>성명</label>
 								<input type="text" name="name" class="f1" id="name">

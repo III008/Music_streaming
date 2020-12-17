@@ -78,6 +78,35 @@ $(document).ready(function(){
 		}
 	});
 	
+	/**
+	 * 게시판 글쓰기 폼 체크
+	 */
+	$("#btnBoardWrite").click(function(){
+		if($("#btitle").val() == "") {
+			alert("제목을 입력해주세요.");
+			$("#btitle").focus();
+			return false;
+		}else {
+			//서버로 전송
+			boardWriteForm.submit();
+		}
+	});
+	
+	
+	/**
+	 * 공지사항 글쓰기 폼 체크
+	 */
+	$("#btnNoticeWrite").click(function(){
+		 if($("#ntitle").val() == "") {
+			 alert("제목을 입력해주세요.");
+			 $("#ntitle").focus();
+			 return false;
+		 }else {
+			 //서버 전송
+			 noticeWriteForm.submit();
+		 }
+	});
+	
 });//ready
 
 
