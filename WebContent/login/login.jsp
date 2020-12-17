@@ -4,10 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-
+<title>Insert title here</title> 
+  <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css"> 
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
