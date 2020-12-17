@@ -948,7 +948,10 @@
 	ul.entire_movie_list li, ul.hot_movie_list>li {
 		display: inline-block;
 	}
-	
+	ul.hot_movie_list img{
+	width:330px;
+	height:150;
+	}
 	ul.entire_movie_list img {
 		width: 220px;
 		heigth: 150px;
