@@ -6,6 +6,7 @@ public class MusicMemberVO {
 	String[] genre;
 	String email, cp, genre_list;
 	
+	
 	public int getRno() {
 		return rno;
 	}
@@ -115,11 +116,4 @@ public class MusicMemberVO {
 		this.genre_list = genre_list;
 	}
 	
-
-/*
- * public String getGenre_list() { String str = ""; if(genre != null) { //폼에서
- * 넘어오는 경우 str = String.join(",", genre); }else { //db에서 넘어오는 경우 str =
- * genre_list; } return str; }
- */
-}
-
+}//class

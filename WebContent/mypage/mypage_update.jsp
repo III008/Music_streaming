@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String id = request.getParameter("id"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -135,20 +136,21 @@
 		<section class="section1">
 		<h1><div>마이페이지</div></h1>
 			<ul class="nav">
-			  	<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">홈</a></li>
+			  	<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp?id=<%= id %>">홈</a></li>
 			  	<li class="dropdown">
 			    <a href="javascript:void(0)" class="dropbtn">보관함</a>
 				    <div class="dropdown-content">
-				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp">음악</a>
-				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp">뮤비</a>
+				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp?id=<%= id %>">음악</a>
+				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp?id=<%= id %>">뮤비</a>
 				    </div>
-				<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_update.jsp">내정보 수정</a></li>
+				<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_update.jsp?id=<%= id %>">내정보 수정</a></li>
 			  	</li>
 			</ul>
 		</section>
 		<section class="section_1">
 				<div>
 					<form name="updateForm" action="mypage_updateProc.jsp" enctype="multipart/form-data" method="post" class="join">
+						<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->>
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>
@@ -161,7 +163,7 @@
 							</li>    
 							<li>
 								<label><span class="red">*</span>아이디</label>
-								<div>hong</div>
+								<div><%= id %></div>
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드</label>

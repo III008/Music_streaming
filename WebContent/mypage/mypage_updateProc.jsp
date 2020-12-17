@@ -31,15 +31,14 @@
         vo.setName(multi.getParameter("name"));
         vo.setPass(multi.getParameter("pass"));
         
-        String email1 = multi.getParameter("email1"); 
-        String email2 = multi.getParameter("email2"); 
-        vo.setEmail(email1+"@"+email2);
+        vo.setEmail1(multi.getParameter("email1")); 
+        vo.setEmail2(multi.getParameter("email2")); 
+        
         vo.setEmail_agr(multi.getParameter("email_agr"));
         
-        String cp1 = multi.getParameter("cp1"); 
-        String cp2 = multi.getParameter("cp2"); 
-        String cp3 = multi.getParameter("cp3"); 
-        vo.setCp(cp1+"-"+cp2+"-"+cp3);
+        vo.setCp1(multi.getParameter("cp1")); 
+        vo.setCp2(multi.getParameter("cp2")); 
+        vo.setCp3(multi.getParameter("cp3")); 
         vo.setSms_agr(multi.getParameter("sms_agr"));
         vo.setGenre(multi.getParameterValues("genre")); 
         
@@ -50,6 +49,19 @@
         System.out.println(vo.getCp());
         System.out.println(vo.getSms_agr());
         System.out.println(vo.getGenre_list());
+        
+        //아이디 넘겨주기
+        /* String id = "test1234"; */
+        String id = multi.getParameter("id");
+        
+        MusicMemberDAO dao = new MusicMemberDAO();
+        boolean result = dao.getUpdate(vo, id);  
+    	
+    	if(result){
+    		response.sendRedirect("mypage_home.jsp?id="+id);
+    	}else{
+    		System.out.println("에러");
+    	}
 
     } catch (Exception e) {
         e.printStackTrace();

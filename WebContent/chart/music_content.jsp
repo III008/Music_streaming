@@ -77,9 +77,9 @@
 			<div>
 				<h3>댓글</h3>
 			</div>
-			<form name="commentWriteForm" action="commentWriteProc.jsp" method="get" class="comment_write">
+			<form name="commentWriteForm" action="commentWriteProc.jsp" method="post" class="comment_write">
 			<div>
-				<input type="hidden" name="id" value="<%= "hong@naver.com" %>"> <!-- 예시 -->
+				<input type="hidden" name="id" value="<%= "test1234" %>"> <!-- 예시 -->
 				<input type="hidden" name="mid" value="<%= vo.getMid() %>">
 				<table class="comment">
 					<tr>
