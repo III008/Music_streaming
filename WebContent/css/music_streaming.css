@@ -1136,6 +1136,11 @@
 		color:gray;
 		font-size:12px;
 	}
+	/**로그인 실패**/
+	div.login>section.section1>div>form.login ul>li>p.loginError{
+		font-size: 13px;
+		color:red;
+	}
 		
 	/*컨텐츠 타이틀 css*/
 	div.content_title{

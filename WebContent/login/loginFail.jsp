@@ -19,18 +19,20 @@
 		</div>
 		<section class="section1">
 			<div>
-			<h2>로그인 실패 임시화면</h2>
-				<form name="loginform" action="loginProc.jsp" method="post" class="login">
+						<form name="loginForm" action="loginProc.jsp" method="post" class="login">
 					<ul>
-						<li><label></label> <input type="text" name="id"
+						<li><input type="text" name="id"
 							placeholder="아이디" id="id"></li>
-						<li><label></label> <input type="text" name="pass"
+						<li><input type="password" name="pass"
 							placeholder="비밀번호" id="pass"></li>
+						<li><p class="loginError">가입하지 않은 아이디이거나,잘못된 비밀번호입니다.</p></li>
 						<li>
-							<button type="button">로그인</button>
+							<button type="button" id="btnLogin">로그인</button>
 						</li>
-						<li><a href="#"><span>아이디/비밀번호 찾기</span></a> <a
-							href="../join/join.jsp"><span>회원가입</span></a></li>
+						<li>
+							<a href="#"><span>아이디/비밀번호 찾기</span></a>
+							<a href="../join/join.jsp"><span>회원가입</span></a>
+						</li>
 					</ul>
 				</form>
 			</div>
