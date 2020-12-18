@@ -174,7 +174,7 @@
 								<label>프로필사진</label>
 								<input type="file" name="file">
 								<% if(vo.getBfile() != null){ %>
-									<span id="fname"><%= vo.getBfile() %></span>
+									<span id="fname"><%= vo.getBfile() %></span> 
 								<% }else{%>
 									<span id="fname">프로필 사진을 등록해주세요</span>
 								<% } %>

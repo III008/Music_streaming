@@ -49,7 +49,7 @@
 	    vo.setGenre(multi.getParameterValues("genre")); 
 		
 	    vo.setBfile(multi.getOriginalFileName("file"));
-	    vo.setBsfile(multi.getFilesystemName("file"));  
+	    vo.setBsfile(multi.getFilesystemName("file"));   
 	    
 	    //DB연동 --> 새로운 파일 있는 경우
 	  	//System.out.println("--------> 파일이 있는 경우(새로운 파일)");
