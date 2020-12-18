@@ -32,6 +32,7 @@
 						<li>
 							<a href="#"><span>아이디/비밀번호 찾기</span></a>
 							<a href="../join/join.jsp"><span>회원가입</span></a>
+							<a href="../manager_index.jsp"><span>관리자페이지 임시이동</span></a>
 						</li>
 					</ul>
 				</form>
