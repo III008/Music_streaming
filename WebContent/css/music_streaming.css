@@ -61,7 +61,7 @@
 		color:rgb(255, 0, 80);
 	}
 	
-	/**로그인**/
+	/**로그인버튼**/
 	div.login_click {
 		text-align:center;
 	}
@@ -1081,23 +1081,20 @@
 		font-weight: bold;
 	}
 	
-	/**login 페이지**/
+/**
+* login 페이지
+*/
 	div.login {
-		margin: auto;
+		text-align:center; 
 		padding-top: 150px;
 		height: 715px;
+
 	}
-	div.login>section.section1>div>form.login {
-		text-align: center;
-	}
-	div.login>section.section1>div>form.login ul>li {
-		 list-style-type: none;
-		padding: 5px;
-	}
-	
+	/**상단 home 배너**/
 	div.login>div{
 		text-align:center;
 		margin-bottom:50px;
+
 	}
 	div.login>div>a{
 		padding: 40px 115px 20px 115px;
@@ -1110,6 +1107,15 @@
 		color: white;
 		font-size:50px;
 		font-weight:900;
+	}
+	/**하단 input,button**/
+	div.login>section.section1>div>form.login{
+		text-align:center;
+
+	}
+	div.login>section.section1>div>form.login ul>li {
+		list-style-type: none;
+		padding: 5px;
 	}
 	div.login>section.section1>div>form.login ul>li>input {
 		padding: 20px 10px;
@@ -1130,6 +1136,12 @@
 	section.section1>div>form li:last-child>a{
 		text-decoration: none;
 		color:gray;
+		font-size:12px;
+	}
+	/**로그인 실패**/
+	div.login>section.section1>div>form.login ul>li>p.loginError{
+		font-size: 13px;
+		color:red;
 	}
 		
 	/*컨텐츠 타이틀 css*/
