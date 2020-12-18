@@ -27,7 +27,9 @@
 							name="update_movie_address"></li>
 						<li><label>내용</label> <textarea name="update_movie_content"></textarea>
 						</li>
-						<li><label>사진첨부</label> <input type="file"
+						<li><label>뮤비사진</label> <input type="file"
+							name="update_movie_file"></li>
+						<li><label>가수사진</label> <input type="file"
 							name="update_movie_file"></li>
 						<li>
 							<button type="button" class="btn_style">수정완료</button>

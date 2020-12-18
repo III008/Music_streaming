@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#btnMovieRegister").click(function(){
+			movieRegisterForm.submit();
+	})
+</script>
 </head>
 <body>
 	<!-- header -->
@@ -15,30 +22,34 @@
 			<section class="section_1">
 				<div>
 					<h1>뮤비 등록</h1>
-					<form name="movieRegisterForm" action="#" method="get" class="admin_movie_register">
+					<form name="movieRegisterForm" action="movieRegisterProc.jsp" method="post" class="admin_movie_register" enctype="multipart/form-data">
 						<ul>
 							<li>
 								<label>가수명</label>
-								<input type="text" name="register_movie_singer">
+								<input type="text" name="vartist" id= "vartist">
 							</li>
 							<li>
 								<label>제 목</label>
-								<input type="text" name="register_movie_title">
+								<input type="text" name="vtitle" id = "vtitle">
 							</li>
 							<li>
 								<label>영상주소</label>
-								<input type="text" name="register_movie_address">
+								<input type="text" name="vcontent" id = "vcontent">
 							</li>
 							<li>
 								<label>내용</label>
-								<textarea name="register_movie_content"></textarea>
+								<textarea name="vintro" id = "vinto"></textarea>
 							</li>
 							<li>
-								<label>파일첨부</label>
-								<input type="file" name="register_movie_file">
+								<label>뮤비사진</label>
+								<input type="file" name="mv_file">
 							</li>
 							<li>
-								<button type="button" class="btn_style">등록</button>
+								<label>가수사진</label>
+								<input type="file" name="art_file">
+							</li>
+							<li>
+								<button type="button" class="btn_style" id = "btnMovieRegister">등록</button>
 								<button type="reset" class="btn_style_2">취소</button>
 								<a href="movie_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</li>
