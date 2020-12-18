@@ -107,26 +107,44 @@ $(document).ready(function(){
 		 }
 	});
 	
+	/**
+	로그인 체크
+ 	*/
+	$("#btnLogin").click(function(){
+		
+			if(!ruleCheck($("#id"))){
+				return false;
+			}else if($("#pass").val() == ""){
+				alert("패스워드를 입력해주세요");
+				$("#pass").focus();
+				return false;
+			}else{
+				loginForm.submit();
+			}		
+		});
+
 });//ready
 
 
-/**
-	정규식 표현
-*/
-function ruleCheck(obj){
-	var regExp = /^[A-Za-z0-9]{4,12}$/;
-	
-	if(obj.val() == ""){
-		alert("아이디를 입력해주세요.");
-		obj.focus();
-		return false;
-	}else {
-		if(regExp.test(obj.val())){
-			return true;
-		}else {
-			alert("영문자/숫자를 포함하여 4~12자리 이내로 작성해주세요.");
+	/**
+		정규식 표현
+	*/
+	function ruleCheck(obj){
+		var regExp = /^[A-Za-z0-9]{4,12}$/;
+		
+		if(obj.val() == ""){
+			alert("아이디를 입력해주세요.");
 			obj.focus();
 			return false;
+		}else {
+			if(regExp.test(obj.val())){
+				return true;
+			}else {
+				alert("영문자/숫자를 포함하여 4~12자리 이내로 작성해주세요.");
+				obj.focus();
+				return false;
+			}
 		}
 	}
-}
+
+

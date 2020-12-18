@@ -94,4 +94,34 @@ public class MusicMemberDAO extends DBConn {
 		
 		return vo;
 	}
+	
+	/**
+	 * login	: 로그인처리
+	 */
+	public int getLogin(MusicMemberVO vo) {
+		int result = 0;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM MUSICMEMBER "
+					+ " WHERE ID=? AND PASS=?";
+			
+			getPreparedStatement(sql);
+			
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPass());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) result = rs.getInt(1);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
 }
