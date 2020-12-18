@@ -41,13 +41,13 @@ public class MusicMemberDAO extends DBConn {
 	}
 	
 	/**
-	 * Update : 회원정보 수정
+	 * Update : 회원정보 수정 - 새로운 파일이 있을 때 
 	 */
 	public boolean getUpdate(MusicMemberVO vo, String id) {
 		boolean result = false;
 		
 		try {
-			String sql = "UPDATE MUSICMEMBER SET NAME=?, PASS=?, EMAIL=?, EMAIL_AGR=?, CP=?, SMS_AGR=?, GENRE_LIST=? WHERE ID=?";
+			String sql = "UPDATE MUSICMEMBER SET NAME=?, PASS=?, EMAIL=?, EMAIL_AGR=?, CP=?, SMS_AGR=?, GENRE_LIST=?, BFILE=?, BSFILE=?, NICKNAME=? WHERE ID=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getName());
@@ -57,7 +57,40 @@ public class MusicMemberDAO extends DBConn {
 			pstmt.setString(5, vo.getCp());
 			pstmt.setString(6, vo.getSms_agr());
 			pstmt.setString(7, vo.getGenre_list());
-			pstmt.setString(8, id);
+			pstmt.setString(8, vo.getBfile());
+			pstmt.setString(9, vo.getBsfile());
+			pstmt.setString(10, vo.getNickname());
+			pstmt.setString(11, id);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Update : 회원정보 수정 - 새로운 파일이 없을 때 
+	 */
+	public boolean getUpdateNofile(MusicMemberVO vo, String id) {
+		boolean result = false;
+		
+		try {
+			String sql = "UPDATE MUSICMEMBER SET NAME=?, PASS=?, EMAIL=?, EMAIL_AGR=?, CP=?, SMS_AGR=?, GENRE_LIST=?, NICKNAME=? WHERE ID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getPass());
+			pstmt.setString(3, vo.getEmail());
+			pstmt.setString(4, vo.getEmail_agr());
+			pstmt.setString(5, vo.getCp());
+			pstmt.setString(6, vo.getSms_agr());
+			pstmt.setString(7, vo.getGenre_list());
+			pstmt.setString(8, vo.getNickname());
+			pstmt.setString(9, id);
 			
 			int val = pstmt.executeUpdate();
 			if(val != 0) result = true;
@@ -76,7 +109,7 @@ public class MusicMemberDAO extends DBConn {
 		MusicMemberVO vo = new MusicMemberVO();
 		
 		try {
-			String sql = "SELECT NAME, ID, EMAIL, CP, GENRE_LIST FROM MUSICMEMBER WHERE ID=?";
+			String sql = "SELECT NAME, ID, EMAIL, CP, GENRE_LIST, NICKNAME, BSFILE, BFILE FROM MUSICMEMBER WHERE ID=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, id);
@@ -88,6 +121,9 @@ public class MusicMemberDAO extends DBConn {
 				vo.setEmail(rs.getString(3));
 				vo.setCp(rs.getString(4));
 				vo.setGenre_list(rs.getString(5));
+				vo.setNickname(rs.getString(6));
+				vo.setBsfile(rs.getString(7));
+				vo.setBfile(rs.getString(8));
 			}
 			
 		} catch (Exception e) {

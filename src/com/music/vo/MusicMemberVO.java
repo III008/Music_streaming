@@ -2,15 +2,22 @@ package com.music.vo;
 
 public class MusicMemberVO {
 	int rno;
-	String bfile, bsfile, name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
+	String name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
 	String[] genre;
 	String email, cp, genre_list;
+	String bfile,bsfile;
 	
-	public int getRno() {
-		return rno;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setRno(int rno) {
-		this.rno = rno;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getMdate() {
+		return mdate;
+	}
+	public void setMdate(String mdate) {
+		this.mdate = mdate;
 	}
 	public String getBfile() {
 		return bfile;
@@ -24,17 +31,17 @@ public class MusicMemberVO {
 	public void setBsfile(String bsfile) {
 		this.bsfile = bsfile;
 	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
 	}
 	public String getId() {
 		return id;
@@ -92,12 +99,6 @@ public class MusicMemberVO {
 	}
 	public String[] getGenre() {
 		return genre;
-	}
-	public String getMdate() {
-		return mdate;
-	}
-	public void setMdate(String mdate) {
-		this.mdate = mdate;
 	}
 	public void setGenre(String[] genre) {
 		this.genre = genre;
