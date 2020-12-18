@@ -2,7 +2,7 @@ package com.music.vo;
 
 public class MusicMemberVO {
 	int rno;
-	String bfile, name, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
+	String bfile, bsfile, name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
 	String[] genre;
 	String email, cp, genre_list;
 	
@@ -18,11 +18,23 @@ public class MusicMemberVO {
 	public void setBfile(String bfile) {
 		this.bfile = bfile;
 	}
+	public String getBsfile() {
+		return bsfile;
+	}
+	public void setBsfile(String bsfile) {
+		this.bsfile = bsfile;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getId() {
 		return id;

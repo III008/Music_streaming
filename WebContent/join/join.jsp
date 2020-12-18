@@ -28,7 +28,11 @@
 							<li>
 								<label><span class="red">*</span>성명</label>
 								<input type="text" name="name" class="f1" id="name">
-							</li>    
+							</li>
+							<li>
+								<label><span class="red">*</span>닉네임</label>
+								<input type="text" name="nickname" class="f1" id="nickname">
+							</li>
 							<li>
 								<label><span class="red">*</span>아이디</label>
 								<input type="text" name="id" class="f1" id="id">

@@ -7,6 +7,10 @@ $(document).ready(function(){
 			alert("이름을 입력해주세요.");
 			$("#name").focus();
 			return false;
+		}else if ($("#nickname").val() == ""){
+			alert("닉네임을 입력해주세요.");
+			$("#nickname").focus();
+			return false;
 		}else if(!ruleCheck($("#id"))){
 			return false;
 		}else if($("#pass").val() == ""){
@@ -108,8 +112,8 @@ $(document).ready(function(){
 	});
 	
 	/**
-	로그인 체크
- 	*/
+	 * 로그인 체크
+  	 */
 	$("#btnLogin").click(function(){
 		
 			if(!ruleCheck($("#id"))){
