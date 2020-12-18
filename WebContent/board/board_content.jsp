@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="com.music.vo.*, com.music.dao.*"%>
+<%
+	String bid = request.getParameter("bid");
+	MusicBoardDAO dao = new MusicBoardDAO();
+	MusicBoardVO vo = dao.getContent(bid);
+	dao.getUpdateHits(bid);
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,27 +30,25 @@
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
-								<a href="board_update.jsp"><button type="button" class="btn_style">수정</button></a>
-								<a href="board_delete.jsp"><button type="button" class="btn_style_2">삭제</button></a>
+								<a href="board_update.jsp?bid=<%=bid%>"><button type="button" class="btn_style">수정</button></a>
+								<a href="board_delete.jsp?bid=<%=bid%>"><button type="button" class="btn_style_2">삭제</button></a>
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7">방탄소년단 신곡 너무 좋아요!</th>
+							<th colspan="7"><%= vo.getBtitle() %></th>
 						</tr>
 						<tr>
-							<td>Anthony Stark</td>
+							<td>음파음파</td>
 							<td>추천</td>
-							<td>0</td>
+							<td><%= vo.getBrec() %></td>
 							<td>조회</td>
-							<td>70</td>
+							<td><%= vo.getBhits() %></td>
 							<td>등록일</td>
-							<td>20.11.22</td>
+							<td><%= vo.getBdate() %></td>
 						</tr>
 						<tr>
 							<td colspan="7">
-								<p> Dynamite 노래 너무 좋아요! <br>
-									다음 앨범도 기대됩니다~ <br><br>
-								</p>
+								<p><%= vo.getBcontent() %></p>
 							</td>
 						</tr>
 					</table>

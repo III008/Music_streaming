@@ -41,7 +41,7 @@
 						<% for(MusicBoardVO vo : list) { %>
 						<tr>
 							<td><%= vo.getRno() %></td>
-							<td><a href="board_content.jsp?nid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a>
+							<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a>
 							<td><%= vo.getBdate() %></td>
 							<td><%= vo.getBrec() %></td>
 							<td><%= vo.getBhits() %></td>
