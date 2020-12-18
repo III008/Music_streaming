@@ -10,7 +10,7 @@
 	$(document).ready(function(){
 		$("#btnMovieRegister").click(function(){
 			movieRegisterForm.submit();
-	})
+	});
 </script>
 </head>
 <body>
