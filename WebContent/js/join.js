@@ -78,6 +78,25 @@ $(document).ready(function(){
 		}
 	});
 	
+	/**
+	로그인 체크
+ 	*/
+	$("#btnLogin").click(function(){
+		
+			if(!ruleCheck($("#id"))){
+				return false;
+			}else if($("#pass").val() == ""){
+				alert("패스워드를 입력해주세요");
+				$("#pass").focus();
+				return false;
+			}else{
+				loginForm.submit();
+			}		
+		});
+		
+		
+		
+		
 });//ready
 
 
@@ -101,3 +120,5 @@ function ruleCheck(obj){
 		}
 	}
 }
+
+
