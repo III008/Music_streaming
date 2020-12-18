@@ -132,16 +132,6 @@
 		
 	});	
 </script>
-<style>
-	span#fname {
-		display:inline-block;
-		width:200px;
-		margin-left:-140px;
-		font-size:16px;
-		background-color:white;
-		padding: 6px 5px 5px 5px;
-	}
-</style>
 <script>
 	$(document).ready(function(){
 		//파일선택
@@ -183,19 +173,23 @@
 							<li>
 								<label>프로필사진</label>
 								<input type="file" name="file">
-								<% if(vo.getFile() != null){ %>
-									<span id="fname"><%= vo.getFile() %></span>
+								<% if(vo.getBfile() != null){ %>
+									<span id="fname"><%= vo.getBfile() %></span>
 								<% }else{%>
 									<span id="fname">프로필 사진을 등록해주세요</span>
 								<% } %>
 							</li>    
 							<li>
 								<label><span class="red">*</span>성명</label>
-								<input type="text" name="name" class="f1" id="name">
+								<input type="text" name="name" class="f1" id="name" value="<%= vo.getName() %>">
 							</li>    
 							<li>
+								<label>닉네임</label>
+								<input type="text" name="nickname" class="f1" id="nickname" value="<%= vo.getNickname() %>">
+							</li>  
+							<li>
 								<label><span class="red">*</span>아이디</label>
-								<div><%= id %></div>
+								<div id="id"><%= vo.getId() %></div>
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드</label>
@@ -209,8 +203,12 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>E-mail</label>
-								<input type="text" name="email1" class="f2" id="email1"> @
-								<input type="text" name="email2" class="f2" id="email2">
+								<% String email[] = vo.getEmail().split("@"); 
+									for(int i=0; i<email.length; i++) {
+										System.out.println(email[i]);
+									} %>
+								<input type="text" name="email1" class="f2" id="email1" value="<%= email[0] %>"> @
+								<input type="text" name="email2" class="f2" id="email2" value="<%= email[1] %>">
 								<select name="email3" class="f3" id="email3">
 									<option value="선택">선택</option>
 									<option value="naver.com">네이버</option>
@@ -222,25 +220,29 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 E-mail</label>
-								<input type="radio" name="email_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="email_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="email_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="email_agr" value="수신거부"checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
-								<select name="cp1" class="hp" id="phone1">
+								<% String phone[] = vo.getCp().split("-"); 
+									for(int i=0; i<phone.length; i++) {
+										System.out.println(phone[i]);
+									} %>
+								<select name="cp1" class="hp" id="phone1" value="<%= phone[0] %>">
 									<option value="선택">선택</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="017">017</option>
 								</select>
-								- <input type="text" name="cp2" class="hp_num" id="phone2">
-								- <input type="text" name="cp3" class="hp_num" id="phone3">
+								- <input type="text" name="cp2" class="hp_num" id="phone2" value="<%= phone[1] %>">
+								- <input type="text" name="cp3" class="hp_num" id="phone3" value="<%= phone[2] %>">
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 SMS</label>
-								<input type="radio" name="sms_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="sms_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="sms_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="sms_agr" value="수신거부" checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label>음악취향</label>

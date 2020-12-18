@@ -36,7 +36,11 @@
 		</section>
 		<section class="section2">
 			<div>
-				<img src="http://localhost:9000/Music_streaming/images/mypage_user.png">
+				<% if(vo.getBsfile() != null){ %>
+					<img src="http://localhost:9000/Music_streaming/images/<%= vo.getBsfile() %>">
+				<% }else { %>
+					<img src="http://localhost:9000/Music_streaming/images/mypage_user.png">
+				<% } %>
 			</div>	
 			<div>
 				<table>
@@ -69,6 +73,11 @@
 						<td><div class="vertical"></div></td>
 						<td>이름</td>
 						<td><%= vo.getName() %></td>
+					</tr>
+					<tr>
+						<td><div class="vertical"></div></td>
+						<td>닉네임</td>
+						<td><%= vo.getNickname() %></td>
 					</tr>
 					<tr>
 						<td><div class="vertical"></div></td>

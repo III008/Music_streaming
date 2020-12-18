@@ -8,7 +8,7 @@
 <%
     //C:\Users\User\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Music_streaming\images
     //1. 파일이 저장되는 경로 설정 : upload폴더 주소
-	String save_path = request.getServletContext().getRealPath("/upload");
+	String save_path = request.getServletContext().getRealPath("/images");
 	System.out.println("path==>>" + save_path);
 			
 	//2. 파일 업로드 사이즈 설정
@@ -34,6 +34,7 @@
 	if(multi.getOriginalFileName("file") != null) {
 	    //수정폼 업로드
 	    vo.setName(multi.getParameter("name"));
+	    vo.setNickname(multi.getParameter("nickname"));
 	    vo.setPass(multi.getParameter("pass"));
 	        
 	    vo.setEmail1(multi.getParameter("email1")); 
@@ -47,8 +48,8 @@
 	    vo.setSms_agr(multi.getParameter("sms_agr"));
 	    vo.setGenre(multi.getParameterValues("genre")); 
 		
-	    vo.setFile(multi.getOriginalFileName("file"));
-	    vo.setFiler(multi.getOriginalFileName("file"));  
+	    vo.setBfile(multi.getOriginalFileName("file"));
+	    vo.setBsfile(multi.getFilesystemName("file"));  
 	    
 	    //DB연동 --> 새로운 파일 있는 경우
 	  	//System.out.println("--------> 파일이 있는 경우(새로운 파일)");
@@ -56,6 +57,7 @@
 	}else {
 		
 		vo.setName(multi.getParameter("name"));
+		vo.setNickname(multi.getParameter("nickname"));
 	    vo.setPass(multi.getParameter("pass"));
 	        
 	    vo.setEmail1(multi.getParameter("email1")); 
@@ -71,17 +73,8 @@
 		
 		//DB연동 --> 새로운 파일 없는 경우 : 기존 파일 유지!!
 		//System.out.println("--------> 파일선택 X, 기존 파일 유지");
-		result = dao.getUpdateNofile(vo, id);   
+		result = dao.getUpdateNofile(vo, id);  
 	}
-     
-    System.out.println(vo.getName());
-    System.out.println(vo.getPass());
-    System.out.println(vo.getEmail());
-    System.out.println(vo.getEmail_agr());
-    System.out.println(vo.getCp());
-    System.out.println(vo.getSms_agr());
-    System.out.println(vo.getGenre_list());
-        
     	
    if(result){
     	response.sendRedirect("mypage_home.jsp?id="+id);

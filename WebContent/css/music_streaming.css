@@ -937,6 +937,27 @@
 		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
 			background-color:white;
 		}
+	body.mypage_update span#fname {
+		display:inline-block;
+		width:200px;
+		margin-left:-140px;
+		font-size:16px;
+		background-color:white;
+		padding: 6px 5px 5px 5px;
+	}
+	body.mypage_update div#id {
+		padding:12px 0;
+		font-size:18px;
+	}
+	body.mypage_update select#phone1,
+	body.mypage_update input#phone2, 
+	body.mypage_update input#phone3 {
+		padding:10px 0;
+	}
+	body.mypage_update input#phone2, 
+	body.mypage_update input#phone3 {
+		padding:9px 10px;
+	}
 	
 /**
 	뮤비 리스트 - 스타일
