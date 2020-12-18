@@ -5,8 +5,21 @@ public class MusicMemberVO {
 	String name, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr;
 	String[] genre;
 	String email, cp, genre_list;
+	String file,filer;
 	
 	
+	public String getFile() {
+		return file;
+	}
+	public void setFile(String file) {
+		this.file = file;
+	}
+	public String getFiler() {
+		return filer;
+	}
+	public void setFiler(String filer) {
+		this.filer = filer;
+	}
 	public int getRno() {
 		return rno;
 	}

@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<% String id = request.getParameter("id"); %>
+    pageEncoding="UTF-8"
+    import="com.music.vo.*, com.music.dao.*, java.util.*"%>
+<%
+	//id 임의로
+	String id = "test1234";
+	MusicMemberDAO dao = new MusicMemberDAO();
+	MusicMemberVO vo = dao.getInfo(id); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,6 +132,27 @@
 		
 	});	
 </script>
+<style>
+	span#fname {
+		display:inline-block;
+		width:200px;
+		margin-left:-140px;
+		font-size:16px;
+		background-color:white;
+		padding: 6px 5px 5px 5px;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		//파일선택
+		$("input[type=file]").on('change', function(){
+			if(window.FileReader){
+				var fileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname").text("").text(fileName);	  //기존 데이터 지우고 fileName 값을 넣음
+			}
+		});
+	});
+</script>
 </head>
 <body class="mypage_update">
 	<!-- header -->
@@ -150,12 +177,17 @@
 		<section class="section_1">
 				<div>
 					<form name="updateForm" action="mypage_updateProc.jsp" enctype="multipart/form-data" method="post" class="join">
-						<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->>
+					<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>
 								<label>프로필사진</label>
 								<input type="file" name="file">
+								<% if(vo.getFile() != null){ %>
+									<span id="fname"><%= vo.getFile() %></span>
+								<% }else{%>
+									<span id="fname">프로필 사진을 등록해주세요</span>
+								<% } %>
 							</li>    
 							<li>
 								<label><span class="red">*</span>성명</label>
