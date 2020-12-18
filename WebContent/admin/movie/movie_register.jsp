@@ -10,6 +10,7 @@
 	$(document).ready(function(){
 		$("#btnMovieRegister").click(function(){
 			movieRegisterForm.submit();
+		});
 	});
 </script>
 </head>
@@ -22,7 +23,7 @@
 			<section class="section_1">
 				<div>
 					<h1>뮤비 등록</h1>
-					<form name="movieRegisterForm" action="movieRegisterProc.jsp" method="post" class="admin_movie_register" enctype="multipart/form-data">
+					<form name="movieRegisterForm" action="movieRegisterProc.jsp" method="post" class="admin_movie_register" enctype="multipart/form-data"">
 						<ul>
 							<li>
 								<label>가수명</label>
@@ -37,16 +38,16 @@
 								<input type="text" name="vcontent" id = "vcontent">
 							</li>
 							<li>
-								<label>내용</label>
-								<textarea name="vintro" id = "vinto"></textarea>
+								<label>영상소개</label>
+								<textarea name="vintro" id = "vintro"></textarea>
 							</li>
 							<li>
 								<label>뮤비사진</label>
-								<input type="file" name="mv_file">
+								<input type="file" name="vfile1">
 							</li>
 							<li>
 								<label>가수사진</label>
-								<input type="file" name="art_file">
+								<input type="file" name="vfile2">
 							</li>
 							<li>
 								<button type="button" class="btn_style" id = "btnMovieRegister">등록</button>

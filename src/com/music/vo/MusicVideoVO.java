@@ -2,12 +2,31 @@ package com.music.vo;
 
 public class MusicVideoVO {
 	int rno, vhits;
-	String vid, video_image, vtitle, vcontent, vintro, vdate, vartist, vartist_image;
-	public String getVartist_image() {
-		return vartist_image;
+	String vid, video_image, vtitle, vcontent, vintro, vdate, vartist, vfile, vsfile, vfile2, vsfile2;
+
+	public String getVfile() {
+		return vfile;
 	}
-	public void setVartist_image(String vartist_image) {
-		this.vartist_image = vartist_image;
+	public void setVfile(String vfile) {
+		this.vfile = vfile;
+	}
+	public String getVsfile() {
+		return vsfile;
+	}
+	public void setVsfile(String vsfile) {
+		this.vsfile = vsfile;
+	}
+	public String getVfile2() {
+		return vfile2;
+	}
+	public void setVfile2(String vfile2) {
+		this.vfile2 = vfile2;
+	}
+	public String getVsfile2() {
+		return vsfile2;
+	}
+	public void setVsfile2(String vsfile2) {
+		this.vsfile2 = vsfile2;
 	}
 	public String getVartist() {
 		return vartist;
