@@ -87,7 +87,7 @@
 			<div>
 				<nav>
 					<div class="title_img">
-						<a href="http://localhost:9000/Music_streaming/index.jsp">
+						<a href="http://localhost:9000/Music_streaming/manager_index.jsp">
 							<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
 						</a>
 					</div>
