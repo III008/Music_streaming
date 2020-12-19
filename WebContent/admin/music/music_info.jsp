@@ -13,38 +13,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-<style>
-	body.music_info table {
-		padding-bottom:100px;
-	}
-	body.music_info table.board_content th{
-		border-bottom:1px solid gray;
-	}
-	body.music_info table.board_content tr#content td:last-child {
-		padding-left:80px;
-		padding-right:200px;
-		text-align:left;
-	}
-	body.music_info table.board_content tr#content:nth-child(3) td {
-		border-top:1px solid white;
-	}
-	body.music_info table.board_content tr#content:nth-child(4) td {
-		border-bottom:1px solid white;
-	}
-	body.music_info table.board_content tr#content td {
-		border-top:1px solid lightgray;
-		color:gray;
-		padding:15px 10px;
-		font-weight:900;
-		font-size:20px;
-	}
-	body.music_info table.board_content tr#content td:last-child {
-		color:black;
-		font-size:16px;
-		font-wieght:none;
-		padding-top:10px;
-	}
-</style>
 </head>
 <body class="music_info">
 	<!-- header -->

@@ -11,15 +11,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-<style>
-	body.music_list tr#list th,
-	body.music_list tr#list td{
-		text-align:center;
-	}
-	body.music_list img#music_image {
-		width:130px; height:130px;
-	}
-</style>
 <script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <script>
 $(document).ready(function(){

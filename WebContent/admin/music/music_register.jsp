@@ -7,23 +7,6 @@
 <title>Insert title here</title>
 <script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-<style>
-	body.music_register ul li#lyrics,
-	body.music_register ul li#music_image{
-		margin-left:50px;
-	}
-	body.music_register textarea#lyrics {
-		resize:none;
-	}
-	body.music_register span#fname {
-		display:inline-block;
-		width:200px;
-		margin-left:-567px;
-		font-size:16px;
-		background-color:white;
-		padding: 6px 5px 4px 5px;
-	}
-</style>
 <script>
 	$(document).ready(function(){
 		

@@ -10,6 +10,6 @@
 	if(result){
 		response.sendRedirect("music_list.jsp");
 	}else{
-		response.sendRedirect("../errorPage.jsp");
+		System.out.println("에러");
 	}
 %>
