@@ -93,7 +93,6 @@
 						</li>
 						<li><button type="button" class="btn_style" id="btnsongRegister">등록완료</button>
 								<button type="reset" class="btn_style_2">취소</button> 
-								<a href="music_info.jsp"><button type="button"class="btn_style_2">이전페이지</button></a> 
 								<a href="music_list.jsp"><button type="button" class="btn_style">목록으로</button></a></li>
 					</ul>
 				</form>

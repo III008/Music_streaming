@@ -98,7 +98,7 @@ public class MusicChartDAO extends DBConn{
 	public MusicChartVO getContent(String mid) {
 		MusicChartVO vo = new MusicChartVO();
 		try {
-			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics from musicchart where mid=?";
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage from musicchart where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, mid);
@@ -112,6 +112,7 @@ public class MusicChartDAO extends DBConn{
 				vo.setLyricist(rs.getString(5));
 				vo.setComposer(rs.getString(6));
 				vo.setLyrics(rs.getString(7));
+				vo.setMusic_simage(rs.getString(8));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
