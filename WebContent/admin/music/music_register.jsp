@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <style>
 	body.music_register ul li#lyrics,
@@ -23,7 +24,6 @@
 		padding: 6px 5px 4px 5px;
 	}
 </style>
-<script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
 <script>
 	$(document).ready(function(){
 		

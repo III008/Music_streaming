@@ -7,6 +7,61 @@ import com.music.vo.MusicChartVO;
 
 public class MusicChartDAO extends DBConn{
 	
+	/**
+	 * Update : 음악정보 수정 - 새로운 파일이 있을 때 
+	 */
+	public boolean updateMusic(MusicChartVO vo, String mid) {
+		boolean result = false;
+		
+		try {
+			String sql = "UPDATE MUSICCHART SET MUSIC_IMAGE=?, MUSIC_SIMAGE=?, SONG=?, ARTIST=?, LYRICIST=?, COMPOSER=?, LYRICS=? WHERE MID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getMusic_image());
+			pstmt.setString(2, vo.getMusic_simage());
+			pstmt.setString(3, vo.getSong());
+			pstmt.setString(4, vo.getArtist());
+			pstmt.setString(5, vo.getLyricist());
+			pstmt.setString(6, vo.getComposer());
+			pstmt.setString(7, vo.getLyrics());
+			pstmt.setString(8, mid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Update : 음악정보 수정 - 새로운 파일이 없을 때 
+	 */
+	public boolean updateMusicNofile(MusicChartVO vo, String mid) {
+		boolean result = false;
+		
+		try {
+			String sql = "UPDATE MUSICCHART SET SONG=?, ARTIST=?, LYRICIST=?, COMPOSER=?, LYRICS=? WHERE MID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getSong());
+			pstmt.setString(2, vo.getArtist());
+			pstmt.setString(3, vo.getLyricist());
+			pstmt.setString(4, vo.getComposer());
+			pstmt.setString(5, vo.getLyrics());
+			pstmt.setString(6, mid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	
 	/**
 	 * Insert : 음악 등록 - 앨범커버 있을 때 
@@ -98,7 +153,7 @@ public class MusicChartDAO extends DBConn{
 	public MusicChartVO getContent(String mid) {
 		MusicChartVO vo = new MusicChartVO();
 		try {
-			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage from musicchart where mid=?";
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, mdate from musicchart where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, mid);
@@ -113,6 +168,7 @@ public class MusicChartDAO extends DBConn{
 				vo.setComposer(rs.getString(6));
 				vo.setLyrics(rs.getString(7));
 				vo.setMusic_simage(rs.getString(8));
+				vo.setMdate(rs.getString(9));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

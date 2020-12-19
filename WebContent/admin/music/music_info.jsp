@@ -57,8 +57,8 @@
 						<tr>
 							<td colspan="3">
 								<a href="music_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
-								<a href="music_update.jsp"><button type="button" class="btn_style">수정</button></a>
-								<a href="music_delete.jsp"><button type="button" class="btn_style_2">삭제</button></a>
+								<a href="music_update.jsp?mid=<%= mid %>"><button type="button" class="btn_style">수정</button></a>
+								<a href="music_delete.jsp?mid=<%= mid %>"><button type="button" class="btn_style_2">삭제</button></a>
 							</td>
 						</tr>
 						<tr>
