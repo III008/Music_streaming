@@ -48,8 +48,6 @@
 				alert("성명을 입력해주세요");
 				$("#name").focus();
 				return false;
-			}else if(!ruleCheck($("#id"), re, id_msg1, id_msg2)){
-				return false;
 			}else if($("#pass").val() == ""){
 				alert("비밀번호를 입력해주세요");
 				$("#pass").focus();
@@ -82,13 +80,9 @@
 				alert("전화번호를 입력해주세요");
 				$("#phone3").focus();
 				return false;
-			}else if($("input:radio:checked").length == 0){
-				alert("연령대를 선택해주세요");
-				rdo_list[0].focus();
-				return false;
-			}else if(nameCheckCount("hobby") == 0){
-				alert("취미를 선택해주세요");
-				document.getElementById("")
+			}else if($("input[name='genre']:checked").length == 0){
+				alert("음악취향 선택해주세요");
+				document.getElementById("");
 				return false;
 			}else{
 				//폼이름.submit()
@@ -217,8 +211,8 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 E-mail</label>
-								<input type="radio" name="email_agr" value="수신동의"><span class="rchk">수신동의</span>
-								<input type="radio" name="email_agr" value="수신거부"checked><span class="rchk">수신거부</span>
+								<input type="radio" name="email_agr"><span class="rchk">수신동의</span>
+								<input type="radio" name="email_agr" checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
@@ -235,11 +229,11 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 SMS</label>
-								<input type="radio" name="sms_agr" value="수신동의"><span class="rchk">수신동의</span>
-								<input type="radio" name="sms_agr" value="수신거부" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="sms_agr"><span class="rchk">수신동의</span>
+								<input type="radio" name="sms_agr" checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
-								<label>음악취향</label>
+								<label><span class="red">*</span>음악취향</label>
 								<input type="checkbox" name="genre" value="발라드"><span class="rchk">발라드</span>
 								<input type="checkbox" name="genre" value="댄스"><span class="rchk">댄스</span>
 								<input type="checkbox" name="genre" value="랩/힙합"><span class="rchk">랩/힙합</span>
