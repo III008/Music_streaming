@@ -98,9 +98,9 @@
 					</div>
 					<ul>
 						<li>
-							<a href="http://localhost:9000/Music_streaming/music/music_chart.jsp">
+							<a href="http://localhost:9000/Music_streaming/admin/music/music_list.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/music.png">
-								<span>차트</span>
+								<span>음악 관리</span>
 							</a>
 						</li>
 						<li>

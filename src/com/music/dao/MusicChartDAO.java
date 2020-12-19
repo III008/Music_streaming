@@ -7,15 +7,45 @@ import com.music.vo.MusicChartVO;
 
 public class MusicChartDAO extends DBConn{
 	
+	
 	/**
-	 * 
+	 * Insert : À½¾Ç µî·Ï - ¾Ù¹üÄ¿¹ö ÀÖÀ» ¶§ 
+	 */
+	public boolean registerMusic(MusicChartVO vo) {
+		boolean result = false;
+		
+		try {
+			String sql = "INSERT INTO MUSICCHART VALUES('m_'||SEQU_COMMENTID.nextval,"
+					+ "?,?,?,?,?,?,?,0,SYSDATE)";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getMusic_image());
+			pstmt.setString(2, vo.getMusic_simage());
+			pstmt.setString(3, vo.getSong());
+			pstmt.setString(4, vo.getArtist());
+			pstmt.setString(5, vo.getLyricist());
+			pstmt.setString(6, vo.getComposer());
+			pstmt.setString(7, vo.getLyrics());
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Insert : ´ñ±Û µî·Ï
 	 */
 	public boolean getCommentInsert(MusicChartVO vo, String id, String mid) {
 		boolean result = false;
 		
 		try {
 			String sql = "INSERT INTO MUSICCOMMENT VALUES('comm_'||SEQU_COMMENTID.nextval,"
-					+ "?,SYSDATE,?,?)";
+					+ "?,SYSDATE,?,0,?)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, id);
@@ -97,7 +127,7 @@ public class MusicChartDAO extends DBConn{
 		ArrayList<MusicChartVO> list = new ArrayList<MusicChartVO>();
 		
 		try {
-			String sql = "SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, MDATE\r\n" + 
+			String sql = "SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, MDATE, MUSIC_SIMAGE\r\n" + 
 					"FROM (SELECT * FROM MUSICCHART ORDER BY MDATE DESC)";
 			
 			getPreparedStatement(sql);
@@ -112,6 +142,7 @@ public class MusicChartDAO extends DBConn{
 				vo.setArtist(rs.getString(5));
 				vo.setMhits(rs.getInt(6));
 				vo.setMdate(rs.getString(7));
+				vo.setMusic_simage(rs.getString(8));
 				
 				list.add(vo);
 			}

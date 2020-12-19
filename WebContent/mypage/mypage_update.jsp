@@ -203,10 +203,7 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>E-mail</label>
-								<% String email[] = vo.getEmail().split("@"); 
-									for(int i=0; i<email.length; i++) {
-										System.out.println(email[i]);
-									} %>
+								<% String email[] = vo.getEmail().split("@");%>
 								<input type="text" name="email1" class="f2" id="email1" value="<%= email[0] %>"> @
 								<input type="text" name="email2" class="f2" id="email2" value="<%= email[1] %>">
 								<select name="email3" class="f3" id="email3">
@@ -225,10 +222,7 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
-								<% String phone[] = vo.getCp().split("-"); 
-									for(int i=0; i<phone.length; i++) {
-										System.out.println(phone[i]);
-									} %>
+								<% String phone[] = vo.getCp().split("-"); %>
 								<select name="cp1" class="hp" id="phone1" value="<%= phone[0] %>">
 									<option value="선택">선택</option>
 									<option value="010">010</option>
