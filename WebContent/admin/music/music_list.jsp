@@ -83,7 +83,7 @@ $(document).ready(function(){
 						<td><%= list2.get(i).getRno() %></td>
 						<td><img id="music_image"
 							src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_simage() %>"></td>
-						<td><a href="music_info.jsp"><%= list2.get(i).getSong() %></a></td>
+						<td><a href="music_info.jsp?mid=<%= list2.get(i).getMid() %>"><%= list2.get(i).getSong() %></a></td>
 						<td><%= list2.get(i).getArtist() %></td>
 						<td><%= list2.get(i).getMhits() %></td>
 						<td><%= list2.get(i).getMdate() %></td>
