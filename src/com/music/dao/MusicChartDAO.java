@@ -8,6 +8,28 @@ import com.music.vo.MusicChartVO;
 public class MusicChartDAO extends DBConn{
 	
 	/**
+	 * Delete : 음악 삭제
+	 */
+	public boolean getDelete(String mid) {
+		boolean result = false;
+		
+		try {
+			String sql = "delete from musicchart where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
 	 * Update : 음악정보 수정 - 새로운 파일이 있을 때 
 	 */
 	public boolean updateMusic(MusicChartVO vo, String mid) {
