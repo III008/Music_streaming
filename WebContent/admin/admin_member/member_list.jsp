@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="com.music.vo.*, com.music.dao.*, java.util.*" %>
-    
 <%
-	MusicBoardDAO dao = new MusicBoardDAO();
-	
+	MusicMemberDAO dao = new MusicMemberDAO();
+
 	//1. 선택한 페이지값
 	String rpage = request.getParameter("rpage");
 	
@@ -34,9 +33,8 @@
 		end = pageSize;
 	}
 	
-	ArrayList<MusicBoardVO> list = dao.getList(start, end);
+	ArrayList<MusicMemberVO> list = dao.getList(start, end);
 %>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -73,46 +71,41 @@
 	</head>
 	<body>
 		<!-- header -->
-		<jsp:include page="../header.jsp"></jsp:include>
+		<jsp:include page="../../manager_header.jsp" />
 		
 		<!-- content -->
-		<div class="content_board">
+		<div class="content_admin_member">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
-					<table class="board">
+					<h1>회원 관리</h1>
+					<table class="admin_member_list">
 						<tr>
-							<td colspan="5">
-								<a href="board_write.jsp">
-									<button type="button" class="btn_style">글쓰기</button>
-								</a>  
-							</td>
+							<th>번호</th>
+							<th>아이디</th>
+							<th>성명</th>
+							<th>닉네임</th>
+							<th>휴대폰 번호</th>
+							<th>가입 일자</th>
 						</tr>
-						<tr>
-							<th>no</th>
-							<th>제목</th>
-							<th>등록일</th>
-							<th>추천</th>
-							<th>조회수</th>
-						</tr>
-						<% for(MusicBoardVO vo : list) { %>
+						<% for(MusicMemberVO vo : list){ %>
 						<tr>
 							<td><%= vo.getRno() %></td>
-							<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a>
-							<td><%= vo.getBdate() %></td>
-							<td><%= vo.getBrec() %></td>
-							<td><%= vo.getBhits() %></td>
+							<td><a href="member_content.jsp?id=<%= vo.getId() %>"><%= vo.getId() %></a></td>
+							<td><%= vo.getName() %></td>
+							<td><%= vo.getNickname() %></td>
+							<td><%= vo.getCp() %></td>
+							<td><%= vo.getMdate() %></td>						
 						</tr>
 						<% } %>
 						<tr>
-							<td colspan="5"><div id="ampaginationsm"></div></td>
+							<td colspan="6"><div id="ampaginationsm"></div></td>
 						</tr>
 					</table>
 				</div>
-			</section>
+			</section>		
 		</div>
 		
 		<!-- footer -->
-		<jsp:include page="../footer.jsp"></jsp:include>
+		<jsp:include page="../../footer.jsp" />
 	</body>
 </html>

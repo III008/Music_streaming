@@ -12,7 +12,7 @@
 			<section class="sc1">
 				<nav>
 					<ul>
-						<li><a href="#">공지사항</a></li>
+						<li><a href="http://localhost:9000/Music_streaming/notice/notice_list.jsp">공지사항</a></li>
 						<li><a href="#">(구)네이버뮤직</a></li>
 						<li><a href="#">개인정보처리방침</a></li>
 						<li><a href="#">네이버 이용약관</a></li>

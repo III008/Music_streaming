@@ -14,7 +14,7 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 		
 		<!-- content -->
-		<div class="content_joinSuc">   
+		<div class="content_joinSuc">
 			<section class="section_1">
 				<div>
 					<h1>회원가입</h1>

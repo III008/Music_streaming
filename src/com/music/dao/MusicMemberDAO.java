@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import com.music.vo.MusicMemberVO;
 
 public class MusicMemberDAO extends DBConn {
-	
 	/**
 	 * insert 회원가입
 	 */
@@ -14,7 +13,7 @@ public class MusicMemberDAO extends DBConn {
 		boolean result = false;
 		
 		try {
-			String sql = " insert into musicmember values(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+			String sql = " INSERT INTO MUSICMEMBER VALUES(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getBfile());
@@ -39,6 +38,108 @@ public class MusicMemberDAO extends DBConn {
 		}
 		return result;
 	}
+	
+	
+	/**
+	 * List : 회원 전체 리스트
+	 */
+	public ArrayList<MusicMemberVO> getList(){
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+		
+		try {
+			String sql =  " SELECT ROWNUM RNO, ID, NAME, NICKNAME, CP, TO_CHAR(MDATE,'yyyy.mm.dd') MDATE"
+					+ " FROM (SELECT * FROM MUSICMEMBER ORDER BY MDATE DESC)";
+			
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	/**
+	 * List : 회원 전체 리스트
+	 */
+	public ArrayList<MusicMemberVO> getList(int start, int end){
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+		
+		try {
+			String sql =  " SELECT * FROM (SELECT ROWNUM RNO, ID, NAME, NICKNAME, CP, TO_CHAR(MDATE,'yyyy.mm.dd') MDATE"
+					+ " FROM (SELECT * FROM MUSICMEMBER ORDER BY MDATE DESC))"
+					+ " WHERE RNO BETWEEN ? AND ?";
+			
+			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	/**
+	 * Content : 회원 상세 정보
+	 */
+	public MusicMemberVO getContent(String id) {
+		MusicMemberVO vo = new MusicMemberVO();
+		
+		try {
+			String sql = " SELECT ID, BFILE, BSFILE, NAME, NICKNAME, CP, TO_CHAR(MDATE,'yyyy.mm.dd') MDATE, EMAIL, GENRE_LIST"
+						+ " FROM MUSICMEMBER WHERE ID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setId(rs.getString(1));
+				vo.setBfile(rs.getString(2));
+				vo.setBsfile(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setNickname(rs.getString(5));
+				vo.setCp(rs.getString(6));
+				vo.setMdate(rs.getString(7));
+				vo.setEmail(rs.getString(8));
+				vo.setGenre_list(rs.getString(9));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return vo;
+	}
+	
 	
 	/**
 	 * Update : 회원정보 수정 - 새로운 파일이 있을 때 
@@ -72,6 +173,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 	
+	
 	/**
 	 * Update : 회원정보 수정 - 새로운 파일이 없을 때 
 	 */
@@ -101,6 +203,7 @@ public class MusicMemberDAO extends DBConn {
 		
 		return result;
 	}
+	
 	
 	/**
 	 * Select : 특정 멤버 정보 출력
@@ -133,8 +236,9 @@ public class MusicMemberDAO extends DBConn {
 		return vo;
 	}
 	
+	
 	/**
-	 * login	: 로그인처리
+	 * login : 로그인처리
 	 */
 	public int getLogin(MusicMemberVO vo) {
 		int result = 0;
@@ -159,7 +263,26 @@ public class MusicMemberDAO extends DBConn {
 	}
 	
 	
+	/**
+	 * 전체 리스트 카운트
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = " SELECT COUNT(*) FROM MUSICBOARD";
+			
+			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	
 	
-	
-}
+}//CLASS

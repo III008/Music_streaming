@@ -15,6 +15,28 @@
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
+		<style>
+			span#fname {
+				/* border:1px solid red; */
+				display:inline-block;
+				width:150px;
+				margin-left:-575px; 
+				font-size:12px;
+				background-color:white;
+				padding:2px 0 0 2px;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				//파일선택
+				$("input[type=file]").on('change',function(){
+					if(window.FileReader){
+						var fileName = $(this)[0].files[0].name;
+						$("#fname").text("").text(fileName);
+					}
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<!-- header -->
@@ -25,7 +47,8 @@
 			<section class="section_1">
 				<div>
 					<h1>게시판</h1>
-					<form name="boardUpdateForm" action="boardUpdateProc.jsp" method="post" class="board_update">
+					<form name="boardUpdateForm" action="boardUpdateProc.jsp" method="post"
+						class="board_update" enctype="multipart/form-data">
 						<input type="hidden" name="bid" value="<%=bid%>">
 						<ul>
 							<li>
@@ -38,7 +61,11 @@
 							</li>
 							<li>
 								<label>파일첨부</label>
-								<input type="file" name="bfile">
+								<% if(vo.getBfile() != null){ %>
+								<input type="file" name="bfile"><span id="fname"><%=vo.getBfile() %></span>
+								<% }else{ %>
+								<input type="file" name="bfile"><span id="fname">선택된 파일 없음</span>
+								<% } %>
 							</li>
 							<li>
 								<button type="submit" class="btn_style">수정완료</button>

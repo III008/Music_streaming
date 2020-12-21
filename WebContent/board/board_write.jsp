@@ -18,7 +18,8 @@
 			<section class="section_1">
 				<div>
 					<h1>게시판</h1>
-					<form name="boardWriteForm" action="boardWriteProc.jsp" method="get" class="board_write">
+					<form name="boardWriteForm" action="boardWriteProc.jsp" method="post"
+					class="board_write"	enctype="multipart/form-data">
 						<ul>
 							<li>
 								<label>제 목</label>

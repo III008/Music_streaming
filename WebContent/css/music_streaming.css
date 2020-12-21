@@ -29,10 +29,8 @@
 	div.title_img>a>img {
 		width:200px;
 		height:140px;
-		/* border:1px solid red; */
 	}
 	header nav>ul>li {
-		/* border: 1px solid red; */
 		padding:6px 5px 5px 25px;
 		clear:both;
 		margin:10px 0;
@@ -43,10 +41,8 @@
 		margin-right:15px;
 		display:inline-block;
 		float:left;
-		/* border:1px solid white; */
 	}
 	nav>ul>li>a>span {
-		/* border:1px solid violet; */
 		display:inline-block;
 		margin:10px 0;
 		color:rgb(241, 241, 241);
@@ -55,9 +51,6 @@
 	}
 	nav>ul>li>a>span:hover {
 		/* text-decoration:underline; */
-		color:white;
-	}
-	nav>ul>li>a>span:active {
 		color:rgb(255, 0, 80);
 	}
 	
@@ -81,8 +74,29 @@
 	}
 	
 	div.login_click>a:hover {
+		text-decoration:none;
 		color:rgb(255, 0, 80);
 	}
+	
+	.menu a{
+       	cursor:pointer;
+    }
+    .menu ul.hide {
+       	display:none;
+    }
+    ul.hide li {
+    	margin:10px 0 0 55px;
+    }
+    ul.hide a {
+    	display:inline-block;
+    	text-decoration:none;
+       	color:white; font-size:18px;
+       	padding:2px 0;
+    }
+    ul.hide a:hover {
+    	color:rgb(255,0,80);
+    	text-decoration:none;
+    }
 
 
 /**
@@ -198,7 +212,7 @@
 	section.section_1>div>form, section.section_1>div>table, table.board_content_rp,
 	table.board_content_reg, table.board_content_title, table.notice_content_rp,
 	table.notice_content_reg, table.notice_content_title,
-	section.section_1>div>div.notice_menu1 {
+	section.section_1>div>div.notice_menu1, table.admin_member_list {
 		width:80%;
 		margin:auto;
 	}
@@ -209,7 +223,7 @@
 		font-size:14px;
 		font-weight:500;
 		color:white;
-		width:25%;
+		width:100px;
 		height:35px;
 	}
 	.btn_style_2 {
@@ -218,49 +232,55 @@
 		font-family:"나눔바른고딕";
 		font-size:14px;
 		font-weight:500;
-		width:25%;
+		width:100%;
 		height:35px;
 	}
 	
 	
 /**
 	게시판 리스트, 공지사항 리스트
+	관리자 - 뮤비
 */
-	table.board, table.notice, table.ask, table.admin_movie_list {
+	table.board, table.notice, table.ask, table.admin_movie_list,
+	table.admin_member_list {
 		border-top:1px solid black;
 		border-bottom:1px solid black;
 		border-collapse:collapse;
 	}
-	table.board td, table.notice td, table.ask td, table.admin_movie_list td {
+	table.board td, table.notice td, table.ask td, table.admin_movie_list td,
+	table.admin_member_list td  {
 		border-top:1px solid rgb(213, 213, 213);
 	}
-	table.board th, table.notice th, table.ask th {
+	table.board th, table.notice th, table.ask th, table.admin_member_list th {
 		border-bottom:1px solid #333;
 	}
 	table.board th, table.board td, table.notice th, table.notice td, table.ask th,
-		table.ask td, table.admin_movie_list th, table.admin_movie_list td {
+	table.ask td, table.admin_movie_list th, table.admin_movie_list td,
+	table.admin_member_list th, table.admin_member_list td,
+	table.admin_member_content th, table.admin_member_content td {
 		padding:12px 0;
 		color:black;
 		font-size:17px;
 	}
-	table.board td>a, table.notice td>a, table.ask td>a, table.admin_movie_list td>a {
+	table.board td>a, table.notice td>a, table.ask td>a, table.admin_movie_list td>a,
+	table.admin_member_list td>a {
 		color:black;
 	}
-	table.board th, table.notice th, table.ask th {
-		/* background-color:rgb(213,213,213); */
-		color:rgb(255, 0, 80);
-		/* font-size:17px; */
+	table.board th, table.notice th, table.ask th,
+	table.admin_movie_list th, table.admin_member_list th, table.admin_member_content th {
+		color:rgb(255,0,80);
 	}
 	table.board tr td:first-child, table.board tr td:nth-child(3), table.board tr td:nth-child(4),
 	table.board tr td:last-child, table.notice tr td:first-child, table.notice tr td:nth-child(3),
 	table.notice tr td:last-child, table.ask tr td:first-child, table.ask tr td:nth-child(2),
 	table.ask tr td:nth-child(4), table.ask tr td:last-child, table.admin_movie_list tr td:nth-child(1),
-	table.admin_movie_list tr td:nth-child(3), table.admin_movie_list tr td:nth-child(4) {
+	table.admin_movie_list tr td:nth-child(3), table.admin_movie_list tr td:nth-child(4),
+	table.admin_member_list tr {
 		text-align:center;
 	}
-	
 	table.board tr td:nth-child(2) a, table.notice tr td:nth-child(2) a,
-	table.ask tr td:nth-child(3) a, table.admin_movie_list tr td:nth-child(2) a	{
+	table.ask tr td:nth-child(3) a, table.admin_movie_list tr td:nth-child(2) a,
+	table.admin_member_list tr td:nth-child(2) a {
 		text-decoration:none;
 	}
 	table.board tr:first-child td, table.admin_movie_list tr:first-child td {
@@ -277,22 +297,25 @@
 		margin-top:10px;
 	}
 	table.board tr:last-child td, table.notice tr:last-child td, table.ask tr:last-child td,
-	table.admin_movie_list tr:last-child td {
+	table.admin_movie_list tr:last-child td, table.admin_member_list tr:last-child td {
 		border:1px solid white;
 		border-top:1px solid black;
 		padding:15px 0 100px 0;
 	}
-	table.board tr:hover, table.notice tr:hover, table.ask tr:hover, table.admin_movie_list tr:hover {
+	table.board tr:hover, table.notice tr:hover, table.ask tr:hover, table.admin_movie_list tr:hover,
+	table.admin_member_list tr:hover {
 		background-color:rgb(240, 240, 240);
 	}
 	table.board tr td:nth-child(2):hover, table.notice tr td:nth-child(2):hover,
-	table.ask tr td:nth-child(3):hover, table.admin_movie_list  tr td:nth-child(2):hover {
+	table.ask tr td:nth-child(3):hover, table.admin_movie_list  tr td:nth-child(2):hover,
+	table.admin_member_list tr td:nth-child(2):hover {
 		text-decoration:underline;
 	}
 	table.board tr:first-child:hover, table.board tr:nth-child(2), table.board tr:last-child:hover,
 	table.notice tr:first-child:hover, table.notice tr:last-child:hover,
 	table.ask tr:first-child:hover, table.ask tr:last-child:hover,
-	table.admin_movie_list tr:first-child:hover, table.admin_movie_list tr:last-child:hover {
+	table.admin_movie_list tr:first-child:hover, table.admin_movie_list tr:last-child:hover,
+	table.admin_member_list tr:last-child:hover {
 		background-color:white;
 		text-decoration:none;
 	}
@@ -334,8 +357,29 @@
 		color:white;
 		background-color:rgb(255, 0, 80);
 	}
+	div.content_admin_member h1 {
+		margin-bottom:50px;
+	}
 	
+/**
+	관리자 - 회원 관리
+*/
+	table.admin_member_content {
+	 	border-top:1px solid black;
+		/* border-bottom:1px solid black; */
+		border-collapse:collapse;
+	}
+	table.admin_member_content tr:last-child td {
+		border-top:1px solid black;
+		text-align:right;
+		padding:15px 0 100px 0;
+	}
+	table.admin_member_content tr:nth-child(2), table.admin_member_content tr:nth-child(3),
+	table.admin_member_content tr:nth-child(4) {
+		border-top:1px solid rgb(213, 213, 213)
+	}
 	
+
 /**
 	게시판 콘텐츠, 공지사항 콘텐츠
 */
@@ -476,7 +520,8 @@
 	
 	
 /**
-	게시판 스타일 - 글쓰기, 수정폼 / 관리자 노래/뮤비 등록&수정
+	게시판 스타일 - 글쓰기, 수정폼
+	관리자 - 노래 , 뮤비 등록&수정
 */	
 	form.board_write, form.board_update,
 	form.admin_movie_update, form.admin_movie_register,
@@ -567,7 +612,8 @@
 	
 	
 /**
-	게시판 스타일 - 삭제 / 관리자 음악&뮤비 삭제
+	게시판 스타일 - 삭제
+	관리자 - 음악&뮤비 삭제
 */
 	form.board_delete, form.admin_movie_delete, form.admin_music_delete {
 		padding-top:50px;
