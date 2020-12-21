@@ -18,11 +18,21 @@
 <script>
 	$(document).ready(function(){
 		
+		var imgfileName = "";
+		var musicfileName = "";
+		
 		//파일선택
-		$("input[type=file]").on('change', function(){
+		$("input[type=file]#music_image").on('change', function(){
 			if(window.FileReader){
-				var fileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
-				$("#fname").text("").text(fileName);//기존 데이터 지우고 fileName 값을 넣음
+				imgfileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname_album").text("").text(imgfileName);//기존 데이터 지우고 fileName 값을 넣음
+			}
+		});
+		
+		$("input[type=file]#music_file").on('change', function(){
+			if(window.FileReader){
+				musicfileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname_music").text("").text(musicfileName);//기존 데이터 지우고 fileName 값을 넣음
 			}
 		});
 		
@@ -45,14 +55,10 @@
 				alert("작곡가를 입력해주세요");
 				$("#composer").focus();
 				return false;
-			/* }else if($("#lyrics").val() == ""){
+			}else if($("#lyrics").val() == ""){
 				alert("가사를 입력해주세요");
 				$("#lyrics").focus();
-				return false; */
-			/* }else if($("#fname").val() == "null"){
-				alert("앨범커버 입력해주세요");
-				$("#music_image").focus();
-				return false; */
+				return false;
 			}else{
 				//폼이름.submit()
 				musicUpdateForm.submit();
@@ -79,14 +85,17 @@
 						<li><label>아티스트</label> <input type = "text" name="artist" id="artist" value ="<%= vo.getArtist() %>"></li>
 						<li><label>작사가</label> <input type = "text" name="lyricist" id="lyricist" value ="<%= vo.getLyricist() %>"></li>
 						<li><label>작곡가</label> <input type = "text" name="composer" id="composer" value ="<%= vo.getComposer() %>"></li>
-						<li  id="lyrics"><label>가사</label> <textarea name="lyrics" id="lyrics"><%= vo.getLyrics() %></textarea>
+						<li class="lyrics"><label>가사</label><textarea name="lyrics" id="lyrics"><%= vo.getLyrics() %></textarea></li>
+						<li class="music_image"><label>앨범커버</label> 
+							<input type="file" name="music_image" id="music_image" value="<%= vo.getMusic_image() %>">
+							<span id="fname_album" class="fname"><%= vo.getMusic_image() %></span>
 						</li>
-						<li id="music_image"><label>앨범커버</label> <input type="file" name="music_image" id="music_image">
-							<span id="fname"><%= vo.getMusic_image() %></span>
+						<li class="music_file"><label>음악파일</label> 
+							<input type="file" name="music_file" id="music_file" value="<%= vo.getMusic_file() %>">
+							<span id="fname_music" class="fname"><%= vo.getMusic_file() %></span>
 						</li>
 						<li>
 							<button type="button" class="btn_style" id="musicbtnUpdate">수정완료</button>
-							<button type="reset" class="btn_style_2">취소</button> 
 							<a href="music_info.jsp?mid=<%= mid %>">
 								<button type="button"class="btn_style_2">이전페이지</button></a> 
 							<a href="music_list.jsp">

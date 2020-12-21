@@ -47,6 +47,28 @@
 <script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script> <!-- 제이쿼리 라이브러리 -->
 <script>
 $(document).ready(function(){
+	
+	//페이지 번호 및 링크
+	var pager = jQuery("#ampaginationsm").pagination({
+		maxSize : 5,
+		totals : <%= dbCount %>,
+		page : <%= reqPage %>,
+		pageSize : <%= pageSize %>,
+		
+		lastText : '&raquo;&raquo', /* 공백주기 */
+		firstText : '&laquo;&laquo',
+		prevText : '&laquo',
+		nextText : '&raquo',
+		
+		btnSize : 'sm'
+	});
+	
+	//
+	jQuery("#ampaginationsm").on('am.pagination.change',function(e){
+		$(location).attr('href','http://localhost:9000/Music_streaming/admin/music/music_list.jsp?rpage='+e.page);  
+		//location.href('이동페이지');
+	});
+	
 	/** 전체선택 **/
 	$("#all").change(function(){
 		//$("all:checked").length == 0
@@ -71,30 +93,6 @@ $(document).ready(function(){
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 	});
 });//ready
-</script>
-<script>
-	$(document).ready(function(){
-		//페이지 번호 및 링크
-		var pager = jQuery("#ampaginationsm").pagination({
-			maxSize : 5,
-			totals : <%= dbCount %>,
-			page : <%= reqPage %>,
-			pageSize : <%= pageSize %>,
-			
-			lastText : '&raquo;&raquo', /* 공백주기 */
-			firstText : '&laquo;&laquo',
-			prevText : '&laquo',
-			nextText : '&raquo',
-			
-			btnSize : 'sm'
-		});
-		
-		//
-		jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-			$(location).attr('href','http://localhost:9000/Music_streaming/admin/music/music_list.jsp?rpage='+e.page);  
-			//location.href('이동페이지');
-		});
-	});
 </script>
 </head>
 
@@ -127,10 +125,11 @@ $(document).ready(function(){
 					</tr>
 					<% for(int i=0; i<list2.size(); i++){ %>
 					<tr id="list">
-						<td><input type="checkbox" name="chk" id="<%= (i+1) %>"></td>
+						<% int row = (Integer.parseInt(rpage)-1)*5 + (i+1); %>
+						<td><input type="checkbox" name="chk" id="<%= row %>"></td>
 						<td><%= list2.get(i).getRno() %></td>
 						<td><img id="music_image"
-							src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_simage() %>"></td>
+							src="http://localhost:9000/Music_streaming/upload/<%= list2.get(i).getMusic_simage() %>"></td>
 						<td><a href="music_info.jsp?mid=<%= list2.get(i).getMid() %>"><%= list2.get(i).getSong() %></a></td>
 						<td><%= list2.get(i).getArtist() %></td>
 						<td><%= list2.get(i).getMhits() %></td>
