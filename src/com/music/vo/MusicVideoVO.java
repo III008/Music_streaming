@@ -2,19 +2,20 @@ package com.music.vo;
 
 public class MusicVideoVO {
 	int rno, vhits;
-	String vid, video_image, vtitle, vcontent, vintro, vdate, vartist, vfile, vsfile, vfile2, vsfile2;
+	String vid, video_image, vtitle, vcontent, vintro, vdate, vartist, vfile1, vsfile1, vfile2, vsfile2;
 
-	public String getVfile() {
-		return vfile;
+	
+	public String getVfile1() {
+		return vfile1;
 	}
-	public void setVfile(String vfile) {
-		this.vfile = vfile;
+	public void setVfile1(String vfile1) {
+		this.vfile1 = vfile1;
 	}
-	public String getVsfile() {
-		return vsfile;
+	public String getVsfile1() {
+		return vsfile1;
 	}
-	public void setVsfile(String vsfile) {
-		this.vsfile = vsfile;
+	public void setVsfile1(String vsfile1) {
+		this.vsfile1 = vsfile1;
 	}
 	public String getVfile2() {
 		return vfile2;

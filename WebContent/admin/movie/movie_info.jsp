@@ -22,20 +22,18 @@
 				<h1>뮤비 관리</h1>
 				<table class="admin_movie_info">
 					<tr>
-						<td colspan="4"><a href="movie_list.jsp"><button
-									type="button" class="btn_style">목록으로</button></a></td>
-						<td colspan="3"><a href="movie_update.jsp"><button
-									type="button" class="btn_style">수정</button></a> <a
-							href="movie_delete.jsp?vid=<%= vid %>"><button type="button"
-									class="btn_style_2">삭제</button></a></td>
+						<td colspan="4"><a href="movie_list.jsp">
+						<button type="button" class="btn_style">목록으로</button></a></td>
+						<td colspan="3"><a href="movie_update.jsp?vid=<%= vid %>">
+						<button type="button" class="btn_style">수정</button></a> <a
+							href="movie_delete.jsp?vid=<%= vid %>">
+						<button type="button"class="btn_style_2">삭제</button></a></td>
 					</tr>
 					<tr>
 						<th colspan="7"><%=vo.getVtitle() %></th>
 					</tr>
 					<tr>
-					<% if(vo.getVsfile2() != null){ %>
-					<td><img src = "http://localhost:9000/Music_streaming/upload/<%=vo.getVsfile2()%>>"></td>
-						<% } %>
+					<td><img src ="http://localhost:9000/Music_streaming/upload/<%=vo.getVsfile2()%>"></td>
 						<td><%=vo.getVartist() %></td>
 						<td><%=vo.getVdate() %></td>
 					</tr>

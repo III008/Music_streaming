@@ -6,7 +6,8 @@
 	 String vartist = request.getParameter("vartist");
 	 MusicVideoDAO dao = new MusicVideoDAO();
 	 MusicVideoVO vo = dao.getContent(vid);
-	 
+	 dao.getUpdateHits(vid);
+	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vo);
 	 %>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@
 				<div>
 					<div>
 						<img
-							src="http://localhost:9000/Music_streaming/images/<%=vo.getVartist_image() %>">
+							src="http://localhost:9000/Music_streaming/upload/<%=vo.getVsfile2() %>">
 						<span><%=vo.getVartist() %></span>
 					</div>
 				</div>
@@ -44,12 +45,13 @@
 			<div class="same_artist">같은 아티스트의 뮤직비디오</div>
 			<div>
 				<ul class="recommend_movie_list">
-					<li><a href="#"><img
-							src=""></a>
+				<%for(MusicVideoVO vo2 : samelist){ %>
+					<li><a href="movie_content.jsp?vid=<%=vo2.getVid()  %>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
 						<dl>
-							<dt></dt>
-							<dt></dt>
+							<dt><%=vo2.getVartist() %></dt>
+							<dt><%=vo2.getVtitle() %></dt>
 						</dl></li>
+						<%} %>
 				</ul>
 			</div>
 		</section>

@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+	 import="com.music.vo.*, com.music.dao.*"%>
+	 
+	 <%
+	String vid= request.getParameter("vid");
+	 MusicVideoDAO dao = new MusicVideoDAO();
+	 MusicVideoVO vo = dao.getContent(vid);
+	%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,27 +23,21 @@
 		<section class="section_1">
 			<div>
 				<h1>뮤비 수정</h1>
-				<form name="movieUpdateForm" action="#" method="get"
-					class="admin_movie_update">
+				<form name="movieUpdateForm" action="movieUpdateProc.jsp" method="post"
+					class="admin_movie_update" enctype="multipart/form-data">
+					<input type="hidden" name="vid" value="<%=vid%>">
 					<ul>
-						<li><label>가수명</label> <input type="text"
-							name="update_movie_singer" value="BLACKPINK"></li>
-						<li><label>제목</label> <input type="text"
-							name="update_movie_title" value="HOW LIKE THAT"></li>
-						<li><label>영상주소</label> <input type="text"
-							name="update_movie_address"></li>
-						<li><label>내용</label> <textarea name="update_movie_content"></textarea>
-						</li>
-						<li><label>뮤비사진</label> <input type="file"
-							name="update_movie_file"></li>
-						<li><label>가수사진</label> <input type="file"
-							name="update_movie_file"></li>
+						<li><label>가수명</label> <input type="text" name="vartist" value="<%=vo.getVartist()%>"></li>
+						<li><label>노래제목</label> <input type="text"name="vtitle" value="<%=vo.getVtitle()%>"></li>
+						<li><label>영상주소</label> <input type="text"name="vcontent" value = "<%= vo.getVcontent()%>"></li>
+						<li><label>영상소개</label> <textarea name="vintro"placeholder = "<%=vo.getVintro()%>"></textarea></li>
+						<li><label>뮤비사진</label> <input type="file"name="vfile1"><%=vo.getVfile1() %></li>
+						<li><label>가수사진</label> <input type="file"name="vfile2"><%=vo.getVfile2() %></li>
 						<li>
-							<button type="button" class="btn_style">수정완료</button>
-							<button type="reset" class="btn_style_2">취소</button> <a
-							href="movie_info.jsp"><button type="button"
-									class="btn_style_2">이전페이지</button></a> <a href="movie_list.jsp"><button
-									type="button" class="btn_style">목록으로</button></a>
+							<button type="submit" class="btn_style">수정완료</button>
+							<button type="reset" class="btn_style_2">취소</button> 
+							<a href="movie_info.jsp?vid=<%= vid %>"><button type="button"class="btn_style_2">이전페이지</button></a> 
+							<a href="movie_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 						</li>
 					</ul>
 				</form>

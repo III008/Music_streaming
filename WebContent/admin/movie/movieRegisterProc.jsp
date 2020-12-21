@@ -14,8 +14,8 @@
 	vo.setVtitle(multi.getParameter("vtitle"));
 	vo.setVcontent(multi.getParameter("vcontent"));
 	vo.setVintro(multi.getParameter("vintro"));
-	vo.setVfile(multi.getOriginalFileName("vfile1"));
-	vo.setVsfile(multi.getFilesystemName("vfile1 "));	
+	vo.setVfile1(multi.getOriginalFileName("vfile1"));
+	vo.setVsfile1(multi.getFilesystemName("vfile1"));	
 	
 	vo.setVfile2(multi.getOriginalFileName("vfile2"));
 	vo.setVsfile2(multi.getFilesystemName("vfile2"));
@@ -27,6 +27,6 @@
 		response.sendRedirect("movie_list.jsp");
 	}else{
 		
-		response.sendRedirect("../errorPage.jsp");
+		response.sendRedirect("../../errorPage.jsp");
 	}
 %>

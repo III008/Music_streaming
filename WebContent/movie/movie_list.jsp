@@ -6,9 +6,10 @@
 	String vid = request.getParameter("vid");
 	MusicVideoDAO dao = new MusicVideoDAO();
 	ArrayList<MusicVideoVO> list = dao.getList();
-	ArrayList<MusicVideoVO> hotlist = dao.getHotList();
-	
+	ArrayList<MusicVideoVO> list2 = dao.getHotList();
 	dao.getUpdateHits(vid);
+	
+	
 	%>
 <!DOCTYPE html>
 <html>
@@ -31,9 +32,8 @@
 			<div class="hot_movie">
 				<div>인기 뮤비</div>
 				<ul class="hot_movie_list">
-				<%for (MusicVideoVO vo: hotlist){ %>
-					<li><a href="movie_content.jsp?vid=<%= vo.getVid() %>"><img
-							src="http://localhost:9000/Music_streaming/images/<%= vo.getVideo_image() %>"></a>
+				<% for (MusicVideoVO vo: list2){  %>
+					<li><a href="movie_content.jsp?vid=<%= vo.getVid() %>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
 						<dl>
 							<dt><%= vo.getVtitle() %></dt>
 							<dt><%=vo.getVartist() %></dt>
@@ -49,7 +49,7 @@
 				<ul class="entire_movie_list">
 					<div class = "A">
 					<%for (MusicVideoVO vo :list){ %>
-					<li><a href="movie_content.jsp?vid=<%=vo.getVid()  %>"><img src="http://localhost:9000/Music_streaming/images/<%= vo.getVideo_image() %>"></a>
+					<li><a href="movie_content.jsp?vid=<%=vo.getVid()  %>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
 						<dl>
 							<dt><%=vo.getVtitle() %></dt>
 							<dt><%=vo.getVartist() %></dt>
@@ -58,8 +58,6 @@
 					</li>
 						<%} %>
 						</div>
-						
-						
 						<div class = "B">
 						</div>
 				</ul>
