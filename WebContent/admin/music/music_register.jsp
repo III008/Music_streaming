@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://localhost:9000/MyWeb/js/jquery-3.5.1.min.js"></script>
+<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <script>
 	$(document).ready(function(){
