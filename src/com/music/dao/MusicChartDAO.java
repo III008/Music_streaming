@@ -8,6 +8,27 @@ import com.music.vo.MusicChartVO;
 public class MusicChartDAO extends DBConn{
 	
 	/**
+	 * 전체 row count
+	 * @return
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = "select count(*) from musicchart";
+			
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
 	 * Delete : 음악 삭제
 	 */
 	public boolean getDelete(String mid) {
@@ -210,6 +231,41 @@ public class MusicChartDAO extends DBConn{
 					"FROM (SELECT * FROM MUSICCHART ORDER BY MDATE DESC)";
 			
 			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicChartVO vo = new MusicChartVO();
+				vo.setMid(rs.getString(1));
+				vo.setRno(rs.getInt(2));
+				vo.setMusic_image(rs.getString(3));
+				vo.setSong(rs.getString(4));
+				vo.setArtist(rs.getString(5));
+				vo.setMhits(rs.getInt(6));
+				vo.setMdate(rs.getString(7));
+				vo.setMusic_simage(rs.getString(8));
+				
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	/**
+	 * List : 최신 TOP5차트 - 페이징
+	 */
+	public ArrayList<MusicChartVO> getList2(int start, int end){
+		ArrayList<MusicChartVO> list = new ArrayList<MusicChartVO>();
+		
+		try {
+			String sql = "SELECT * FROM (SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, MDATE, MUSIC_SIMAGE\r\n" + 
+					"FROM (SELECT * FROM MUSICCHART ORDER BY MDATE DESC)) WHERE RNO BETWEEN ? AND ?";
+			
+			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
