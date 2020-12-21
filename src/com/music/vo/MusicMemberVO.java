@@ -2,10 +2,9 @@ package com.music.vo;
 
 public class MusicMemberVO {
 	int rno;
-	String name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
+	String bfile, bsfile, name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
 	String[] genre;
 	String email, cp, genre_list;
-	String bfile,bsfile;
 	
 	public String getNickname() {
 		return nickname;

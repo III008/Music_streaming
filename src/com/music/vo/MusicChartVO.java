@@ -1,10 +1,16 @@
 package com.music.vo;
 
 public class MusicChartVO {
-	String mid, music_image, song, artist, lyricist, composer, lyrics, mdate;
+	String mid, music_image, music_simage, song, artist, lyricist, composer, lyrics, mdate;
 	int rno, mhits;
 	String comm_id, id, comm_date, comment_write;
 	
+	public String getMusic_simage() {
+		return music_simage;
+	}
+	public void setMusic_simage(String music_simage) {
+		this.music_simage = music_simage;
+	}
 	public String getMid() {
 		return mid;
 	}

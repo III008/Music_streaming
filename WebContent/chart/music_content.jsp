@@ -98,7 +98,7 @@
 							<td colspan="2"><div id="id"><a><%= vo1.getId() %></a></div></td>
 						</tr>
 						<tr>
-							<td colspan="2"><div id="date"><label><%= vo1.getComm_date() %></label></div></td>
+				 			<td colspan="2"><div id="date"><label><%= vo1.getComm_date() %></label></div></td>
 						</tr>
 						<tr>
 							<td colspan="2"><div id="comment_write"><label><%= vo1.getComment_write() %></label></div></td>

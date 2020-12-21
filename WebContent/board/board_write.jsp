@@ -6,6 +6,8 @@
 		<meta charset="UTF-8">
 		<title>board_write</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
 	</head>
 	<body>
 		<!-- header -->
@@ -16,11 +18,12 @@
 			<section class="section_1">
 				<div>
 					<h1>게시판</h1>
-					<form name="boardWriteForm" action="#" method="get" class="board_write">
+					<form name="boardWriteForm" action="boardWriteProc.jsp" method="post"
+					class="board_write"	enctype="multipart/form-data">
 						<ul>
 							<li>
 								<label>제 목</label>
-								<input type="text" name="btitle">
+								<input type="text" name="btitle" id="btitle">
 							</li>
 							<li>
 								<label>내 용</label>
@@ -31,7 +34,7 @@
 								<input type="file" name="bfile">
 							</li>
 							<li>
-								<button type="button" class="btn_style">등록</button>
+								<button type="button" class="btn_style" id="btnBoardWrite">등록</button>
 								<button type="reset" class="btn_style_2">취소</button>
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</li>
