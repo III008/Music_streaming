@@ -13,10 +13,13 @@ public class MusicBoardDAO extends DBConn {
 		int result = 0;
 		
 		try {
-			String sql = " select count(*) from musicboard";
+			String sql = " SELECT COUNT(*) FROM MUSICBOARD";
+			
 			getPreparedStatement(sql);
+			
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) result = rs.getInt(1);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -156,10 +159,9 @@ public class MusicBoardDAO extends DBConn {
 		ArrayList<MusicBoardVO> list = new ArrayList<MusicBoardVO>();
 		
 		try {
-			String sql = " select * from (select rownum rno, bid, btitle, "
-					+ " to_char(bdate, 'yyyy.mm.dd'), brec, bhits"
-					+ " from (select * from musicboard order by bdate desc))"
-					+ " where rno between ? and ?";
+			String sql = " SELECT * FROM (SELECT ROWNUM RNO, BID, BTITLE, TO_CHAR(BDATE,'yyyy.mm.dd') BDATE, BREC, BHITS"
+						+ " FROM (SELECT * FROM MUSICBOARD ORDER BY MDATE DESC))"
+						+ " WHERE RNO BETWEEN ? AND ?";
 			
 			getPreparedStatement(sql);
 			pstmt.setInt(1, start);
