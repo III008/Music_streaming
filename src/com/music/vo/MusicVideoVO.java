@@ -2,7 +2,7 @@ package com.music.vo;
 
 public class MusicVideoVO {
 	int rno, vhits;
-	String vid, video_image, vtitle, vcontent, vintro, vdate, vartist, vfile1, vsfile1, vfile2, vsfile2;
+	String vid,  vtitle, vcontent, vintro, vdate, vartist, vfile1, vsfile1, vfile2, vsfile2;
 
 	
 	public String getVfile1() {
@@ -53,12 +53,7 @@ public class MusicVideoVO {
 	public void setVid(String vid) {
 		this.vid = vid;
 	}
-	public String getVideo_image() {
-		return video_image;
-	}
-	public void setVideo_image(String video_image) {
-		this.video_image = video_image;
-	}
+
 	public String getVtitle() {
 		return vtitle;
 	}

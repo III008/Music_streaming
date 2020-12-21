@@ -15,7 +15,7 @@
 	MusicVideoDAO dao = new MusicVideoDAO();
 	boolean result = false;
 	
-	//뮤비사진, 가수사진 둘다 수정할때 
+	//뮤비사진, 가수사진 둘다 수정할 때 
 	if((multi.getOriginalFileName("vfile1")!=null) && (multi.getOriginalFileName("vfile2")!=null)){
 		vo.setVid(multi.getParameter("vid"));
 		vo.setVtitle(multi.getParameter("vtitle"));
@@ -26,10 +26,9 @@
 		vo.setVfile2(multi.getOriginalFileName("vfile2"));
 		vo.setVsfile2(multi.getFilesystemName("vfile2"));
 		
-	
 		result = dao.getUpdate(vo);
 		
-	//뮤비사진만 수정할때
+	//뮤비사진만 수정할 때
 	}else if(multi.getOriginalFileName("vfile1")!=null ){
 		vo.setVid(multi.getParameter("vid"));
 		vo.setVartist(multi.getParameter("vartist"));
@@ -41,7 +40,7 @@
 		
 		result = dao.getUpdateVfile1(vo);
 		
-	//가수사진만 수정할때
+	//가수사진만 수정할 때
 	}else if(multi.getOriginalFileName("vfile2")!=null ){
 		vo.setVid(multi.getParameter("vid"));
 		vo.setVartist(multi.getParameter("vartist"));
@@ -53,13 +52,14 @@
 		
 		result = dao.getUpdateVfile2(vo);
 		
-	//뮤비사진, 가수사진 둘다 변경하지 않을 때 
+	//뮤비사진, 가수사진 둘다 수정하지 않을 때 
 	}else if((multi.getOriginalFileName("vfile1") ==null) && (multi.getOriginalFileName("vfile2")==null)){
 		vo.setVid(multi.getParameter("vid"));
 		vo.setVartist(multi.getParameter("vartist"));
 		vo.setVtitle(multi.getParameter("vtitle"));
 		vo.setVcontent(multi.getParameter("vcontent"));
 		vo.setVintro(multi.getParameter("vinto"));
+		
 		result = dao.getUpdateNofile(vo);
 	}
 	
