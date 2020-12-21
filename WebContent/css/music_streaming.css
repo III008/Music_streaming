@@ -172,7 +172,71 @@
 	div a:hover {
 		text-decoration:underline;
 	}
+	#navbar {
+		width:100%;
+	  	overflow: hidden;
+	  	/* border-bottom: 1px solid #717D85;
+  		border-top: 1px solid #717D85; */
+  		margin: 0;
+  		padding: 0 0 0 12px;
+  		position: -webkit-sticky;
+  		position: sticky;
+  		top: -1px;
+  		background-color: #CCC;
+	}
 	
+	/* Navbar links */
+	#navbar a {
+		color:rgb(255, 0, 80);
+	  float: left;
+	  display: block;
+	  font-size:20px;
+	  font-weight:900;
+	  text-align: center;
+	  padding: 14px;
+	  text-decoration: none;
+	  
+	}
+	
+	/* Page content */
+	.content2 {
+	  padding: 50px;
+	}
+	
+	/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+	.sticky {
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	}
+	
+	/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+	.sticky + .content2 {
+		border-top: 1px solid #CCC;
+	  	padding-top: 60px;
+	}
+	section.movie {
+		padding-bottom:100px;
+	}
+	section.magazine2 div.content2 div,
+	section.music iframe, section.music img,
+	section.movie iframe {
+		padding:0 13px;
+	}
+	section.music img {
+		margin-top:-345px;
+	}
+	section.carousel {
+		padding:30px 0;
+	}
+	section.magazine table.tb tr:first-child td:nth-child(2) {
+		height:35px;
+		padding:30px 0;
+	}
+	section.magazine table.tb tr:nth-child(2){
+		height:50px;
+		padding:40px 0;
+	}
 	
 /**
 	footer
@@ -1850,4 +1914,78 @@
 	
 	body.music_content .btn_like .ani_heart_m {
 	    margin: -63px 0 0 -63px;
+	}
+
+/**
+	* 음악관리자 페이지
+**/
+	
+	/* music_info.jsp */
+	body.music_info table {
+		padding-bottom:100px;
+	}
+	body.music_info table.board_content th{
+		border-bottom:1px solid gray;
+	}
+	body.music_info table.board_content tr#content td:last-child {
+		padding-left:80px;
+		padding-right:200px;
+		text-align:left;
+	}
+	body.music_info table.board_content tr#content:nth-child(3) td {
+		border-top:1px solid white;
+	}
+	body.music_info table.board_content tr#content:nth-child(4) td {
+		border-bottom:1px solid white;
+	}
+	body.music_info table.board_content tr#content td {
+		border-top:1px solid lightgray;
+		color:gray;
+		padding:15px 10px;
+		font-weight:900;
+		font-size:20px;
+	}
+	body.music_info table.board_content tr#content td:last-child {
+		color:black;
+		font-size:16px;
+		font-wieght:none;
+		padding-top:10px;
+	}
+	
+	/* music_list.jsp */
+	body.music_list tr#list th,
+	body.music_list tr#list td{
+		text-align:center;
+	}
+	body.music_list img#music_image {
+		width:130px; height:130px;
+	}
+	
+	/* music_register.jsp */
+	/* music_update.jsp */
+	body.music_register ul li#lyrics,
+	body.music_register ul li#music_image,
+	body.music_update ul li#lyrics,
+	body.music_update ul li#music_image{
+		margin-left:50px;
+	}
+	body.music_register textarea#lyrics,
+	body.music_update textarea#lyrics {
+		resize:none;
+	}
+	body.music_register span#fname,
+	body.music_update span#fname {
+		display:inline-block;
+		width:200px;
+		margin-left:-567px;
+		font-size:16px;
+		background-color:white;
+		padding: 6px 5px 4px 5px;
+	}
+	
+/**
+	* button
+**/
+	button {
+		cursor:pointer;
 	}
