@@ -1,10 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import ="com.music.dao.*, com.music.vo.*"
+    %>
+<%
+	String mid = request.getParameter("mid");
+	MusicMagazineDAO dao = new MusicMagazineDAO();
+	MusicMagazineVO vo = dao.getContent(mid);
+%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>board_content</title>
+		<title>notice_content</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 	</head>
 	<body>
@@ -12,37 +19,38 @@
 		<jsp:include page="../../manager_header.jsp"></jsp:include>
 		
 		<!-- content -->
-		<div class="content_board">
+		<div class="content_notice">
 			<section class="section_1">
 				<div>
-					<h1>매거진 관리</h1>
-					<table class="board_content">
+					<h1>매거진</h1>
+					<table class="notice_content">
 						<tr>
-							<td colspan="4">
-								<a href="magazine_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
-							</td>
-							<td colspan="3">
-								<a href="magazine_update.jsp"><button type="button" class="btn_style">수정</button></a>
-								<a href="magazine_delete.jsp"><button type="button" class="btn_style_2">삭제</button></a>
+							<td colspan="7">
+								<a href="magazine_list.jsp?mid=<%=mid%>"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="magazine_update.jsp?mid=<%=vo.getMid()%>"><button type="button" class="btn_style">수정하기</button></a>
+								<a href="magazine_delete.jsp?mid=<%=vo.getMid()%>"><button type="button" class="btn_style">삭제하기</button></a>
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7">매거진등록 미완성</th>
-							
+							<th colspan="6"><%= vo.getMtitle() %></th>
 						</tr>
 						<tr>
-							<td>매거진등록 미완성</td>
-							<td>추천</td>
-							<td>0</td>
+							<td>Admin</td>
+						<!-- 	<td>추천</td>
+							<td>0</td> -->
 							<td>조회</td>
-							<td>70</td>
+							<td><%= vo.getMhits() %></td>
 							<td>등록일</td>
-							<td>2020.12.05</td>
+							<td><%= vo.getMdate() %></td>
 						</tr>
 						<tr>
 							<td colspan="7">
-								<p> 매거진  <br>
-								</p>
+								<p>
+									<%= vo.getMcontent().replace("\r\n", "<br>")%><br>
+									<% if(vo.getMsfile() != null){ %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getMsfile()%>"width="50%"  >
+							 		<% } %>
+							   </p>
 							</td>
 						</tr>
 					</table>
@@ -50,10 +58,7 @@
 			</section>
 			
 			<section class="section_2">
-				<div>
-				
-						
-				</div>
+	
 			</section>
  		</div>
 		
