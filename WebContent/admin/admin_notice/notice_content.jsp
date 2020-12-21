@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import ="com.music.dao.*, com.music.vo.*"
+    %>
+<%
+	String nid = request.getParameter("nid");
+	MusicNoticeDAO dao = new MusicNoticeDAO();
+	MusicNoticeVO vo = dao.getContent(nid);
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,31 +22,35 @@
 		<div class="content_notice">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
+					<h1>공지사항</h1>
 					<table class="notice_content">
 						<tr>
 							<td colspan="7">
-								<a href="notice_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
-								<a href="notice_update.jsp"><button type="button" class="btn_style">수정하기</button></a>
+								<a href="notice_list.jsp?nid=<%=nid%>"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="notice_update.jsp?nid=<%=vo.getNid()%>"><button type="button" class="btn_style">수정하기</button></a>
+								<a href="notice_delete.jsp?nid=<%=vo.getNid()%>"><button type="button" class="btn_style">삭제하기</button></a>
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7">[VIBE 업데이트] Windows 10에서 만나는 VIBE</th>
+							<th colspan="6"><%= vo.getNtitle() %></th>
 						</tr>
 						<tr>
 							<td>Admin</td>
-							<td>추천</td>
-							<td>0</td>
+						<!-- 	<td>추천</td>
+							<td>0</td> -->
 							<td>조회</td>
-							<td>70</td>
+							<td><%= vo.getNhits() %></td>
 							<td>등록일</td>
-							<td>20.12.01</td>
+							<td><%= vo.getNdate() %></td>
 						</tr>
 						<tr>
 							<td colspan="7">
-								<p> 공지사항<br>
-									공지사항<br><br>
-								</p>
+								<p>
+									<%= vo.getNcontent().replace("\r\n", "<br>")  %><br>
+									<% if(vo.getNsfile() != null){ %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getNsfile()%>"width="50%"  >
+							 		<% } %>
+							   </p>
 							</td>
 						</tr>
 					</table>

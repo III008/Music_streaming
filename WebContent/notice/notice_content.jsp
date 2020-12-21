@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.music.vo.*, com.music.dao.*"%>
+<%
+	String nid = request.getParameter("nid");
+	MusicNoticeDAO dao = new MusicNoticeDAO();
+	MusicNoticeVO vo = dao.getContent(nid);
+	dao.getUpdateHits(nid);
+%>     
+    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,21 +30,24 @@
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7">[VIBE 업데이트] Windows 10에서 만나는 VIBE</th>
+							<th colspan="7"><%= vo.getNtitle() %></th>
 						</tr>
 						<tr>
-							<td>Anthony Stark</td>
-							<td>추천</td>
-							<td>0</td>
+							<td>Admin</td>
+						<!-- 	<td>추천</td>
+							<td>0</td> -->
 							<td>조회</td>
-							<td>70</td>
+							<td><%= vo.getNhits() %></td>
 							<td>등록일</td>
-							<td>20.12.01</td>
+							<td><%= vo.getNdate() %></td>
 						</tr>
 						<tr>
 							<td colspan="7">
-								<p> 공지사항<br>
-									공지사항<br><br>
+								<p>
+									<%= vo.getNcontent().replace("\r\n", "<br>")  %><br>
+									<% if(vo.getNsfile() != null){ %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getNsfile()%>"width="50%"  >
+							 		<% } %>
 								</p>
 							</td>
 						</tr>
@@ -45,7 +55,7 @@
 				</div>
 			</section>
 			
-			<section class="section_2">
+	<!-- 		<section class="section_2">
 				<div>
 					<table class="notice_content_title">
 						<tr>
@@ -60,7 +70,7 @@
 					</table>
 				</div>
 			</section>
- 		</div>
+ 		</div> -->
 		
 		<!-- footer -->
 		<jsp:include page="../footer.jsp"></jsp:include>
