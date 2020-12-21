@@ -33,17 +33,18 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+
 	/**
-	 * 전체리스트 출력
+	 * 뮤비 전체리스트 출력
 	 */
-	public ArrayList<MusicVideoVO> getList(){
+	public ArrayList<MusicVideoVO> getList() {
 		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
 		try {
 			String sql = "select rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vdate, vhits  from musicvideo";
 			getPreparedStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				MusicVideoVO vo = new MusicVideoVO();
 				vo.setRno(rs.getInt(1));
 				vo.setVid(rs.getString(2));
@@ -57,26 +58,27 @@ public class MusicVideoDAO extends DBConn {
 				vo.setVsfile2(rs.getString(10));
 				vo.setVdate(rs.getString(11));
 				vo.setVhits(rs.getInt(12));
-				
+
 				list.add(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return list;
-		
+
 	}
+
 	/**
-	 * 상세 정보 출력 
+	 * 뮤비 상세 정보 출력
 	 */
 	public MusicVideoVO getContent(String vid) {
 		MusicVideoVO vo = new MusicVideoVO();
 		try {
-			String sql = "select vtitle, vartist, vdate, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2  from musicvideo where vid =?";
+			String sql = "select vtitle, vartist, vdate, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vhits  from musicvideo where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vid);
 			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				vo.setVtitle(rs.getString(1));
 				vo.setVartist(rs.getString(2));
 				vo.setVdate(rs.getString(3));
@@ -86,12 +88,14 @@ public class MusicVideoDAO extends DBConn {
 				vo.setVsfile1(rs.getString(7));
 				vo.setVfile2(rs.getString(8));
 				vo.setVsfile2(rs.getString(9));
+				vo.setVhits(rs.getInt(10));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return vo;
 	}
+
 	/**
 	 * 뮤비 삭제
 	 */
@@ -103,16 +107,17 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(1, vid);
 			int val = pstmt.executeUpdate();
 
-			if(val !=0) {
+			if (val != 0) {
 				result = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			}
+		}
 		return result;
 	}
+
 	/**
-	 * 뮤비 수정
+	 * 뮤비사진&가수사진 둘다 변경할 때 
 	 */
 	public boolean getUpdate(MusicVideoVO vo) {
 		boolean result = false;
@@ -127,9 +132,9 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(6, vo.getVfile2());
 			pstmt.setString(7, vo.getVsfile2());
 			pstmt.setString(8, vo.getVid());
-			
+
 			int val = pstmt.executeUpdate();
-			if(val !=0) {
+			if (val != 0) {
 				result = true;
 			}
 		} catch (Exception e) {
@@ -138,6 +143,10 @@ public class MusicVideoDAO extends DBConn {
 		return result;
 	}
 	
+	/**
+	 * 뮤비 사진만 변경할 떄
+	 */
+
 	public boolean getUpdateVfile1(MusicVideoVO vo) {
 		boolean result = false;
 		try {
@@ -149,9 +158,9 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(4, vo.getVfile1());
 			pstmt.setString(5, vo.getVsfile1());
 			pstmt.setString(6, vo.getVid());
-			
+
 			int val = pstmt.executeUpdate();
-			if(val !=0) {
+			if (val != 0) {
 				result = true;
 			}
 		} catch (Exception e) {
@@ -159,6 +168,11 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+	
+	/**
+	 *  가수사진만 변경 할 때
+	 */
+
 	public boolean getUpdateVfile2(MusicVideoVO vo) {
 		boolean result = false;
 		try {
@@ -170,9 +184,9 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(4, vo.getVfile2());
 			pstmt.setString(5, vo.getVsfile2());
 			pstmt.setString(6, vo.getVid());
-			
+
 			int val = pstmt.executeUpdate();
-			if(val !=0) {
+			if (val != 0) {
 				result = true;
 			}
 		} catch (Exception e) {
@@ -180,18 +194,22 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+
+	/**
+	 * 뮤비사진&가수사진 모두 변경하지 않을 때 
+	 */
 	public boolean getUpdateNofile(MusicVideoVO vo) {
 		boolean result = false;
 		try {
 			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? where vid= ?";
-			
+
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
-			pstmt.setString(3, vo.getVintro());			
-			pstmt.setString(4, vo.getVid());			
+			pstmt.setString(3, vo.getVintro());
+			pstmt.setString(4, vo.getVid());
 			int val = pstmt.executeUpdate();
-			if(val !=0) {
+			if (val != 0) {
 				result = true;
 			}
 		} catch (Exception e) {
@@ -199,19 +217,19 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+
 	/**
 	 * 인기 뮤비 출력
 	 */
-	
-	public ArrayList<MusicVideoVO> getHotList(){
-		 ArrayList<MusicVideoVO> list = new  ArrayList<MusicVideoVO>();
-		 try {
+
+	public ArrayList<MusicVideoVO> getHotList() {
+		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
+		try {
 			String sql = "select rownum rno, vid, vfile1, vsfile1, vtitle, vartist"
-					+ " from (select * from musicvideo order by vhits desc) "
-					+ "where rownum < 5";
+					+ " from (select * from musicvideo order by vhits desc) " + "where rownum < 5";
 			getPreparedStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				MusicVideoVO vo = new MusicVideoVO();
 				vo.setRno(rs.getInt(1));
 				vo.setVid(rs.getString(2));
@@ -219,53 +237,58 @@ public class MusicVideoDAO extends DBConn {
 				vo.setVsfile1(rs.getString(4));
 				vo.setVtitle(rs.getString(5));
 				vo.setVartist(rs.getString(6));
-				
+
 				list.add(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		 return list;
+		return list;
 	}
+
 	/**
 	 * Update : 조회수 업데이트
 	 */
 	public void getUpdateHits(String vid) {
 		try {
-			String sql = "update musicvideo set vhits=vhits+1 "
-					+ " where vid=?";
-			
+			String sql = "update musicvideo set vhits=vhits+1 " + " where vid=?";
+
 			getPreparedStatement(sql);
 			pstmt.setString(1, vid);
 			pstmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<MusicVideoVO> getSameContent(MusicVideoVO vo){
-		ArrayList<MusicVideoVO> list =new ArrayList<MusicVideoVO>();
+
+	/**
+	 * 같은 아티스트 뮤비 출력
+	 */
+	public ArrayList<MusicVideoVO> getSameContent(String vartist, String vid) {
+		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
+		MusicVideoVO vo2 = new MusicVideoVO();
+
 		try {
-			String sql = "select vid,vtitle, vartist, vfile1, vsfile1 from "
-					+ " (select * from musicvideo where vartist = ?)"
-					+ " where vid <> ?";
+			String sql = "select vid, vtitle, vartist, vfile1, vsfile1 from "
+					+ " (select * from musicvideo where vartist = ?)" + " where vid <> ?";
 			getPreparedStatement(sql);
-			ResultSet rs = pstmt.executeQuery();	
-			pstmt.setString(1, vo.getVartist());
-			pstmt.setString(2, vo.getVid());
-			while(rs.next()) {
-				MusicVideoVO vo2 = new MusicVideoVO();
-				vo2.setVtitle(rs.getString(1));
-				vo2.setVartist(rs.getString(2));
-				vo2.setVfile1(rs.getString(3));
-				vo2.setVsfile1(rs.getString(4));
-				
+			pstmt.setString(1, vartist);
+			pstmt.setString(2, vid);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				vo2.setVid(rs.getString(1));
+				vo2.setVtitle(rs.getString(2));
+				vo2.setVartist(rs.getString(3));
+				vo2.setVfile1(rs.getString(4));
+				vo2.setVsfile1(rs.getString(5));
+
 				list.add(vo2);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return list;
-		
+
 	}
 }
