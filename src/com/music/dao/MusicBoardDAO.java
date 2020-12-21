@@ -13,13 +13,10 @@ public class MusicBoardDAO extends DBConn {
 		int result = 0;
 		
 		try {
-			String sql = " SELECT COUNT(*) FROM MUSICBOARD";
-			
+			String sql = " select count(*) from musicboard";
 			getPreparedStatement(sql);
-			
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) result = rs.getInt(1);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

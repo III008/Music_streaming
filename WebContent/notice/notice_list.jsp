@@ -37,60 +37,6 @@
 							<td>70</td>
 						</tr>
 						<tr>
-							<td>2</td>
-							<td><a href="#">공지사항</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>6</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>7</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>10</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
 							<td colspan="4"> << 1 2 3 4 5 6 7 8 9 10 >> </td>
 						</tr>
 					</table>

@@ -54,7 +54,6 @@
 					totals:<%=dbCount%>,
 					page : <%=reqPage%>,
 					pageSize : <%=pageSize%>,
-							
 					
 					lastText : '&raquo;&raquo;',
 					firstText : '&laquo;&laquo',

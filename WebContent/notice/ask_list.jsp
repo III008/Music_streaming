@@ -39,69 +39,6 @@
 							<td>70</td>
 						</tr>
 						<tr>
-							<td>2</td>
-							<td>서비스 문의</td>
-							<td><a href="#"></a>바이브 차트의 순위는 어떻게 정해지나요?</td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>기타</td>
-							<td><a href="#">로그인은 어디서 하나요?</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>6</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>7</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
-							<td>10</td>
-							<td>기타</td>
-							<td><a href="#">룰루</a></td>
-							<td>2020.11.22</td>
-							<td>70</td>
-						</tr>
-						<tr>
 							<td colspan="5"> << 1 2 3 4 5 6 7 8 9 10 >> </td>
 						</tr>
 					</table>
