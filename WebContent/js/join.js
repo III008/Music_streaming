@@ -127,6 +127,38 @@ $(document).ready(function(){
 			}		
 		});
 
+		
+			
+	/**
+	 공지사항 등록 체크
+	*/
+	$("#btnNoticeWrite").click(function(){
+		if($("#ntitle").val() == ""){
+			alert("제목을 입력해주세요");
+			$("#ntitle").focus();
+			return false;
+		}else{
+			noticeWriteForm.submit();
+		}
+			
+	});		
+	
+	/**
+	 매거진 등록 체크
+	*/
+	$("#btnMagazineWrite").click(function(){
+		if($("#mtitle").val() == ""){
+			alert("제목을 입력해주세요");
+			$("#mtitle").focus();
+			return false;
+		}else{
+			magazineWriteForm.submit();
+		}
+			
+	});	
+		
+		
+
 });//ready
 
 

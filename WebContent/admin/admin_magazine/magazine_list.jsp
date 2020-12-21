@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import = "com.music.vo.*, com.music.dao.*, java.util.ArrayList"
+	%>
+	<%
+	MusicMagazineDAO dao = new MusicMagazineDAO();
+	ArrayList<MusicMagazineVO> list = dao.getList();
+	String mid = request.getParameter("mid");
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,14 +37,14 @@
 		
 		for(var i in chk_list){
 			if(chk_list[i].checked){
-				del_list += chk_list[i].getAttribute("id")+",";
+				del_list += chk_list[i].getAttribute(<%=mid%>)+",";
 			}
 		}
 		alert(del_list);
 	}
 </script>
 </head>
-<body class="ad_notice_list">
+<body class="ad_magazine_list">
 	<!-- header -->
 	<jsp:include page="../../manager_header.jsp"></jsp:include>
 	<!-- content -->
@@ -44,10 +52,10 @@
 		<section class="section_1">
 			<div>
 				<h1>매거진 관리</h1>
-				<table class="ad_notice">
+				<table class="ad_notice"> <!--태그 공지사항과 동일함 -->
 					<tr>
 						<td colspan="5">
-							<button type="button" class="btn_style" id="delete" onclick="chk_delete()">매거진 삭제</button>
+							<a href="magazineDeleteProc.jsp?mid=<%=mid%>"><button type="button" class="btn_style">매거진 삭제</button></a>
 						<a href="magazine_write.jsp" >
 								<button type="button" class="btn_style" id="insert">매거진 등록</button>
 						</a>
@@ -60,76 +68,17 @@
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
+					
+					<% for (MusicMagazineVO vo : list) { %>
 					<tr>
-						<td><input type="checkbox" name="chk" id="01"></td>
-						<td>1</td>
-						<td><a href="magazine_content.jsp">매거진1</a>
-						<td>2020.12.05</td>
-						<td>70</td>
+						<td><input type="checkbox" name="chk" id="<%=mid%>"></td>	<!-- 번호 바꿔야해ㅑ  -->
+						<td><%= vo.getRno() %></td>
+						<td><a href="magazine_content.jsp?mid=<%=vo.getMid()%>"><%= vo.getMtitle() %></a></td>
+						<td><%= vo.getMdate() %></td>
+						<td><%= vo.getMhits() %></td>
 					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="02"></td>
-						<td>2</td>
-						<td><a href="#">매거진2</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="03"></td>
-						<td>3</td>
-						<td><a href="#">매거진3</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="04"></td>
-						<td>4</td>
-						<td><a href="#">매거진4</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="05"></td>
-						<td>5</td>
-						<td><a href="#">매거진5</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="06"></td>
-						<td>6</td>
-						<td><a href="#">매거진6</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="07"></td>
-						<td>7</td>
-						<td><a href="#">매거진7</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="08"></td>
-						<td>8</td>
-						<td><a href="#">매거진8</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="09"></td>
-						<td>9</td>
-						<td><a href="#">매거진9</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="chk" id="10"></td>
-						<td>10</td>
-						<td><a href="#">매거진10</a>
-						<td>2020.12.05</td>
-						<td>70</td>
-					</tr>
+					<%} %>
+			
 					<tr>
 						<td colspan="5"><< 1 2 3 4 5 6 7 8 9 10 >></td>
 					</tr>
