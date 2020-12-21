@@ -117,7 +117,7 @@ public class MusicVideoDAO extends DBConn {
 	public boolean getUpdate(MusicVideoVO vo) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ? ,vfile2=?, vsfile2=?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ? ,vfile2=?, vsfile2=? where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
@@ -126,6 +126,7 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(5, vo.getVsfile1());
 			pstmt.setString(6, vo.getVfile2());
 			pstmt.setString(7, vo.getVsfile2());
+			pstmt.setString(8, vo.getVid());
 			
 			int val = pstmt.executeUpdate();
 			if(val !=0) {
@@ -140,13 +141,14 @@ public class MusicVideoDAO extends DBConn {
 	public boolean getUpdateVfile1(MusicVideoVO vo) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ? where vid= ?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
 			pstmt.setString(3, vo.getVintro());
 			pstmt.setString(4, vo.getVfile1());
 			pstmt.setString(5, vo.getVsfile1());
+			pstmt.setString(6, vo.getVid());
 			
 			int val = pstmt.executeUpdate();
 			if(val !=0) {
@@ -160,13 +162,14 @@ public class MusicVideoDAO extends DBConn {
 	public boolean getUpdateVfile2(MusicVideoVO vo) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile2= ?, vsfile2 = ?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile2= ?, vsfile2 = ? where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
 			pstmt.setString(3, vo.getVintro());
 			pstmt.setString(4, vo.getVfile2());
 			pstmt.setString(5, vo.getVsfile2());
+			pstmt.setString(6, vo.getVid());
 			
 			int val = pstmt.executeUpdate();
 			if(val !=0) {
@@ -180,12 +183,13 @@ public class MusicVideoDAO extends DBConn {
 	public boolean getUpdateNofile(MusicVideoVO vo) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? where vid= ?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
 			pstmt.setString(3, vo.getVintro());			
+			pstmt.setString(4, vo.getVid());			
 			int val = pstmt.executeUpdate();
 			if(val !=0) {
 				result = true;
@@ -243,7 +247,7 @@ public class MusicVideoDAO extends DBConn {
 		ArrayList<MusicVideoVO> list =new ArrayList<MusicVideoVO>();
 		try {
 			String sql = "select vid,vtitle, vartist, vfile1, vsfile1 from "
-					+ "(select * from musicvideo where vartist = ?)"
+					+ " (select * from musicvideo where vartist = ?)"
 					+ " where vid <> ?";
 			getPreparedStatement(sql);
 			ResultSet rs = pstmt.executeQuery();	

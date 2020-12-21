@@ -46,7 +46,7 @@
 			<div>
 				<ul class="recommend_movie_list">
 				<%for(MusicVideoVO vo2 : samelist){ %>
-					<li><a href="movie_content.jsp?vid=<%=vo2.getVid()  %>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
+					<li><a href="movie_content.jsp?vid=<%=vo2.getVid()%>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
 						<dl>
 							<dt><%=vo2.getVartist() %></dt>
 							<dt><%=vo2.getVtitle() %></dt>
