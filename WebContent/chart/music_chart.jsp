@@ -12,6 +12,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+<style>
+	div#no {
+		border:1px solid red;
+	}
+</style>
 </head>
 <body class="music_chart">
 	<!-- header -->
@@ -34,6 +39,10 @@
 				</h3>
 				<div class="line"></div>
 				<div class="part">
+				<% if(list1.isEmpty()) { %>
+					<div id="no">등록된 음악이 없음</div>
+				<% }else { //등록된 음악이 있을 때 %>
+					<% if(list1.size() >=2 ){ %>
 					<% for(int i=0; i<2; i++){ %>
 					<table class="chart1">
 						<tr>
@@ -46,10 +55,16 @@
 						</tr>
 						
 					</table>
-					<% } %>
+					<% }//for
+					}//if
+					}//else%>
+					
 				</div>
 				<div class="part">
 					<% for(int i=2; i<4; i++){ %>
+						<% if(list1.get(i).getMid().isEmpty()) { 
+							
+						}else {%>
 					<table class="chart1">
 						<tr>
 							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list1.get(i).getMusic_image() %>"></td>
@@ -60,10 +75,14 @@
 							<td id="artist"><label><%= list1.get(i).getArtist() %></label></td>
 						</tr>
 					</table>
-					<% } %>
+					<% }//else
+					}//for%>
 				</div>
 				<div class="part">
 					<% for(int i=4; i<5; i++){ %>
+					<% if(list1.get(i).getMid().isEmpty()) { 
+							
+						}else {%>
 					<table class="chart1">
 						<tr>
 							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list1.get(i).getMusic_image() %>"></td>
@@ -74,7 +93,8 @@
 							<td id="artist"><label><%= list1.get(i).getArtist() %></label></td>
 						</tr>
 					</table>
-					<% } %>
+					<% }//else
+					}//for%>
 				</div>
 			</div>
 		</section>
@@ -86,6 +106,9 @@
 				</h3>
 				<div class="line"></div>
 				<div class="part">
+				<% if(list2.isEmpty()) { %>
+					<div id="no">등록된 음악이 없음</div>
+				<% }else { //등록된 음악이 있을 때 %>
 					<% for(int i=0; i<2; i++){ %>
 					<table class="chart2">
 						<tr>
@@ -98,10 +121,14 @@
 						</tr>
 						
 					</table>
-					<% } %>
+					<% }//else
+					}//for%>
 				</div>
 				<div class="part">
 					<% for(int i=2; i<4; i++){ %>
+					<% if(list2.get(i).getMid().isEmpty()) { 
+							
+						}else {%>
 					<table class="chart2">
 						<tr>
 							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_image() %>"></td>
@@ -112,10 +139,14 @@
 							<td id="artist"><label><%= list2.get(i).getArtist() %></label></td>
 						</tr>
 					</table>
-					<% } %>
+					<% }//else
+					}//for%>
 				</div>
 				<div class="part">
 					<% for(int i=4; i<5; i++){ %>
+					<% if(list2.get(i).getMid().isEmpty()) { 
+							
+						}else {%>
 					<table class="chart2">
 						<tr>
 							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_image() %>"></td>
@@ -126,7 +157,8 @@
 							<td id="artist"><label><%= list2.get(i).getArtist() %></label></td>
 						</tr>
 					</table>
-					<% } %>
+					<% }//else
+					}//for%>
 				</div>
 			</div>
 		</section>
