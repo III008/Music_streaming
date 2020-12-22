@@ -17,6 +17,99 @@
 <script>
 	$(document).ready(function(){
 		
+		//이메일 수신거부 선택 준비
+		var email_agr = $("#checkedEmail").val();
+		$("input[name=email_agr]").each(function(){
+			if($(this).val() == email_agr){
+				$(this).attr("checked",true);
+			} 
+		});
+		
+		//SMS 수신동의 선택 준비
+		var sms_agr = $("#checkedSms").val();
+		$("input[name=sms_agr]").each(function(){
+			if($(this).val() == sms_agr){
+				$(this).attr("checked",true);
+			} 
+		});
+		
+		//이메일 선택 준비
+		var splitEmail = $("#splitEmail").val();
+		$("select[name='email3'] option").each(function(){
+			if($(this).val() == splitEmail){
+				$(this).prop("selected",true);
+			}
+		});
+		
+		//핸드폰 선택 준비
+		var splitPhone = $("#splitPhone").val();
+		$("select[name='cp1'] option").each(function(){
+			if($(this).val() == splitPhone){
+				$(this).prop("selected",true);
+			}
+		});
+		//장르 선택 준비
+		var splitGenre = $("#checkedGenre").val().split(",");
+		$("input[name=genre]").each(function(){
+			for(var i=0; i<splitGenre.length; i++){
+				if($(this).val() == splitGenre[i]){
+					$(this).attr("checked",true);
+				} 
+			}
+		});
+		
+		
+		//파일선택
+		$("input[type=file]").on('change', function(){
+			if(window.FileReader){
+				var fileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname").text("").text(fileName);	  //기존 데이터 지우고 fileName 값을 넣음
+			}
+		});
+		
+		/**
+		 * 회원가입 - 닉네임 중복체크
+		 */
+		$("#nicknameCheck").click(function(){
+			if($("#nickname").val() == ""){
+				alert("닉네임을 입력해주세요");
+				$("#nickname").focus();
+				return false;
+			}else {
+				//ajax를 활용한 서버 연동
+				$.ajax({
+					url:"mypage_nicknameCheck.jsp?nickname="+$("#nickname").val(),
+					success:function(result){
+						if(result == 1){
+							$("#nicknamecheck_result").text("이미 중복된 닉네임이 존재합니다. 다시 입력해주세요")
+								.css("color","red");
+							$("#nickname").val("");
+							$("#nickname").focus();
+							return false;
+						}else {
+							$("#nicknamecheck_result").text("사용가능한 닉네임입니다")
+							.css("color","blue");
+							return true;
+						}
+					}
+				});
+			}
+		});
+		
+		/** 비밀번호 정규식 체크 **/
+		$("#pass").focusout(function(){
+			var re = /^.{4,12}$/
+			var msg1 = "비밀번호를 입력해주세요";
+			var msg2 = "비밀번호는 4자리 이상 12자리 이하로 입력해주세요";
+			if(ruleCheck($("#pass"), re, msg1, msg2)) {
+				return true;
+			}else {
+				$("#pass").val("");
+				$("#pass").focus();
+				return false;
+			}
+		});
+		
 		/** 비밀번호, 비밀번호 확인 체크 **/
 		$("#cpass").focusout(function(){
 			$("#msg").text("");	
@@ -39,14 +132,14 @@
 		
 		/** 유효성 체크 **/
 		$("#btnUpdate").click(function(){
-			var re = /^[a-zA-Z0-9]{6,13}$/;  //아이디 정규식 표현
-			
-			var id_msg1 = "아이디를 입력해주세요";
-			var id_msg2 = "영문자/숫자 포함 6~13자리 이내로 작성해주세요";
 			
 			if($("#name").val() == ""){
 				alert("성명을 입력해주세요");
 				$("#name").focus();
+				return false;
+			}else if($("#nickname").val() == ""){
+				alert("닉네임을 입력해주세요");
+				$("#nickname").focus();
 				return false;
 			}else if($("#pass").val() == ""){
 				alert("비밀번호를 입력해주세요");
@@ -85,14 +178,20 @@
 				document.getElementById("");
 				return false;
 			}else{
-				//폼이름.submit()
-				updateForm.submit();
+				//닉네임 중복확인 버튼 눌렀는지 확인
+				if($("#nicknamecheck_result").text() == "" || $("#nicknamecheck_result").text() == "이미 중복된 닉네임이 존재합니다. 다시 입력해주세요"){
+					alert("닉네임 중복 버튼을 눌러주세요");
+					$("#nicknameCheck").focus();
+					return false;
+				}else {
+					//폼이름.submit()
+					updateForm.submit();
+				}
 			}
-		});//btnJoin click -- validation check
+		});//btnUpdate click -- validation check
 		
 		/** 정규식 체크 **/
 		function ruleCheck(obj, re, msg1, msg2){
-			
 			if(obj.val() == ""){
 				alert(msg1);
 				obj.focus();
@@ -125,17 +224,6 @@
 		});
 		
 	});	
-</script>
-<script>
-	$(document).ready(function(){
-		//파일선택
-		$("input[type=file]").on('change', function(){
-			if(window.FileReader){
-				var fileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
-				$("#fname").text("").text(fileName);	  //기존 데이터 지우고 fileName 값을 넣음
-			}
-		});
-	});
 </script>
 </head>
 <body class="mypage_update">
@@ -180,6 +268,8 @@
 							<li>
 								<label>닉네임</label>
 								<input type="text" name="nickname" class="f1" id="nickname" value="<%= vo.getNickname() %>">
+								<button type="button" class="sub" id="nicknameCheck">닉네임 중복체크</button>
+								<div id="nicknamecheck_result"></div>
 							</li>  
 							<li>
 								<label><span class="red">*</span>아이디</label>
@@ -200,7 +290,8 @@
 								<% String email[] = vo.getEmail().split("@");%>
 								<input type="text" name="email1" class="f2" id="email1" value="<%= email[0] %>"> @
 								<input type="text" name="email2" class="f2" id="email2" value="<%= email[1] %>">
-								<select name="email3" class="f3" id="email3">
+								<input type="hidden" id ="splitEmail" value="<%= email[1] %>">
+								<select name="email3" class="f3" id="email3"> 
 									<option value="선택">선택</option>
 									<option value="naver.com">네이버</option>
 									<option value="gmail.com">구글</option>
@@ -210,14 +301,16 @@
 								</select>
 							</li>
 							<li>
+								<input type="hidden" id="checkedEmail" value="<%= vo.getEmail_agr() %>">
 								<label><span class="red">*</span>정보수신동의 E-mail</label>
-								<input type="radio" name="email_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="email_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="email_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="email_agr" value="수신거부"><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
 								<% String phone[] = vo.getCp().split("-"); %>
-								<select name="cp1" class="hp" id="phone1" value="<%= phone[0] %>">
+								<input type="hidden" id="splitPhone" value="<%= phone[0] %>">
+								<select name="cp1" class="hp" id="phone1">
 									<option value="선택">선택</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
@@ -228,12 +321,14 @@
 								- <input type="text" name="cp3" class="hp_num" id="phone3" value="<%= phone[2] %>">
 							</li>
 							<li>
+								<input type="hidden" id="checkedSms" value="<%= vo.getSms_agr() %>">
 								<label><span class="red">*</span>정보수신동의 SMS</label>
-								<input type="radio" name="sms_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="sms_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="sms_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="sms_agr" value="수신거부"><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>음악취향</label>
+								<input type="hidden" id="checkedGenre" value="<%= vo.getGenre_list() %>">
 								<input type="checkbox" name="genre" value="발라드"><span class="rchk">발라드</span>
 								<input type="checkbox" name="genre" value="댄스"><span class="rchk">댄스</span>
 								<input type="checkbox" name="genre" value="랩/힙합"><span class="rchk">랩/힙합</span>
