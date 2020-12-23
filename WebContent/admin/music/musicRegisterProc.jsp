@@ -8,7 +8,7 @@
 <%
     //C:\Users\User\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Music_streaming\images
     //1. 파일이 저장되는 경로 설정 : upload폴더 주소
-	String save_path = request.getServletContext().getRealPath("/images");
+	String save_path = request.getServletContext().getRealPath("/upload");
 			
 	//2. 파일 업로드 사이즈 설정
 	int max_size = 1024*1024*15;
@@ -36,6 +36,9 @@
 		
 	vo.setMusic_image(multi.getOriginalFileName("music_image"));
 	vo.setMusic_simage(multi.getFilesystemName("music_image"));   
+	
+	vo.setMusic_file(multi.getOriginalFileName("music_file"));
+	vo.setMusic_sfile(multi.getFilesystemName("music_file"));  
 	    
 	//DB연동 --> 새로운 파일 있는 경우
 	//System.out.println("--------> 파일이 있는 경우(새로운 파일)");

@@ -51,9 +51,40 @@ public class MusicChartDAO extends DBConn{
 	}
 	
 	/**
-	 * Update : 음악정보 수정 - 새로운 파일이 있을 때 
+	 * Update : 음악정보 수정 - 이미지 O, 음악파일 O
 	 */
 	public boolean updateMusic(MusicChartVO vo, String mid) {
+		boolean result = false;
+		
+		try {
+			String sql = "UPDATE MUSICCHART SET MUSIC_IMAGE=?, MUSIC_SIMAGE=?, SONG=?, ARTIST=?, LYRICIST=?, COMPOSER=?, LYRICS=?, MUSIC_FILE=?, MUSIC_SFILE=? WHERE MID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getMusic_image());
+			pstmt.setString(2, vo.getMusic_simage());
+			pstmt.setString(3, vo.getSong());
+			pstmt.setString(4, vo.getArtist());
+			pstmt.setString(5, vo.getLyricist());
+			pstmt.setString(6, vo.getComposer());
+			pstmt.setString(7, vo.getLyrics());
+			pstmt.setString(8, vo.getMusic_file());
+			pstmt.setString(9, vo.getMusic_sfile());
+			pstmt.setString(10, mid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Update : 음악정보 수정 - 이미지 O, 음악파일 X
+	 */
+	public boolean updateMusicImg(MusicChartVO vo, String mid) {
 		boolean result = false;
 		
 		try {
@@ -80,7 +111,36 @@ public class MusicChartDAO extends DBConn{
 	}
 	
 	/**
-	 * Update : 음악정보 수정 - 새로운 파일이 없을 때 
+	 * Update : 음악정보 수정 - 이미지 X, 음악파일 O
+	 */
+	public boolean updateMusicFile(MusicChartVO vo, String mid) {
+		boolean result = false;
+		
+		try {
+			String sql = "UPDATE MUSICCHART SET SONG=?, ARTIST=?, LYRICIST=?, COMPOSER=?, LYRICS=?, MUSIC_FILE=?, MUSIC_SFILE=? WHERE MID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vo.getSong());
+			pstmt.setString(2, vo.getArtist());
+			pstmt.setString(3, vo.getLyricist());
+			pstmt.setString(4, vo.getComposer());
+			pstmt.setString(5, vo.getLyrics());
+			pstmt.setString(6, vo.getMusic_file());
+			pstmt.setString(7, vo.getMusic_sfile());
+			pstmt.setString(8, mid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Update : 음악정보 수정 - 이미지 X, 음악파일 X
 	 */
 	public boolean updateMusicNofile(MusicChartVO vo, String mid) {
 		boolean result = false;
@@ -107,14 +167,14 @@ public class MusicChartDAO extends DBConn{
 	}
 	
 	/**
-	 * Insert : 음악 등록 - 앨범커버 있을 때 
+	 * Insert : 음악 등록
 	 */
 	public boolean registerMusic(MusicChartVO vo) {
 		boolean result = false;
 		
 		try {
 			String sql = "INSERT INTO MUSICCHART VALUES('m_'||SEQU_COMMENTID.nextval,"
-					+ "?,?,?,?,?,?,?,0,SYSDATE)";
+					+ "?,?,?,?,?,?,?,0,SYSDATE,?,?)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getMusic_image());
@@ -124,6 +184,8 @@ public class MusicChartDAO extends DBConn{
 			pstmt.setString(5, vo.getLyricist());
 			pstmt.setString(6, vo.getComposer());
 			pstmt.setString(7, vo.getLyrics());
+			pstmt.setString(8, vo.getMusic_file());
+			pstmt.setString(9, vo.getMusic_sfile());
 			
 			int val = pstmt.executeUpdate();
 			if(val != 0) result = true;
@@ -196,7 +258,7 @@ public class MusicChartDAO extends DBConn{
 	public MusicChartVO getContent(String mid) {
 		MusicChartVO vo = new MusicChartVO();
 		try {
-			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, mdate from musicchart where mid=?";
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, mdate, music_file from musicchart where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, mid);
@@ -212,6 +274,7 @@ public class MusicChartDAO extends DBConn{
 				vo.setLyrics(rs.getString(7));
 				vo.setMusic_simage(rs.getString(8));
 				vo.setMdate(rs.getString(9));
+				vo.setMusic_file(rs.getString(10));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

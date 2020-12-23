@@ -46,7 +46,7 @@
 					<% for(int i=0; i<2; i++){ %>
 					<table class="chart1">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list1.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list1.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list1.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list1.get(i).getMid() %>"><%= list1.get(i).getSong() %></a></td>
 						</tr>
@@ -67,7 +67,7 @@
 						}else {%>
 					<table class="chart1">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list1.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list1.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list1.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list1.get(i).getMid() %>"><%= list1.get(i).getSong() %></a></td>
 						</tr>
@@ -85,7 +85,7 @@
 						}else {%>
 					<table class="chart1">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list1.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list1.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list1.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list1.get(i).getMid() %>"><%= list1.get(i).getSong() %></a></td>
 						</tr>
@@ -112,7 +112,7 @@
 					<% for(int i=0; i<2; i++){ %>
 					<table class="chart2">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list2.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list2.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list2.get(i).getMid() %>"><%= list2.get(i).getSong() %></a></td>
 						</tr>
@@ -131,7 +131,7 @@
 						}else {%>
 					<table class="chart2">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list2.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list2.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list2.get(i).getMid() %>"><%= list2.get(i).getSong() %></a></td>
 						</tr>
@@ -149,7 +149,7 @@
 						}else {%>
 					<table class="chart2">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= list2.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list2.get(i).getMusic_image() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list2.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list2.get(i).getMid() %>"><%= list2.get(i).getSong() %></a></td>
 						</tr>

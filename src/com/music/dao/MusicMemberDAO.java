@@ -212,7 +212,7 @@ public class MusicMemberDAO extends DBConn {
 		MusicMemberVO vo = new MusicMemberVO();
 		
 		try {
-			String sql = "SELECT NAME, ID, EMAIL, CP, GENRE_LIST, NICKNAME, BSFILE, BFILE FROM MUSICMEMBER WHERE ID=?";
+			String sql = "SELECT NAME, ID, EMAIL, CP, GENRE_LIST, NICKNAME, BSFILE, BFILE, EMAIL_AGR, SMS_AGR FROM MUSICMEMBER WHERE ID=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, id);
@@ -227,6 +227,8 @@ public class MusicMemberDAO extends DBConn {
 				vo.setNickname(rs.getString(6));
 				vo.setBsfile(rs.getString(7));
 				vo.setBfile(rs.getString(8));
+				vo.setEmail_agr(rs.getString(9));
+				vo.setSms_agr(rs.getString(10));
 			}
 			
 		} catch (Exception e) {
@@ -325,7 +327,50 @@ public class MusicMemberDAO extends DBConn {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return result;
+	}
 
+	/**
+	 * 닉네임 가져오기
+	 */
+	public String getNickname(String id) {
+		String result = "";
+		
+		try {
+			String sql = "SELECT NICKNAME FROM MUSICMEMBER WHERE ID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) result = rs.getString(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * 닉네임 중복체크
+	 */
+	public int getNicknameCheck(String nickname) {
+		int result = 0;
+		
+		try {
+			String sql = "select count(*) from musicmember where nickname=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, nickname);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return result;
 	}
 	

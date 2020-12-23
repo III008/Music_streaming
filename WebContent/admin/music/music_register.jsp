@@ -10,13 +10,24 @@
 <script>
 	$(document).ready(function(){
 		
+		var imgfileName = "";
+		var musicfileName = "";
+		
 		//파일선택
-		$("input[type=file]").on('change', function(){
+		$("input[type=file]#music_image").on('change', function(){
 			if(window.FileReader){
-				var fileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
-				$("#fname").text("").text(fileName);//기존 데이터 지우고 fileName 값을 넣음
+				imgfileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname_album").text("").text(imgfileName);//기존 데이터 지우고 fileName 값을 넣음
 			}
 		});
+		
+		$("input[type=file]#music_file").on('change', function(){
+			if(window.FileReader){
+				musicfileName = $(this)[0].files[0].name;  //파일선택 0번지의 첫번째 파일의 이름을 fileName변수에 넣는다
+				$("#fname_music").text("").text(musicfileName);//기존 데이터 지우고 fileName 값을 넣음
+			}
+		});
+		
 		
 		/** 유효성 체크 **/
 		$("#btnsongRegister").click(function(){
@@ -37,14 +48,18 @@
 				alert("작곡가를 입력해주세요");
 				$("#composer").focus();
 				return false;
-			/* }else if($("#lyrics").val() == ""){
+			}else if($("#lyrics").val() == ""){
 				alert("가사를 입력해주세요");
 				$("#lyrics").focus();
-				return false; */
-			/* }else if($("#span").val() == "앨범커버 등록해주세요"){
+				return false;
+			}else if(imgfileName == ""){
 				alert("앨범커버 입력해주세요");
 				$("#music_image").focus();
-				return false; */
+				return false;
+			}else if(musicfileName == ""){
+				alert("음악파일 입력해주세요");
+				$("#music_file").focus();
+				return false;
 			}else{
 				//폼이름.submit()
 				musicRegisterForm.submit();
@@ -69,10 +84,14 @@
 						<li><label>가수</label> <input type="text" name="artist" id="artist"></li>
 						<li><label>작사</label> <input type="text" name="lyricist" id="lyricist"></li>
 						<li><label>작곡</label> <input type="text" name="composer" id="composer"></li>
-						<li id="lyrics"><label>가사</label> <textarea name="lyrics" id="lyrics"></textarea></li>
-						<li id="music_image"><label>앨범커버</label> 
+						<li class="lyrics"><label>가사</label><textarea name="lyrics" id="lyrics"></textarea></li>
+						<li class="music_image"><label>앨범커버</label> 
 							<input type="file" name="music_image" id="music_image" value="">
-							<span id="fname">앨범커버 등록해주세요</span>
+							<span id="fname_album" class="fname">앨범커버 등록해주세요</span>
+						</li>
+						<li class="music_file"><label>음악파일</label> 
+							<input type="file" name="music_file" id="music_file" value="">
+							<span id="fname_music" class="fname">음악파일 등록해주세요</span>
 						</li>
 						<li><button type="button" class="btn_style" id="btnsongRegister">등록완료</button>
 								<button type="reset" class="btn_style_2">취소</button> 
