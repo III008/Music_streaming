@@ -8,6 +8,7 @@
 	 MusicVideoVO vo = dao.getContent(vid);
 	 dao.getUpdateHits(vid);
 	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vartist,vid);
+	 System.out.println(samelist.size());
 	 %>
 <!DOCTYPE html>
 <html>

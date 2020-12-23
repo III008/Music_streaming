@@ -67,6 +67,40 @@ public class MusicVideoDAO extends DBConn {
 		return list;
 
 	}
+	/**
+	 * 뮤비 전체리스트 출력
+	 */
+	public ArrayList<MusicVideoVO> getList(int start, int end) {
+		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
+		try {
+			String sql = "select * from( rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vdate, vhits  from musicvideo)"
+					+ " where rno between ? and ?";
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				MusicVideoVO vo = new MusicVideoVO();
+				vo.setRno(rs.getInt(1));
+				vo.setVid(rs.getString(2));
+				vo.setVtitle(rs.getString(3));
+				vo.setVartist(rs.getString(4));
+				vo.setVcontent(rs.getString(5));
+				vo.setVintro(rs.getString(6));
+				vo.setVfile1(rs.getString(7));
+				vo.setVsfile1(rs.getString(8));
+				vo.setVfile2(rs.getString(9));
+				vo.setVsfile2(rs.getString(10));
+				vo.setVdate(rs.getString(11));
+				vo.setVhits(rs.getInt(12));
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
 
 	/**
 	 * 뮤비 상세 정보 출력
@@ -290,5 +324,25 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return list;
 
+	}
+	/**
+	 * 전체 리스트 카운트
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = " select count(*) from musicvideo";
+			
+			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 }
