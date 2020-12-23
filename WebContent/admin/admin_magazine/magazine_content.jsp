@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>notice_content</title>
+		<title>magazine_content</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 	</head>
 	<body>
@@ -46,6 +46,8 @@
 						<tr>
 							<td colspan="7">
 								<p>
+									<%= vo.getMsummary() %><br>
+									<%= vo.getMsubtitle() %><br>
 									<%= vo.getMcontent().replace("\r\n", "<br>")%><br>
 									<% if(vo.getMsfile() != null){ %>
 									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getMsfile()%>"width="50%"  >

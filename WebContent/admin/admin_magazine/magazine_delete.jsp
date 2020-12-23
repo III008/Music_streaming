@@ -27,7 +27,7 @@
 						<a href="magazineDeleteProc.jsp?mid=<%=mid%>"><button
 								type="button" class="btn_style">삭제 완료</button></a> <a
 							href="magazine_content.jsp?mid=<%=mid%>"><button type="button"
-								class="btn_style_2">이전페이지</button></a> <a href="notice_list.jsp"><button
+								class="btn_style_2">이전페이지</button></a> <a href="magazine_list.jsp"><button
 								type="button" class="btn_style">목록으로</button></a>
 					</div>
 				</form>

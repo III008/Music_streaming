@@ -2,7 +2,21 @@ package com.music.vo;
 
 public class MusicMagazineVO {
 	int rno,mhits;
-	String mid,mtitle,mcontent,mfile,msfile,mdate;
+	String mid,mtitle,mcontent,mfile,msfile,mdate,msubtitle,msummary;
+	
+	
+	public String getMsubtitle() {
+		return msubtitle;
+	}
+	public void setMsubtitle(String msubtitle) {
+		this.msubtitle = msubtitle;
+	}
+	public String getMsummary() {
+		return msummary;
+	}
+	public void setMsummary(String msummary) {
+		this.msummary = msummary;
+	}
 	public int getRno() {
 		return rno;
 	}

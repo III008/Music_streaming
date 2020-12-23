@@ -5,7 +5,15 @@ public class MusicMemberVO {
 	String bfile, bsfile, name, nickname, id, pass, email1, email2, email_agr, cp1, cp2, cp3, sms_agr, mdate;
 	String[] genre;
 	String email, cp, genre_list;
+	int login_state;
 	
+	
+	public int getLogin_state() {
+		return login_state;
+	}
+	public void setLogin_state(int login_state) {
+		this.login_state = login_state;
+	}
 	public String getNickname() {
 		return nickname;
 	}

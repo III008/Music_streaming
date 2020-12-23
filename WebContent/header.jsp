@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+	import="com.music.dao.MusicMemberDAO, com.music.vo.MusicMemberVO"
+	%>
+	<%
+	MusicMemberDAO dao = new MusicMemberDAO(); 
+	MusicMemberVO vo = new MusicMemberVO();
+%> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,6 +42,15 @@
 						<a href="http://localhost:9000/Music_streaming/login/login.jsp">
 							<span>로그인</span>
 						</a>
+					
+		
+						<%-- <%} else{ %> --%>
+						<%-- 	<a href="http://localhost:9000/Music_streaming/index.jsp">
+							<span>로그아웃</span>
+							<% dao.login_state(vo, 0); %>
+							</a>
+							<%} %>  --%>
+							
 					</div>
 					<ul>
 						<li>
