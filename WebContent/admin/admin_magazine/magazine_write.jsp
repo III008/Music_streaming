@@ -21,7 +21,7 @@
 			<div>
 				<h1>매거진 등록</h1>
 				<form name="magazineWriteForm" action="magazineWriteProc.jsp"
-					method="post" class="admin_music_magazine" enctype="multipart/form-data">
+					method="post" class="board_write" enctype="multipart/form-data">
 					<ul>
 						<li><label>제 목</label> <input type="text" name="mtitle">
 						</li>
