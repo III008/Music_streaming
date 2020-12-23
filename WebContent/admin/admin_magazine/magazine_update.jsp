@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>board_write</title>
+<title>magazine_update</title>
 <link rel="stylesheet"
 	href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <script
@@ -43,15 +43,17 @@
 					<ul>
 						<li><label>제 목</label> <input type="text" name="mtitle"
 							value="<%=vo.getMtitle()%>"></li>
+						<li><label>요 약</label> <input type="text" name="msummary"
+							value="<%=vo.getMsummary() %>">
+						</li>
+						<li><label>소제목</label> <input type="text" name="msubtitle"
+							value="<%=vo.getMsubtitle()%>">
 						<li><label>내 용</label> <textarea name="mcontent"><%=vo.getMcontent()%></textarea>
 						</li>
-						<li><label>파일첨부</label> 
-						<%if (vo.getMfile() != null) {%> 
-						<input type="file" name="mfile"><span id="fname"><%=vo.getMfile()%></span>
-							<%} else { %> 
-							<input type="file" name="mfile"><span	id="fname">선택된 파일 없음</span>
-							 <%} %>
-						</li>
+						<li><label>파일첨부</label> <%if (vo.getMfile() != null) {%> <input
+							type="file" name="mfile"><span id="fname"><%=vo.getMfile()%></span>
+							<%} else { %> <input type="file" name="mfile"><span
+							id="fname">선택된 파일 없음</span> <%} %></li>
 						<li>
 							<button type="submit" class="btn_style">수정완료</button>
 							<button type="reset" class="btn_style_2">취소</button> <a

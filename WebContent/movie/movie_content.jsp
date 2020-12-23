@@ -7,7 +7,7 @@
 	 MusicVideoDAO dao = new MusicVideoDAO();
 	 MusicVideoVO vo = dao.getContent(vid);
 	 dao.getUpdateHits(vid);
-	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vo);
+	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vartist,vid);
 	 %>
 <!DOCTYPE html>
 <html>
@@ -30,6 +30,7 @@
 			<div class="movie_detail">
 				<div>
 					<div><%=vo.getVtitle() %></div>
+					
 					<div>조회수 : <%=vo.getVhits() %></div>
 				</div>
 				<div><%=vo.getVdate() %></div>
@@ -46,7 +47,8 @@
 			<div>
 				<ul class="recommend_movie_list">
 				<%for(MusicVideoVO vo2 : samelist){ %>
-					<li><a href="movie_content.jsp?vid=<%=vo2.getVid()%>"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getVsfile1() %>"></a>
+					<li><a href="movie_content.jsp?vid=<%=vo2.getVid()%>&vartist=<%=vo2.getVartist()%>">
+					<img src="http://localhost:9000/Music_streaming/upload/<%= vo2.getVsfile1() %>"></a>
 						<dl>
 							<dt><%=vo2.getVartist() %></dt>
 							<dt><%=vo2.getVtitle() %></dt>

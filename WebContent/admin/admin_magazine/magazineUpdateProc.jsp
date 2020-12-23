@@ -26,6 +26,8 @@
 	if(multi.getOriginalFileName("mfile") != null){
 		vo.setMid(multi.getParameter("mid"));
 		vo.setMtitle(multi.getParameter("mtitle"));
+		vo.setMsummary(multi.getParameter("msummary"));
+		vo.setMsubtitle(multi.getParameter("msubtitle"));
 		vo.setMcontent(multi.getParameter("mcontent"));
 		vo.setMfile(multi.getOriginalFileName("mfile"));
 		vo.setMsfile(multi.getFilesystemName("mfile"));
@@ -36,6 +38,8 @@
 	}else{
 		vo.setMid(multi.getParameter("mid"));
 		vo.setMtitle(multi.getParameter("mtitle"));
+		vo.setMsummary(multi.getParameter("msummary"));
+		vo.setMsubtitle(multi.getParameter("msubtitle"));
 		vo.setMcontent(multi.getParameter("mcontent"));
 		
 		//DB연동 ---> 새로운 파일 없음 : 기존 파일 유지!!
