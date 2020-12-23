@@ -4,7 +4,20 @@ public class MusicChartVO {
 	String mid, music_image, music_simage, song, artist, lyricist, composer, lyrics, mdate;
 	int rno, mhits;
 	String comm_id, id, comm_date, comment_write;
+	String music_file, music_sfile;
 	
+	public String getMusic_file() {
+		return music_file;
+	}
+	public void setMusic_file(String music_file) {
+		this.music_file = music_file;
+	}
+	public String getMusic_sfile() {
+		return music_sfile;
+	}
+	public void setMusic_sfile(String music_sfile) {
+		this.music_sfile = music_sfile;
+	}
 	public String getMusic_simage() {
 		return music_simage;
 	}

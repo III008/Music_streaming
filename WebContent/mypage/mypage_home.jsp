@@ -37,7 +37,7 @@
 		<section class="section2">
 			<div>
 				<% if(vo.getBsfile() != null){ %> 
-					<img src="http://localhost:9000/Music_streaming/images/<%= vo.getBsfile() %>">
+					<img src="http://localhost:9000/Music_streaming/upload/<%= vo.getBsfile() %>">
 				<% }else { %>
 					<img src="http://localhost:9000/Music_streaming/images/mypage_user.png">
 				<% } %>
