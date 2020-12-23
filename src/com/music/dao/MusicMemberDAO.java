@@ -29,28 +29,6 @@ public class MusicMemberDAO extends DBConn {
 	
 	
 	/**
-	 * 전체 리스트 카운트
-	 */
-	public int getListCount() {
-		int result = 0;
-		
-		try {
-			String sql = " SELECT COUNT(*) FROM MUSICMEMBER";
-			
-			getPreparedStatement(sql);
-			
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) result = rs.getInt(1);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
-	
-	
-	/**
 	 * insert 회원가입
 	 */
 	public boolean getInsert(MusicMemberVO vo) {
@@ -305,5 +283,71 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 	
+
+	/**
+	 * 전체 리스트 카운트
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = " SELECT COUNT(*) FROM MUSICBOARD";
+			
+			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	
+	/**
+	 *  login_state : 로그인 상태
+	 */
+	public boolean login_state(MusicMemberVO vo, int login_state) {
+		boolean result =false;
+		
+		try {
+			String sql = "update musicmember set login_state=? where id=?";
+			getPreparedStatement(sql);
+			pstmt.setInt(1, login_state);
+			pstmt.setString(2, vo.getId());
+			int count = pstmt.executeUpdate();
+			if (count != 0)
+				result = true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+}
+	/**
+	 * 현재 로그인 아이디
+	 */
+	public boolean loginIng(String id) {
+		boolean result = false;
+
+		try {
+			String sql = "select count(*) from musicmember where id=?";
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if (rs.getInt(1) != 0)
+					result = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
 }//CLASS

@@ -41,10 +41,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
-		<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
+		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+		<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
 		<script>
 			$(document).ready(function(){
 				//페이지 번호 및 링크 		

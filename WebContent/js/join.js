@@ -154,7 +154,7 @@ $(document).ready(function(){
 		}		
 	});
 		
-			
+
 	/**
 	 * 공지사항 등록 체크
 	 */

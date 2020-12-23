@@ -14,6 +14,8 @@
 
 	MusicMagazineVO vo = new MusicMagazineVO();
 	vo.setMtitle(multi.getParameter("mtitle"));
+	vo.setMsummary(multi.getParameter("msummary"));
+	vo.setMsubtitle(multi.getParameter("msubtitle"));
 	vo.setMcontent(multi.getParameter("mcontent"));
 	vo.setMfile(multi.getOriginalFileName("mfile"));
 	vo.setMsfile(multi.getFilesystemName("mfile"));
