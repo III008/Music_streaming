@@ -1929,14 +1929,21 @@
 	}
 	body.music_info table.board_content th{
 		border-bottom:1px solid gray;
+		padding-left:30px;
+	}
+	body.music_info table.board_content tr#content td:first-child {
+		padding-left:30px;
 	}
 	body.music_info table.board_content tr#content td:last-child {
-		padding-left:80px;
 		padding-right:200px;
 		text-align:left;
 	}
 	body.music_info table.board_content tr#content:nth-child(3) td {
 		border-top:1px solid white;
+	}
+	body.music_info table.board_content tr#content:nth-child(3) td img {
+		border-style:double;
+		border:9px double rgb(242,242,242);
 	}
 	body.music_info table.board_content tr#content:nth-child(4) td {
 		border-bottom:1px solid white;
@@ -1962,24 +1969,29 @@
 	}
 	body.music_list img#music_image {
 		width:130px; height:130px;
+		border-style:double;
+		border:4px double rgb(242,242,242);
 	}
 	
 	/* music_register.jsp */
 	/* music_update.jsp */
-	body.music_register ul li#lyrics,
-	body.music_register ul li#music_image,
-	body.music_update ul li#lyrics,
-	body.music_update ul li#music_image{
+	body.music_register ul li.lyrics,
+	body.music_register ul li.music_image,
+	body.music_register ul li.music_file,
+	body.music_update ul li.lyrics,
+	body.music_update ul li.music_image,
+	body.music_update ul li.music_image,
+	body.music_update ul li.music_file {
 		margin-left:50px;
 	}
 	body.music_register textarea#lyrics,
 	body.music_update textarea#lyrics {
 		resize:none;
 	}
-	body.music_register span#fname,
-	body.music_update span#fname {
+	body.music_register span.fname,
+	body.music_update span.fname {
 		display:inline-block;
-		width:200px;
+		width:600px;
 		margin-left:-567px;
 		font-size:16px;
 		background-color:white;

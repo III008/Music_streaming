@@ -23,8 +23,10 @@
 				<h1>음악 관리</h1>
 				<table class="board_content">
 						<tr>
-							<td colspan="3">
+							<td>
 								<a href="music_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+							</td>							
+							<td colspan="3">
 								<a href="music_update.jsp?mid=<%= mid %>"><button type="button" class="btn_style">수정</button></a>
 								<a href="music_delete.jsp?mid=<%= mid %>"><button type="button" class="btn_style_2">삭제</button></a>
 							</td>
@@ -35,10 +37,18 @@
 						<tr id="content">
 							<td>앨범커버</td>
 							<% if(vo.getMusic_simage() != null) { %>
-								<td><img src="http://localhost:9000/Music_streaming/images/<%= vo.getMusic_simage() %>" 
+								<td><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>" 
 									width="200px" height="200px"></td>
 							<% }else { %>
 								<td>앨범커버를 등록해주세요</td>
+							<% } %>
+						</tr>
+						<tr id="content">
+							<td>음악 파일</td>
+							<% if(vo.getMusic_file() != null) { %>
+								<td><%= vo.getMusic_file() %></td>
+							<% }else { %>
+								<td>음악파일을 등록해주세요</td>
 							<% } %>
 						</tr>
 						<tr id="content">

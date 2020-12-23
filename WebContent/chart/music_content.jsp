@@ -5,6 +5,7 @@
 	String mid = request.getParameter("mid");
 	MusicChartDAO dao = new MusicChartDAO();
 	MusicChartVO vo = dao.getContent(mid);  
+	
 	ArrayList<MusicChartVO> commlist = dao.getComm_List(mid);  
 	/* dao.getUpdateHits(mid);  */
 %>
@@ -26,7 +27,35 @@
 			    $(this).addClass('btn_unlike');
 			  }
 			});
+		
+		$("#btnLike").click(function(){
+			$(this).attr("value","좋아요");
+			/* if($("#nickname").val() == ""){
+				alert("닉네임을 입력해주세요");
+				$("#nickname").focus();
+				return false;
+			}else {
+				//ajax를 활용한 서버 연동
+				$.ajax({
+					url:"mypage_nicknameCheck.jsp?nickname="+$("#nickname").val(),
+					success:function(result){
+						if(result == 1){
+							$("#nicknamecheck_result").text("이미 중복된 닉네임이 존재합니다. 다시 입력해주세요")
+								.css("color","red");
+							$("#nickname").val("");
+							$("#nickname").focus();
+							return false;
+						}else {
+							$("#nicknamecheck_result").text("사용가능한 닉네임입니다")
+							.css("color","blue");
+							return true;
+						}
+					}
+				});
+			} */
+		});
 	});
+	
 </script>
 </head>
 <body class="music_content">
@@ -53,7 +82,7 @@
 						<td id="bar">
 							<button type="button" class="btn_style">재생</button>
 							<button type="button" class="btn_style">MP3 구매</button>
-							<button type="button" class="btn_like">
+							<button type="button" class="btn_like" id="btnLike">
   								<span class="img_emoti">좋아요</span>
 							</button>
 							<button type="button" class="btn_style2">···</button>
@@ -93,9 +122,11 @@
 		<section class="section4">
 				<div>
 					<% for(MusicChartVO vo1 : commlist) {%>
+					<% MusicMemberDAO dao_member = new MusicMemberDAO();
+					String nickname = dao_member.getNickname(vo1.getId()); %>
 					<table class="comment_list">
 						<tr>
-							<td colspan="2"><div id="id"><a><%= vo1.getId() %></a></div></td>
+							<td colspan="2"><div id="nickname"><a><%= nickname %> (<%= vo1.getId() %>)</a></div></td>
 						</tr>
 						<tr>
 				 			<td colspan="2"><div id="date"><label><%= vo1.getComm_date() %></label></div></td>
