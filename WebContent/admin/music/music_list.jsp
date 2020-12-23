@@ -125,7 +125,7 @@ $(document).ready(function(){
 					</tr>
 					<% for(int i=0; i<list2.size(); i++){ %>
 					<tr id="list">
-						<% int row = (Integer.parseInt(rpage)-1)*5 + (i+1); %>
+						<% int row=(reqPage-1)*5+(i+1); %>
 						<td><input type="checkbox" name="chk" id="<%= row %>"></td>
 						<td><%= list2.get(i).getRno() %></td>
 						<td><img id="music_image"
