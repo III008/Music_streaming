@@ -48,6 +48,32 @@ $(document).ready(function(){
 	
 	
 	/**
+	 * 회원가입 - 아이디 중복체크
+	 */
+	$("#idCheck").click(function(){
+		if(!ruleCheck($("#id"))){
+			return false;
+		}else{
+			//ajax를 활용한 서버 연동
+			$.ajax({
+				url:"idCheck.jsp?id="+$("#id").val(),
+				success:function(result){
+					if(result == 1){
+						$("#idcheck_result").text("이미 중복된 아이디가 존재합니다. 다시 입력해주세요")
+											.css("color","red");
+						$("#id").focus();
+					}else{
+						/*$(".idcheck").css("display","none");*/
+						$("#idcheck_result").text("사용가능한 아이디 입니다.")
+											.css("color","blue");
+					}
+				}
+			});
+		}			
+	});
+	
+	
+	/**
 	 * 비밀번호, 비밀번호 확인 체크
 	 */
 	$("#cpass").focusout(function(){
@@ -82,6 +108,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	
 	/**
 	 * 게시판 글쓰기 폼 체크
 	 */
@@ -111,27 +138,26 @@ $(document).ready(function(){
 		 }
 	});
 	
+	
 	/**
 	 * 로그인 체크
   	 */
 	$("#btnLogin").click(function(){
-		
-			if(!ruleCheck($("#id"))){
-				return false;
-			}else if($("#pass").val() == ""){
-				alert("패스워드를 입력해주세요");
-				$("#pass").focus();
-				return false;
-			}else{
-				loginForm.submit();
-			}		
-		});
-
+		if(!ruleCheck($("#id"))){
+			return false;
+		}else if($("#pass").val() == ""){
+			alert("패스워드를 입력해주세요");
+			$("#pass").focus();
+			return false;
+		}else{
+			loginForm.submit();
+		}		
+	});
 		
 			
 	/**
-	 공지사항 등록 체크
-	*/
+	 * 공지사항 등록 체크
+	 */
 	$("#btnNoticeWrite").click(function(){
 		if($("#ntitle").val() == ""){
 			alert("제목을 입력해주세요");
@@ -140,12 +166,12 @@ $(document).ready(function(){
 		}else{
 			noticeWriteForm.submit();
 		}
-			
 	});		
 	
+	
 	/**
-	 매거진 등록 체크
-	*/
+	 * 매거진 등록 체크
+	 */
 	$("#btnMagazineWrite").click(function(){
 		if($("#mtitle").val() == ""){
 			alert("제목을 입력해주세요");
@@ -154,11 +180,9 @@ $(document).ready(function(){
 		}else{
 			magazineWriteForm.submit();
 		}
-			
 	});	
 		
 		
-
 });//ready
 
 

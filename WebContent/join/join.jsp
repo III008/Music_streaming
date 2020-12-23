@@ -18,8 +18,7 @@
 			<section class="section_1">
 				<div>
 					<h1>회원가입</h1>
-					<form name="joinForm" action="joinProc.jsp" method="post"
-						class="join"> <!-- enctype="multipart/form-data" -->
+					<form name="joinForm" action="joinProc.jsp" method="post" class="join" enctype="multipart/form-data">
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>
@@ -37,9 +36,10 @@
 							<li>
 								<label><span class="red">*</span>아이디</label>
 								<input type="text" name="id" class="f1" id="id">
-								<button type="button" class="sub">ID중복검사</button>
-								<div>아이디는 영문, 숫자 조합으로 하셔야 합니다. [4자리 이상 12자리 이하]</div>
-								<div>아이디는 <span class="red">소문자</span>로 저장 됩니다.</div>
+								<button type="button" class="sub" id="idCheck">ID중복검사</button>
+								<div class="idcheck">아이디는 영문, 숫자 조합으로 하셔야 합니다. [4자리 이상 12자리 이하]</div>
+								<div class="idcheck">아이디는 <span class="red">소문자</span>로 저장 됩니다.</div>
+								<div id="idcheck_result"></div>
 							</li>
 							<li>
 								<label><span class="red">*</span>패스워드</label>

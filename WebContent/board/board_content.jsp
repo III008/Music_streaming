@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="com.music.vo.*, com.music.dao.*"%>
+    import="com.music.vo.*, com.music.dao.*, java.util.*"%>
 <%
 	String bid = request.getParameter("bid");
 	MusicBoardDAO dao = new MusicBoardDAO();
 	MusicBoardVO vo = dao.getContent(bid);
+	/* ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid); */
 	dao.getUpdateHits(bid);
 %>
 
@@ -14,6 +15,7 @@
 		<meta charset="UTF-8">
 		<title>board_content</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 	</head>
 	<body>
 		<!-- header -->
@@ -25,7 +27,6 @@
 				<div>
 					<h1>게시판</h1>
 					<table class="board_content">
-						<input type="hidden" name="id" value="<%= "test1234" %>">
 						<tr>
 							<td colspan="4">
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
@@ -61,32 +62,40 @@
 				</div>
 			</section>
 			
-			<section class="section_2">
+			<%-- <section class="section_2">
 				<div>
 					<table class="board_content_title">
 						<tr>
 							<td>댓글</td>
 						</tr>
 					</table>
-					<table class="board_content_rp">
-						<tr>
-							<td><img src="http://localhost:9000/Music_streaming/images/member_rp.png"></td>
-							<td>닉네임</td>
-							<td>날짜</td>
-						</tr>
-						<tr>
-							<td colspan="3">댓글 내용</td>
-						</tr>
-					</table>
+				</div>
+				<form name="boardReplyForm" action="boardReplyProc.jsp" method="post" class="reply_write">
+					<input type="hidden" name="id" value="<%= "test1234" %>"> <!-- 예시 -->
+					<input type="hidden" name="bid" value="<%= vo.getBid() %>">
 					<table class="board_content_reg">
 						<tr>
 							<td><textarea placeholder="댓글을 입력해주세요."></textarea></td>
 							<td><button type="button" class="btn_style">등록</button></td>
 						</tr>
 					</table>
-				</div>
+				</form>
 			</section>
- 		</div>
+			
+			<section class="section_3">
+				<% for(MusicBoardVO bvo : rplist) %>
+				<table class="board_content_rp">
+						<tr>
+							<td><img src="http://localhost:9000/Music_streaming/images/member_rp.png"></td>
+							<td><div id="id"><a><%= bvo.getId() %></a></div></td>
+							<td><div id="date"><label><%= bvo.getRp_date() %></label></div></td>
+						</tr>
+						<tr>
+							<td colspan="3"><div id="rp_write"><label><%= bvo.getRp_write() %></label></div></td>
+						</tr>
+					</table>
+			</section>
+ 		</div> --%>
 		
 		<!-- footer -->
 		<jsp:include page="../footer.jsp"></jsp:include>

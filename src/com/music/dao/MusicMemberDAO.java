@@ -7,6 +7,28 @@ import com.music.vo.MusicMemberVO;
 
 public class MusicMemberDAO extends DBConn {
 	/**
+	 * 회원가입 - 아이디 중복체크
+	 */
+	public int getIdCheck(String id) {
+		int result = 0;
+		
+		try {
+			String sql = " SELECT COUNT(*) FROM MUSICMEMBER WHERE ID=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
+	/**
 	 * 전체 리스트 카운트
 	 */
 	public int getListCount() {
@@ -50,7 +72,6 @@ public class MusicMemberDAO extends DBConn {
 			pstmt.setString(10, vo.getSms_agr());
 			pstmt.setString(11, vo.getGenre_list());
 
-			
 			int val = pstmt.executeUpdate();
 			
 			if(val != 0) result = true;
@@ -128,7 +149,6 @@ public class MusicMemberDAO extends DBConn {
 		
 		return list;
 	}
-	
 	
 	
 	/**

@@ -3,7 +3,7 @@ package com.music.vo;
 public class MusicBoardVO {
 	int rno, brec, bhits;
 	String bid, btitle, bcontent, bfile, bsfile, bdate;
-	String reply_id, nickname, reply_date, reply_write, id;
+	String rp_id, id, rp_date, rp_write;
 	
 	
 	public int getRno() {
@@ -60,34 +60,28 @@ public class MusicBoardVO {
 	public void setBdate(String bdate) {
 		this.bdate = bdate;
 	}
-	public String getReply_id() {
-		return reply_id;
+	public String getRp_id() {
+		return rp_id;
 	}
-	public void setReply_id(String reply_id) {
-		this.reply_id = reply_id;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	public String getReply_date() {
-		return reply_date;
-	}
-	public void setReply_date(String reply_date) {
-		this.reply_date = reply_date;
-	}
-	public String getReply_write() {
-		return reply_write;
-	}
-	public void setReply_write(String reply_write) {
-		this.reply_write = reply_write;
+	public void setRp_id(String rp_id) {
+		this.rp_id = rp_id;
 	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getRp_date() {
+		return rp_date;
+	}
+	public void setRp_date(String rp_date) {
+		this.rp_date = rp_date;
+	}
+	public String getRp_write() {
+		return rp_write;
+	}
+	public void setRp_write(String rp_write) {
+		this.rp_write = rp_write;
 	}
 }

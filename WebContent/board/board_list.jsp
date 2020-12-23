@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="com.music.vo.*, com.music.dao.*, java.util.*" %>
-    
 <%
 	MusicBoardDAO dao = new MusicBoardDAO();
-	
+
 	//1. 선택한 페이지값
 	String rpage = request.getParameter("rpage");
 	
@@ -12,7 +11,7 @@
 	//1페이지(1~10), 2페이지(11~20) ...
 	int start = 0;
 	int end = 0;
-	int pageSize = 10; //한 페이지당 출력되는 row
+	int pageSize = 5; //한 페이지당 출력되는 row
 	int pageCount = 1; //전체 페이지 수  : 전체 리스트 row /한 페이지당 출력되는 row
 	int dbCount = dao.getListCount(); //DB연동 후 전체로우수 출력
 	int reqPage = 1; //요청페이지
@@ -42,10 +41,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
+		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/music_streaming.css">
+		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
 		<script>
 			$(document).ready(function(){
 				//페이지 번호 및 링크 		
@@ -54,6 +53,7 @@
 					totals:<%=dbCount%>,
 					page : <%=reqPage%>,
 					pageSize : <%=pageSize%>,
+							
 					
 					lastText : '&raquo;&raquo;',
 					firstText : '&laquo;&laquo',
