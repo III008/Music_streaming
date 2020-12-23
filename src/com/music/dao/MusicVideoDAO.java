@@ -40,7 +40,7 @@ public class MusicVideoDAO extends DBConn {
 	public ArrayList<MusicVideoVO> getList() {
 		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
 		try {
-			String sql = "select rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vdate, vhits  from musicvideo";
+			String sql = "select rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, to_char(vdate,'yyyy/mm/dd') vdate, vhits  from musicvideo";
 			getPreparedStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 
@@ -73,9 +73,10 @@ public class MusicVideoDAO extends DBConn {
 	public ArrayList<MusicVideoVO> getList(int start, int end) {
 		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
 		try {
-			String sql = "select * from( rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vdate, vhits  from musicvideo)"
-					+ " where rno between ? and ?";
+			String sql = "  select * from (select rownum rno, vid, vtitle, vartist, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, to_char(vdate,'yyyy/mm/dd') vdate, vhits  from musicvideo) where rno between ? and ?";;
 			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			ResultSet rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
@@ -108,7 +109,7 @@ public class MusicVideoDAO extends DBConn {
 	public MusicVideoVO getContent(String vid) {
 		MusicVideoVO vo = new MusicVideoVO();
 		try {
-			String sql = "select vtitle, vartist, vdate, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vhits  from musicvideo where vid =?";
+			String sql = "select vtitle, vartist, to_char(vdate,'yyyy/mm/dd') vdate, vcontent, vintro, vfile1, vsfile1, vfile2, vsfile2, vhits  from musicvideo where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vid);
 			ResultSet rs = pstmt.executeQuery();
@@ -301,7 +302,6 @@ public class MusicVideoDAO extends DBConn {
 	 */
 	public ArrayList<MusicVideoVO> getSameContent(String vartist, String vid) {
 		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
-		MusicVideoVO vo2 = new MusicVideoVO();
 
 		try {
 			String sql = "select vid, vtitle, vartist, vfile1, vsfile1 from "
@@ -311,6 +311,7 @@ public class MusicVideoDAO extends DBConn {
 			pstmt.setString(2, vid);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
+				MusicVideoVO vo2 = new MusicVideoVO();
 				vo2.setVid(rs.getString(1));
 				vo2.setVtitle(rs.getString(2));
 				vo2.setVartist(rs.getString(3));
@@ -326,6 +327,37 @@ public class MusicVideoDAO extends DBConn {
 
 	}
 	/**
+	 * 같은 아티스트 뮤비 출력
+	 */
+	public ArrayList<MusicVideoVO> getSameContent(String vartist, String vid,int start, int end) {
+		ArrayList<MusicVideoVO> list = new ArrayList<MusicVideoVO>();
+		
+		try {
+			String sql = "select rownum rno, vid, vtitle, vartist, vfile1, vsfile1 from   (select * from musicvideo where vartist = ?) where vid <>  ? and rownum between ? and ? ";
+			getPreparedStatement(sql);
+			pstmt.setString(1, vartist);
+			pstmt.setString(2, vid);
+			pstmt.setInt(3, start);
+			pstmt.setInt(4, end);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				MusicVideoVO vo2 = new MusicVideoVO();
+				vo2.setRno(rs.getInt(1));
+				vo2.setVid(rs.getString(2));
+				vo2.setVtitle(rs.getString(3));
+				vo2.setVartist(rs.getString(4));
+				vo2.setVfile1(rs.getString(5));
+				vo2.setVsfile1(rs.getString(6));
+				
+				list.add(vo2);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
+	/**
 	 * 전체 리스트 카운트
 	 */
 	public int getListCount() {
@@ -335,6 +367,26 @@ public class MusicVideoDAO extends DBConn {
 			String sql = " select count(*) from musicvideo";
 			
 			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	public int getHotListCount(String vartist, String vid) {
+		int result = 0;
+		
+		try {
+			String sql = " select count(*) from (select vid, vtitle, vartist, vfile1, vsfile1 from  "
+					+ " (select * from musicvideo where vartist = ?)) where vid <> ?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vartist);
+			pstmt.setString(2, vid);
 			
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) result = rs.getInt(1);

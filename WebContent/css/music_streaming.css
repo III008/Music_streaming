@@ -498,11 +498,10 @@
 	table.notice_content tr:nth-child(3) td:nth-child(2), table.notice_content tr:nth-child(3) td:nth-child(3),
 	table.notice_content tr:nth-child(3) td:nth-child(4), table.notice_content tr:nth-child(3) td:nth-child(5),
 	table.admin_movie_info tr:nth-child(3) td:nth-child(2) {
-		width:50px;
+		width:100px;
 		font-size:16px;
 		text-align:center;
 		font-weight:bold;
-		/* border:1px solid red; */
 	}
 	table.board_content tr:nth-child(3) td:nth-child(6), table.notice_content tr:nth-child(3) td:nth-child(6) {
 		width:80px;
@@ -1990,7 +1989,7 @@
 	}
 	body.music_register span.fname,
 	body.music_update span.fname {
-		display:inline-block;
+		 display:inline-block;
 		width:600px;
 		margin-left:-567px;
 		font-size:16px;
