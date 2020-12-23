@@ -16,14 +16,18 @@
 	<jsp:include page="../../manager_header.jsp" />
 
 	<!-- content -->
-	<div class="content_board">
+	<div class="magazine_write">
 		<section class="section_1">
 			<div>
 				<h1>매거진 등록</h1>
 				<form name="magazineWriteForm" action="magazineWriteProc.jsp"
-					method="post" class="board_write" enctype="multipart/form-data">
+					method="post" class="admin_music_magazine" enctype="multipart/form-data">
 					<ul>
 						<li><label>제 목</label> <input type="text" name="mtitle">
+						</li>
+						<li><label>요 약</label> <input type="text" name="msummary">
+						</li>
+						<li><label>소제목</label> <input type="text" name="msubtitle">
 						</li>
 						<li><label>내 용</label> <textarea name="mcontent"></textarea>
 						</li>

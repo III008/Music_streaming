@@ -3,6 +3,7 @@ package com.music.dao;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.music.vo.MusicChartVO;
 import com.music.vo.MusicMagazineVO;
 
 
@@ -15,7 +16,7 @@ public class MusicMagazineDAO extends DBConn{
 		ArrayList<MusicMagazineVO> list = new ArrayList<MusicMagazineVO>();
 		
 		try {
-			String sql = "select rownum rno, mid, mtitle, to_char(mdate,'yyyy.mm.dd'), mhits" + 
+			String sql = "select rownum rno, mid, mtitle, to_char(mdate,'yyyy.mm.dd'), mhits, msfile" + 
 					" from (select * from musicmagazine order by mdate desc)";
 			
 			getPreparedStatement(sql);
@@ -27,6 +28,7 @@ public class MusicMagazineDAO extends DBConn{
 				vo.setMtitle(rs.getString(3));
 				vo.setMdate(rs.getString(4));
 				vo.setMhits(rs.getInt(5));
+				vo.setMsfile(rs.getString(6));
 				
 				list.add(vo);
 			}
@@ -44,7 +46,7 @@ public class MusicMagazineDAO extends DBConn{
 		MusicMagazineVO vo = new MusicMagazineVO();
 		
 		try {
-			String sql = "select mid,mtitle, mcontent "
+			String sql = " select mid,mtitle,msummary, msubtitle,mcontent"
 					+ ",to_char(mdate,'yyyy.mm.dd'),mhits, mfile, msfile " + 
 					" from musicmagazine where mid=?";
 			
@@ -54,11 +56,13 @@ public class MusicMagazineDAO extends DBConn{
 			if(rs.next()) {
 				vo.setMid(rs.getString(1));
 				vo.setMtitle(rs.getString(2));
-				vo.setMcontent(rs.getString(3));
-				vo.setMdate(rs.getString(4));
-				vo.setMhits(rs.getInt(5));
-				vo.setMfile(rs.getString(6));
-				vo.setMsfile(rs.getString(7));
+				vo.setMsummary(rs.getString(3));
+				vo.setMsubtitle(rs.getString(4));
+				vo.setMcontent(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				vo.setMhits(rs.getInt(7));
+				vo.setMfile(rs.getString(8));
+				vo.setMsfile(rs.getString(9));
 			}
 			
 		} catch (Exception e) {
@@ -77,13 +81,15 @@ public class MusicMagazineDAO extends DBConn{
 		
 		try {
 			String sql = "insert into musicmagazine "
-				+ " values('n_'||sequ_musicmagazine.nextval,?,?,?,?,sysdate,0)";
+				+ " values('n_'||sequ_musicmagazine.nextval,?,?,?,?,?,?,sysdate,0)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getMtitle());
-			pstmt.setString(2, vo.getMcontent());
-			pstmt.setString(3, vo.getMfile());
-			pstmt.setString(4, vo.getMsfile());
+			pstmt.setString(2, vo.getMsummary());
+			pstmt.setString(3, vo.getMsubtitle());
+			pstmt.setString(4, vo.getMcontent());
+			pstmt.setString(5, vo.getMfile());
+			pstmt.setString(6, vo.getMsfile());
 			
 			int val = pstmt.executeUpdate();
 			if(val != 0) result = true;			
@@ -103,15 +109,17 @@ public class MusicMagazineDAO extends DBConn{
 		boolean result = false;
 		
 		try {
-			String sql = "update musicmagazine set mtitle=?, mcontent=?, mfile=?, msfile=? "
+			String sql = "update musicmagazine set mtitle=?, msummary=?,msubtitle=?, mcontent=?, mfile=?, msfile=? "
 					+ " where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getMtitle());
-			pstmt.setString(2, vo.getMcontent());
-			pstmt.setString(3, vo.getMfile());
-			pstmt.setString(4, vo.getMsfile());
-			pstmt.setString(5, vo.getMid());
+			pstmt.setString(2, vo.getMsummary());
+			pstmt.setString(3, vo.getMsubtitle());
+			pstmt.setString(4, vo.getMcontent());
+			pstmt.setString(5, vo.getMfile());
+			pstmt.setString(6, vo.getMsfile());
+			pstmt.setString(7, vo.getMid());
 			
 			int val = pstmt.executeUpdate();
 			if(val != 0) result = true;
@@ -131,12 +139,14 @@ public class MusicMagazineDAO extends DBConn{
 		boolean result = false;
 		
 		try {
-			String sql ="update musicmagazine set mtitle=?, mcontent=? "
+			String sql ="update musicmagazine set mtitle=?, msummary=?, msubtitle=?, mcontent=? "
 					+ " where mid=?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getMtitle());
-			pstmt.setString(2, vo.getMcontent());
-			pstmt.setString(3, vo.getMid());
+			pstmt.setString(2, vo.getMsummary());
+			pstmt.setString(3, vo.getMsubtitle());
+			pstmt.setString(4, vo.getMcontent());
+			pstmt.setString(5, vo.getMid());
 			
 			int val = pstmt.executeUpdate();
 			if(val != 0) result = true;
@@ -184,5 +194,36 @@ public class MusicMagazineDAO extends DBConn{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 *	사용자 매거진콘텐츠 - 메인 헤드 타이틀
+	 */
+	public ArrayList<MusicMagazineVO> getList1(){
+		ArrayList<MusicMagazineVO> list = new ArrayList<MusicMagazineVO>();
+		
+		try {
+			String sql =   " select mid,mtitle,msummary,mfile,msfile "
+					+ " from musicmagazine "
+					+ " where mhits = (select max(mhits) from musicmagazine)";
+			
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicMagazineVO vo = new MusicMagazineVO();
+				vo.setMid(rs.getString(1));
+				vo.setMtitle(rs.getString(2));
+				vo.setMsummary(rs.getString(3));
+				vo.setMfile(rs.getString(4));
+				vo.setMsfile(rs.getString(5));
+				
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 }
