@@ -374,4 +374,5 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 	
+	
 }//CLASS
