@@ -32,7 +32,7 @@
 		start = reqPage;
 		end = pageSize;
 	}
-	
+
 	ArrayList<MusicBoardVO> list = dao.getList(start, end);
 %>
 
@@ -94,10 +94,11 @@
 							<th>추천</th>
 							<th>조회수</th>
 						</tr>
-						<% for(MusicBoardVO vo : list) { %>
+						
+						<% for(MusicBoardVO vo : list){ %>
 						<tr>
 							<td><%= vo.getRno() %></td>
-							<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a>
+							<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a></td>
 							<td><%= vo.getBdate() %></td>
 							<td><%= vo.getBrec() %></td>
 							<td><%= vo.getBhits() %></td>

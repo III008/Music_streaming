@@ -36,10 +36,8 @@
 	vo.setCp(multi.getParameter("cp"));
 	vo.setSms_agr(multi.getParameter("sms_agr"));
 	vo.setGenre_list(multi.getParameter("genre_list"));
-	
-	System.out.println("사용자 파일 : " + multi.getOriginalFileName("tfile"));
-	System.out.println("저장된 파일 : " + multi.getFilesystemName("tfile"));
 	 */
+	 
 	//DB 연동 후 저장
 	result = dao.getInsert(vo);
 

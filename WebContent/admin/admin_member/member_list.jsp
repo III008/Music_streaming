@@ -53,7 +53,6 @@
 					page : <%=reqPage%>,
 					pageSize : <%=pageSize%>,
 							
-					
 					lastText : '&raquo;&raquo;',
 					firstText : '&laquo;&laquo',
 					prevTest : '&laquo;',
@@ -68,6 +67,55 @@
 				});
 			});
 		</script>
+		<script>
+			$(document).ready(function(){
+				/** body 로딩 후 맨 처음 전체 리스트 호출 기능 **/
+				ajax_list("total", null);
+				
+				/** 검색 기능 **/
+				$("#btnSearch").click(function(){
+					if($("#sname").val() == "") {
+						alert("검색할 데이터를 입력해주세요.");
+						$("#sanme").focus();
+						return false;
+					}else {
+						var sitem = $("#select_item").val();
+						var sname = $("#sname").val();
+						
+						ajax_list(sitem, sname);
+					}
+				});//btnSearch
+				
+				
+				/** 리스트 출력 함수 **/
+				function ajax_list(sitem, sname){
+					$.ajax({
+						url:"11_emplist_check_search.jsp?sitem="+sitem+"&sname="+sname,
+						success:function(){ 
+							//JSON 형식으로 parsing
+							var jdata = JSON.parse(result);
+							
+							//2-1. DHTML을 이용하여 테이블 생성 및 출력
+							var output="<table border=1>";
+							output += "<tr><th>번호</th><th>사원번호</th><th>사원명</th><th>입사일자</th></tr>"
+							
+							for(var i in jdata.jlist) {
+								output += "<tr>";
+								output += "<td>"+ jdata.jlist[i].rno + "</td>";
+								output += "<td>"+ jdata.jlist[i].empno + "</td>";
+								output += "<td>"+ jdata.jlist[i].ename + "</td>";
+								output += "<td>"+ jdata.jlist[i].hiredate + "</td>";
+								output += "</tr>";
+							}
+							output += "</table>";
+							$("table").remove();
+							$("#btnSearch").after(output);
+						}//success
+					});//ajax
+				}//ajax_list
+			});//ready
+		</script>
+		
 	</head>
 	<body>
 		<!-- header -->
@@ -78,6 +126,16 @@
 			<section class="section_1">
 				<div>
 					<h1>회원 관리</h1>
+					<select id="select_item">
+						<option value="total">전체</option>
+						<option value="id">아이디</option>
+						<option value="name">성명</option>
+						<option value="nickname">닉네임</option>
+						<option value="hp">휴대폰 번호 </option>
+					</select>
+					<input type="text" id="sname">
+					<button type="button" id="btnSearch">검색</button>
+					
 					<table class="admin_member_list">
 						<tr>
 							<th>번호</th>

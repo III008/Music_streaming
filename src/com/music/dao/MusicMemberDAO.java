@@ -395,4 +395,45 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
+	/**
+	 * 검색 기능
+	 */
+	public ArrayList<MusicMemberVO> getSearchList(String sname, String svalue){
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+		
+		try {
+			String str="";
+			if(sname.equals("total")) {
+				str="";
+			}/*else if(sname.equals("id")) {
+				str = "where " + sname + "=upper('"+svalue+"')";
+			}else {
+				str = "where " + sname + "='"+svalue+"'";
+			}*/
+			
+			String sql = " select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate " + 
+					" from (select * from cgvmember order by mdate desc) "+ str;
+				
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				
+				list.add(vo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }//CLASS

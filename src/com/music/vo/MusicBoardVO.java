@@ -5,7 +5,6 @@ public class MusicBoardVO {
 	String bid, btitle, bcontent, bfile, bsfile, bdate;
 	String rp_id, id, rp_date, rp_write;
 	
-	
 	public int getRno() {
 		return rno;
 	}
