@@ -2,7 +2,7 @@ package com.music.vo;
 
 public class MusicBoardVO {
 	int rno, brec, bhits;
-	String bid, btitle, bcontent, bfile, bsfile, bdate;
+	String bid, btitle, bcontent, bd_file, bd_sfile, bdate;
 	String rp_id, id, rp_date, rp_write;
 	
 	public int getRno() {
@@ -41,17 +41,17 @@ public class MusicBoardVO {
 	public void setBcontent(String bcontent) {
 		this.bcontent = bcontent;
 	}
-	public String getBfile() {
-		return bfile;
+	public String getBd_file() {
+		return bd_file;
 	}
-	public void setBfile(String bfile) {
-		this.bfile = bfile;
+	public void setBd_file(String bd_file) {
+		this.bd_file = bd_file;
 	}
-	public String getBsfile() {
-		return bsfile;
+	public String getBd_sfile() {
+		return bd_sfile;
 	}
-	public void setBsfile(String bsfile) {
-		this.bsfile = bsfile;
+	public void setBd_sfile(String bd_sfile) {
+		this.bd_sfile = bd_sfile;
 	}
 	public String getBdate() {
 		return bdate;

@@ -61,10 +61,10 @@
 							</li>
 							<li>
 								<label>파일첨부</label>
-								<% if(vo.getBfile() != null){ %>
-								<input type="file" name="bfile"><span id="fname"><%=vo.getBfile() %></span>
+								<% if(vo.getBd_file() != null){ %>
+								<input type="file" name="bd_file"><span id="fname"><%=vo.getBd_file() %></span>
 								<% }else{ %>
-								<input type="file" name="bfile"><span id="fname">선택된 파일 없음</span>
+								<input type="file" name="bd_file"><span id="fname">선택된 파일 없음</span>
 								<% } %>
 							</li>
 							<li>

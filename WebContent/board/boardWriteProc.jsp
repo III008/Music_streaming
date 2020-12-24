@@ -18,15 +18,14 @@
 
 	//3. MultipartRequest 객체 생성 -- 생성되는 동시에 파일이 자동업로드(서버에 저장)
 	MultipartRequest multi 
-		= new MultipartRequest(request,save_path,max_size,
-				"utf-8", new DefaultFileRenamePolicy());
+		= new MultipartRequest(request, save_path, max_size, "utf-8", new DefaultFileRenamePolicy());
 	
 	//4. VO 객체 생성
 	MusicBoardVO vo = new MusicBoardVO();
 	vo.setBtitle(multi.getParameter("btitle"));
 	vo.setBcontent(multi.getParameter("bcontent"));
-	vo.setBfile(multi.getOriginalFileName("bfile"));
-	vo.setBsfile(multi.getFilesystemName("bfile"));
+	vo.setBd_file(multi.getOriginalFileName("bd_file"));
+	vo.setBd_sfile(multi.getFilesystemName("bd_file"));
 	
 	MusicBoardDAO dao = new MusicBoardDAO();
 	boolean result = dao.getInsert(vo);
@@ -34,7 +33,7 @@
 	if(result){
 		response.sendRedirect("board_list.jsp");
 	}else {
-		//response.sendRedirect("../errorPage.jsp");
+		response.sendRedirect("../errorPage.jsp");
 	}
 
 %>

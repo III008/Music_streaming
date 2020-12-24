@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>board_write</title>
+		<title>게시판 글쓰기</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
@@ -31,7 +31,7 @@
 							</li>
 							<li>
 								<label>파일첨부</label>
-								<input type="file" name="bfile">
+								<input type="file" name="bd_file">
 							</li>
 							<li>
 								<button type="button" class="btn_style" id="btnBoardWrite">등록</button>
