@@ -396,6 +396,7 @@ public class MusicMemberDAO extends DBConn {
 	}
 
 	
+
 	/**
 	 * 검색 기능
 	 */
@@ -436,4 +437,5 @@ public class MusicMemberDAO extends DBConn {
 		
 		return list;
 	}
+
 }//CLASS

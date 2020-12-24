@@ -258,7 +258,7 @@ public class MusicChartDAO extends DBConn{
 	public MusicChartVO getContent(String mid) {
 		MusicChartVO vo = new MusicChartVO();
 		try {
-			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, mdate, music_file from musicchart where mid=?";
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, to_char(mdate,'yyyy/mm/dd'), music_file from musicchart where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, mid);
@@ -323,7 +323,7 @@ public class MusicChartDAO extends DBConn{
 		ArrayList<MusicChartVO> list = new ArrayList<MusicChartVO>();
 		
 		try {
-			String sql = "SELECT * FROM (SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, MDATE, MUSIC_SIMAGE\r\n" + 
+			String sql = "SELECT * FROM (SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, TO_CHAR(MDATE,'YYYY/MM/DD'), MUSIC_SIMAGE\r\n" + 
 					"FROM (SELECT * FROM MUSICCHART ORDER BY MDATE DESC)) WHERE RNO BETWEEN ? AND ?";
 			
 			getPreparedStatement(sql);
