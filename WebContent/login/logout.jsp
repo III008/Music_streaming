@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="com.music.vo.*, com.music.dao.*"
+    import = "com.music.vo.*,com.music.dao.*"
     %>
     <jsp:useBean id="vo" class="com.music.vo.MusicMemberVO" />
 	<jsp:setProperty name="vo" property="*" />
-
 <%
 	MusicMemberDAO dao = new MusicMemberDAO();
-	int result = dao.getLogin(vo);
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
 	
-	if(result != 0){
+	if(svo != null){
+		
+		session.invalidate();
+		dao.login_state(vo, 0);// 로그아웃 성공시 login_state 0로 변경
+		
 		response.sendRedirect("http://localhost:9000/Music_streaming/index.jsp");
-		dao.login_state(vo, 1);// 로그인 성공시 login_state 1로 변경
 	}else{
-		response.sendRedirect("http://localhost:9000/Music_streaming/login/loginFail.jsp");
+		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");
 	}
-%>    
+%>

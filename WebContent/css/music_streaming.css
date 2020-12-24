@@ -30,6 +30,10 @@
 		width:200px;
 		height:140px;
 	}
+	header nav>ul>li.login_user>a:first-child{
+		text-align:center;
+		text-decoration:none;
+	}
 	header nav>ul>li {
 		padding:6px 5px 5px 25px;
 		clear:both;

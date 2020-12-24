@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.music.vo.MusicMemberVO;
+import com.music.vo.SessionVO;
 
 public class MusicMemberDAO extends DBConn {
 	/**
@@ -242,12 +243,12 @@ public class MusicMemberDAO extends DBConn {
 	/**
 	 * login : 로그인처리
 	 */
-	public int getLogin(MusicMemberVO vo) {
-		int result = 0;
+	public SessionVO getLogin(MusicMemberVO vo) {
+		SessionVO svo = new SessionVO();
 		
 		try {
-			String sql = "SELECT COUNT(*) FROM MUSICMEMBER "
-					+ " WHERE ID=? AND PASS=?";
+			String sql = "SELECT count(*), name FROM MUSICMEMBER " + 
+					"  WHERE ID=? AND PASS=? group by name";
 			
 			getPreparedStatement(sql);
 			
@@ -256,13 +257,17 @@ public class MusicMemberDAO extends DBConn {
 			
 			ResultSet rs = pstmt.executeQuery();
 			
-			if(rs.next()) result = rs.getInt(1);
+			if(rs.next()) {
+				svo.setResult(rs.getInt(1));
+				svo.setName(rs.getString(2));
+			}
 			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return result;
+			
+		}catch(Exception e) {e.printStackTrace();}
+		
+		return svo;
 	}
+	
 	
 	
 	/**
@@ -307,28 +312,6 @@ public class MusicMemberDAO extends DBConn {
 
 		return result;
 }
-	/**
-	 * 현재 로그인 아이디
-	 */
-	public boolean loginIng(String id) {
-		boolean result = false;
-
-		try {
-			String sql = "select count(*) from musicmember where id=?";
-			getPreparedStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-			
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				if (rs.getInt(1) != 0)
-					result = true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
 
 	/**
 	 * 닉네임 가져오기
