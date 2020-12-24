@@ -18,7 +18,7 @@
 			<section class="section_1">
 				<div>
 					<h1>회원가입</h1>
-					<form name="joinForm" action="joinProc.jsp" method="post" class="join" enctype="multipart/form-data">
+					<form name="joinForm" action="joinProc.jsp" method="get" class="join">
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>

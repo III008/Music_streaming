@@ -36,7 +36,7 @@ public class MusicMemberDAO extends DBConn {
 		boolean result = false;
 		
 		try {
-			String sql = " INSERT INTO MUSICMEMBER VALUES(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+			String sql = " INSERT INTO MUSICMEMBER VALUES(?,?,?,?,?,?,?,?,?,?,?,sysdate,?)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getBfile());
@@ -50,6 +50,7 @@ public class MusicMemberDAO extends DBConn {
 			pstmt.setString(9, vo.getCp());
 			pstmt.setString(10, vo.getSms_agr());
 			pstmt.setString(11, vo.getGenre_list());
+			pstmt.setInt(12, vo.getLogin_state());
 
 			int val = pstmt.executeUpdate();
 			
