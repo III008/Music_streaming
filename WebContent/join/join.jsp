@@ -66,8 +66,8 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 E-mail</label>
-								<input type="radio" name="email_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="email_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="email_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="email_agr" value="수신거부"checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>핸드폰</label>
@@ -83,8 +83,8 @@
 							</li>
 							<li>
 								<label><span class="red">*</span>정보수신동의 SMS</label>
-								<input type="radio" name="sms_agr"><span class="rchk">수신동의</span>
-								<input type="radio" name="sms_agr" checked><span class="rchk">수신거부</span>
+								<input type="radio" name="sms_agr" value="수신동의"><span class="rchk">수신동의</span>
+								<input type="radio" name="sms_agr" value="수신거부"checked><span class="rchk">수신거부</span>
 							</li>
 							<li>
 								<label><span class="red">*</span>음악취향</label>
