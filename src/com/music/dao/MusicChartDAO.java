@@ -8,6 +8,40 @@ import com.music.vo.MusicChartVO;
 public class MusicChartDAO extends DBConn{
 	
 	/**
+	 * Update : 좋아요 수 업데이트(-1)
+	 */
+	public void getUpdateHitsMinus(String mid) {
+		try {
+			String sql = "update musicchart set mhits=mhits-1 "
+					+ "where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Update : 좋아요 수 업데이트(+1)
+	 */
+	public void getUpdateHitsPlus(String mid) {
+		try {
+			String sql = "update musicchart set mhits=mhits+1 "
+					+ "where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
 	 * 전체 row count
 	 * @return
 	 */
@@ -258,7 +292,7 @@ public class MusicChartDAO extends DBConn{
 	public MusicChartVO getContent(String mid) {
 		MusicChartVO vo = new MusicChartVO();
 		try {
-			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, to_char(mdate,'yyyy/mm/dd'), music_file from musicchart where mid=?";
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, to_char(mdate,'yyyy/mm/dd'), music_file, mhits from musicchart where mid=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, mid);
@@ -275,6 +309,7 @@ public class MusicChartDAO extends DBConn{
 				vo.setMusic_simage(rs.getString(8));
 				vo.setMdate(rs.getString(9));
 				vo.setMusic_file(rs.getString(10));
+				vo.setMhits(rs.getInt(11));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

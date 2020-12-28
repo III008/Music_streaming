@@ -8,6 +8,27 @@ import com.music.vo.MypageLikeVO;
 public class MypageLikeDAO extends DBConn{
 	
 	/**
+	 * 좋아요 반영 확인
+	 */
+	public int likeResult(String mid, String id) {
+		int result = 0;
+		
+		try {
+			String sql ="SELECT COUNT(*) FROM MYPAGELIKE WHERE MID=? AND ID=?";
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.setString(2, id);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
 	 * Select - 음악 좋아요 전체 가져오기 (아이디로)
 	 */
 	public ArrayList<MypageLikeVO> getMusicLike(String id){

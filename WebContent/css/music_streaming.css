@@ -1874,7 +1874,7 @@
 		padding:0;
 		cursor:pointer;
 	}
-	body.music_content .btn_like {
+	body.music_content .btn_unlike {
 	  	position: relative;
 	 /*  margin: 100px auto; */
 	 /*  display: block; */
@@ -1893,13 +1893,13 @@
 	  	cursor: pointer;
 	}
 
-	body.music_content .btn_like:hover {
+	body.music_content .btn_unlike:hover {
 	  border: 1px solid rgba(228,89,89,0.3);
 	  background-color: rgba(228,89,89,0.02);
 	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
 	}
 	
-	body.music_content .btn_unlike .img_emoti {
+	body.music_content .btn_like .img_emoti {
 	    background-position: -30px -120px;
 	}
 	
@@ -1918,7 +1918,7 @@
 	    text-indent: 0;
 	}
 	
-	body.music_content .btn_like .ani_heart_m {
+	body.music_content .btn_unlike .ani_heart_m {
 	    margin: -63px 0 0 -63px;
 	}
 
