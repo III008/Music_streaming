@@ -1748,6 +1748,9 @@
 	body.music_content div section.section4 table td {
 		padding:10px 8px;
 	}
+	body.music_content a#mhits {
+		font-size:20px;
+	}
 	body.music_content div section.section1 table {
 		display:inline-block;
 		width:100%;

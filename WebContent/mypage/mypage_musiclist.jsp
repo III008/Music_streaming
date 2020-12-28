@@ -166,16 +166,18 @@ $(document).ready(function(){
 						<th>아티스트</th>
 						
 					</tr>
-					<% for(int i=0; i<list.size(); i++){ %>
-					<tr id="list">
-						<% int row=(reqPage-1)*5+(i+1); %>
-						<td><input type="checkbox" name="chk" id="<%= row %>"></td>
-						<td><%= list.get(i).getRno() %></td>
-						<td><img id="music_image"
-							src="http://localhost:9000/Music_streaming/upload/<%= list.get(i).getMusic_simage() %>"></td>
-						<td><a href="../chart/music_content.jsp?mid=<%= list.get(i).getMid() %>"><%= list.get(i).getSong() %></a></td>
-						<td><%= list.get(i).getArtist() %></td>
-					</tr>
+					<% if(list.size() != 0) { %>
+						<% for(int i=0; i<list.size(); i++){ %>
+						<tr id="list">
+							<% int row=(reqPage-1)*5+(i+1); %>
+							<td><input type="checkbox" name="chk" id="<%= row %>"></td>
+							<td><%= list.get(i).getRno() %></td>
+							<td><img id="music_image"
+								src="http://localhost:9000/Music_streaming/upload/<%= list.get(i).getMusic_simage() %>"></td>
+							<td><a href="../chart/music_content.jsp?mid=<%= list.get(i).getMid() %>"><%= list.get(i).getSong() %></a></td>
+							<td><%= list.get(i).getArtist() %></td>
+						</tr>
+						<% } %>
 					<% } %>
 					<tr>
 						<td colspan="5"><div id="ampaginationsm"></div></td>

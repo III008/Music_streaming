@@ -87,7 +87,7 @@
 			<div>
 				<table class="music_content">
 					<tr>
-						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= vo.getMusic_image() %>"></td>
+						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_image() %>"></td>
 						<td id="song_info">
 							<div id="song"><label><%= vo.getSong() %></label></div>
 							<div id="artist"><a><%= vo.getArtist() %></a></div>
@@ -103,7 +103,7 @@
 							<button type="button" class="btn_unlike" id="btnLike">
   								<span class="img_emoti">좋아요</span>
 							</button>
-							<a><%= vo.getMhits() %></a>
+							<a id="mhits"><%= vo.getMhits() %></a>
 							<button type="button" class="btn_style2">···</button>
 						</td>
 					</tr>
@@ -155,12 +155,6 @@
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td>
-							<div id="like">
-								<button type="button" class="btn_like">
-  								<span class="img_emoti">좋아요</span>
-								</button>
-							</div>
 						</tr>
 					</table>
 					<% } %>
