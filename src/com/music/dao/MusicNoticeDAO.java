@@ -6,18 +6,42 @@ import java.util.ArrayList;
 import com.music.vo.MusicNoticeVO;
 
 public class MusicNoticeDAO extends DBConn {
-
+	
+	/**
+	 * 	list count
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = " select count(*) from musicnotice";
+			
+			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	/**
 	 * Select : 전체 리스트 출력 
 	 */
-	public ArrayList<MusicNoticeVO> getList(){
+	public ArrayList<MusicNoticeVO> getList(int start, int end){
 		ArrayList<MusicNoticeVO> list = new ArrayList<MusicNoticeVO>();
 		
 		try {
-			String sql = "select rownum rno, nid, ntitle, to_char(ndate,'yyyy.mm.dd'), nhits" + 
-					" from (select * from musicnotice order by ndate desc)";
+			String sql = " select * from (select rownum rno, nid, ntitle, to_char(ndate,'yyyy.mm.dd'), nhits "
+					+ 	" from (select * from musicnotice order by ndate desc)) " 
+					+ " where rno between ? and ?";
 			
 			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				MusicNoticeVO vo = new MusicNoticeVO();

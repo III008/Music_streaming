@@ -87,16 +87,15 @@
 								<span>공지사항</span>
 							</a>
 						</li>
-					</ul> -->
-					
-					<% if(svo != null){ %>
-					<div class="login_click">
+					</ul> --> 
+					 <% if(svo != null){ %>
+					<a href="#" class="user"><%= svo.getName() %>님 환영합니다.</a>
+					<div class="logout_click">
 						<a href="http://localhost:9000/Music_streaming/login/logout.jsp">
 							<span>로그아웃</span>
 						</a>
 					</div>
 					<ul>
-						<li class="login_user"><a href="#"><%= svo.getName() %>님 환영합니다.</a></li>
 						<li>
 							<a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/mypage.png">

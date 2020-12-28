@@ -398,7 +398,29 @@ public class MusicMemberDAO extends DBConn {
 
 		return result;
 }
-
+	
+	/**
+	 * 아이디 가져오기
+	 */
+	public String getId(String name) {
+		String result = "";
+		
+		try {
+			String sql = "SELECT ID FROM MUSICMEMBER WHERE NAME=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, name);
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) result = rs.getString(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * 닉네임 가져오기
 	 */
