@@ -1049,9 +1049,13 @@
 	body.mypage_musiclist div.content>section.section2 table.like tr:first-child:hover,
 		body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2):hover,
 		body.mypage_movielist div.content>section.section2 table.like tr:first-child:hover,
-		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
+		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover,
+		body.mypage_musiclist div.content>section.section2 table.like tr:last-child:hover {
 			background-color:white;
 		}
+	body.mypage_musiclist table.like tr:last-child td {
+		text-align:center;
+	}
 	body.mypage_update span#fname {
 		display:inline-block;
 		width:200px;

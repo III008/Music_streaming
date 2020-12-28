@@ -13,6 +13,7 @@
 	MusicMemberDAO dao = new MusicMemberDAO();
 	String id = dao.getId(svo.getName());
 	MusicMemberVO vo = dao.getInfo(id); 
+	MypageLikeDAO dao1 = new MypageLikeDAO();
 %>
 <!DOCTYPE html>
 <html>
@@ -54,7 +55,7 @@
 					<tr>
 						<td><div class="vertical"></div></td>
 						<td>좋아요 곡 수</td>
-						<td><a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp?id=<%= id %>">10</a></td>
+						<td><a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp?id=<%= id %>"><%= dao1.getListCount(id) %></a></td>
 					</tr>
 					<tr>
 						<td><div class="vertical"></div></td>

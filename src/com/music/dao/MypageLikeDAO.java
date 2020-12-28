@@ -8,6 +8,69 @@ import com.music.vo.MypageLikeVO;
 public class MypageLikeDAO extends DBConn{
 	
 	/**
+	 * 전체 row count
+	 * @return
+	 */
+	public int getListCount(String id) {
+		int result = 0;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM (SELECT ROWNUM RNO, MUSICCHART.SONG, MUSICCHART.MUSIC_SIMAGE, MUSICCHART.ARTIST, MUSICCHART.MID, MYPAGELIKE.ID\r\n" + 
+					"FROM MUSICCHART\r\n" + 
+					"JOIN MYPAGELIKE ON MUSICCHART.MID = MYPAGELIKE.MID\r\n" + 
+					"WHERE MYPAGELIKE.ID=?)";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * List : 좋아요 리스트
+	 */
+	public ArrayList<MypageLikeVO> getList(int start, int end, String id){
+		ArrayList<MypageLikeVO> list = new ArrayList<MypageLikeVO>();
+		
+		try {
+			String sql = "SELECT * \r\n" + 
+					"FROM (SELECT ROWNUM RNO, MUSICCHART.SONG, MUSICCHART.MUSIC_SIMAGE, MUSICCHART.ARTIST, MUSICCHART.MID, MYPAGELIKE.ID\r\n" + 
+					"FROM MUSICCHART\r\n" + 
+					"JOIN MYPAGELIKE ON MUSICCHART.MID = MYPAGELIKE.MID\r\n" + 
+					"WHERE MYPAGELIKE.ID=?) \r\n" + 
+					"WHERE RNO BETWEEN ? AND ?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MypageLikeVO vo = new MypageLikeVO();
+				vo.setRno(rs.getInt(1));
+				vo.setSong(rs.getString(2));
+				vo.setMusic_simage(rs.getString(3));
+				vo.setArtist(rs.getString(4));
+				vo.setMid(rs.getString(5));
+				
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	/**
 	 * 좋아요 반영 확인
 	 */
 	public int likeResult(String mid, String id) {
