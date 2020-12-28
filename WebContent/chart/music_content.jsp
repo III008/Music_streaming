@@ -2,13 +2,30 @@
     pageEncoding="UTF-8"
     import="com.music.dao.*, com.music.vo.*, java.util.*"%>
 <% 
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+	
+	String id = "";
+	//svo 객체 != null ===> 로그인 성공!!
+	//svo 객체 == null ===> 로그인 하지 않은 상태
+	if(svo != null){
+
+		MusicMemberDAO dao = new MusicMemberDAO();
+		id = dao.getId(svo.getName());
+	}
+%>
+
+
+<% 
 	String mid = request.getParameter("mid");
 	MusicChartDAO dao = new MusicChartDAO();
 	MusicChartVO vo = dao.getContent(mid);  
 	
 	ArrayList<MusicChartVO> commlist = dao.getComm_List(mid);  
-	/* dao.getUpdateHits(mid);  */
+	
+	MypageLikeDAO dao1 = new MypageLikeDAO();
+	int likeResult = dao1.likeResult(mid,id);
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,42 +35,43 @@
 <script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 <script>
 	$(document).ready(function(){
-		
-		$('button').click(function(){
-			  if($(this).hasClass('btn_unlike')){
-			    $(this).removeClass('btn_unlike');
-			  }
-			  else{
-			    $(this).addClass('btn_unlike');
-			  }
-			});
+		//좋아요 반영 되어있을 때
+		if(<%= likeResult %>){
+			$("#btnLike").addClass('btn_like');
+		}
 		
 		$("#btnLike").click(function(){
-			$(this).attr("value","좋아요");
-			/* if($("#nickname").val() == ""){
-				alert("닉네임을 입력해주세요");
-				$("#nickname").focus();
-				return false;
-			}else {
-				//ajax를 활용한 서버 연동
-				$.ajax({
-					url:"mypage_nicknameCheck.jsp?nickname="+$("#nickname").val(),
-					success:function(result){
-						if(result == 1){
-							$("#nicknamecheck_result").text("이미 중복된 닉네임이 존재합니다. 다시 입력해주세요")
-								.css("color","red");
-							$("#nickname").val("");
-							$("#nickname").focus();
-							return false;
-						}else {
-							$("#nicknamecheck_result").text("사용가능한 닉네임입니다")
-							.css("color","blue");
-							return true;
+				
+			  if($(this).hasClass('btn_like')){
+				  //좋아요 취소
+				  $(this).removeClass('btn_like');
+				  
+				  //ajax를 활용한 서버 연동
+				  $.ajax({
+					  url:"music_content_unlike.jsp?mid=<%= mid %>&id=<%= id %>",
+					  success:function(result){
+						  alert("좋아요 취소되었습니다");
+						  location.reload();
+						  }
+					});
+			  }else{
+				  //좋아요를 눌렀을 때
+				  $(this).addClass('btn_like');
+				  
+				  //ajax를 활용한 서버 연동
+					$.ajax({
+						url:"music_content_like.jsp?mid=<%= mid %>&id=<%= id %>",
+						success:function(result){
+							alert("좋아요 반영되었습니다");
+							location.reload();
+							$(this).addClass('btn_like');
 						}
-					}
-				});
-			} */
-		});
+					});
+			   }
+			
+			});
+		
+		
 	});
 	
 </script>
@@ -69,7 +87,7 @@
 			<div>
 				<table class="music_content">
 					<tr>
-						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/images/<%= vo.getMusic_image() %>"></td>
+						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_image() %>"></td>
 						<td id="song_info">
 							<div id="song"><label><%= vo.getSong() %></label></div>
 							<div id="artist"><a><%= vo.getArtist() %></a></div>
@@ -82,9 +100,10 @@
 						<td id="bar">
 							<button type="button" class="btn_style">재생</button>
 							<button type="button" class="btn_style">MP3 구매</button>
-							<button type="button" class="btn_like" id="btnLike">
+							<button type="button" class="btn_unlike" id="btnLike">
   								<span class="img_emoti">좋아요</span>
 							</button>
+							<a id="mhits"><%= vo.getMhits() %></a>
 							<button type="button" class="btn_style2">···</button>
 						</td>
 					</tr>
@@ -108,7 +127,7 @@
 			</div>
 			<form name="commentWriteForm" action="commentWriteProc.jsp" method="post" class="comment_write">
 			<div>
-				<input type="hidden" name="id" value="<%= "test1234" %>"> <!-- 예시 -->
+				<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->
 				<input type="hidden" name="mid" value="<%= vo.getMid() %>">
 				<table class="comment">
 					<tr>
@@ -136,12 +155,6 @@
 						</tr>
 						<tr>
 							<td><div id="reply"><a href="#">답글</a></div></td>
-							<td>
-							<div id="like">
-								<button type="button" class="btn_like">
-  								<span class="img_emoti">좋아요</span>
-								</button>
-							</div>
 						</tr>
 					</table>
 					<% } %>
