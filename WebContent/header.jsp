@@ -37,7 +37,7 @@
 							<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
 						</a>
 					</div>
-					<div class="login_click">
+					<!-- <div class="login_click">
 						<a href="http://localhost:9000/Music_streaming/login/login.jsp">
 							<span>로그인</span>
 						</a>
@@ -87,8 +87,9 @@
 								<span>공지사항</span>
 							</a>
 						</li>
-					</ul>
-					<%-- <% if(svo != null){ %>
+					</ul> -->
+					
+					<% if(svo != null){ %>
 					<div class="login_click">
 						<a href="http://localhost:9000/Music_streaming/login/logout.jsp">
 							<span>로그아웃</span>
@@ -187,7 +188,7 @@
 							</a>
 						</li>
 					</ul>
-					<% } %> --%>
+					<% } %>
 					
 				</nav>
 			</div>

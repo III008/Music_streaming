@@ -280,7 +280,7 @@
 	section.section_1>div>form, section.section_1>div>table, table.board_content_rp,
 	table.board_content_reg, table.board_content_title, table.notice_content_rp,
 	table.notice_content_reg, table.notice_content_title,
-	section.section_1>div>div.notice_menu1, table.admin_member_list {
+	section.section_1>div>div.notice_menu1, div.search {
 		width:80%;
 		margin:auto;
 	}
@@ -307,7 +307,7 @@
 	
 /**
 	게시판 리스트, 공지사항 리스트
-	관리자 - 뮤비
+	관리자 - 뮤비, 회원관리
 */
 	table.board, table.notice, table.ask, table.admin_movie_list,
 	table.admin_member_list {
@@ -430,6 +430,9 @@
 	}
 	div.content_admin_member h1 {
 		margin-bottom:50px;
+	}
+	div.search {
+		margin-bottom:20px;
 	}
 	
 /**
