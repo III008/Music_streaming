@@ -84,13 +84,13 @@ public class MusicBoardDAO extends DBConn {
 		boolean result = false;
 		
 		try {
-			String sql = " UPDATE MUSICBOARD SET BTITLE=?, BCONTENT=?, BFILE=?, BSFILE=? WHERE BID=?";
+			String sql = " UPDATE MUSICBOARD SET BTITLE=?, BCONTENT=?, BD_FILE=?, BD_SFILE=? WHERE BID=?";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getBtitle());
 			pstmt.setString(2, vo.getBcontent());
-			pstmt.setString(3, vo.getBfile());
-			pstmt.setString(4, vo.getBsfile());
+			pstmt.setString(3, vo.getBd_file());
+			pstmt.setString(4, vo.getBd_sfile());
 			pstmt.setString(5, vo.getBid());
 			
 			int val = pstmt.executeUpdate();
@@ -128,7 +128,7 @@ public class MusicBoardDAO extends DBConn {
 		MusicBoardVO vo = new MusicBoardVO();
 		
 		try {
-			String sql = " select bid, btitle, bcontent, bfile, bsfile, to_char(bdate, 'yyyy.mm.dd'), brec, bhits"
+			String sql = " select bid, btitle, bcontent, bd_file, bd_sfile, to_char(bdate, 'yyyy.mm.dd'), brec, bhits"
 					+ " from musicboard where bid=?";
 			
 			getPreparedStatement(sql);
@@ -139,8 +139,8 @@ public class MusicBoardDAO extends DBConn {
 				vo.setBid(rs.getString(1));
 				vo.setBtitle(rs.getString(2));
 				vo.setBcontent(rs.getString(3));
-				vo.setBfile(rs.getString(4));
-				vo.setBsfile(rs.getString(5));
+				vo.setBd_file(rs.getString(4));
+				vo.setBd_sfile(rs.getString(5));
 				vo.setBdate(rs.getString(6));
 				vo.setBrec(rs.getInt(7));
 				vo.setBhits(rs.getInt(8));
@@ -233,8 +233,8 @@ public class MusicBoardDAO extends DBConn {
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getBtitle());
 			pstmt.setString(2, vo.getBcontent());
-			pstmt.setString(3, vo.getBfile());
-			pstmt.setString(4, vo.getBsfile());
+			pstmt.setString(3, vo.getBd_file());
+			pstmt.setString(4, vo.getBd_sfile());
 			
 			int val = pstmt.executeUpdate();
 			

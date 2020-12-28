@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    import="com.music.vo.*, com.music.dao.*, java.util.*"%>
+    pageEncoding="UTF-8" import="com.music.vo.*, com.music.dao.*"%>
 <%
 	String bid = request.getParameter("bid");
 	MusicBoardDAO dao = new MusicBoardDAO();
@@ -15,7 +14,7 @@
 		<meta charset="UTF-8">
 		<title>board_content</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+		<!-- <script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script> -->
 	</head>
 	<body>
 		<!-- header -->
@@ -52,8 +51,8 @@
 							<td colspan="7">
 								<p>
 									<%= vo.getBcontent().replace("\r\n", "<br>") %><br>
-									<% if(vo.getBsfile() != null) { %>
-									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getBsfile()%>" width=50%>
+									<% if(vo.getBd_sfile() != null) { %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getBd_sfile()%>" width=50%>
 									<% } %>
 								</p>
 							</td>
@@ -94,8 +93,8 @@
 							<td colspan="3"><div id="rp_write"><label><%= bvo.getRp_write() %></label></div></td>
 						</tr>
 					</table>
-			</section>
- 		</div> --%>
+			</section> --%>
+ 		</div>
 		
 		<!-- footer -->
 		<jsp:include page="../footer.jsp"></jsp:include>

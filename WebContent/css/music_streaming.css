@@ -396,20 +396,23 @@
 		background-color:white;
 		text-decoration:none;
 	}
-	table.board tr td:first-child, table.notice tr td:first-child, table.ask tr td:first-child,
+	table.board tr th:first-child, table.notice tr th:first-child, table.ask tr th:first-child,
 	table.admin_movie_list tr td:first-child {
-		width:80px;
+		width:7%;
 	}
-	table.board tr td:last-child, table.notice tr td:last-child, table.ask tr td:last-child,
+	table.board tr th:last-child, table.notice tr th:last-child, table.ask tr th:last-child,
 	table.admin_movie_list tr td:last-child {
-		width:100px;
+		width:10%;
 	}
 	table.ask tr td:nth-child(2) {
 		width:120px;
 	}
-	table.board tr td:nth-child(3), table.notice tr td:nth-child(3), table.ask tr td:nth-child(4),
+	table.board tr th:nth-child(2) {
+		width:60%;
+	}
+	table.board tr th:nth-child(3), table.notice tr th:nth-child(3), table.ask tr th:nth-child(4),
 	table.admin_movie_list tr td:nth-child(3) {
-		width:180px;
+		width:10%;
 	}
 	table.notice_menu {
 		/* border:1px solid red; */
