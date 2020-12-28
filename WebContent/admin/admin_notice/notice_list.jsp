@@ -29,7 +29,6 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 			start = reqPage;
 			end = pageSize;
 		}
-
 		ArrayList<MusicNoticeVO> list = dao.getList(start, end);
 %>
 	
@@ -72,14 +71,13 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 	}
 	
 	$(document).ready(function(){
-		//페이지 번호 및 링크 		
+
 		var pager = jQuery("#ampaginationsm").pagination({
 			maxSize : 5,			
 			totals:<%=dbCount%>,
 			page : <%=reqPage%>,
 			pageSize : <%=pageSize%>,
 					
-			
 			lastText : '&raquo;&raquo;',
 			firstText : '&laquo;&laquo',
 			prevTest : '&laquo;',
@@ -90,7 +88,7 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 		
 		jQuery("#ampaginationsm").on('am.pagination.change',function(e){
 			$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
-			//location.href('이동페이지');
+
 		});
 	});
 </script>
