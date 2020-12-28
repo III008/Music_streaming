@@ -36,8 +36,8 @@
 						<a href="http://localhost:9000/Music_streaming/index.jsp">
 							<img src="http://localhost:9000/Music_streaming/images/logo.jpg">
 						</a>
-					</div>
-					<div class="login_click">
+				 	</div>
+				<!-- 	<div class="login_click">
 						<a href="http://localhost:9000/Music_streaming/login/login.jsp">
 							<span>로그인</span>
 						</a>
@@ -87,15 +87,16 @@
 								<span>공지사항</span>
 							</a>
 						</li>
-					</ul>
-					<%-- <% if(svo != null){ %>
-					<div class="login_click">
+					</ul> --> 
+					 <% if(svo != null){ %>
+					<a href="#" class="user"><%= svo.getName() %>님 환영합니다.</a>
+					<div class="logout_click">
 						<a href="http://localhost:9000/Music_streaming/login/logout.jsp">
 							<span>로그아웃</span>
 						</a>
 					</div>
 					<ul>
-						<li class="login_user"><a href="#"><%= svo.getName() %>님 환영합니다.</a></li>
+				<%-- 		<li class="login_user"><a href="#"><%= svo.getName() %>님 환영합니다.</a></li> --%>
 						<li>
 							<a href="http://localhost:9000/Music_streaming/mypage/mypage_home.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/mypage.png">
@@ -187,7 +188,7 @@
 							</a>
 						</li>
 					</ul>
-					<% } %> --%>
+					<% } %>
 					
 				</nav>
 			</div>

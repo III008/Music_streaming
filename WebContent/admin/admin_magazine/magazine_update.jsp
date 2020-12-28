@@ -38,7 +38,7 @@
 			<div>
 				<h1>매거진 관리</h1>
 				<form name="magazineUpdateForm" action="magazineUpdateProc.jsp"
-					method="post" class="board_update" enctype="multipart/form-data">
+					method="post" class="magazine_update" enctype="multipart/form-data">
 					<input type="hidden" name="mid" value="<%=vo.getMid()%>">
 					<ul>
 						<li><label>제 목</label> <input type="text" name="mtitle"
@@ -69,7 +69,7 @@
 	</div>
 
 	<!-- footer -->
-	s
+	
 	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -30,14 +30,16 @@
 		width:200px;
 		height:140px;
 	}
-	header nav>ul>li.login_user>a:first-child{
-		text-align:center;
-		text-decoration:none;
-	}
 	header nav>ul>li {
 		padding:6px 5px 5px 25px;
 		clear:both;
 		margin:10px 0;
+	}
+	header nav>a.user{
+		color:rgb(255, 0, 80);
+		text-decoration:none;
+		text-align:center;
+		display:block;
 	}
 	nav>ul>li>a>img {
 		width:40px;
@@ -58,12 +60,12 @@
 		color:rgb(255, 0, 80);
 	}
 	
-	/**로그인버튼**/
-	div.login_click {
+	/**로그인버튼,로그아웃 버튼**/
+	div.login_click,div.logout_click {
 		text-align:center;
 	}
 	
-	div.login_click>a {
+	div.login_click>a,div.logout_click>a {
 		display:inline-block;
 		text-align:center;
 		width:70%;
@@ -76,8 +78,15 @@
 		margin:15px 0;
 		text-decoration:none;
 	}
+	div.logout_click>a{
+		width:50%;
+		padding:7px 0;
+		font-size:15px;
+		font-weight:800;
+	}
 	
-	div.login_click>a:hover {
+	
+	div.login_click>a:hover,div.logout_click>a:hover {
 		text-decoration:none;
 		color:rgb(255, 0, 80);
 	}
@@ -592,12 +601,12 @@
 */	
 	form.board_write, form.board_update,
 	form.admin_movie_update, form.admin_movie_register,
-	form.admin_music_update, form.admin_music_register{
+	form.admin_music_update, form.admin_music_register,form.magazine_wirte,form.magazine_update{
 		padding-top:50px;
 	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
 	form.board_write, form.board_update, form.admin_movie_update, form.admin_movie_register,
-	form.admin_music_update, form.admin_music_register{
+	form.admin_music_update, form.admin_music_register,form.magazine_wirte,form.magazine_update{
 		padding-top:50px;
 	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
@@ -612,19 +621,25 @@
 	form.admin_music_update>ul>li:first-child, form.admin_music_update>ul>li:nth-child(2),
 	form.admin_music_update>ul>li:nth-child(3), form.admin_music_update>ul>li:nth-child(4),
 	form.admin_music_register>ul>li:first-child, form.admin_music_register>ul>li:nth-child(2),
-	form.admin_music_register>ul>li:nth-child(3), form.admin_music_register>ul>li:nth-child(4) {
+	form.admin_music_register>ul>li:nth-child(3), form.admin_music_register>ul>li:nth-child(4),
+	form.magazine_wirte>ul>li:first-child, form.magazine_wirte>ul>li:nth-child(2),
+	form.magazine_wirte>ul>li:nth-child(3),form.magazine_wirte>ul>li:nth-child(4),
+	form.magazine_update>ul>li:first-child, form.magazine_update>ul>li:nth-child(2),
+	form.magazine_update>ul>li:nth-child(3),form.magazine_update>ul>li:nth-child(4),
+		form.magazine_wirte>ul>li:nth-child(5),form.magazine_update>ul>li:last-child(5) {
 		padding:5px 0 5px 50px;
 	}
 	
 	form.board_write>ul>li, form.board_update>ul>li, form.admin_movie_update>ul>li,
-	form.admin_movie_register>ul>li, form.admin_music_update>ul>li, form.admin_music_register>ul>li {
+	form.admin_movie_register>ul>li, form.admin_music_update>ul>li, form.admin_music_register>ul>li,
+	form.magazine_wirte>ul>li,form.magazine_update>ul>li{
 		list-style-type:none;
 		clear:both;
 		margin-bottom:5px;
 	}
 	form.board_write>ul>li>label, form.board_update>ul>li>label, form.admin_movie_update>ul>li>label,
 	form.admin_movie_register>ul>li>label, form.admin_music_update>ul>li>label,
-	form.admin_music_register>ul>li>label {
+	form.admin_music_register>ul>li>label,form.magazine_wirte>ul>li>label,form.magazine_update>ul>li>label {
 		background-color:rgb(213, 213, 213);
 		display:inline-block;
 		width:100px;
@@ -643,7 +658,9 @@
 	form.admin_movie_update>ul>li>textarea, form.admin_movie_register>ul>li>input[type="text"],
 	form.admin_movie_register>ul>li>textarea, form.admin_music_update>ul>li>input[type="text"],
 	form.admin_music_update>ul>li>textarea, form.admin_music_register>ul>li>input[type="text"],
-	form.admin_music_register>ul>li>textarea {
+	form.admin_music_register>ul>li>textarea,
+	form.magazine_wirte>ul>li>input[type="text"],form.magazine_wirte>ul>li>textarea,
+	form.magazine_update>ul>li>input[type="text"],form.magazine_update>ul>li>textarea {
 		border-radius:4px;
 		width:80%;
 		padding:7px 10px;
@@ -656,9 +673,13 @@
 	form.admin_music_register>ul>li>textarea {
 		height:150px;
 	}
+	form.magazine_wirte>ul>li>textarea,form.magazine_update>ul>li>textarea{
+		height:300px;
+	}
 	form.board_write>ul>li>input[type="file"], form.board_update>ul>li>input[type="file"],
 	form.admin_movie_update>ul>li>input[type="file"], form.admin_movie_register>ul>li>input[type="file"],
-	form.admin_music_update>ul>li>input[type="file"], form.admin_music_register>ul>li>input[type="file"] {
+	form.admin_music_update>ul>li>input[type="file"], form.admin_music_register>ul>li>input[type="file"],
+	form.magazine_wirte>ul>li>input[type="file"], form.magazine_update>ul>li>input[type="file"]{
 		width:50%;
 		height:50px;
 		padding:3px 0;
@@ -667,7 +688,8 @@
 	}
 	form.board_write>ul>li:last-child button, form.board_update>ul>li:last-child button,
 	form.admin_movie_update>ul>li:last-child button, form.admin_movie_register>ul>li:last-child button,
-	form.admin_music_update>ul>li:last-child button, form.admin_music_register>ul>li:last-child button {
+	form.admin_music_update>ul>li:last-child button, form.admin_music_register>ul>li:last-child button,
+	form.magazine_wirte>ul>li:last-child button,form.magazine_update>ul>li:last-child button {
 		font-size:13px;
 		width:100px;
 		padding:5px 0;
@@ -675,10 +697,11 @@
 	}
 	form.board_write>ul>li:last-child, form.board_update>ul>li:last-child,
 	form.admin_movie_update>ul>li:last-child, form.admin_movie_register>ul>li:last-child,
-	form.admin_music_update>ul>li:last-child, form.admin_music_register>ul>li:last-child {
+	form.admin_music_update>ul>li:last-child, form.admin_music_register>ul>li:last-child,
+	form.magazine_wirte>ul>li:last-child,form.magazine_update>ul>li:last-child {
 		text-align:center;
 	}
-	
+
 	
 /**
 	게시판 스타일 - 삭제

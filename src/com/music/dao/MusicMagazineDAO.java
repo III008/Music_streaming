@@ -157,8 +157,6 @@ public class MusicMagazineDAO extends DBConn{
 		return result;
 	}
 	
-	
-	
 	/**
 	 * Delete : ªË¡¶
 	 */
