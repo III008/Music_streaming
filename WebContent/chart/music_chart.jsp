@@ -35,7 +35,7 @@
 			<div>
 				<h3>
 					<img src="http://localhost:9000/Music_streaming/images/chart_img2.png"> 
-					<label class="top5_1">조회 TOP 5</label>
+					<label class="top5_1">TOP 5</label>
 				</h3>
 				<div class="line"></div>
 				<div class="part">
@@ -102,7 +102,7 @@
 			<div>
 				<h3>
 					<img src="http://localhost:9000/Music_streaming/images/chart_img2.png">
-					<label class="top5_2">최신 TOP 5</label>
+					<label class="top5_2">최신 음악</label>
 				</h3>
 				<div class="line"></div>
 				<div class="part">
