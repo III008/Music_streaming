@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="com.music.vo.*, com.music.dao.*, java.util.*"%>
+<% 
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+
+	//svo 객체 != null ===> 로그인 성공!!
+	//svo 객체 == null ===> 로그인 하지 않은 상태
+	if(svo != null){
+%>
+
 <%
 	//id 임의로
-	String id = "test1234";
 	MusicMemberDAO dao = new MusicMemberDAO();
+	String id = dao.getId(svo.getName());
 	MusicMemberVO vo = dao.getInfo(id); 
 %>
 <!DOCTYPE html>
@@ -350,3 +358,8 @@
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
+<% }else { %>
+<script>
+	alert("로그인을 진행하셔야 접근이 가능합니다.");
+</script>
+<% } %>

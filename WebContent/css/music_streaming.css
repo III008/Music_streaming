@@ -1075,9 +1075,13 @@
 	body.mypage_musiclist div.content>section.section2 table.like tr:first-child:hover,
 		body.mypage_musiclist div.content>section.section2 table.like tr:nth-child(2):hover,
 		body.mypage_movielist div.content>section.section2 table.like tr:first-child:hover,
-		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover {
+		body.mypage_movielist div.content>section.section2 table.like tr:nth-child(2):hover,
+		body.mypage_musiclist div.content>section.section2 table.like tr:last-child:hover {
 			background-color:white;
 		}
+	body.mypage_musiclist table.like tr:last-child td {
+		text-align:center;
+	}
 	body.mypage_update span#fname {
 		display:inline-block;
 		width:200px;
@@ -1762,13 +1766,36 @@
 	body.music_content div section.section3 table,
 	body.music_content div section.section3 table td,
 	body.music_content div section.section4 table,
-	body.music_content div section.section4 table td {
+	body.music_content div section.section4 table td,
+	body.music_content table.sameArtist,
+	body.music_content table.sameArtist td {
 		border-collapse:collapse;
+	}
+	body.music_content table.sameArtist {
+		text-align:left;
+		margin-left:13%;
+		margin-bottom:3%;
+		width:75%;
+	}
+	body.music_content table.sameArtist tr {
+		border-top:1px solid lightgray;
+		border-bottom:1px solid lightgray;
+	}
+	body.music_content table.sameArtist td:first-child {
+		width:150px;
+		padding-left:10px;
+	}
+	body.music_content table.sameArtist img {
+		width:90px;
+		height:90px;
 	}
 	body.music_content div section.section1 table td,
 	body.music_content div section.section3 table td,
-	body.music_content div section.section4 table td {
+	body.music_content div section.section4 table td{
 		padding:10px 8px;
+	}
+	body.music_content a#mhits {
+		font-size:20px;
 	}
 	body.music_content div section.section1 table {
 		display:inline-block;
@@ -1900,7 +1927,7 @@
 		padding:0;
 		cursor:pointer;
 	}
-	body.music_content .btn_like {
+	body.music_content .btn_unlike {
 	  	position: relative;
 	 /*  margin: 100px auto; */
 	 /*  display: block; */
@@ -1919,13 +1946,13 @@
 	  	cursor: pointer;
 	}
 
-	body.music_content .btn_like:hover {
+	body.music_content .btn_unlike:hover {
 	  border: 1px solid rgba(228,89,89,0.3);
 	  background-color: rgba(228,89,89,0.02);
 	  box-shadow: 0 2px 4px 0 rgba(228,89,89,0.2);
 	}
 	
-	body.music_content .btn_unlike .img_emoti {
+	body.music_content .btn_like .img_emoti {
 	    background-position: -30px -120px;
 	}
 	
@@ -1944,7 +1971,7 @@
 	    text-indent: 0;
 	}
 	
-	body.music_content .btn_like .ani_heart_m {
+	body.music_content .btn_unlike .ani_heart_m {
 	    margin: -63px 0 0 -63px;
 	}
 
