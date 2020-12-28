@@ -287,6 +287,44 @@ public class MusicChartDAO extends DBConn{
 	}
 	
 	/**
+	 * Select : 같은 아티스트
+	 */
+	public ArrayList<MusicChartVO> getSameArtist(String artist) {
+		ArrayList<MusicChartVO> list = new ArrayList<MusicChartVO>();
+		try {
+			String sql = "select mid, music_image, song, artist, lyricist, composer, lyrics, music_simage, to_char(mdate,'yyyy/mm/dd'),\r\n" + 
+					"music_file, mhits \r\n" + 
+					"from musicchart \r\n" + 
+					"where artist=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, artist);
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MusicChartVO vo = new MusicChartVO();
+				vo.setMid(rs.getString(1));
+				vo.setMusic_image(rs.getString(2));
+				vo.setSong(rs.getString(3));
+				vo.setArtist(rs.getString(4));
+				vo.setLyricist(rs.getString(5));
+				vo.setComposer(rs.getString(6));
+				vo.setLyrics(rs.getString(7));
+				vo.setMusic_simage(rs.getString(8));
+				vo.setMdate(rs.getString(9));
+				vo.setMusic_file(rs.getString(10));
+				vo.setMhits(rs.getInt(11));
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	/**
 	 * Select : 상세 내용
 	 */
 	public MusicChartVO getContent(String mid) {

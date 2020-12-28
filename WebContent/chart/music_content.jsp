@@ -20,7 +20,8 @@
 	MusicChartDAO dao = new MusicChartDAO();
 	MusicChartVO vo = dao.getContent(mid);  
 	
-	ArrayList<MusicChartVO> commlist = dao.getComm_List(mid);  
+	ArrayList<MusicChartVO> commlist = dao.getComm_List(mid);
+	ArrayList<MusicChartVO> list = dao.getSameArtist(vo.getArtist()); 
 	
 	MypageLikeDAO dao1 = new MypageLikeDAO();
 	int likeResult = dao1.likeResult(mid,id);
@@ -119,6 +120,27 @@
 				<p class="lyrics"><%= vo.getLyrics() %>
 				
 				</p>
+			</div>
+			<div>
+				<h3>같은 아티스트의 음악</h3>
+			</div>
+			<div>
+				<table class="sameArtist">
+					<% if(list.size() != 0) { %>
+						<% for(int i=0; i<list.size(); i++){ %>
+						<% if(list.get(i).getMid() != mid) { %>
+						<tr id="list">
+							<td><img id="music_image"
+								src="http://localhost:9000/Music_streaming/upload/<%= list.get(i).getMusic_simage() %>"></td>
+							<td><a href="../chart/music_content.jsp?mid=<%= list.get(i).getMid() %>"><%= list.get(i).getSong() %></a></td>
+							<td><%= list.get(i).getArtist() %></td>
+							<td><%= list.get(i).getLyricist() %></td>
+							<td><%= list.get(i).getComposer() %></td>
+						</tr>
+						<% } %>
+						<% } %>
+					<% } %>
+				</table>
 			</div>
 		</section>
 		<section class="section3">
