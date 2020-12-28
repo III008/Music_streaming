@@ -4,6 +4,8 @@
 	%>
 <%
 MusicNoticeDAO dao = new MusicNoticeDAO();
+ String nid = request.getParameter("nid"); 
+ boolean result = dao.getDelete(nid);
 /* 	ArrayList<MusicNoticeVO> list = dao.getList(); */
 	
 		String rpage = request.getParameter("rpage");
@@ -43,7 +45,8 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
 <script>
-	function allCheck(){
+/*전체 선택*/
+/* 	function allCheck(){
 		var all =document.getElementById("all");
 		var chk_list = document.getElementsByName("chk");
 
@@ -67,9 +70,37 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 				del_list += chk_list[i].getAttribute("id")+",";
 			}
 		}
-		alert(del_list);
-	}
+		alert(del_list);	
+		noticeDeleteProc.submit();
+	} */
 	
+	/** 전체선택 **/
+	$("#all").change(function(){
+		$("#all:checked").length == 0
+		if($(this).is(":checked")){
+			//선택 - 하위 checkbox 선택
+			$("input[name='chk']").prop("checked",true);
+		}else{
+			//해제 - 하위 checkbox 해제
+			$("input[name='chk']").prop("checked",false);
+		}
+		
+	});
+	
+	
+	/** 삭제 버튼 클릭 : 클릭된 체크박스의 id 값을 리턴 **/
+	$("#btnDelete").click(function(){
+		var del_list ="";
+		
+		$("input[name='chk']:checked").each(function(index){
+			del_list += $(this).attr("id")+",";
+		});
+
+		//ajax를 이용하여 서버로 전송 후 삭제 진행
+	});
+	
+	
+	/*페이징 처리*/
 	$(document).ready(function(){
 
 		var pager = jQuery("#ampaginationsm").pagination({
@@ -105,14 +136,16 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 				<table class="ad_notice">
 					<tr>
 						<td colspan="5">
-							<button type="button" class="btn_style" id="delete" onclick="chk_delete()">공지사항 삭제</button>
+						<%-- <a href="noticeDeleteProc.jsp?nid=<%=nid%>"> --%>
+							<button type="button" class="btn_style" id="btnDelete">공지사항 삭제</button>
+						<!-- </a> -->
 						<a href="notice_write.jsp" >
 								<button type="button" class="btn_style" id="insert">공지사항 등록</button>
 						</a>
 					</td>
 					</tr>
 					<tr>
-						<th><input type="checkbox" id="all" onchange="allCheck()">전체선택</th>
+						<th><input type="checkbox" id="all" >전체선택</th>
 						<th>번호</th>
 						<th>제목</th>
 						<th>등록일</th>
@@ -121,7 +154,7 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 					
 					<% for (MusicNoticeVO vo : list) { %>
 					<tr>
-						<td><input type="checkbox" name="chk" id="01"></td>	<!-- 번호 바꿔야해ㅑ  -->
+						<td><input type="checkbox" name="chk" id="<%=vo.getNid() %>"></td>	<!-- 번호 바꿔야해ㅑ  -->
 						<td><%= vo.getRno() %></td>
 						<td><a href="notice_content.jsp?nid=<%=vo.getNid()%>"><%= vo.getNtitle() %></a></td>
 						<td><%= vo.getNdate() %></td>
