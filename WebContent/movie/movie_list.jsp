@@ -53,7 +53,7 @@
 						<dl>
 							<dt><%=vo.getVtitle() %></dt>
 							<dt><%=vo.getVartist() %></dt>
-							<dt class="like_image"><a href= ""><img src="http://localhost:9000/Music_streaming/images/heart.PNG"></a><span></span>조회<%= vo.getVhits() %></dt>
+							<dt>조회수 : <%= vo.getVhits() %></dt>
 						</dl>
 					</li>
 						<%} %>

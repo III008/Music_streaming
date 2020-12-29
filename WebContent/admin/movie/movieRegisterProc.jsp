@@ -7,7 +7,6 @@
 	int max_size = 1024*1024*15;
 	MultipartRequest multi = new MultipartRequest(request, save_path, max_size,
 			"UTF-8",new DefaultFileRenamePolicy());
-			System.out.println("path==>>" + save_path);	
 	
 	MusicVideoVO vo = new MusicVideoVO();
 	vo.setVartist(multi.getParameter("vartist"));

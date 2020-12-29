@@ -8,9 +8,8 @@
 	 MusicVideoDAO dao = new MusicVideoDAO();
 	 MusicVideoVO vo = dao.getContent(vid);
 	 dao.getUpdateHits(vid);
-	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vartist,vid);
 	 
-	 int start = 0;
+	 	int start = 0;
 		int end = 0;
 		int pageSize = 5; 
 		int pageCount = 1; 
@@ -31,6 +30,7 @@
 			start = reqPage;
 			end = pageSize;
 		}
+	 ArrayList<MusicVideoVO> samelist = dao.getSameContent(vartist,vid,start,end);
 	 %>
 <!DOCTYPE html>
 <html>
