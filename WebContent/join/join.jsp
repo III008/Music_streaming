@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>join</title>
+		<title>회원가입</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
@@ -18,7 +18,7 @@
 			<section class="section_1">
 				<div>
 					<h1>회원가입</h1>
-					<form name="joinForm" action="joinProc.jsp" method="get" class="join">
+					<form name="joinForm" action="joinProc.jsp" method="get" class="join" enctype="multipart/form-data">
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>

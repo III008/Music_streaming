@@ -443,7 +443,15 @@
 	div.search {
 		margin-bottom:20px;
 	}
-	
+	div.search>select#sname, div.search>input#svalue {
+		font-size:17px;
+	}
+	div.search>button#btnSearch {
+		font-size:17px;
+		padding:0 5px;
+	}
+
+
 /**
 	包府磊 - 雀盔 包府
 */
