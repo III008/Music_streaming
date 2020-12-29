@@ -2,8 +2,10 @@
 	pageEncoding="UTF-8"
 	import="com.music.dao.*, com.music.vo.*, java.util.*"%>
 <%
-	MusicChartDAO dao = new MusicChartDAO(); 
-	ArrayList<MusicChartVO> list1 = dao.getList1();  
+	MusicChartDAO dao = new MusicChartDAO();
+	int start = 1;
+	int end = 4;
+	ArrayList<MusicChartVO> list1 = dao.getList1(start,end); 
 %> 
 <!DOCTYPE html>
 <html>
@@ -133,20 +135,22 @@
 			</div>
 		</section>
 		
-		<section class="magazine2"><!-- 음악  -->
+		<section class="magazine2" id="music"><!-- 음악  -->
 			<div id="navbar">
 				<a class="active"
 					href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">음악 ></a>
 			</div>
-			<div class="content2">
+			<div class="content2" id="music_content">
+				<% for(MusicChartVO vo : list1) {%>
 				<div>
-					<img
-						src="http://localhost:9000/Music_streaming/images/magazine1.png">
+					<a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= vo.getMid() %>"><img
+						src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>"></a>
 					<dl>
-						<dt>넓은 음악적 스펙트럼을 자랑하는 함소윤</dt>
-						<dt>2020.11.16</dt>
+						<dt><%= vo.getSong() %></dt>
+						<dt><%= vo.getArtist() %></dt>
 					</dl>
 				</div>
+				<% } %>
 				
 			</div>
 		</section>

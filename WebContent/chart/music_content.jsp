@@ -88,7 +88,7 @@
 			<div>
 				<table class="music_content">
 					<tr>
-						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_image() %>"></td>
+						<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>"></td>
 						<td id="song_info">
 							<div id="song"><label><%= vo.getSong() %></label></div>
 							<div id="artist"><a><%= vo.getArtist() %></a></div>
