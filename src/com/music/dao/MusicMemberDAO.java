@@ -503,6 +503,7 @@ public class MusicMemberDAO extends DBConn {
 		return list;
 	}
 
+	
 	public MusicMemberVO FindID(String email) {
 		MusicMemberVO vo = new MusicMemberVO();
 		try {
@@ -519,6 +520,8 @@ public class MusicMemberDAO extends DBConn {
 		}
 		return vo;
 	}
+	
+	
 	public MusicMemberVO FindPass(String id, String email) {
 		MusicMemberVO vo = new MusicMemberVO();
 		try {

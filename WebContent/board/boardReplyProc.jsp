@@ -6,18 +6,18 @@
 <jsp:setProperty name="vo" property="*" />
 
 <%
-	/* String id = request.getParameter("id");
+	String id = request.getParameter("id");
 	String bid = request.getParameter("bid");
 	
 	//DB연동
 	MusicBoardDAO dao = new MusicBoardDAO();
-	boolean result = dao.getReplyInsert(vo,id,bid);
+	boolean result = dao.getRpInsert(vo,id,bid);
 	
 	if(result){
 		response.sendRedirect("board_content.jsp?bid="+bid);
 	}else{
-		System.out.println("오류");
-	} */
+		response.sendRedirect("../errorPage.jsp");
+	}
 
 
 

@@ -76,8 +76,7 @@
 				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
 								<li><a href="#">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
-								<li><a href="#">알앤비</a></li>
-								<li><a href="#">인디</a></li>
+								<li><a href="#">R&B/인디</a></li>
 								<li><a href="#">트롯</a></li>
 				            </ul>
 				        </li>
@@ -129,8 +128,7 @@
 				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
 								<li><a href="#">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
-								<li><a href="#">알앤비</a></li>
-								<li><a href="#">인디</a></li>
+								<li><a href="#">R&B/인디</a></li>
 								<li><a href="#">트롯</a></li>
 				            </ul>
 				        </li>
@@ -175,8 +173,7 @@
 				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
 								<li><a href="#">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
-								<li><a href="#">알앤비</a></li>
-								<li><a href="#">인디</a></li>
+								<li><a href="#">R&B/인디</a></li>
 								<li><a href="#">트롯</a></li>
 				            </ul>
 				        </li>

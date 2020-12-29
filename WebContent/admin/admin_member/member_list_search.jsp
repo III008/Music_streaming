@@ -55,6 +55,9 @@
 		jarray.add(jobj);
 	}
 	jdata.add("jlist", jarray);
+	jdata.addProperty("dbcount", dbCount);
+	jdata.addProperty("reqpage", reqPage);
+	jdata.addProperty("pagesize", pageSize);
 	
 	out.write(gson.toJson(jdata)); //gson.toJSON()
 %>
