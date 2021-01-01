@@ -74,6 +74,8 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 		noticeDeleteProc.submit();
 	} */
 	
+	$(document).ready(function(){
+		
 	/** 전체선택 **/
 	$("#all").change(function(){
 		$("#all:checked").length == 0
@@ -83,26 +85,40 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 		}else{
 			//해제 - 하위 checkbox 해제
 			$("input[name='chk']").prop("checked",false);
-		}
-		
+		}	
 	});
-	
+	/**전체선택후 개별선택시 전체선택 체크해제**/
+	$("input[name='chk']").click(function(){
+		  $("#all").prop("checked", false);
+		 });
 	
 	/** 삭제 버튼 클릭 : 클릭된 체크박스의 id 값을 리턴 **/
 	$("#btnDelete").click(function(){
-		var del_list ="";
-		
-		$("input[name='chk']:checked").each(function(index){
+		 var del_list =""
+		 $("input[name='chk']:checked").each(function(index){
 			del_list += $(this).attr("id")+",";
 		});
-
+			alert(del_list); 	
+	
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
-	});
+		$.ajax({
+			url:"noticeDeleteProc.jsp?del_list="+del_list,
+			sucees:function(result){
+				 if(result == 1) {     
+					 alert("삭제 성공");
+				/* location.href = "/shop/cartList"; */
+		      } else {
+		       alert("삭제 실패");
+		      }
+			}
+			
+				
+		})//ajax
+		
+	});//btnDelete
 	
 	
 	/*페이징 처리*/
-	$(document).ready(function(){
-
 		var pager = jQuery("#ampaginationsm").pagination({
 			maxSize : 5,			
 			totals:<%=dbCount%>,
@@ -121,7 +137,8 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 			$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
 
 		});
-	});
+		
+	});//ready
 </script>
 
 </head>
@@ -137,7 +154,7 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 					<tr>
 						<td colspan="5">
 						<%-- <a href="noticeDeleteProc.jsp?nid=<%=nid%>"> --%>
-							<button type="button" class="btn_style" id="btnDelete">공지사항 삭제</button>
+							<button type="button" class="btn_style" id="btnDelete" >공지사항 삭제</button>
 						<!-- </a> -->
 						<a href="notice_write.jsp" >
 								<button type="button" class="btn_style" id="insert">공지사항 등록</button>
