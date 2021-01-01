@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>join</title>
+		<title>회원가입</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
@@ -18,7 +18,8 @@
 			<section class="section_1">
 				<div>
 					<h1>회원가입</h1>
-					<form name="joinForm" action="joinProc.jsp" method="get" class="join">
+					<form name="joinForm" action="joinProc.jsp" method="post" class="join">
+					 <!-- enctype="multipart/form-data" -->
 						<div class="j_title"><span class="red">*</span>표시 항목은 필수 입력 항목 입니다.</div>
 						<ul>
 							<li>
@@ -91,8 +92,7 @@
 								<input type="checkbox" name="genre" value="발라드"><span class="rchk">발라드</span>
 								<input type="checkbox" name="genre" value="댄스"><span class="rchk">댄스</span>
 								<input type="checkbox" name="genre" value="랩/힙합"><span class="rchk">랩/힙합</span>
-								<input type="checkbox" name="genre" value="R&B"><span class="rchk">R&B</span>
-								<input type="checkbox" name="genre" value="인디"><span class="rchk">인디</span>
+								<input type="checkbox" name="genre" value="R&B"><span class="rchk">R&B/인디</span>
 								<input type="checkbox" name="genre" value="트롯"><span class="rchk">트롯</span>
 							</li>
 							<li>

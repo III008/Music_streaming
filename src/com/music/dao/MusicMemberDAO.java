@@ -8,6 +8,71 @@ import com.music.vo.SessionVO;
 
 public class MusicMemberDAO extends DBConn {
 	/**
+	 * 검색 기능
+	 */
+	public ArrayList<MusicMemberVO> getSearchList(String sname, String svalue, int start, int end){
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+		
+		try {
+			String str="";
+			if(sname.equals("total")) {
+				str="";
+			}else {
+				str = " where " + sname +"='"+svalue+"'";
+			}
+			
+			String sql = " select * from (select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate " + 
+					" from (select * from musicmember order by mdate desc) " + str 
+					+ ") where rno between "+ start + " and " + end ;
+
+			getStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				
+				list.add(vo);
+			}	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	/**
+	 * 검색기능 시 리스트 카운트
+	 */
+	public int getListCount(String sname, String svalue) {
+		int result = 0;
+		
+		try {
+			String str="";
+			if(!sname.equals("total")) {
+				str = " where "+sname+"="+"'" + svalue+"'";
+			}
+			
+			String sql = " select count(*) from musicmember " + str;
+			getStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	/**
 	 * 회원가입 - 아이디 중복체크
 	 */
 	public int getIdCheck(String id) {
@@ -438,6 +503,7 @@ public class MusicMemberDAO extends DBConn {
 		return list;
 	}
 
+	
 	public MusicMemberVO FindID(String email) {
 		MusicMemberVO vo = new MusicMemberVO();
 		try {
@@ -454,6 +520,8 @@ public class MusicMemberDAO extends DBConn {
 		}
 		return vo;
 	}
+	
+	
 	public MusicMemberVO FindPass(String id, String email) {
 		MusicMemberVO vo = new MusicMemberVO();
 		try {
