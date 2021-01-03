@@ -469,6 +469,13 @@
 	table.admin_member_content tr:nth-child(4) {
 		border-top:1px solid rgb(213, 213, 213)
 	}
+	table.admin_member_content tr:nth-child(2)>td:first-child {
+		width:30%;
+		text-align:center;
+	}
+	table.admin_member_content tr:first-child {
+		height:60px;
+	}
 	
 
 /**

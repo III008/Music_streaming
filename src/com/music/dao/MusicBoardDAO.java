@@ -280,7 +280,7 @@ public class MusicBoardDAO extends DBConn {
 		ArrayList<MusicBoardVO> list = new ArrayList<MusicBoardVO>();
 		
 		try {
-			String sql = " SELECT RP_ID, ID, RP_DATE, RP_WRITE, BID FROM MUSICREPLY WHERE BID=?";
+			String sql = " SELECT RP_ID, ID, RP_DATE, RP_WRITE, BID FROM MUSICREPLY WHERE BID=? ORDER BY RP_DATE";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, bid);
