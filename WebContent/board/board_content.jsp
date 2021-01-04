@@ -1,10 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.music.vo.*, com.music.dao.*"%>
+    pageEncoding="UTF-8"
+	import="com.music.vo.*, com.music.dao.*, java.util.*"%>
+<% 
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+	
+	String id = "";
+	//svo 객체 != null ===> 로그인 성공!!
+	//svo 객체 == null ===> 로그인 하지 않은 상태
+	if(svo != null){
+		MusicMemberDAO dao = new MusicMemberDAO();
+		id = dao.getId(svo.getName());
+	}
+%>
 <%
 	String bid = request.getParameter("bid");
 	MusicBoardDAO dao = new MusicBoardDAO();
 	MusicBoardVO vo = dao.getContent(bid);
-	/* ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid); */
+	
+	ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid);
 	dao.getUpdateHits(bid);
 %>
 
@@ -14,7 +27,7 @@
 		<meta charset="UTF-8">
 		<title>board_content</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-		<!-- <script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script> -->
+		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 	</head>
 	<body>
 		<!-- header -->
@@ -61,7 +74,7 @@
 				</div>
 			</section>
 			
-			<%-- <section class="section_2">
+			<section class="section_2">
 				<div>
 					<table class="board_content_title">
 						<tr>
@@ -70,30 +83,35 @@
 					</table>
 				</div>
 				<form name="boardReplyForm" action="boardReplyProc.jsp" method="post" class="reply_write">
-					<input type="hidden" name="id" value="<%= "test1234" %>"> <!-- 예시 -->
+					<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->
 					<input type="hidden" name="bid" value="<%= vo.getBid() %>">
 					<table class="board_content_reg">
 						<tr>
-							<td><textarea placeholder="댓글을 입력해주세요."></textarea></td>
-							<td><button type="button" class="btn_style">등록</button></td>
+							<td id="reply"><textarea placeholder="댓글을 입력해주세요." name="rp_write"></textarea></td>
+							<td id="write_button"><button type="submit" class="btn_style">등록</button></td>
 						</tr>
 					</table>
 				</form>
 			</section>
 			
 			<section class="section_3">
-				<% for(MusicBoardVO bvo : rplist) %>
-				<table class="board_content_rp">
+				<div>
+					<% for(MusicBoardVO vo1 : rplist) { %>
+					<% MusicMemberDAO dao_member = new MusicMemberDAO();
+					String nickname = dao_member.getNickname(vo1.getId()); %>
+					<table class="board_content_rp">
 						<tr>
 							<td><img src="http://localhost:9000/Music_streaming/images/member_rp.png"></td>
-							<td><div id="id"><a><%= bvo.getId() %></a></div></td>
-							<td><div id="date"><label><%= bvo.getRp_date() %></label></div></td>
+							<td><div id="id"><a><%= nickname %> (<%= vo1.getId() %>)</a></div></td>
+							<td><div id="date"><label><%= vo1.getRp_date() %></label></div></td>
 						</tr>
 						<tr>
-							<td colspan="3"><div id="rp_write"><label><%= bvo.getRp_write() %></label></div></td>
+							<td colspan="3"><div id="rp_write"><label><%= vo1.getRp_write() %></label></div></td>
 						</tr>
 					</table>
-			</section> --%>
+					<% } %>
+				</div>
+			</section>
  		</div>
 		
 		<!-- footer -->

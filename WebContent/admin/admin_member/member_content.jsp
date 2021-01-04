@@ -34,8 +34,10 @@
 						</tr>
 						<tr>
 							<td colspan="2", rowspan="3">
-								<% if(vo.getBsfile() != null){ %>
-								  	 <img src="http://localhost:9000/Music_streaming/upload/<%=vo.getBsfile()%>" width="50%">
+								<% if(vo.getBsfile() != null) { %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getBsfile()%>" width=90%>
+								<% }else { %>
+									<img src="http://localhost:9000/Music_streaming/images/mypage_user.png" width=90%>
 								<% } %>
 							</td>
 							<th>휴대폰 번호</th>

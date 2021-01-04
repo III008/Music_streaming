@@ -248,5 +248,60 @@ public class MusicBoardDAO extends DBConn {
 	}
 	
 	
+	/**
+	 * Insert ´ñ±Û µî·Ï
+	 */
+	public boolean getRpInsert(MusicBoardVO vo, String id, String bid) {
+		boolean result = false;
+		
+		try {
+			String sql = " INSERT INTO MUSICREPLY VALUES('comm_'||SEQU_RPID.nextval,?,SYSDATE,?,?)";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, vo.getRp_write());
+			pstmt.setString(3, bid);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
+	/**
+	 * List : ´ñ±Û ¸®½ºÆ®
+	 */
+	public ArrayList<MusicBoardVO> getRp_List(String bid){
+		ArrayList<MusicBoardVO> list = new ArrayList<MusicBoardVO>();
+		
+		try {
+			String sql = " SELECT RP_ID, ID, RP_DATE, RP_WRITE, BID FROM MUSICREPLY WHERE BID=? ORDER BY RP_DATE";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, bid);
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MusicBoardVO vo = new MusicBoardVO();
+				vo.setRp_id(rs.getString(1));
+				vo.setId(rs.getString(2));
+				vo.setRp_date(rs.getString(3));
+				vo.setRp_write(rs.getString(4));
+				vo.setBid(rs.getString(5));
+				
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 	
 }//class
