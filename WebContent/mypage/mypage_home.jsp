@@ -36,7 +36,7 @@
 			    <a href="javascript:void(0)" class="dropbtn">보관함</a>
 				    <div class="dropdown-content">
 				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp?id=<%= id %>">음악</a>
-				      <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp?id=<%= id %>">뮤비</a>
+				      <%-- <a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp?id=<%= id %>">뮤비</a> --%>
 				    </div>
 				<li><a href="http://localhost:9000/Music_streaming/mypage/mypage_update.jsp?id=<%= id %>">내정보 수정</a></li>
 			  	</li>
@@ -57,11 +57,11 @@
 						<td>좋아요 곡 수</td>
 						<td><a href="http://localhost:9000/Music_streaming/mypage/mypage_musiclist.jsp?id=<%= id %>"><%= dao1.getListCount(id) %></a></td>
 					</tr>
-					<tr>
+					<%-- <tr>
 						<td><div class="vertical"></div></td>
 						<td>좋아요 뮤비 수</td>
 						<td><a href="http://localhost:9000/Music_streaming/mypage/mypage_movielist.jsp?id=<%= id %>">5</a></td>
-					</tr>
+					</tr> --%>
 				</table>
 			</div>
 			<div>

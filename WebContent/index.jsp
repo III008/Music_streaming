@@ -141,15 +141,17 @@
 					href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">음악 ></a>
 			</div>
 			<div class="content2" id="music_content">
-				<% for(MusicChartVO vo : list1) {%>
-				<div>
-					<a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= vo.getMid() %>"><img
-						src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>"></a>
-					<dl>
-						<dt><%= vo.getSong() %></dt>
-						<dt><%= vo.getArtist() %></dt>
-					</dl>
-				</div>
+				<% if(list1.size() != 0) { %>
+					<% for(MusicChartVO vo : list1) {%>
+					<div>
+						<a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= vo.getMid() %>"><img
+							src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>"></a>
+						<dl>
+							<dt><%= vo.getSong() %></dt>
+							<dt><%= vo.getArtist() %></dt>
+						</dl>
+					</div>
+					<% } %>
 				<% } %>
 				
 			</div>
