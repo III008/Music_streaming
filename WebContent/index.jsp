@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+	import="com.music.dao.*, com.music.vo.*, java.util.*"%>
+<%
+	MusicChartDAO dao = new MusicChartDAO();
+	int start = 1;
+	int end = 4;
+	ArrayList<MusicChartVO> list1 = dao.getList1(start,end); 
+%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +30,7 @@
 	<!-- content -->
 	<div class="content">
 		<section class="magazine">
-			<div>
+			<div class="part">
 				<table class="tb">
 					<tr>
 						<td rowspan="3"><img
@@ -36,13 +43,13 @@
 					</tr>
 
 					<tr>
-						<td>아직 한 달 남짓한 시간이 남았지만, 2020년 역시 힙합의 해라고 해도 과언이 아니지 않을까?</td>
+						<td>아직 한 달 남짓한 시간이 남았지만, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						2020년 역시 힙합의 해라고 해도 과언이 아니지 않을까?</td>
 					</tr>
 
 				</table>
 			</div>
-		</section>
-		<section class="carousel">
+			<div class="part">
 				<!-- 캐러셀 start -->
 				<div id="demo" class="carousel slide" data-ride="carousel">
 				
@@ -50,19 +57,27 @@
 					<ul class="carousel-indicators">
 						<li data-target="#demo" data-slide-to="0" class="active"></li>
 						<li data-target="#demo" data-slide-to="1"></li>
-						<!-- <li data-target="#demo" data-slide-to="2"></li> -->
+						<li data-target="#demo" data-slide-to="2"></li>
+						<li data-target="#demo" data-slide-to="3"></li>
+						<li data-target="#demo" data-slide-to="4"></li>
 					</ul>
 					  
 					<!-- The slideshow -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-						  <img src="images/magazine_example.png" width="1500" height="450">
+						  <img src="http://localhost:9000/Music_streaming/images/ban_1.jpg" width="316" height="380">
 						</div>
 						<div class="carousel-item">
-						  <img src="images/album.jpg" width="1500" height="450">
+						  <img src="http://localhost:9000/Music_streaming/images/ban_2.jpg" width="316" height="380">
 						</div>
 						<div class="carousel-item">
-						  <img src="images/music_video1.PNG" width="1500" height="450">
+						  <img src="http://localhost:9000/Music_streaming/images/ban_3.jpg" width="316" height="380">
+						</div>
+						<div class="carousel-item">
+						  <img src="http://localhost:9000/Music_streaming/images/ban_4.jpg" width="316" height="380">
+						</div>
+						<div class="carousel-item">
+						  <img src="http://localhost:9000/Music_streaming/images/ban_5.jpg" width="316" height="380">
 						</div>
 					</div>
 					  
@@ -76,11 +91,13 @@
 				</div>
 				
 				<!-- 캐러셀 end -->
-			</section>
+			</div>
+		</section>
+		
 		<section class="magazine2">
 			<div id="navbar">
 				<a class="active"
-					href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">매거진></a>
+					href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">매거진 ></a>
 			</div>
 			<div class="content2">
 				<div>
@@ -117,26 +134,33 @@
 				</div>
 			</div>
 		</section>
-
-		<section class="music">
+		
+		<section class="magazine2" id="music"><!-- 음악  -->
 			<div id="navbar">
 				<a class="active"
-				href="http://localhost:9000/Music_streaming/music/music_chart.jsp">음악></a>
+					href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">음악 ></a>
 			</div>
-			<div class="content2">
-				<iframe width="700" height="350"
-					src="https://www.youtube.com/embed/c0gZnxJ5U6c?controls=0"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-				<img src="http://localhost:9000/Music_streaming/images/album.jpg">
+			<div class="content2" id="music_content">
+				<% if(list1.size() != 0) { %>
+					<% for(MusicChartVO vo : list1) {%>
+					<div>
+						<a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= vo.getMid() %>"><img
+							src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_simage() %>"></a>
+						<dl>
+							<dt><%= vo.getSong() %></dt>
+							<dt><%= vo.getArtist() %></dt>
+						</dl>
+					</div>
+					<% } %>
+				<% } %>
+				
 			</div>
 		</section>
 
 		<section class="movie">
 			<div id="navbar">
 				<a class="active"
-				href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">뮤직비디오></a>
+				href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">뮤직비디오 ></a>
 			</div>
 			<div class="content2">
 				<iframe width="560" height="315"
