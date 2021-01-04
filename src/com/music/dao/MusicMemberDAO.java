@@ -112,15 +112,14 @@ public class MusicMemberDAO extends DBConn {
 			pstmt.setString(6, vo.getPass());
 			pstmt.setString(7, vo.getEmail());
 			pstmt.setString(8, vo.getEmail_agr());
-			pstmt.setString(9, vo.getCp());
+			pstmt.setString(9, vo.getCp()); 
 			pstmt.setString(10, vo.getSms_agr());
 			pstmt.setString(11, vo.getGenre_list());
 			pstmt.setInt(12, vo.getLogin_state());
 
 			int val = pstmt.executeUpdate();
-
-			if (val != 0)
-				result = true;
+			
+			if(val != 0) result = true;
 
 		} catch (Exception e) {
 			e.printStackTrace();

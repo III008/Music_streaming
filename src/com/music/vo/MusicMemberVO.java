@@ -125,7 +125,7 @@ public class MusicMemberVO {
 	public String getCp() {
 		String str="";
 		if(cp1 != null) {
-			str = cp1 +"-"+cp2+"-"+cp3;
+			str = cp1+"-"+cp2+"-"+cp3;
 		}else {
 			str = cp;
 		}

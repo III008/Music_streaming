@@ -106,7 +106,7 @@ $(document).ready(function(){
 			<div>
 				<h1>음악 관리</h1>
 				<div class="d1"></div>
-				<table class="ad_notice">
+				<table class="admin_movie_list">
 					<tr>
 						<td colspan="7">
 						<a href="music_register.jsp"><button type="button" class="btn_style">등록</button></a>

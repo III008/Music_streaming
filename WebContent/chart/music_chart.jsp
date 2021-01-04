@@ -3,7 +3,7 @@
     import="com.music.dao.MusicChartDAO, com.music.vo.MusicChartVO, java.util.*"%>
 <%
 	MusicChartDAO dao = new MusicChartDAO(); 
-	ArrayList<MusicChartVO> list1 = dao.getList1();  
+	ArrayList<MusicChartVO> list1 = dao.getList1();
 	ArrayList<MusicChartVO> list2 = dao.getList2(); 
 %> 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
 					<% for(int i=0; i<2; i++){ %>
 					<table class="chart1">
 						<tr>
-							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list1.get(i).getMusic_image() %>"></td>
+							<td rowspan="2" id="music_image"><img src="http://localhost:9000/Music_streaming/upload/<%= list1.get(i).getMusic_simage() %>"></td>
 							<td rowspan="2" id="rank"><label><%= list1.get(i).getRno() %></label></td>
 							<td id="song"><a href="http://localhost:9000/Music_streaming/chart/music_content.jsp?mid=<%= list1.get(i).getMid() %>"><%= list1.get(i).getSong() %></a></td>
 						</tr>
