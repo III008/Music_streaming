@@ -192,6 +192,23 @@ public class MusicNoticeDAO extends DBConn {
 	}
 	
 	/**
+	 * Delete : 체크 박스 삭제	//배열 타입으로 넘어와야함
+	 */
+	public boolean getDelete_chk(String del_list) {
+		boolean result = false;
+	
+		try {
+			String sql=" delete from musicnotice where del_list"
+			
+		} catch (Exception e) {
+				e.printStackTrace();
+		}		
+		
+		return result;
+	}
+	
+	
+	/**
 	 * Update : 조회수 업데이트
 	 */
 	public void getUpdateHits(String nid) {
