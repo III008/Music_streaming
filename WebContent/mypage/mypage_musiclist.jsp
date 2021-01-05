@@ -94,14 +94,22 @@ $(document).ready(function(){
 	});
 	
 	$("#btnPlay").click(function(){
-		var del_list ="";
+		var play_list ="";
+		var id = '<%= id %>';
 		
 		$("input[name='chk']:checked").each(function(index){
-			del_list += $(this).attr("id") + ",";
+			play_list += $(this).attr("id") + ",";
 		});
 		
-		alert(del_list);
+		alert(play_list);
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
+		$.ajax({
+			  url:"music_play_chk.jsp?rownum="+play_list+"&id="+id,
+			  success:function(result){
+				  alert("재생목록 추가완료");
+				  location.reload();
+			  }
+			});
 	});
 	
 	$("#btnCancle").click(function(){
@@ -113,6 +121,13 @@ $(document).ready(function(){
 		
 		alert(del_list);
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
+		$.ajax({
+			  url:"music_likeCancle_chk.jsp?rownum="+del_list+"&id="+<%= id %>+"&start="+<%= String.valueOf(start) %>+"&end="+<%= String.valueOf(end) %>,
+			  success:function(result){
+				  alert("음악 좋아요 취소");
+				  location.reload();
+			  }
+			});
 	});
 	
 	$('button').click(function(){
@@ -171,7 +186,7 @@ $(document).ready(function(){
 						<tr id="list">
 							<% int row=(reqPage-1)*5+(i+1); %>
 							<td><input type="checkbox" name="chk" id="<%= row %>"></td>
-							<td><%= list.get(i).getRno() %></td>
+							<td><%= row %></td>
 							<td><img id="music_image"
 								src="http://localhost:9000/Music_streaming/upload/<%= list.get(i).getMusic_simage() %>"></td>
 							<td><a href="../chart/music_content.jsp?mid=<%= list.get(i).getMid() %>"><%= list.get(i).getSong() %></a></td>

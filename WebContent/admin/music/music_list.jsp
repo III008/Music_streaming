@@ -89,13 +89,12 @@ $(document).ready(function(){
 			del_list += $(this).attr("id") + ",";
 		});
 		
-		alert(del_list);
+		/* alert(del_list); */
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
-		
 		$.ajax({
 			  url:"music_delete_chk.jsp?rownum="+del_list,
 			  success:function(result){
-				  alert(result);
+				  alert("음악 삭제완료");
 				  location.reload();
 			  }
 			});
