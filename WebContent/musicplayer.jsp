@@ -7,11 +7,11 @@
 <title>Music</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link rel="stylesheet" type="text/css" href="css/theme-2.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/Music_streaming/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/Music_streaming/css/theme-2.css" />
 <!-- JS FILE's  -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.audioControls.min.js"></script>
+<script src="http://localhost:9000/Music_streaming/js/jquery.js"></script>
+<script src="http://localhost:9000/Music_streaming/js/jquery.audioControls.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#playListContainer").audioControls({
@@ -36,8 +36,9 @@
 			}
 		});
 		
+		$("#playListContainer").hide();
 		$("#playlist").click(function(){
-		    $("#playListContainer").toggle();
+		    $("#playListContainer").toggle(1000);
 		  });
 	});
 </script>

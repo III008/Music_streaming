@@ -6,11 +6,10 @@
 	SessionVO svo = (SessionVO)session.getAttribute("svo");
 	%> 
 <!DOCTYPE html>
-<html>
+<html  lang="en-US" dir="ltr" id="9lessons-demo">
 	<head>
 		<meta charset="UTF-8">
 		<title>header</title>
-		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<!-- <script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script> -->
 		<script>
 			$(document).ready(function(){
@@ -25,7 +24,7 @@
 			     }).mouseover(function(){
 			         $(this).next("ul").slideDown();
 			     });
-			 });
+			});
 		</script>
 	</head>
 	<body>
