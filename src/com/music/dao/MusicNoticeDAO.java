@@ -1,5 +1,6 @@
 package com.music.dao;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -194,19 +195,18 @@ public class MusicNoticeDAO extends DBConn {
 	/**
 	 * Delete : 체크 박스 삭제	//배열 타입으로 넘어와야함
 	 */
-	public boolean getDelete_chk(String del_list) {
-		boolean result = false;
-	
-		try {
-			String sql=" delete from musicnotice where del_list"
-			
-		} catch (Exception e) {
-				e.printStackTrace();
-		}		
-		
-		return result;
-	}
-	
+	/*
+	 * public boolean getDelete_chk(del_list) { boolean result = false;
+	 * 
+	 * try { String sql=" delete from musicnotice where nid = ?";
+	 * 
+	 * getPreparedStatement(sql); pstmt.setArray(1,del_list); int val =
+	 * pstmt.executeUpdate(); if(val != 0) result = true;
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); }
+	 * 
+	 * return result; }
+	 */
 	
 	/**
 	 * Update : 조회수 업데이트

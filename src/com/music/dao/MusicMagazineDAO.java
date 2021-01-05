@@ -224,4 +224,37 @@ public class MusicMagazineDAO extends DBConn{
 		
 		return list;
 	}
+	
+	/**
+	 * 인덱스 페이지 매거진 : 조회수 기준 4개
+	 */
+	public ArrayList<MusicMagazineVO> getList2(){
+		ArrayList<MusicMagazineVO> list = new ArrayList<MusicMagazineVO>();
+		
+		try {
+			String sql =   " select rno,mid,mtitle,msummary,mfile,msfile,to_char(sysdate,'yyyy-mm-dd')mdate"
+					+ " from (select rownum rno,mid,mtitle,msummary,mfile,msfile,to_char(sysdate,'yyyy-mm-dd')mdate"
+									+ " from (select mid,mtitle,msummary,mfile,msfile,to_char(sysdate,'yyyy-mm-dd')mdate from musicmagazine order by mhits desc))" 
+					+ " where rno<=4";
+			
+			getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MusicMagazineVO vo = new MusicMagazineVO();
+				vo.setRno(rs.getInt(1));
+				vo.setMid(rs.getString(2));
+				vo.setMtitle(rs.getString(3));
+				vo.setMsummary(rs.getString(4));
+				vo.setMfile(rs.getString(5));
+				vo.setMsfile(rs.getString(6));
+				vo.setMdate(rs.getString(7));
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

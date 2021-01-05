@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import = "com.music.vo.*, com.music.dao.*, java.util.*"
-	%>
+	import="com.music.vo.*, com.music.dao.*, java.util.*"%>
 <%
-MusicNoticeDAO dao = new MusicNoticeDAO();
- String nid = request.getParameter("nid"); 
- boolean result = dao.getDelete(nid);
-/* 	ArrayList<MusicNoticeVO> list = dao.getList(); */
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+
+	//svo 객체 != null ==>> 로그인 성공!!
+	//svo 객체 == null ==>> 로그인 하지 않은 상태
+	if(svo != null){
+%>
+<%
+	MusicNoticeDAO dao = new MusicNoticeDAO();
+ 	String nid = request.getParameter("nid"); 
+	boolean result = dao.getDelete(nid);
 	
 		String rpage = request.getParameter("rpage");
 		
@@ -33,47 +38,20 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 		}
 		ArrayList<MusicNoticeVO> list = dao.getList(start, end);
 %>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <link rel="stylesheet"
-	href="http://localhost:9000/Music_streaming/css/music_streaming.css"> 
-		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
-		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
-		<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
+<link rel="stylesheet"
+	href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+<link rel="stylesheet"
+	href="http://localhost:9000/Music_streaming/css/am-pagination.css">
+<script
+	src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+<script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
 <script>
-/*전체 선택*/
-/* 	function allCheck(){
-		var all =document.getElementById("all");
-		var chk_list = document.getElementsByName("chk");
-
-		if(all.checked){
-			for(var i=0; i<chk_list.length; i++){
-				chk_list[i].checked = true;
-			}
-		}else{
-			for(var i=0; i<chk_list.length; i++){
-				chk_list[i].checked = false;
-			}
-		}
-	}
-	
-	function chk_delete(){
-		var chk_list = document.getElementsByName("chk");
-		var del_list="";
-		
-		for(var i in chk_list){
-			if(chk_list[i].checked){
-				del_list += chk_list[i].getAttribute("id")+",";
-			}
-		}
-		alert(del_list);	
-		noticeDeleteProc.submit();
-	} */
-	
 	$(document).ready(function(){
 		
 	/** 전체선택 **/
@@ -94,8 +72,8 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 	
 	/** 삭제 버튼 클릭 : 클릭된 체크박스의 id 값을 리턴 **/
 	$("#btnDelete").click(function(){
-		 /* var del_list =""; */	//문자열로 받았을 경우
-		 var del_list = [];	//배열 list로 받았을 경우 
+		  var del_list =""; 	//문자열로 받았을 경우
+		 /* var del_list = [];	//배열 list로 받았을 경우  */
 		 $("input[name='chk']:checked").each(function(i){
 			del_list.push($(this).val());
 		});
@@ -159,25 +137,25 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 				<table class="ad_notice">
 					<tr>
 						<td colspan="5">
-						<%-- <a href="noticeDeleteProc.jsp?nid=<%=nid%>"> --%>
-							<button type="button" class="btn_style" id="btnDelete" >공지사항 삭제</button>
-						<!-- </a> -->
-						<a href="notice_write.jsp" >
-								<button type="button" class="btn_style" id="insert">공지사항 등록</button>
+							<%-- <a href="noticeDeleteProc.jsp?nid=<%=nid%>"> --%>
+							<button type="button" class="btn_style" id="btnDelete">공지사항
+								삭제</button> <!-- </a> --> <a href="notice_write.jsp">
+								<button type="button" class="btn_style" id="insert">공지사항
+									등록</button>
 						</a>
-					</td>
+						</td>
 					</tr>
 					<tr>
-						<th><input type="checkbox" id="all" >전체선택</th>
+						<th><input type="checkbox" id="all">전체선택</th>
 						<th>번호</th>
 						<th>제목</th>
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
-					
 					<% for (MusicNoticeVO vo : list) { %>
 					<tr>
-						<td><input type="checkbox" name="chk" id="<%=vo.getNid() %>"></td>	<!-- 번호 바꿔야해ㅑ  -->
+						<td><input type="checkbox" name="chk" id="<%=vo.getNid() %>"></td>
+						<!-- 번호 바꿔야해ㅑ  -->
 						<td><%= vo.getRno() %></td>
 						<td><a href="notice_content.jsp?nid=<%=vo.getNid()%>"><%= vo.getNtitle() %></a></td>
 						<td><%= vo.getNdate() %></td>
@@ -196,3 +174,8 @@ MusicNoticeDAO dao = new MusicNoticeDAO();
 	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
+<% }else{ %>
+<script>
+	alert("접근불가합니다.");
+</script>
+<% } %>

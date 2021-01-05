@@ -1,9 +1,19 @@
 package com.music.vo;
 
+import java.util.ArrayList;
+
 public class MusicNoticeVO {
 	int rno,nhits;
 	String nid,ntitle,ncontent,nfile,nsfile,ndate;
+	ArrayList<MusicNoticeVO> del_list;
 	
+
+	public ArrayList<MusicNoticeVO> getDel_list() {
+		return del_list;
+	}
+	public void setDel_list(ArrayList<MusicNoticeVO> del_list) {
+		this.del_list = del_list;
+	}
 	public int getRno() {
 		return rno;
 	}

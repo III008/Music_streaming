@@ -6,6 +6,8 @@
 	int start = 1;
 	int end = 4;
 	ArrayList<MusicChartVO> list1 = dao.getList1(start,end); 
+	MusicMagazineDAO mdao = new MusicMagazineDAO();
+	ArrayList<MusicMagazineVO> mlist = mdao.getList2();
 %> 
 <!DOCTYPE html>
 <html>
@@ -97,48 +99,30 @@
 		<section class="magazine2">
 			<div id="navbar">
 				<a class="active"
-					href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">매거진 ></a>
+					href="http://localhost:9000/Music_streaming/magazine/magazine_list.jsp">매거진 </a>
 			</div>
+				
 			<div class="content2">
+				<% if(mlist.size() != 0) { %>
+				<%
+					for (MusicMagazineVO vo : mlist) {
+				%>		
 				<div>
-					<img
-						src="http://localhost:9000/Music_streaming/images/magazine1.png">
+					<a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp?mid=<%=vo.getMid()%>"><img src="http://localhost:9000/Music_streaming/upload/<%=vo.getMsfile()%>"></a>
 					<dl>
-						<dt>넓은 음악적 스펙트럼을 자랑하는 함소윤</dt>
-						<dt>2020.11.16</dt>
+						<dt><a href="http://localhost:9000/Music_streaming/magazine/magazine_content.jsp?mid=<%=vo.getMid()%>" class="mtitle_font"><%=vo.getMtitle()%></a></dt>
+						<dt><span class="mdate_font"><%=vo.getMdate()%></span></dt>
 					</dl>
 				</div>
-				<div>
-					<img
-						src="http://localhost:9000/Music_streaming/images/magazine2.png">
-					<dl>
-						<dt>아리아나 그란데의 콜라보레이터</dt>
-						<dt>2020.11.12</dt>
-					</dl>
-				</div>
-				<div>
-					<img
-						src="http://localhost:9000/Music_streaming/images/magazine3.png">
-					<dl>
-						<dt>한국 재즈가 있어 따뜻한 가을</dt>
-						<dt>2020.11.11</dt>
-					</dl>
-				</div>
-				<div>
-					<img
-						src="http://localhost:9000/Music_streaming/images/magazine4.png">
-					<dl>
-						<dt>이주의 디깅 #83</dt>
-						<dt>2020.11.10</dt>
-					</dl>
-				</div>
+						<%}	%>
+					<%}%>
 			</div>
 		</section>
 		
 		<section class="magazine2" id="music"><!-- 음악  -->
 			<div id="navbar">
 				<a class="active"
-					href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">음악 ></a>
+					href="http://localhost:9000/Music_streaming/chart/music_chart.jsp">음악 </a>
 			</div>
 			<div class="content2" id="music_content">
 				<% if(list1.size() != 0) { %>
@@ -160,7 +144,7 @@
 		<section class="movie">
 			<div id="navbar">
 				<a class="active"
-				href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">뮤직비디오 ></a>
+				href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">뮤직비디오 </a>
 			</div>
 			<div class="content2">
 				<iframe width="560" height="315"

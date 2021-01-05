@@ -17,8 +17,8 @@
 						</a>
 					</div>
 					<div class="login_click">
-						<a href="http://localhost:9000/Music_streaming/login/login.jsp">
-							<span>로그인</span>
+						<a href="http://localhost:9000/Music_streaming/index.jsp">
+							<span>사용자 페이지</span>
 						</a>
 					</div>
 					

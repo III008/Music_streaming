@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="com.music.dao.*, com.music.vo.*"%>
 <%
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+
+	//svo 객체 != null ==>> 로그인 성공!!
+	//svo 객체 == null ==>> 로그인 하지 않은 상태
+	if(svo != null){
+%>
+<%
 	String nid = request.getParameter("nid");
 	MusicNoticeDAO dao = new MusicNoticeDAO();
 	MusicNoticeVO vo = dao.getContent(nid);
@@ -46,13 +53,10 @@
 							value="<%= vo.getNtitle() %>"></li>
 						<li><label>내 용</label> <textarea name="ncontent"><%=vo.getNcontent() %></textarea>
 						</li>
-						<li><label>파일첨부</label>
-						<% if(vo.getNfile() != null){ %>
-						 <input type="file" name="nfile"><span id="fname"><%=vo.getNfile() %></span>
-						<% }else{ %>
-						<input type="file" name="bfile"><span id="fname">선택된 파일 없음</span>
-							<% } %>
-						</li>
+						<li><label>파일첨부</label> <% if(vo.getNfile() != null){ %> <input
+							type="file" name="nfile"><span id="fname"><%=vo.getNfile() %></span>
+							<% }else{ %> <input type="file" name="bfile"><span
+							id="fname">선택된 파일 없음</span> <% } %></li>
 						<li>
 							<button type="submit" class="btn_style">수정완료</button>
 							<button type="reset" class="btn_style_2">취소</button> <a
@@ -67,7 +71,11 @@
 	</div>
 
 	<!-- footer -->
-	s
 	<jsp:include page="../../footer.jsp" />
 </body>
 </html>
+<% }else{ %>
+<script>
+	alert("접근불가합니다.");
+</script>
+<% } %>
