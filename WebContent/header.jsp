@@ -73,7 +73,7 @@
 				            	<span>게시판</span>
 				            </a>
 				            <ul class="hide">
-				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
+				                <li><a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">발라드</a></li>
 								<li><a href="#">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
 								<li><a href="#">R&B/인디</a></li>
@@ -120,13 +120,13 @@
 							</a>
 						</li>
 						 <li class="menu">
-				            <a href="http://localhost:9000/Music_streaming/board/board_list.jsp">
+				            <a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">
 				            	<img src="http://localhost:9000/Music_streaming/images/board.png">
 				            	<span>게시판</span>
 				            </a>
 				            <ul class="hide">
-				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
-								<li><a href="#">댄스</a></li>
+				                <li><a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">발라드</a></li>
+								<li><a href="http://localhost:9000/Music_streaming/board/board_dc/board_list.jsp">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
 								<li><a href="#">R&B/인디</a></li>
 								<li><a href="#">트롯</a></li>
@@ -165,13 +165,13 @@
 							</a>
 						</li>
 						 <li class="menu">
-				            <a href="http://localhost:9000/Music_streaming/board/board_list.jsp">
+				            <a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">
 				            	<img src="http://localhost:9000/Music_streaming/images/board.png">
 				            	<span>게시판</span>
 				            </a>
 				            <ul class="hide">
-				                <li><a href="http://localhost:9000/Music_streaming/board/board_list.jsp">발라드</a></li>
-								<li><a href="#">댄스</a></li>
+				                <li><a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">발라드</a></li>
+								<li><a href="http://localhost:9000/Music_streaming/board/board_dc/board_list.jsp">댄스</a></li>
 								<li><a href="#">랩/힙합</a></li>
 								<li><a href="#">R&B/인디</a></li>
 								<li><a href="#">트롯</a></li>

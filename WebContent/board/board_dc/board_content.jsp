@@ -13,25 +13,25 @@
 	}
 %>
 <%
-	String bid = request.getParameter("bid");
-	MusicBoardDAO dao = new MusicBoardDAO();
-	MusicBoardVO vo = dao.getContent(bid);
+	String dc_bid = request.getParameter("dc_bid");
+	MusicBoardDcDAO dao = new MusicBoardDcDAO();
+	MusicBoardDcVO vo = dao.getContent(dc_bid);
 	
-	ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid);
-	dao.getUpdateHits(bid);
+	ArrayList<MusicBoardDcVO> rplist = dao.getRp_List(dc_bid);
+	dao.getUpdateHits(dc_bid);
 %>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>board_content</title>
+		<title>게시판</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 	</head>
 	<body>
 		<!-- header -->
-		<jsp:include page="../header.jsp"></jsp:include>
+		<jsp:include page="../../header.jsp"></jsp:include>
 		
 		<!-- content -->
 		<div class="content_board">
@@ -44,28 +44,28 @@
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
-								<a href="board_update.jsp?bid=<%=bid%>"><button type="button" class="btn_style">수정</button></a>
-								<a href="board_delete.jsp?bid=<%=bid%>"><button type="button" class="btn_style_2">삭제</button></a>
+								<a href="board_update.jsp?dc_bid=<%=dc_bid%>"><button type="button" class="btn_style">수정</button></a>
+								<a href="board_delete.jsp?dc_bid=<%=dc_bid%>"><button type="button" class="btn_style_2">삭제</button></a>
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7"><%= vo.getBtitle() %></th>
+							<th colspan="7"><%= vo.getDc_btitle() %></th>
 						</tr>
 						<tr>
 							<td>닉네임</td>
 							<td>추천</td>
-							<td><%= vo.getBrec() %></td>
+							<td><%= vo.getDc_brec() %></td>
 							<td>조회</td>
-							<td><%= vo.getBhits() %></td>
+							<td><%= vo.getDc_bhits() %></td>
 							<td>등록일</td>
-							<td><%= vo.getBdate() %></td>
+							<td><%= vo.getDc_bdate() %></td>
 						</tr>
 						<tr>
 							<td colspan="7">
 								<p>
-									<%= vo.getBcontent().replace("\r\n", "<br>") %><br>
-									<% if(vo.getBd_sfile() != null) { %>
-									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getBd_sfile()%>" width=50%>
+									<%= vo.getDc_bcontent() /* .replace("\r\n", "<br>") */ %><br>
+									<% if(vo.getDc_bsfile() != null) { %>
+									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getDc_bsfile()%>" width=50%>
 									<% } %>
 								</p>
 							</td>
@@ -84,7 +84,7 @@
 				</div>
 				<form name="boardReplyForm" action="boardReplyProc.jsp" method="post" class="reply_write">
 					<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->
-					<input type="hidden" name="bid" value="<%= vo.getBid() %>">
+					<input type="hidden" name="dc_bid" value="<%= vo.getDc_bid() %>">
 					<table class="board_content_reg">
 						<tr>
 							<td id="reply"><textarea placeholder="댓글을 입력해주세요." name="rp_write"></textarea></td>
@@ -96,7 +96,7 @@
 			
 			<section class="section_3">
 				<div>
-					<% for(MusicBoardVO vo1 : rplist) { %>
+					<% for(MusicBoardDcVO vo1 : rplist) { %>
 					<% MusicMemberDAO dao_member = new MusicMemberDAO();
 					String nickname = dao_member.getNickname(vo1.getId()); %>
 					<table class="board_content_rp">
@@ -115,6 +115,6 @@
  		</div>
 		
 		<!-- footer -->
-		<jsp:include page="../footer.jsp"></jsp:include>
+		<jsp:include page="../../footer.jsp"></jsp:include>
 	</body>
 </html>

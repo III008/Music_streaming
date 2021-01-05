@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.music.vo.*, com.music.dao.*, java.util.*" %>
 <%
-	MusicBoardDAO dao = new MusicBoardDAO();
+	MusicBoardDcDAO dao = new MusicBoardDcDAO();
 
 	//1. 선택한 페이지값
 	String rpage = request.getParameter("rpage");
@@ -32,14 +32,14 @@
 		end = pageSize;
 	}
 
-	ArrayList<MusicBoardVO> list = dao.getList(start, end);
+	ArrayList<MusicBoardDcVO> list = dao.getList(start, end);
 %>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>게시판</title>
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
@@ -62,7 +62,7 @@
 				}); 
 				
 				jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-					$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
+					$(location).attr('href','http://localhost:9000/Music_streaming/board/board_dc/board_list.jsp?rpage='+e.page);  
 					//location.href('이동페이지');
 				});
 			});
@@ -70,7 +70,7 @@
 	</head>
 	<body>
 		<!-- header -->
-		<jsp:include page="../header.jsp"></jsp:include>
+		<jsp:include page="../../header.jsp"></jsp:include>
 		
 		<!-- content -->
 		<div class="content_board">
@@ -93,13 +93,13 @@
 							<th>조회수</th>
 						</tr>
 						
-						<% for(MusicBoardVO vo : list){ %>
+						<% for(MusicBoardDcVO vo : list){ %>
 						<tr>
 							<td><%= vo.getRno() %></td>
-							<td><a href="board_content.jsp?bid=<%=vo.getBid()%>"><%= vo.getBtitle() %></a></td>
-							<td><%= vo.getBdate() %></td>
-							<td><%= vo.getBrec() %></td>
-							<td><%= vo.getBhits() %></td>
+							<td><a href="board_content.jsp?dc_bid=<%=vo.getDc_bid()%>"><%= vo.getDc_btitle() %></a></td>
+							<td><%= vo.getDc_bdate() %></td>
+							<td><%= vo.getDc_brec() %></td>
+							<td><%= vo.getDc_bhits() %></td>
 						</tr>
 						<% } %>
 						<tr>
@@ -111,6 +111,6 @@
 		</div>
 		
 		<!-- footer -->
-		<jsp:include page="../footer.jsp"></jsp:include>
+		<jsp:include page="../../footer.jsp"></jsp:include>
 	</body>
 </html>

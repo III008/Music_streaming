@@ -229,7 +229,6 @@ public class MusicBoardDAO extends DBConn {
 		try {
 			String sql = " insert into musicboard"
 					+ " values('b_'||sequ_musicboard.nextval,?,?,?,?,sysdate,0,0)";
-			
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getBtitle());
 			pstmt.setString(2, vo.getBcontent());
@@ -302,6 +301,4 @@ public class MusicBoardDAO extends DBConn {
 		
 		return list;
 	}
-	
-	
 }//class
