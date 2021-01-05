@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
 	import="com.music.dao.*, com.music.vo.*, java.util.*"%>
+
+<% 
+	SessionVO svo = (SessionVO)session.getAttribute("svo");
+
+	if(svo != null){
+		MusicMemberDAO dao = new MusicMemberDAO();
+		String id = dao.getId(svo.getName());
+		
+		MusicPlaylistDAO dao1 = new MusicPlaylistDAO();
+		ArrayList<MusicPlaylistVO> list = dao1.getMusiclist(id);
+%>
+
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" id="9lessons-demo">
 <head>
@@ -14,6 +26,7 @@
 <script src="http://localhost:9000/Music_streaming/js/jquery.audioControls.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		
 		$("#playListContainer").audioControls({
 			autoPlay : false,
 			timer : 'increment',
@@ -38,8 +51,9 @@
 		
 		$("#playListContainer").hide();
 		$("#playlist").click(function(){
+		    $("#playListContainer").height(400);
 		    $("#playListContainer").toggle(1000);
-		  });
+		});
 	});
 </script>
 
@@ -52,26 +66,15 @@
 					<div class="containerPlayer">
 						<div id="listContainer" class="playlistContainer">
 							<ul id="playListContainer">
+							<% if(list != null) { %>
+							<% for(MusicPlaylistVO vo : list) { %>
 								<li
-									data-src="https://s3.amazonaws.com/9lessonslabs/songs/Everything+But+Mine.mp3">
-									<a href="#"> VVS (Feat. JUSTHIS) (Prod. GroovyRoom) </a>
+									data-src="http://localhost:9000/Music_streaming/upload/<%= vo.getMusic_sfile() %>">
+									<a href="#"><%= vo.getSong() %></a>
+									<br><a href="#"><%= vo.getArtist() %></a>
 								</li>
-								<li
-									data-src="https://s3.amazonaws.com/9lessonslabs/songs/Linkin+Park+-+Numb.mp3">
-									<a href="#"> 밤하늘의 별을(2020) </a>
-								</li>
-								<li
-									data-src="https://s3.amazonaws.com/9lessonslabs/songs/love-the-way-you-lie-rihanna-feat-eminem.mp3">
-									<a href="#">  내일이 오면 (Feat. 기리보이, BIG Naughty (서동현)) </a>
-								</li>
-								<li
-									data-src="http://localhost:9000/Music_streaming/upload/현아 (4minute)-04-어디부터 어디까지 (With 양요섭).mp3">
-									<a href="#"> Dynamite </a>
-								</li>
-								<li
-									data-src="https://s3.amazonaws.com/9lessonslabs/songs/when-i-was-your-man-bruno-mars.mp3">
-									<a href="#"> 잠이 오질 않네요 </a>
-								</li>
+							<% } %>
+							<% } %>
 							</ul>
 						</div>
 						<div id="playerContainer">
@@ -113,3 +116,4 @@
 	</div>
 </body>
 </html>
+<% } %>
