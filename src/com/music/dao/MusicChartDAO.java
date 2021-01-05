@@ -8,6 +8,32 @@ import com.music.vo.MusicChartVO;
 public class MusicChartDAO extends DBConn{
 	
 	/**
+	 * rownum -> mid 구하기
+	 */
+	public String getMid(int rownum_int) {
+		String result = "";
+
+		try {
+			String sql = "SELECT MID\r\n" + 
+					"FROM (SELECT MID, ROWNUM RNO, MUSIC_IMAGE, SONG, ARTIST, MHITS, TO_CHAR(MDATE,'YYYY/MM/DD'), MUSIC_SIMAGE\r\n" + 
+					"FROM (SELECT * FROM MUSICCHART ORDER BY MDATE DESC)) \r\n" + 
+					"WHERE RNO=?";
+
+			getPreparedStatement(sql);
+			pstmt.setInt(1, rownum_int);
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next())
+				result = rs.getString(1);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	/**
 	 * Update : 좋아요 수 업데이트(-1)
 	 */
 	public void getUpdateHitsMinus(String mid) {
@@ -60,6 +86,25 @@ public class MusicChartDAO extends DBConn{
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Delete : 음악 삭제 void
+	 */
+	public void getDeleteChk(String mid) {
+		
+		try {
+			String sql = "delete from musicchart where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
