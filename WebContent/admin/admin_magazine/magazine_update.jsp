@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="com.music.dao.*, com.music.vo.*"%>
+<%	SessionVO svo = (SessionVO)session.getAttribute("svo");
+	//svo 객체 != null ==>> 로그인 성공!!
+	//svo 객체 == null ==>> 로그인 하지 않은 상태
+	if(svo != null){
+%>
 <%
 	String mid = request.getParameter("mid");
 	MusicMagazineDAO dao = new MusicMagazineDAO();
@@ -44,8 +49,7 @@
 						<li><label>제 목</label> <input type="text" name="mtitle"
 							value="<%=vo.getMtitle()%>"></li>
 						<li><label>요 약</label> <input type="text" name="msummary"
-							value="<%=vo.getMsummary() %>">
-						</li>
+							value="<%=vo.getMsummary() %>"></li>
 						<li><label>소제목</label> <input type="text" name="msubtitle"
 							value="<%=vo.getMsubtitle()%>">
 						<li><label>내 용</label> <textarea name="mcontent"><%=vo.getMcontent()%></textarea>
@@ -69,7 +73,12 @@
 	</div>
 
 	<!-- footer -->
-	
+
 	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
+<% }else{ %>
+<script>
+	alert("접근불가합니다.");
+</script>
+<% } %>

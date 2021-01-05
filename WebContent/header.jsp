@@ -87,8 +87,12 @@
 							</a>
 						</li>
 					</ul> --> 
-					 <% if(svo != null){ %>
+					<% if(svo != null){ %>
+					<%if(svo.getName().equals("admin")) {%>
+					<a href="#" class="user">관리자 계정입니다</a>
+					<%}else{ %>
 					<a href="#" class="user"><%= svo.getName() %>님 환영합니다.</a>
+					<%} %>
 					<div class="logout_click">
 						<a href="http://localhost:9000/Music_streaming/login/logout.jsp">
 							<span>로그아웃</span>
@@ -138,6 +142,14 @@
 								<span>공지사항</span>
 							</a>
 						</li>
+						<%if(svo.getName().equals("admin")) {%>
+						<li>
+							<a href="http://localhost:9000/Music_streaming/manager_index.jsp">
+								<img src="http://localhost:9000/Music_streaming/images/admin.png">
+								<span>관리자 메뉴</span>
+							</a>
+						</li>
+						<%} %>
 					</ul>
 					<% }else{ %>
 						<div class="login_click">

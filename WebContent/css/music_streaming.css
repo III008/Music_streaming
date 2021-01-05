@@ -177,6 +177,15 @@
 		width:340px;
 		height:320px;
 	}
+	section.magazine2 a.mtitle_font {
+		text-decoration:none;
+		color:black;
+	}
+	section.magazine2 span.mdate_font{
+		font-size:14px;
+		color:gray;
+	}
+	
 	div#music_content>div img {
 		border:1px solid rgb(242,242,242);
 		background-color:RGB(245, 245, 245);
