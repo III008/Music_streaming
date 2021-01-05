@@ -49,10 +49,9 @@
 				//페이지 번호 및 링크 		
 				var pager = jQuery("#ampaginationsm").pagination({
 					maxSize : 5,			
-					totals:<%=dbCount%>,
+					totals : <%=dbCount%>,
 					page : <%=reqPage%>,
 					pageSize : <%=pageSize%>,
-							
 					
 					lastText : '&raquo;&raquo;',
 					firstText : '&laquo;&laquo',

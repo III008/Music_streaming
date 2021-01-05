@@ -12,7 +12,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>회원관리 리스트</title>
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
@@ -25,7 +25,7 @@
 				/** Ajax를 활용한 회원전체 리스트 출력 **/
 				function member_list(sname,svalue){
 					$.ajax({
-						url:"member_list_search.jsp?sname="+sname+"&svalue="+svalue,
+						url:"member_list_proc.jsp?sname="+sname+"&svalue="+svalue,
 						success:function(result){
 							//alert(result);
 							var jdata = JSON.parse(result);
@@ -38,7 +38,7 @@
 							output += '<th>닉네임</th>';
 							output += '<th>휴대폰번호</th>';
 							output += '<th>가입일자</th></tr>';
-		
+							
 							for(var i in jdata.jlist){ 
 								output += '<tr>';
 								output += '<td>'+ jdata.jlist[i].rno + '</td>';
@@ -61,6 +61,7 @@
 					});//ajax
 				}//member_list
 				
+				
 				/** 검색 버튼 이벤트 처리 **/
 				$("#btnSearch").click(function(){
 					if($("#sname").val() !="total" && $("#svalue").val() == ""){
@@ -72,19 +73,19 @@
 						var svalue = $("#svalue").val();
 						
 						member_list(sname, svalue);
-						//member_list($("#sname").val(),$("#svalue").val());
 					}
 				});
+				
 				
 				/** 페이징 처리 함수 **/
 				function page(dbcount, reqpage, pagesize){
 					//페이지 번호 및 링크 		
 					var pager = jQuery("#ampaginationsm").pagination({
 						maxSize : 5,			
-						totals:dbcount,
+						totals : dbcount,
 						page : reqpage,
 						pageSize : pagesize,
-						
+								
 						lastText : '&raquo;&raquo;',
 						firstText : '&laquo;&laquo',
 						prevTest : '&laquo;',
@@ -94,11 +95,12 @@
 					}); 
 					
 					jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-						$(location).attr('href','http://localhost:9000/Music_streaming/admin/admin_member/member_list.jsp?rpage='+e.page); 
-						//location.href('이동페이지');
+						$(location).attr('href','http://localhost:9000/Music_streaming/admin/admin_member/member_list.jsp?rpage='+e.page);  
 					});
 				}//page
+				
 			});//ready
+
 		</script>
 	</head>
 	<body>
@@ -115,8 +117,8 @@
 							<option value="total">전체</option>
 							<option value="id">아이디</option>
 							<option value="name">성명</option>
+							<option value="cp">핸드폰번호</option>
 							<option value="nickname">닉네임</option>
-							<option value="hp">휴대폰 번호 </option>
 						</select>
 						<input type="text" id="svalue">
 						<button type="button" id="btnSearch">검색</button>

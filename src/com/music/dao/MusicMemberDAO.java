@@ -8,93 +8,6 @@ import com.music.vo.SessionVO;
 
 public class MusicMemberDAO extends DBConn {
 	/**
-	 * 검색 기능
-	 */
-	public ArrayList<MusicMemberVO> getSearchList(String sname, String svalue, int start, int end){
-		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
-		
-		try {
-			String str="";
-			if(sname.equals("total")) {
-				str="";
-			}else {
-				str = " where " + sname +"='"+svalue+"'";
-			}
-			
-			String sql = " select * from (select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate " + 
-					" from (select * from musicmember order by mdate desc) " + str 
-					+ ") where rno between "+ start + " and " + end ;
-
-			getStatement();
-			ResultSet rs = stmt.executeQuery(sql);
-			
-			while(rs.next()) {
-				MusicMemberVO vo = new MusicMemberVO();
-				vo.setRno(rs.getInt(1));
-				vo.setId(rs.getString(2));
-				vo.setName(rs.getString(3));
-				vo.setNickname(rs.getString(4));
-				vo.setCp(rs.getString(5));
-				vo.setMdate(rs.getString(6));
-				
-				list.add(vo);
-			}	
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return list;
-	}
-	
-	
-	/**
-	 * 검색기능 시 리스트 카운트
-	 */
-	public int getListCount(String sname, String svalue) {
-		int result = 0;
-		
-		try {
-			String str="";
-			if(!sname.equals("total")) {
-				str = " where "+sname+"="+"'" + svalue+"'";
-			}
-			
-			String sql = " select count(*) from musicmember " + str;
-			getStatement();
-			ResultSet rs = stmt.executeQuery(sql);
-			if(rs.next()) result = rs.getInt(1);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-	
-	
-	/**
-	 * 회원가입 - 아이디 중복체크
-	 */
-	public int getIdCheck(String id) {
-		int result = 0;
-
-		try {
-			String sql = " SELECT COUNT(*) FROM MUSICMEMBER WHERE ID=?";
-
-			getPreparedStatement(sql);
-			pstmt.setString(1, id);
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next())
-				result = rs.getInt(1);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return result;
-	}
-
-	/**
 	 * insert 회원가입
 	 */
 	public boolean getInsert(MusicMemberVO vo) {
@@ -126,41 +39,31 @@ public class MusicMemberDAO extends DBConn {
 		}
 		return result;
 	}
-
+	
+	
 	/**
-	 * List : 회원 전체 리스트
+	 * 회원가입 - 아이디 중복체크
 	 */
-	public ArrayList<MusicMemberVO> getList(int start, int end) {
-		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+	public int getIdCheck(String id) {
+		int result = 0;
 
 		try {
-			String sql = " SELECT * FROM (SELECT ROWNUM RNO, ID, NAME, NICKNAME, CP, TO_CHAR(MDATE,'yyyy.mm.dd') MDATE"
-					+ " FROM (SELECT * FROM MUSICMEMBER ORDER BY MDATE DESC))" + " WHERE RNO BETWEEN ? AND ?";
+			String sql = " SELECT COUNT(*) FROM MUSICMEMBER WHERE ID=?";
 
 			getPreparedStatement(sql);
-			pstmt.setInt(1, start);
-			pstmt.setInt(2, end);
-
+			pstmt.setString(1, id);
 			ResultSet rs = pstmt.executeQuery();
+			if (rs.next())
+				result = rs.getInt(1);
 
-			while (rs.next()) {
-				MusicMemberVO vo = new MusicMemberVO();
-				vo.setRno(rs.getInt(1));
-				vo.setId(rs.getString(2));
-				vo.setName(rs.getString(3));
-				vo.setNickname(rs.getString(4));
-				vo.setCp(rs.getString(5));
-				vo.setMdate(rs.getString(6));
-
-				list.add(vo);
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return list;
+		return result;
 	}
-
+	
+	
 	/**
 	 * List : 회원 전체 리스트
 	 */
@@ -191,7 +94,134 @@ public class MusicMemberDAO extends DBConn {
 
 		return list;
 	}
+	
+	
+	/**
+	 * List : 회원 전체 리스트
+	 */
+	public ArrayList<MusicMemberVO> getList(int start, int end) {
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
 
+		try {
+			String sql = " SELECT * FROM (SELECT ROWNUM RNO, ID, NAME, NICKNAME, CP, TO_CHAR(MDATE,'yyyy.mm.dd') MDATE"
+					+ " FROM (SELECT * FROM MUSICMEMBER ORDER BY MDATE DESC))"
+					+ " WHERE RNO BETWEEN ? AND ?";
+			
+			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+
+	
+	/**
+	 * 검색 기능
+	 */
+	public ArrayList<MusicMemberVO> getSearchList(String sname, String svalue, int start, int end){
+		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
+		
+		try {
+			String str="";
+			if(sname.equals("total")) {
+				str="";
+			}else {
+				str = " where " + sname +"='"+svalue+"'";
+			}
+			
+			String sql = " select * from (select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate " + 
+					" from (select * from musicmember order by mdate desc) " 
+					+ str + ") where rno between "+ start + " and " + end ;
+			System.out.println("sql-->" + sql);			
+			getStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				MusicMemberVO vo = new MusicMemberVO();
+				vo.setRno(rs.getInt(1));
+				vo.setId(rs.getString(2));
+				vo.setName(rs.getString(3));
+				vo.setNickname(rs.getString(4));
+				vo.setCp(rs.getString(5));
+				vo.setMdate(rs.getString(6));
+				
+				list.add(vo);
+			}	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	/**
+	 * 전체 리스트 카운트
+	 */
+	public int getListCount() {
+		int result = 0;
+
+		try {
+			String sql = " SELECT COUNT(*) FROM MUSICMEMBER";
+
+			getPreparedStatement(sql);
+
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next())
+				result = rs.getInt(1);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	
+	/**
+	 * 검색기능 시 리스트 카운트
+	 */
+	public int getListCount(String sname, String svalue) {
+		int result = 0;
+		
+		try {
+			String str="";
+			if(!sname.equals("total")) {
+				str = " where " + sname + "='" + svalue + "'";
+			}
+			
+			String sql = "SELECT COUNT(*) FROM MUSICMEMBER " + str;
+			
+			getStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
 	/**
 	 * Content : 회원 상세 정보
 	 */
@@ -223,7 +253,8 @@ public class MusicMemberDAO extends DBConn {
 
 		return vo;
 	}
-
+	
+	
 	/**
 	 * Update : 회원정보 수정 - 새로운 파일이 있을 때
 	 */
@@ -257,6 +288,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
 	/**
 	 * Update : 회원정보 수정 - 새로운 파일이 없을 때
 	 */
@@ -288,6 +320,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
 	/**
 	 * Select : 특정 멤버 정보 출력
 	 */
@@ -321,6 +354,7 @@ public class MusicMemberDAO extends DBConn {
 		return vo;
 	}
 
+	
 	/**
 	 * login : 로그인처리
 	 */
@@ -349,28 +383,7 @@ public class MusicMemberDAO extends DBConn {
 		return svo;
 	}
 
-	/**
-	 * 전체 리스트 카운트
-	 */
-	public int getListCount() {
-		int result = 0;
-
-		try {
-			String sql = " SELECT COUNT(*) FROM MUSICBOARD";
-
-			getPreparedStatement(sql);
-
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next())
-				result = rs.getInt(1);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return result;
-	}
-
+	
 	/**
 	 * login_state : 로그인 상태
 	 */
@@ -393,6 +406,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
 	/**
 	 * 아이디 가져오기
 	 */
@@ -416,6 +430,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
 	/**
 	 * 닉네임 가져오기
 	 */
@@ -439,6 +454,7 @@ public class MusicMemberDAO extends DBConn {
 		return result;
 	}
 
+	
 	/**
 	 * 닉네임 중복체크
 	 */
@@ -461,47 +477,7 @@ public class MusicMemberDAO extends DBConn {
 
 		return result;
 	}
-
-	/**
-	 * 검색 기능
-	 */
-	public ArrayList<MusicMemberVO> getSearchList(String sname, String svalue) {
-		ArrayList<MusicMemberVO> list = new ArrayList<MusicMemberVO>();
-
-		try {
-			String str = "";
-			if (sname.equals("total")) {
-				str = "";
-			} /*
-				 * else if(sname.equals("id")) { str = "where " + sname +
-				 * "=upper('"+svalue+"')"; }else { str = "where " + sname + "='"+svalue+"'"; }
-				 */
-
-			String sql = " select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate "
-					+ " from (select * from cgvmember order by mdate desc) " + str;
-
-			getPreparedStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				MusicMemberVO vo = new MusicMemberVO();
-				vo.setRno(rs.getInt(1));
-				vo.setId(rs.getString(2));
-				vo.setName(rs.getString(3));
-				vo.setNickname(rs.getString(4));
-				vo.setCp(rs.getString(5));
-				vo.setMdate(rs.getString(6));
-
-				list.add(vo);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return list;
-	}
-
+	
 	
 	public MusicMemberVO FindID(String email) {
 		MusicMemberVO vo = new MusicMemberVO();
