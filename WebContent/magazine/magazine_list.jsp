@@ -18,6 +18,9 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
+	<!-- player -->
+	<jsp:include page="../musicplayer.jsp" />
+	
 	<div class="content_menu">
 
 		<div class="magazine_head">
