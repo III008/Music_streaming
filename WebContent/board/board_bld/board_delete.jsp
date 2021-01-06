@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<!-- header -->
-		<jsp:include page="../header.jsp"></jsp:include>
+		<jsp:include page="../../header.jsp"></jsp:include>
 		
 		<!-- content -->
 		<div class="content_board">
@@ -34,6 +34,6 @@
  		</div>
 		
 		<!-- footer -->
-		<jsp:include page="../footer.jsp"></jsp:include>
+		<jsp:include page="../../footer.jsp"></jsp:include>
 	</body>
 </html>

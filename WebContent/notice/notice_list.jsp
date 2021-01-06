@@ -69,6 +69,8 @@
 <body>
 	<!-- header -->
 	<jsp:include page="../header.jsp"></jsp:include>
+	<!-- player -->
+	<jsp:include page="../musicplayer.jsp" />
 
 	<!-- content -->
 	<div class="content_notice">

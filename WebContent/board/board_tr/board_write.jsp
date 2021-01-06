@@ -4,14 +4,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>게시판 글쓰기</title>
+		<title>게시판</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
 	</head>
 	<body>
 		<!-- header -->
-		<jsp:include page="../header.jsp"></jsp:include>
+		<jsp:include page="../../header.jsp"></jsp:include>
 		
 		<!-- content -->
 		<div class="content_board">
@@ -22,15 +22,15 @@
 						<ul>
 							<li>
 								<label>제 목</label>
-								<input type="text" name="btitle" id="btitle">
+								<input type="text" name="tr_btitle" id="btitle">
 							</li>
 							<li>
 								<label>내 용</label>
-								<textarea name="bcontent"></textarea>
+								<textarea name="tr_bcontent"></textarea>
 							</li>
 							<li>
 								<label>파일첨부</label>
-								<input type="file" name="bd_file">
+								<input type="file" name="tr_bfile">
 							</li>
 							<li>
 								<button type="button" class="btn_style" id="btnBoardWrite">등록</button>
@@ -44,6 +44,6 @@
  		</div>
 		
 		<!-- footer -->
-		<jsp:include page="../footer.jsp"></jsp:include>
+		<jsp:include page="../../footer.jsp"></jsp:include>
 	</body>
 </html>

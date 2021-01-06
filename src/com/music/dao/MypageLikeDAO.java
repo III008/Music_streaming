@@ -8,6 +8,34 @@ import com.music.vo.MypageLikeVO;
 public class MypageLikeDAO extends DBConn{
 	
 	/**
+	 * rownum -> mid 구하기
+	 */
+	public String getMid(String id, int rownum_int) {
+		String result = "";
+
+		try {
+			String sql = "SELECT MID\r\n" + 
+					"FROM (SELECT LID, ROWNUM RNO, ID, MID\r\n" + 
+					"FROM (SELECT * FROM MYPAGELIKE ORDER BY LDATE DESC)\r\n" + 
+					"WHERE ID=?)\r\n" + 
+					"WHERE RNO=?";
+
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, rownum_int);
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next())
+				result = rs.getString(1);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	/**
 	 * 전체 row count
 	 * @return
 	 */
@@ -40,11 +68,12 @@ public class MypageLikeDAO extends DBConn{
 		ArrayList<MypageLikeVO> list = new ArrayList<MypageLikeVO>();
 		
 		try {
-			String sql = "SELECT * \r\n" + 
-					"FROM (SELECT ROWNUM RNO, MUSICCHART.SONG, MUSICCHART.MUSIC_SIMAGE, MUSICCHART.ARTIST, MUSICCHART.MID, MYPAGELIKE.ID\r\n" + 
+			String sql = "SELECT RNO, SONG, MUSIC_SIMAGE, ARTIST, MID, ID\r\n" + 
+					"FROM (SELECT ROWNUM RNO, MUSICCHART.SONG, MUSICCHART.MUSIC_SIMAGE, MUSICCHART.ARTIST, MYPAGELIKE.MID, MYPAGELIKE.ID, MYPAGELIKE.LDATE\r\n" + 
 					"FROM MUSICCHART\r\n" + 
 					"JOIN MYPAGELIKE ON MUSICCHART.MID = MYPAGELIKE.MID\r\n" + 
-					"WHERE MYPAGELIKE.ID=?) \r\n" + 
+					"WHERE MYPAGELIKE.ID=?\r\n" + 
+					"ORDER BY MYPAGELIKE.LDATE DESC)\r\n" + 
 					"WHERE RNO BETWEEN ? AND ?";
 			
 			getPreparedStatement(sql);
@@ -151,7 +180,7 @@ public class MypageLikeDAO extends DBConn{
 		boolean result = false;
 		
 		try {
-			String sql = "INSERT INTO MYPAGELIKE(LID, ID, MID) VALUES('l_'||SEQU_MYPAGELIKE.nextval,?,?)";
+			String sql = "INSERT INTO MYPAGELIKE(LID, ID, MID, LDATE) VALUES('l_'||SEQU_MYPAGELIKE.nextval,?,?,SYSDATE)";
 			
 			getPreparedStatement(sql);
 			pstmt.setString(1, id);

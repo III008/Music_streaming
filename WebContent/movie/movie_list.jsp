@@ -22,6 +22,8 @@
 <body>
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
+	<!-- player -->
+	<jsp:include page="../musicplayer.jsp" />
 
 	<div class="movie_list">
 		<section class="section1">

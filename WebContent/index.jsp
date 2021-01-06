@@ -28,6 +28,9 @@
 <body>
 	<!-- header -->
 	<jsp:include page="header.jsp" />
+	
+	<!-- player -->
+	<jsp:include page="musicplayer.jsp" />
 
 	<!-- content -->
 	<div class="content">
@@ -176,6 +179,6 @@
 	</div>
 	<!-- footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
-
+	
 </body>
 </html>
