@@ -51,7 +51,7 @@
 		
 		$("#playListContainer").hide();
 		$("#playlist").click(function(){
-		    $("#playListContainer").height(400);
+		    $("#playListContainer").height(300);
 		    $("#playListContainer").toggle(1000);
 		});
 	});
