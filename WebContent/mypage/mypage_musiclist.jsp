@@ -101,7 +101,7 @@ $(document).ready(function(){
 			play_list += $(this).attr("id") + ",";
 		});
 		
-		alert(play_list);
+		/* alert(play_list); */
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 		$.ajax({
 			  url:"music_play_chk.jsp?rownum="+play_list+"&id="+id,
@@ -114,15 +114,16 @@ $(document).ready(function(){
 	
 	$("#btnCancle").click(function(){
 		var del_list ="";
+		var id = '<%= id %>';
 		
 		$("input[name='chk']:checked").each(function(index){
 			del_list += $(this).attr("id") + ",";
 		});
 		
-		alert(del_list);
+		/* alert(del_list); */
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 		$.ajax({
-			  url:"music_likeCancle_chk.jsp?rownum="+del_list+"&id="+<%= id %>+"&start="+<%= String.valueOf(start) %>+"&end="+<%= String.valueOf(end) %>,
+			  url:"music_likeCancle_chk.jsp?rownum="+del_list+"&id="+id,
 			  success:function(result){
 				  alert("음악 좋아요 취소");
 				  location.reload();
