@@ -72,6 +72,19 @@
 			
 			});
 		
+		$("#playMusic").click(function(){
+			//ajax를 활용한 서버 연동
+			  $.ajax({
+				  url:"music_content_play.jsp?mid=<%= mid %>&id=<%= id %>",
+				  success:function(result){
+					  alert(result);
+					  location.reload();
+					  $("#playListContainer").audioControls({
+							autoPlay : true
+					  });
+				  }
+				});
+		});
 		
 	});
 	
@@ -80,6 +93,9 @@
 <body class="music_content">
 	<!-- header -->
 	<jsp:include page="../header.jsp"/>
+	
+	<!-- player -->
+	<jsp:include page="../musicplayer.jsp" />
 	
 	<!-- content -->
 	<div class="content">
@@ -99,8 +115,7 @@
 					</tr>
 					<tr>
 						<td id="bar">
-							<button type="button" class="btn_style">재생</button>
-							<button type="button" class="btn_style">MP3 구매</button>
+							<button type="button" class="btn_style" id="playMusic">재생</button>
 							<button type="button" class="btn_unlike" id="btnLike">
   								<span class="img_emoti">좋아요</span>
 							</button>
@@ -176,7 +191,7 @@
 							<td colspan="2"><div id="comment_write"><label><%= vo1.getComment_write() %></label></div></td>
 						</tr>
 						<tr>
-							<td><div id="reply"><a href="#">답글</a></div></td>
+							<!-- <td><div id="reply"><a href="#">답글</a></div></td> -->
 						</tr>
 					</table>
 					<% } %>
