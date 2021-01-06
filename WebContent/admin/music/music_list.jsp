@@ -115,8 +115,8 @@ $(document).ready(function(){
 				<table class="admin_movie_list">
 					<tr>
 						<td colspan="7">
+						<button type="button" class="btn_style" id="btnDelete">선택삭제</button>
 						<a href="music_register.jsp"><button type="button" class="btn_style">등록</button></a>
-						<button type="button" class="btn_style" id="btnDelete">삭제</button>
 						</td>
 					</tr>
 

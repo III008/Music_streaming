@@ -3,9 +3,11 @@
 	import="com.music.dao.*, com.music.vo.*, java.util.*"%>
 <%
 	MusicChartDAO dao = new MusicChartDAO();
+	MusicVideoDAO dao2 = new MusicVideoDAO();
 	int start = 1;
 	int end = 4;
 	ArrayList<MusicChartVO> list1 = dao.getList1(start,end); 
+	ArrayList<MusicVideoVO> list2 = dao2.getList(start,end); 
 	MusicMagazineDAO mdao = new MusicMagazineDAO();
 	ArrayList<MusicMagazineVO> mlist = mdao.getList2();
 %> 
@@ -22,7 +24,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
-	
+	iframe{
+	width:560px;
+	height:315px;
+	}
 </style>
 </head>
 <body>
@@ -150,31 +155,11 @@
 				href="http://localhost:9000/Music_streaming/movie/movie_list.jsp">뮤직비디오 </a>
 			</div>
 			<div class="content2">
-				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/D1PvIWdJ8xo?controls=0"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-				<span class="aaa"></span>
-				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/gIOyB9ZXn8s?controls=0"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
+		<%for (MusicVideoVO  vo: list2){ %>
+			<%=vo.getVcontent() %>
+			<%} %>
 			</div>
-			<div>
-				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/XsX3ATc3FbA?controls=0"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-				<span class="ccc"></span>
-				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/mrAIqeULUL0?controls=0"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-			</div>
+
 		</section>
 	</div>
 	<!-- footer -->

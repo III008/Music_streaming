@@ -284,6 +284,9 @@
 		background-color:rgb(242, 242, 242);
 		border:1px solid rgb(231, 231, 231);
 	}
+	footer>section.sc2 {
+		padding-bottom:150px;
+	}
 	footer>section.sc1>nav>ul>li {
 		display:inline-block;
 		padding:15px 0 15px 20px;
@@ -2095,6 +2098,9 @@
 	body.music_list table tr:nth-child(2):hover {
 		background-color:white;
 	}
+	body.music_list button#btnDelete {
+		margin-top:10px;
+	}	
 	
 	/* music_register.jsp */
 	/* music_update.jsp */

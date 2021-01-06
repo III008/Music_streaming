@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/Music_streaming/css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/Music_streaming/css/theme-2.css" />
 <!-- JS FILE's  -->
-<script src="http://localhost:9000/Music_streaming/js/jquery.js"></script>
+<!-- <script src="http://localhost:9000/Music_streaming/js/jquery.js"></script> -->
 <script src="http://localhost:9000/Music_streaming/js/jquery.audioControls.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -51,7 +51,7 @@
 		
 		$("#playListContainer").hide();
 		$("#playlist").click(function(){
-		    $("#playListContainer").height(400);
+		    $("#playListContainer").height(300);
 		    $("#playListContainer").toggle(1000);
 		});
 	});
