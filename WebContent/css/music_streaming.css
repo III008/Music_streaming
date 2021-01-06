@@ -1587,11 +1587,14 @@
 		color:black;
 		font-size:17px;
 	}
+	table.ad_notice th{
+		color:rgb(255, 0, 80);
+	}
 	table.ad_notice td>a{
 		color:black;
 	}
 	table.ad_notice th{
-		background-color:rgb(213,213,213);
+		background-color:white;
 	}
 	table.ad_notice tr td:nth-child(1),table.ad_notice tr td:nth-child(2),
 	table.ad_notice tr td:nth-child(4),table.ad_notice tr td:nth-child(5){

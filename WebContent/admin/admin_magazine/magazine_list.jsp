@@ -72,33 +72,19 @@ $(document).ready(function(){
 	
 	/** 삭제 버튼 클릭 : 클릭된 체크박스의 id 값을 리턴 **/
 	$("#btnDelete").click(function(){
-		  var del_list =""; 	//문자열로 받았을 경우
-		 /* var del_list = [];	//배열 list로 받았을 경우  */
-		 $("input[name='chk']:checked").each(function(i){
-			del_list.push($(this).val());
+		  var del_list =""; 	
+		 $("input[name='chk']:checked").each(function(index){
+			 del_list += $(this).attr("id") + ",";
 		});
-		 
-			alert(del_list); 	//삭제 버튼 클릭시 공지사항 NID출력
-		/* 	var objParams ={
-					
-			}; */
-			
+
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 		$.ajax({
-			/* alert("성공");   ajax까지는 넘어옴*/
-			url:"magazineDeleteProc.jsp?del_list="+del_list,
-			sucees:function(result){
-				 if(result == 1) {     
-					 alert("삭제 성공");
-				/* location.href = "/shop/cartList"; */
-		      } else {
-		       		alert("삭제 실패");
-		      }
-			}
-			
-				
-		})//ajax 
-		
+			  url:"magazine_delete_chk.jsp?midnum="+del_list,
+			  success:function(result){
+				  alert("매거진 삭제완료");
+				  location.reload();
+			  }
+		});//ajax 
 	});//btnDelete
 	
 	
@@ -137,14 +123,14 @@ $(document).ready(function(){
 					<!--태그 공지사항과 동일함 -->
 					<tr>
 						<td colspan="5"><a href="magazineDeleteProc.jsp?mid=<%=mid%>"><button
-									type="button" class="btn_style">매거진 삭제</button></a> <a
+									type="button" class="btn_style" id="btnDelete">매거진 삭제</button></a> <a
 							href="magazine_write.jsp">
 								<button type="button" class="btn_style" id="insert">매거진
 									작성</button>
 						</a></td>
 					</tr>
 					<tr>
-						<th><input type="checkbox" id="all" onchange="allCheck()">전체선택</th>
+						<th><input type="checkbox" id="all" onchange="allCheck()"></th>
 						<th>번호</th>
 						<th>제목</th>
 						<th>등록일</th>
@@ -152,7 +138,7 @@ $(document).ready(function(){
 					</tr>
 					<% for (MusicMagazineVO vo : list) { %>
 					<tr>
-						<td><input type="checkbox" name="chk" id="<%=mid%>"></td>
+						<td><input type="checkbox" name="chk" id="<%=vo.getMid()%>"></td>
 						<!-- 번호 바꿔야해ㅑ  -->
 						<td><%= vo.getRno() %></td>
 						<td><a href="magazine_content.jsp?mid=<%=vo.getMid()%>"><%= vo.getMtitle() %></a></td>

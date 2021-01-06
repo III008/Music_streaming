@@ -202,6 +202,26 @@ public class MusicMagazineDAO extends DBConn{
 	}
 	
 	/**
+	 * Delete : 체크 삭제
+	 */
+	public void getDeleteChk(String mid) {
+		
+		try {
+			String sql = " delete from musicmagazine where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+	/**
 	 * Update : 조회수 업데이트
 	 */
 	public void getUpdateHits(String mid) {

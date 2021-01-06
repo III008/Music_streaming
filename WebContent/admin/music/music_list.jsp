@@ -81,7 +81,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	
 	$("#btnDelete").click(function(){
 		var del_list ="";
 		
