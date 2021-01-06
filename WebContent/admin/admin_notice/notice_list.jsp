@@ -118,7 +118,7 @@
 		}); 
 		
 		jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-			$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
+			$(location).attr('href','http://localhost:9000/Music_streaming/admin/admin_notice/notice_list.jsp?rpage='+e.page);  
 
 		});
 		
