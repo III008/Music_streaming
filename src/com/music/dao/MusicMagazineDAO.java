@@ -10,16 +10,40 @@ import com.music.vo.MusicMagazineVO;
 public class MusicMagazineDAO extends DBConn{
 
 	/**
+	 * 	list count
+	 */
+	public int getListCount() {
+		int result = 0;
+		
+		try {
+			String sql = " select count(*) from musicmagazine";
+			
+			getPreparedStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	/**
 	 * Select : 전체 리스트 출력 
 	 */
-	public ArrayList<MusicMagazineVO> getList(){
+	public ArrayList<MusicMagazineVO> getList(int start, int end){
 		ArrayList<MusicMagazineVO> list = new ArrayList<MusicMagazineVO>();
 		
 		try {
-			String sql = "select rownum rno, mid, mtitle, to_char(mdate,'yyyy.mm.dd'), mhits, msfile" + 
-					" from (select * from musicmagazine order by mdate desc)";
+			String sql =  " select * from (select rownum rno, mid, mtitle, to_char(mdate,'yyyy.mm.dd'), mhits, msfile "
+					+ 	" from (select * from musicmagazine order by mdate desc)) " 
+					+ " where rno between ? and ?";
 			
 			getPreparedStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				MusicMagazineVO vo = new MusicMagazineVO();
@@ -74,7 +98,7 @@ public class MusicMagazineDAO extends DBConn{
 	}
 	
 	/**
-	 * Insert : 공지사항 글쓰기
+	 * Insert : 매거진 글쓰기
 	 */
 	public boolean getInsert(MusicMagazineVO vo) {
 		boolean result = false;
@@ -176,6 +200,26 @@ public class MusicMagazineDAO extends DBConn{
 		
 		return result;
 	}
+	
+	/**
+	 * Delete : 체크 삭제
+	 */
+	public void getDeleteChk(String mid) {
+		
+		try {
+			String sql = " delete from musicmagazine where mid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, mid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	
 	/**
 	 * Update : 조회수 업데이트

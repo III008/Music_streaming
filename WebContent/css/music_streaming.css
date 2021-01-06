@@ -284,6 +284,9 @@
 		background-color:rgb(242, 242, 242);
 		border:1px solid rgb(231, 231, 231);
 	}
+	footer>section.sc2 {
+		padding-bottom:150px;
+	}
 	footer>section.sc1>nav>ul>li {
 		display:inline-block;
 		padding:15px 0 15px 20px;
@@ -1459,7 +1462,7 @@
 	
 	/*메거진 메인 리스트 */
 	div.content_menu>section.magazine_list{
-		height: 1500px;
+		height: 1300px;
 		width: 1500px;
 		display: block;
 		margin: auto;
@@ -1497,7 +1500,9 @@
 		height: 300px;
 		width: 300px;
 		border-radius:8px;
-		
+	}
+	div.content_menu div.page_num{
+			text-align:center;
 	}
 	
 	
@@ -1585,11 +1590,14 @@
 		color:black;
 		font-size:17px;
 	}
+	table.ad_notice th{
+		color:rgb(255, 0, 80);
+	}
 	table.ad_notice td>a{
 		color:black;
 	}
 	table.ad_notice th{
-		background-color:rgb(213,213,213);
+		background-color:white;
 	}
 	table.ad_notice tr td:nth-child(1),table.ad_notice tr td:nth-child(2),
 	table.ad_notice tr td:nth-child(4),table.ad_notice tr td:nth-child(5){
@@ -2090,6 +2098,9 @@
 	body.music_list table tr:nth-child(2):hover {
 		background-color:white;
 	}
+	body.music_list button#btnDelete {
+		margin-top:10px;
+	}	
 	
 	/* music_register.jsp */
 	/* music_update.jsp */

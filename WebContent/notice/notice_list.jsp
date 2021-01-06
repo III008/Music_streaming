@@ -59,8 +59,9 @@
 				}); 
 				
 				jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-					$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
+					$(location).attr('href','http://localhost:9000/Music_streaming/notice/notice_list.jsp?rpage='+e.page);  
 					//location.href('이동페이지');
+					
 				});
 			});
 		</script>

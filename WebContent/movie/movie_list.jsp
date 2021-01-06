@@ -17,6 +17,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+<script src="http://localhost:9000/Music_streaming/js/jquery.js"></script>
 
 </head>
 <body>

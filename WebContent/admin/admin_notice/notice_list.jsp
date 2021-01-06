@@ -51,6 +51,7 @@
 <script
 	src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 <script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
+
 <script>
 	$(document).ready(function(){
 		
@@ -72,35 +73,20 @@
 	
 	/** 삭제 버튼 클릭 : 클릭된 체크박스의 id 값을 리턴 **/
 	$("#btnDelete").click(function(){
-		  var del_list =""; 	//문자열로 받았을 경우
-		 /* var del_list = [];	//배열 list로 받았을 경우  */
-		 $("input[name='chk']:checked").each(function(i){
-			del_list.push($(this).val());
+		  var del_list =""; 	
+		 $("input[name='chk']:checked").each(function(index){
+			 del_list += $(this).attr("id") + ",";
 		});
-		 
-			alert(del_list); 	//삭제 버튼 클릭시 공지사항 NID출력
-		/* 	var objParams ={
-					
-			}; */
-			
+
 		//ajax를 이용하여 서버로 전송 후 삭제 진행
 		$.ajax({
-			/* alert("성공");   ajax까지는 넘어옴*/
-			url:"noticeDeleteProc.jsp?del_list="+del_list,
-			sucees:function(result){
-				 if(result == 1) {     
-					 alert("삭제 성공");
-				/* location.href = "/shop/cartList"; */
-		      } else {
-		       		alert("삭제 실패");
-		      }
-			}
-			
-				
-		})//ajax 
-		
+			  url:"notice_delete_chk.jsp?nidnum="+del_list,
+			  success:function(result){
+				  alert("공지사항 삭제완료");
+				  location.reload();
+			  }
+		});//ajax 
 	});//btnDelete
-	
 	
 	/*페이징 처리*/
 		var pager = jQuery("#ampaginationsm").pagination({
@@ -118,8 +104,7 @@
 		}); 
 		
 		jQuery("#ampaginationsm").on('am.pagination.change',function(e){
-			$(location).attr('href','http://localhost:9000/Music_streaming/board/board_list.jsp?rpage='+e.page);  
-
+			$(location).attr('href','http://localhost:9000/Music_streaming/admin/admin_notice/notice_list.jsp?rpage='+e.page);  
 		});
 		
 	});//ready
@@ -146,7 +131,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th><input type="checkbox" id="all">전체선택</th>
+						<th><input type="checkbox" id="all"></th>
 						<th>번호</th>
 						<th>제목</th>
 						<th>등록일</th>

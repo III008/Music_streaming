@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"
 	 import = "com.music.vo.*, com.music.dao.*, java.util.*"%>
 	 <%
+	 String id = request.getParameter("id");
 	 String vid = request.getParameter("vid");
 	 String vartist = request.getParameter("vartist");
 	 String rpage = request.getParameter("rpage");
@@ -43,6 +44,8 @@
 <script src="http://localhost:9000/Music_streaming/js/am-pagination.js"></script>
 <script>
 			$(document).ready(function(){
+
+
 				//페이지 번호 및 링크 		
 				var pager = jQuery("#ampaginationsm").pagination({
 					maxSize : 5,			
@@ -64,12 +67,17 @@
 				});
 			});
 		</script>
+		<style>
+		iframe{
+		width:1200px;
+		height:700px;}
+		</style>
 </head>
 <body>
 	<!-- header -->
 	<jsp:include page="../header.jsp" />
 
-
+	<input type="hidden" name="bid" value="<%=id%>">
 	<div class="movie_info">
 		<section class="section1">
 			<div>영상 정보</div>
