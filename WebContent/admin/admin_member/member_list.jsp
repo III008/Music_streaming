@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="com.music.vo.*, com.music.dao.*, java.util.*" %>
-<%-- <%
-	SessionVO svo = (SessionVO)session.getAttribute("svo");
-
-	//svo 객체 != null ==>> 로그인 성공!!
-	//svo 객체 == null ==>> 로그인 하지 않은 상태
-	if(svo != null){
-%>  --%> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -79,13 +72,12 @@
 				
 				/** 페이징 처리 함수 **/
 				function page(dbcount, reqpage, pagesize){
-					//페이지 번호 및 링크 		
 					var pager = jQuery("#ampaginationsm").pagination({
 						maxSize : 5,			
 						totals : dbcount,
 						page : reqpage,
 						pageSize : pagesize,
-								
+						
 						lastText : '&raquo;&raquo;',
 						firstText : '&laquo;&laquo',
 						prevTest : '&laquo;',
@@ -93,14 +85,12 @@
 						
 						btnSize : 'sm' 			
 					}); 
-					
+				
 					jQuery("#ampaginationsm").on('am.pagination.change',function(e){
 						$(location).attr('href','http://localhost:9000/Music_streaming/admin/admin_member/member_list.jsp?rpage='+e.page);  
 					});
 				}//page
-				
 			});//ready
-
 		</script>
 	</head>
 	<body>
@@ -131,8 +121,4 @@
 		<jsp:include page="../../footer.jsp" />
 	</body>
 </html>
-<%-- <% }else{ %>
-<script>
-	alert("로그인을 진행하셔야 접근이 가능합니다.");
-</script>
-<% } %> --%>
+

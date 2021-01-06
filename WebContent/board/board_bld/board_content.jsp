@@ -17,6 +17,9 @@
 	MusicBoardDAO dao = new MusicBoardDAO();
 	MusicBoardVO vo = dao.getContent(bid);
 	
+	MusicMemberDAO dao1 = new MusicMemberDAO();
+	String nickname_b = dao1.getNickname(vo.getId());
+	
 	ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid);
 	dao.getUpdateHits(bid);
 %>
@@ -52,7 +55,7 @@
 							<th colspan="7"><%= vo.getBtitle() %></th>
 						</tr>
 						<tr>
-							<td>닉네임</td>
+							<td><%= nickname_b %></td>
 							<td>추천</td>
 							<td><%= vo.getBrec() %></td>
 							<td>조회</td>
@@ -83,7 +86,7 @@
 					</table>
 				</div>
 				<form name="boardReplyForm" action="boardReplyProc.jsp" method="post" class="reply_write">
-					<input type="hidden" name="id" value="<%= id %>"> <!-- 예시 -->
+					<input type="hidden" name="id" value="<%= id %>"> 
 					<input type="hidden" name="bid" value="<%= vo.getBid() %>">
 					<table class="board_content_reg">
 						<tr>

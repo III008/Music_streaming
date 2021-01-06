@@ -143,13 +143,13 @@ public class MusicMemberDAO extends DBConn {
 			if(sname.equals("total")) {
 				str="";
 			}else {
-				str = " where " + sname +"='"+svalue+"'";
+				str = " where " + sname + "='" + svalue + "'";
 			}
 			
-			String sql = " select * from (select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd') mdate " + 
+			String sql = " select * from (select rownum rno, id, name, nickname, cp, to_char(mdate,'yyyy.mm.dd')" + 
 					" from (select * from musicmember order by mdate desc) " 
 					+ str + ") where rno between "+ start + " and " + end ;
-			System.out.println("sql-->" + sql);			
+
 			getStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -205,10 +205,10 @@ public class MusicMemberDAO extends DBConn {
 		try {
 			String str="";
 			if(!sname.equals("total")) {
-				str = " where " + sname + "='" + svalue + "'";
+				str = " where "+ sname + "='" + svalue + "'";
 			}
 			
-			String sql = "SELECT COUNT(*) FROM MUSICMEMBER " + str;
+			String sql = "SELECT COUNT(*) FROM MUSICMEMBER" + str;
 			
 			getStatement();
 			ResultSet rs = stmt.executeQuery(sql);

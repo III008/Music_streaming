@@ -9,6 +9,8 @@
 <jsp:setProperty property="*" name="vo"/> --%>
 
 <%
+	String id = request.getParameter("id");
+
 	//1. 파일이 저장되는 경로 설정 : upload폴더 주소
 	String save_path = request.getServletContext().getRealPath("/upload"); 
 	//System.out.println("path==>>" + save_path);	
