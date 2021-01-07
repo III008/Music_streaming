@@ -125,8 +125,7 @@ $(document).ready(function(){
 						<td colspan="5"><a href="magazineDeleteProc.jsp?mid=<%=mid%>"><button
 									type="button" class="btn_style" id="btnDelete">매거진 삭제</button></a> <a
 							href="magazine_write.jsp">
-								<button type="button" class="btn_style" id="insert">매거진
-									작성</button>
+								<button type="button" class="btn_style" id="insert">매거진작성</button>
 						</a></td>
 					</tr>
 					<tr>

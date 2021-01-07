@@ -1314,6 +1314,7 @@
 		font-size: 30px;
 		margin-top: 50px;
 		font-weight: bold;
+		margin-bottom:20px;
 	}
 	
 /**
@@ -2143,7 +2144,10 @@
 		background-color:white;
 		padding: 6px 5px 4px 5px;
 	}
-	
+	/**admin-movie_list**/
+	.num{
+	text-align:center;
+	}
 /**
 	* button
 **/

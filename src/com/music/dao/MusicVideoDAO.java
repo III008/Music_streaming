@@ -150,6 +150,25 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+	
+	/**
+	 * Delete : 체크 삭제
+	 */
+	public void getDeleteChk(String vid) {
+		
+		try {
+			String sql = " delete from musicvideo where vid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 	/**
 	 * 뮤비사진&가수사진 둘다 변경할 때 

@@ -4,6 +4,7 @@
 	<%
 		MusicVideoDAO dao = new MusicVideoDAO();
 		String rpage = request.getParameter("rpage");
+		String vid = request.getParameter("vid");
 		
 		int start = 0;
 		int end = 0;
@@ -60,11 +61,35 @@
 					$(location).attr('href','http://localhost:9000/Music_streaming/admin/movie/movie_list.jsp?rpage='+e.page);  
 					//location.href('이동페이지');
 				});
+				$("#all").change(function(){
+					$("#all:checked").length == 0
+					if($(this).is(":checked")){
+						
+						$("input[name='chk']").prop("checked",true);
+					}else{
+						
+						$("input[name='chk']").prop("checked",false);
+					}	
+				});
+				$("input[name='chk']").click(function(){
+					  $("#all").prop("checked", false);
+					 });
+				$("#btnDelete").click(function(){
+					  var del_list =""; 	
+					 $("input[name='chk']:checked").each(function(index){
+						 del_list += $(this).attr("id") + ",";
+					});
+					$.ajax({
+						  url:"movie_delete_chk.jsp?vidnum="+del_list,
+						  success:function(result){
+							  alert("뮤비 삭제완료");
+							  location.reload();
+						  }
+					});//ajax 
+				});//btnDelete
 			});
 		</script>
 </head>
-<style>
-</style>
 <body>
 	<!-- header -->
 	<jsp:include page="../../manager_header.jsp"></jsp:include>
@@ -78,10 +103,14 @@
 				</div>
 				<table class="admin_movie_list">
 					<tr>
-						<td colspan ="4"><a href ="movie_register.jsp"><button type = "button" class = "btn_style" >등록</button></a></td>
+						
+						<td colspan ="5"><a href="movieDeleteProc.jsp?vid=<%=vid%>">
+						<button type="button" class="btn_style" id="btnDelete">선택삭제</button></a>
+						<a href ="movie_register.jsp"><button type = "button" class = "btn_style" >등록</button></a></td>
 					</tr>
 					
 					<tr>
+						<th><input type="checkbox" id="all" onchange = "allCheck()"></th>
 						<th>번호</th>
 						<th>노래제목</th>
 						<th>가수명</th>
@@ -89,13 +118,13 @@
 					</tr>
 					<%for(MusicVideoVO vo : list){ %>
 					<tr>
-						<td><%=vo.getRno() %></td>
+					<td><input type="checkbox" name="chk" id="<%=vo.getVid()%>"></td>
+						<td class = "num"><%=vo.getRno() %></td>
 						<td><a href="movie_info.jsp?vid=<%= vo.getVid() %>"><%=vo.getVtitle() %></a></td>
 						<td><%=vo.getVartist() %></td>
 						<td><%=vo.getVdate() %></td>
 					</tr>
 					<%} %>
-					<tr>
 					<tr>
 						<td colspan="4"><div  id="ampaginationsm"></div></td>
 					</tr>

@@ -71,6 +71,8 @@
 		iframe{
 		width:1200px;
 		height:700px;}
+		
+
 		</style>
 </head>
 <body>

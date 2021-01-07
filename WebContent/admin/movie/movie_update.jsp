@@ -13,6 +13,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
+
 </head>
 <body>
 	<!-- header -->
@@ -29,7 +30,7 @@
 					<ul>
 						<li><label>가수명</label> <input type="text" name="vartist" value="<%=vo.getVartist()%>"></li>
 						<li><label>노래제목</label> <input type="text"name="vtitle" value="<%=vo.getVtitle()%>"></li>
-						<li><label>영상주소</label> <input type="text"name="vcontent" value = "<%= vo.getVcontent()%>"></li>
+						<li><label>영상주소</label> <textarea name="vcontent" cols = "5" rows="5"><%=vo.getVcontent() %></textarea></li>
 						<li><label>영상소개</label> <textarea name="vintro"><%=vo.getVintro() %></textarea></li>
 						<li><label>뮤비사진</label> <input type="file"name="vfile1"><%=vo.getVfile1() %></li>
 						<li><label>가수사진</label> <input type="file"name="vfile2"><%=vo.getVfile2() %></li>
