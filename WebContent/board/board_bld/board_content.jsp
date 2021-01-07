@@ -40,7 +40,8 @@
 					<h1>게시판</h1>
 					<table class="board_content">
 						<tr>
-							<td colspan="3">
+							<%-- <input type="text" name="id" value="<%= id %>"> --%>
+							<td colspan="4">
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
@@ -49,9 +50,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th colspan="6"><%= vo.getBtitle() %></th>
+							<th colspan="7"><%= vo.getBtitle() %></th>
 						</tr>
 						<tr>
+							<td><%= id %></td>
 							<td>추천</td>
 							<td><%= vo.getBrec() %></td>
 							<td>조회</td>
@@ -60,7 +62,7 @@
 							<td><%= vo.getBdate() %></td>
 						</tr>
 						<tr>
-							<td colspan="6">
+							<td colspan="7">
 								<p>
 									<%= vo.getBcontent().replace("\r\n", "<br>") %><br>
 									<% if(vo.getBd_sfile() != null) { %>

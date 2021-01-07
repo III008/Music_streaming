@@ -77,13 +77,6 @@
 		<section class="section_1">
 			<div>
 				<h1>공지사항</h1>
-				<table class="notice_menu">
-					<tr>
-						<td><a href="notice_list.jsp">공지사항</a></td>
-						<td><a href="ask_list.jsp">자주하는 질문</a></td>
-					</tr>
-				</table>
-
 				<table class="notice">
 					<tr>
 						<th>no</th>

@@ -353,6 +353,9 @@
 		border-bottom:1px solid black;
 		border-collapse:collapse;
 	}
+	div.content_notice h1 {
+		margin-bottom:60px;
+	}
 	table.board td, table.notice td, table.ask td, table.admin_movie_list td,
 	table.admin_member_list td  {
 		border-top:1px solid rgb(213, 213, 213);
@@ -688,7 +691,7 @@
 	form.magazine_wirte>ul>li:nth-child(3),form.magazine_wirte>ul>li:nth-child(4),
 	form.magazine_update>ul>li:first-child, form.magazine_update>ul>li:nth-child(2),
 	form.magazine_update>ul>li:nth-child(3),form.magazine_update>ul>li:nth-child(4),
-		form.magazine_wirte>ul>li:nth-child(5),form.magazine_update>ul>li:last-child(5) {
+	form.magazine_wirte>ul>li:nth-child(5),form.magazine_update>ul>li:last-child(5) {
 		padding:5px 0 5px 50px;
 	}
 	
