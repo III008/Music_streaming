@@ -57,7 +57,7 @@
 						<li><label>파일첨부</label> <%if (vo.getMfile() != null) {%> <input
 							type="file" name="mfile"><span id="fname"><%=vo.getMfile()%></span>
 							<%} else { %> <input type="file" name="mfile"><span
-							id="fname">선택된 파일 없음</span> <%} %></li>
+							id="fname"></span> <%} %></li>
 						<li>
 							<button type="submit" class="btn_style">수정완료</button>
 							<button type="reset" class="btn_style_2">취소</button> <a
