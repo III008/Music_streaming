@@ -22,7 +22,7 @@
 		<div class="content_notice">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
+					<h1>공지사항</h1>
 					<table class="notice_content">
 						<tr>
 							<td colspan="7">

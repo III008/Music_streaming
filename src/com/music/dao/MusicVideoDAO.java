@@ -150,23 +150,43 @@ public class MusicVideoDAO extends DBConn {
 		}
 		return result;
 	}
+	
+	/**
+	 * Delete : 체크 삭제
+	 */
+	public void getDeleteChk(String vid) {
+		
+		try {
+			String sql = " delete from musicvideo where vid=?";
+			
+			getPreparedStatement(sql);
+			pstmt.setString(1, vid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 	/**
 	 * 뮤비사진&가수사진 둘다 변경할 때 
 	 */
-	public boolean getUpdate(MusicVideoVO vo) {
+	public boolean getUpdate(MusicVideoVO vo,String vid) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ? ,vfile2=?, vsfile2=? where vid =?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?, vcontent = ?,vintro = ? , vfile1= ?, vsfile1 = ? ,vfile2=?, vsfile2=? where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
-			pstmt.setString(3, vo.getVintro());
-			pstmt.setString(4, vo.getVfile1());
-			pstmt.setString(5, vo.getVsfile1());
-			pstmt.setString(6, vo.getVfile2());
-			pstmt.setString(7, vo.getVsfile2());
-			pstmt.setString(8, vo.getVid());
+			pstmt.setString(3, vo.getVcontent());
+			pstmt.setString(4, vo.getVintro());
+			pstmt.setString(5, vo.getVfile1());
+			pstmt.setString(6, vo.getVsfile1());
+			pstmt.setString(7, vo.getVfile2());
+			pstmt.setString(8, vo.getVsfile2());
+			pstmt.setString(9,vid);
 
 			int val = pstmt.executeUpdate();
 			if (val != 0) {
@@ -182,17 +202,18 @@ public class MusicVideoDAO extends DBConn {
 	 * 뮤비 사진만 변경할 떄
 	 */
 
-	public boolean getUpdateVfile1(MusicVideoVO vo) {
+	public boolean getUpdateVfile1(MusicVideoVO vo,String vid) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile1= ?, vsfile1 = ? where vid= ?";
+			String sql = "update musicvideo set vartist =?, vtitle = ? ,vcontent = ?, vintro = ? , vfile1= ?, vsfile1 = ? where vid= ?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
-			pstmt.setString(3, vo.getVintro());
-			pstmt.setString(4, vo.getVfile1());
-			pstmt.setString(5, vo.getVsfile1());
-			pstmt.setString(6, vo.getVid());
+			pstmt.setString(3, vo.getVcontent());
+			pstmt.setString(4, vo.getVintro());
+			pstmt.setString(5, vo.getVfile1());
+			pstmt.setString(6, vo.getVsfile1());
+			pstmt.setString(7, vid);
 
 			int val = pstmt.executeUpdate();
 			if (val != 0) {
@@ -208,17 +229,18 @@ public class MusicVideoDAO extends DBConn {
 	 *  가수사진만 변경 할 때
 	 */
 
-	public boolean getUpdateVfile2(MusicVideoVO vo) {
+	public boolean getUpdateVfile2(MusicVideoVO vo,String vid) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? , vfile2= ?, vsfile2 = ? where vid =?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?,vcontent = ?, vintro = ? , vfile2= ?, vsfile2 = ? where vid =?";
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
-			pstmt.setString(3, vo.getVintro());
-			pstmt.setString(4, vo.getVfile2());
-			pstmt.setString(5, vo.getVsfile2());
-			pstmt.setString(6, vo.getVid());
+			pstmt.setString(3, vo.getVcontent());
+			pstmt.setString(4, vo.getVintro());
+			pstmt.setString(5, vo.getVfile2());
+			pstmt.setString(6, vo.getVsfile2());
+			pstmt.setString(7, vid);
 
 			int val = pstmt.executeUpdate();
 			if (val != 0) {
@@ -233,16 +255,17 @@ public class MusicVideoDAO extends DBConn {
 	/**
 	 * 뮤비사진&가수사진 모두 변경하지 않을 때 
 	 */
-	public boolean getUpdateNofile(MusicVideoVO vo) {
+	public boolean getUpdateNofile(MusicVideoVO vo,String vid) {
 		boolean result = false;
 		try {
-			String sql = "update musicvideo set vartist =?, vtitle = ?, vintro = ? where vid= ?";
+			String sql = "update musicvideo set vartist =?, vtitle = ?,vcontent =?, vintro = ? where vid= ?";
 
 			getPreparedStatement(sql);
 			pstmt.setString(1, vo.getVartist());
 			pstmt.setString(2, vo.getVtitle());
-			pstmt.setString(3, vo.getVintro());
-			pstmt.setString(4, vo.getVid());
+			pstmt.setString(3, vo.getVcontent());
+			pstmt.setString(4, vo.getVintro());
+			pstmt.setString(5, vid);
 			int val = pstmt.executeUpdate();
 			if (val != 0) {
 				result = true;

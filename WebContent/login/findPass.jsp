@@ -54,7 +54,7 @@ font-size:15px;
 			$.ajax({
 				url : "member_pass_ajax_proc.jsp?id=" + id + "&email=" + email,
 				success : function(result) {
-					alert(result);
+					//alert(result);
 
 					var jdata = JSON.parse(result);
 

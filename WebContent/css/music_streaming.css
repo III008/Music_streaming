@@ -1167,8 +1167,8 @@
 	}
 	body.mypage_update span#fname {
 		display:inline-block;
-		width:200px;
-		margin-left:-140px;
+		width:300px;
+		margin-left:-150px;
 		font-size:16px;
 		background-color:white;
 		padding: 6px 5px 5px 5px;
@@ -1331,6 +1331,7 @@
 		font-size: 30px;
 		margin-top: 50px;
 		font-weight: bold;
+		margin-bottom:20px;
 	}
 	
 /**
@@ -2155,12 +2156,15 @@
 	body.music_update span.fname {
 		display:inline-block;
 		width:600px;
-		margin-left:-590px;
+		margin-left:-600px;
 		font-size:16px;
 		background-color:white;
 		padding: 6px 5px 4px 5px;
 	}
-	
+	/**admin-movie_list**/
+	.num{
+	text-align:center;
+	}
 /**
 	* button
 **/

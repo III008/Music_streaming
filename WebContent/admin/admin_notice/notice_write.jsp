@@ -17,6 +17,14 @@
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#btn_write").click(function(){
+				noticeWriteForm.submit();
+			})
+			
+		})
+		</script>
 	</head>
 	<body>
 		<!-- header -->
@@ -44,7 +52,7 @@
 							<li>
 								<button type="button" class="btn_style" id="btnNoticeWrite">등록</button>
 								<button type="reset" class="btn_style_2">취소</button>
-								<a href="notice_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
+								<a href="notice_list.jsp"><button type="button" class="btn_style" id ="btn_write">목록으로</button></a>
 							</li>
 						</ul>
 					</form>
