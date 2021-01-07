@@ -20,7 +20,7 @@
 		vo.setVid(multi.getParameter("vid"));
 		vo.setVtitle(multi.getParameter("vtitle"));
 		vo.setVcontent(multi.getParameter("vcontent"));
-		vo.setVintro(multi.getParameter("vinto"));
+		vo.setVintro(multi.getParameter("vintro"));
 		vo.setVfile1(multi.getOriginalFileName("vfile1"));
 		vo.setVsfile1(multi.getFilesystemName("vfile1"));
 		vo.setVfile2(multi.getOriginalFileName("vfile2"));
@@ -34,7 +34,7 @@
 		vo.setVartist(multi.getParameter("vartist"));
 		vo.setVtitle(multi.getParameter("vtitle"));
 		vo.setVcontent(multi.getParameter("vcontent"));
-		vo.setVintro(multi.getParameter("vinto"));
+		vo.setVintro(multi.getParameter("vintro"));
 		vo.setVfile1(multi.getOriginalFileName("vfile1"));
 		vo.setVsfile1(multi.getFilesystemName("vfile1"));
 		
@@ -46,7 +46,7 @@
 		vo.setVartist(multi.getParameter("vartist"));
 		vo.setVtitle(multi.getParameter("vtitle"));
 		vo.setVcontent(multi.getParameter("vcontent"));
-		vo.setVintro(multi.getParameter("vinto"));
+		vo.setVintro(multi.getParameter("vintro"));
 		vo.setVfile2(multi.getOriginalFileName("vfile2"));
 		vo.setVsfile2(multi.getFilesystemName("vfile2"));
 		
@@ -58,7 +58,7 @@
 		vo.setVartist(multi.getParameter("vartist"));
 		vo.setVtitle(multi.getParameter("vtitle"));
 		vo.setVcontent(multi.getParameter("vcontent"));
-		vo.setVintro(multi.getParameter("vinto"));
+		vo.setVintro(multi.getParameter("vintro"));
 		
 		result = dao.getUpdateNofile(vo);
 	}
