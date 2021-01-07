@@ -72,8 +72,8 @@
 		<!-- header -->
 		<jsp:include page="../../header.jsp"></jsp:include>
 		
-		<!-- player -->
-		<jsp:include page="../../musicplayer.jsp" />
+		<%-- <!-- player -->
+		<jsp:include page="../../musicplayer.jsp" /> --%>
 		
 		<!-- content -->
 		<div class="content_board">

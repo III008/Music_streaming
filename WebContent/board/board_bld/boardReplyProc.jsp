@@ -18,7 +18,4 @@
 	}else{
 		response.sendRedirect("../errorPage.jsp");
 	}
-
-
-
 %>

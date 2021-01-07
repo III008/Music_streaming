@@ -420,8 +420,8 @@
 	table.board tr:first-child:hover, table.board tr:nth-child(2), table.board tr:last-child:hover,
 	table.notice tr:first-child:hover, table.notice tr:last-child:hover,
 	table.ask tr:first-child:hover, table.ask tr:last-child:hover,
-	table.admin_movie_list tr:first-child:hover, table.admin_movie_list tr:last-child:hover,
-	table.admin_member_list tr:last-child:hover {
+	table.admin_movie_list tr:first-child:hover, table.admin_movie_list tr:nth-child(2):hover, table.admin_movie_list tr:last-child:hover,
+	table.admin_member_list tr:first-child:hover, table.admin_member_list tr:last-child:hover {
 		background-color:white;
 		text-decoration:none;
 	}
@@ -548,16 +548,25 @@
 		border-top:1px solid lightgray;
 		border-bottom:1px solid gray;
 	}
-	table.board_content tr:nth-child(3) td:first-child, table.notice_content tr:nth-child(3) td:first-child,
-	table.admin_movie_info  tr:nth-child(3) td:first-child {
+	table.notice_content tr:nth-child(3) td:first-child,
+	table.admin_movie_info tr:nth-child(3) td:first-child {
 		width:180px;
 		padding-left:10px;
 		font-size:18px;
 		font-weight:700;
 		/* border:1px solid green; */
 	}
+	table.board_content tr:nth-child(3) td:first-child {
+		width:50px;
+		padding-left:10px;
+	}
 	table.board_content tr:nth-child(3) td:nth-child(2), table.board_content tr:nth-child(3) td:nth-child(3),
-	table.board_content tr:nth-child(3) td:nth-child(4), table.board_content tr:nth-child(3) td:nth-child(5),
+	table.board_content tr:nth-child(3) td:nth-child(4) {
+		width:50px;
+	}
+	table.board_content tr:nth-child(3) td:nth-child(5) {
+		width:80px;
+	}
 	table.notice_content tr:nth-child(3) td:nth-child(2), table.notice_content tr:nth-child(3) td:nth-child(3),
 	table.notice_content tr:nth-child(3) td:nth-child(4), table.notice_content tr:nth-child(3) td:nth-child(5),
 	table.admin_movie_info tr:nth-child(3) td:nth-child(2) {
@@ -566,14 +575,14 @@
 		text-align:center;
 		font-weight:bold;
 	}
-	table.board_content tr:nth-child(3) td:nth-child(6), table.notice_content tr:nth-child(3) td:nth-child(6) {
+	table.notice_content tr:nth-child(3) td:nth-child(6) {
 		width:80px;
 		font-size:16px;
 		text-align:center;
 		font-weight:bold;
 		/* border:1px solid blue; */
 	}
-	table.board_content tr:nth-child(3) td:last-child, table.notice_content tr:nth-child(3) td:last-child {
+	table.notice_content tr:nth-child(3) td:last-child {
 		font-size:16px;
 		font-weight:bold;
 		/* border:1px solid tomato; */

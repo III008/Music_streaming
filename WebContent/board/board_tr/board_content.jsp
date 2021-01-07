@@ -17,8 +17,6 @@
 	MusicBoardTrDAO dao = new MusicBoardTrDAO();
 	MusicBoardTrVO vo = dao.getContent(tr_bid);
 	
-	//String nickname = dao.getNickname(id);
-	
 	ArrayList<MusicBoardTrVO> rplist = dao.getRp_List(tr_bid);
 	dao.getUpdateHits(tr_bid);
 %>
@@ -42,7 +40,7 @@
 					<h1>게시판</h1>
 					<table class="board_content">
 						<tr>
-							<td colspan="4">
+							<td colspan="3">
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
@@ -51,10 +49,9 @@
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7"><%= vo.getTr_btitle() %></th>
+							<th colspan="6"><%= vo.getTr_btitle() %></th>
 						</tr>
 						<tr>
-							<td>닉네임</td>
 							<td>추천</td>
 							<td><%= vo.getTr_brec() %></td>
 							<td>조회</td>
@@ -63,9 +60,9 @@
 							<td><%= vo.getTr_bdate() %></td>
 						</tr>
 						<tr>
-							<td colspan="7">
+							<td colspan="6">
 								<p>
-									<%= vo.getTr_bcontent() /* .replace("\r\n", "<br>") */ %><br>
+									<%= vo.getTr_bcontent().replace("\r\n", "<br>") %><br>
 									<% if(vo.getTr_bsfile() != null) { %>
 									<img src="http://localhost:9000/Music_streaming/upload/<%=vo.getTr_bsfile()%>" width=50%>
 									<% } %>

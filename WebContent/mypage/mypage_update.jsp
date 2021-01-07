@@ -351,6 +351,7 @@
 							<li>
 								<button type="submit" class="btn_style" id="btnUpdate">수정하기</button>
 								<button type="reset" class="btn_style_2">취소</button>
+								<a href="mypage_delete.jsp?id=<%=id%>"><button type="button" class="btn_style">회원 탈퇴</button></a>
 							</li>
 						</ul>
 					</form>

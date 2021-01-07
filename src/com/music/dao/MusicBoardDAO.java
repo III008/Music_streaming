@@ -37,7 +37,7 @@ public class MusicBoardDAO extends DBConn {
 		
 		try {
 			String sql = " DELETE FROM MUSICBOARD WHERE BID=?";
-			
+			System.out.println(sql);
 			getPreparedStatement(sql);
 			pstmt.setString(1, bid);
 			

@@ -514,6 +514,30 @@ public class MusicMemberDAO extends DBConn {
 		}
 		return vo;
 	}
+	
+	
+	/**
+	 * È¸¿ø Å»Åð
+	 */
+	public boolean getDelete(String id) {
+		boolean result = false;
+		
+		try {
+			String sql = " DELETE FROM MUSICMEMBER WHERE ID=?";
+			System.out.println(sql);
+			getPreparedStatement(sql);
+			pstmt.setString(1, id);
+			
+			int val = pstmt.executeUpdate();
+			if(val != 0) result = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 
-}
-// CLASS
+}// CLASS
+
+

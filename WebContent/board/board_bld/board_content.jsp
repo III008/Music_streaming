@@ -17,9 +17,6 @@
 	MusicBoardDAO dao = new MusicBoardDAO();
 	MusicBoardVO vo = dao.getContent(bid);
 	
-	MusicMemberDAO dao1 = new MusicMemberDAO();
-	String nickname_b = dao1.getNickname(vo.getId());
-	
 	ArrayList<MusicBoardVO> rplist = dao.getRp_List(bid);
 	dao.getUpdateHits(bid);
 %>
@@ -43,7 +40,7 @@
 					<h1>게시판</h1>
 					<table class="board_content">
 						<tr>
-							<td colspan="4">
+							<td colspan="3">
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
 							<td colspan="3">
@@ -52,10 +49,9 @@
 							</td>
 						</tr>
 						<tr>
-							<th colspan="7"><%= vo.getBtitle() %></th>
+							<th colspan="6"><%= vo.getBtitle() %></th>
 						</tr>
 						<tr>
-							<td><%= nickname_b %></td>
 							<td>추천</td>
 							<td><%= vo.getBrec() %></td>
 							<td>조회</td>
@@ -64,7 +60,7 @@
 							<td><%= vo.getBdate() %></td>
 						</tr>
 						<tr>
-							<td colspan="7">
+							<td colspan="6">
 								<p>
 									<%= vo.getBcontent().replace("\r\n", "<br>") %><br>
 									<% if(vo.getBd_sfile() != null) { %>
