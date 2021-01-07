@@ -7,7 +7,7 @@
 		
 		int start = 0;
 		int end = 0;
-		int pageSize = 5; 
+		int pageSize = 10; 
 		int pageCount = 1; 
 		int dbCount = dao.getListCount();
 		int reqPage = 1;
