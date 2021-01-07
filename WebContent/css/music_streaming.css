@@ -1161,8 +1161,8 @@
 	}
 	body.mypage_update span#fname {
 		display:inline-block;
-		width:200px;
-		margin-left:-140px;
+		width:300px;
+		margin-left:-150px;
 		font-size:16px;
 		background-color:white;
 		padding: 6px 5px 5px 5px;
@@ -2150,7 +2150,7 @@
 	body.music_update span.fname {
 		display:inline-block;
 		width:600px;
-		margin-left:-590px;
+		margin-left:-600px;
 		font-size:16px;
 		background-color:white;
 		padding: 6px 5px 4px 5px;
