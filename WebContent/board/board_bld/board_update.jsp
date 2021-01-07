@@ -20,7 +20,7 @@
 				/* border:1px solid red; */
 				display:inline-block;
 				width:150px;
-				margin-left:-575px; 
+				margin-left:-595px; 
 				font-size:12px;
 				background-color:white;
 				padding:2px 0 0 2px;

@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>회원가입 완료</title>
 		<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
 		<script src="http://localhost:9000/Music_streaming/js/join.js"></script>
@@ -30,7 +30,7 @@
 						<ul>
 							<li>
 							<img  class = "welcome"src = "http://localhost:9000/Music_streaming/images/welcome.PNG">
-								<h2>환영합니다!</h2>
+								<h1>환영합니다!</h1>
 								<h3>회원가입을 축하합니다.</h3>
 							</li>
 							<li>
