@@ -31,7 +31,7 @@
 			</ul>
 		</section>
 		
-			<div class="content_board">
+			<div class="content_mypage_delete">
 				<section class="section_1">
 					<div>
 						<form class="mypage_delete">

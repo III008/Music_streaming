@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import ="com.music.vo.*, com.music.dao.*" %>
+
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 
@@ -8,7 +9,7 @@
 <jsp:setProperty property="*" name="vo"/> --%>
 
 <%
-//1. 파일이 저장되는 경로 설정 : upload폴더 주소
+	//1. 파일이 저장되는 경로 설정 : upload폴더 주소
 	String save_path = request.getServletContext().getRealPath("/upload"); 
 	//System.out.println("path==>>" + save_path);	
 
@@ -21,6 +22,8 @@
 	
 	//4. VO 객체 생성
 	//4-1. 선택된 파일이 있는 경우 (새로운 파일 선택)
+	String bid = multi.getParameter("bid");
+	
 	MusicBoardVO vo = new MusicBoardVO();
 	MusicBoardDAO dao = new MusicBoardDAO();
 	boolean result = false;
@@ -46,7 +49,7 @@
 	}
 
 	if(result){
-		response.sendRedirect("board_list.jsp");
+		response.sendRedirect("board_content.jsp?bid="+bid);
 	}else{
 		response.sendRedirect("../errorPage.jsp");
 	}

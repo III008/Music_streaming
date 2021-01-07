@@ -772,8 +772,8 @@
 	게시판 스타일 - 삭제
 	관리자 - 음악&뮤비 삭제
 */
-	form.board_delete, form.admin_movie_delete, form.admin_music_delete, form.mypage_delete {
-		padding-top:50px;
+	form.board_delete, form.admin_movie_delete, form.admin_music_delete {
+		padding-top:150px;
 	}
 	form.board_delete img, form.admin_movie_delete img, form.admin_music_delete img,
 	form.mypage_delete img {
@@ -787,15 +787,21 @@
 		text-align:center;
 		margin:auto;
 	}
-	form.board_delete>div, form.admin_movie_delete, form.admin_music_delete, form.mypage_delete>div {
-		padding-bottom:100px;
+	form.board_delete>div, form.admin_movie_delete, form.admin_music_delete {
+		padding-bottom:250px;
 	}
 	form.board_delete>div button, form.admin_movie_delete>div button, form.admin_music_delete>div button,
 	form.mypage_delete>div button {
 		font-size:13px;
 		width:100px;
 		padding:5px 0;
-		margin:10px 0;
+		margin:10px 0
+	}
+	form.mypage_delete>div {
+		padding-bottom:150px;
+	}
+	form.mypage_delete {
+		padding-top:70px
 	}
 	
 	

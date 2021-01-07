@@ -40,7 +40,6 @@
 					<h1>게시판</h1>
 					<table class="board_content">
 						<tr>
-							<%-- <input type="text" name="id" value="<%= id %>"> --%>
 							<td colspan="4">
 								<a href="board_list.jsp"><button type="button" class="btn_style">목록으로</button></a>
 							</td>
@@ -53,7 +52,6 @@
 							<th colspan="7"><%= vo.getBtitle() %></th>
 						</tr>
 						<tr>
-							<td><%= id %></td>
 							<td>추천</td>
 							<td><%= vo.getBrec() %></td>
 							<td>조회</td>
