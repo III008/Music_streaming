@@ -9,10 +9,9 @@
 	SessionVO svo = (SessionVO)session.getAttribute("svo");
 	
 	if(svo != null){
-		
 		session.invalidate();
-		dao.login_state(vo, 0);// 로그아웃 성공시 login_state 0로 변경
 		
+		/* dao.login_state(0, vo);// 로그아웃 성공시 login_state 0로 변경 */
 		response.sendRedirect("http://localhost:9000/Music_streaming/index.jsp");
 	}else{
 		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");

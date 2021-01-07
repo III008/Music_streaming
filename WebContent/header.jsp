@@ -143,7 +143,7 @@
 						</li>
 						<%if(svo.getName().equals("admin")) {%>
 						<li>
-							<a href="http://localhost:9000/Music_streaming/manager_index.jsp">
+							<a href="http://localhost:9000/Music_streaming/admin/admin_member/member_list.jsp">
 								<img src="http://localhost:9000/Music_streaming/images/admin.png">
 								<span>관리자 메뉴</span>
 							</a>
