@@ -35,10 +35,10 @@
 				<section class="section_1">
 					<div>
 						<form class="mypage_delete">
-							<h3>정말로 삭제 하시겠습니까?</h3>
+							<h3>정말로 탈퇴 하시겠습니까?</h3>
 							<img src="http://localhost:9000/Music_streaming/images/delete.png">
 							<div>
-								<a href="mypage_deleteProc.jsp?id=<%=id%>"><button type="button" class="btn_style">삭제 완료</button></a>
+								<a href="mypage_deleteProc.jsp?id=<%=id%>"><button type="button" class="btn_style">탈퇴 완료</button></a>
 								<a href="mypage_update.jsp?id=<%=id%>"><button type="button" class="btn_style_2">이전페이지</button></a>
 							</div>
 						</form>

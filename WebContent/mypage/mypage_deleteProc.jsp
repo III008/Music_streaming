@@ -6,9 +6,11 @@
 	boolean result = dao.getDelete(id);
 	
 	if(result){
-		response.sendRedirect("../index.jsp");
+		session.invalidate();
+		
+		response.sendRedirect("http://localhost:9000/Music_streaming/index.jsp");
 	}else {
-		response.sendRedirect("../errorPage.jsp");
+		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");
 	}
 
 %>

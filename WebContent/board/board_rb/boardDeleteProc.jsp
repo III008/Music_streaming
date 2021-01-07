@@ -8,6 +8,6 @@
 	if(result){
 		response.sendRedirect("board_list.jsp");
 	}else{
-		response.sendRedirect("../../errorPage.jsp");
+		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");
 	}
 %>    

@@ -611,35 +611,35 @@
 		padding:5px 5px 5px 10px;
 	}
 	table.board_content_rp tr:first-child td:first-child {
-		border:1px solid red;
+		/* border:1px solid red; */
 		width:45px;
 	}
 	table.board_content_rp tr:first-child td:nth-child(2) {
-		border:1px solid green;
+		/* border:1px solid green; */
 		width:15%;
 		font-size:17px;
 		font-weight:bold;
 	}
 	table.board_content_rp tr:first-child td:nth-child(3) {
-		border:1px solid blue;
+		/* border:1px solid blue; */
 		font-size:15px;
 	}
 	table.board_content_rp tr:last-child td {
-		border:1px solid orange;
-		padding:5px 0 5px 10px;
-		font-size:17px;
+		/* border:1px solid orange; */
+		padding:5px 0 8px 10px;
+		font-size:18px;
 	}
 	table.board_content_reg td:first-child, table.notice_content_reg td:first-child {
-		border:1px solid blue;
+		/* border:1px solid blue; */
 		width:92%;
 		padding-bottom:10px;
 	}
 	table.board_content_reg td:last-child, table.notice_content_reg td:last-child {
-		border:1px solid red;
+		/* border:1px solid red; */
 		text-align:center;
 	}
 	table.board_content_reg textarea, table.notice_content_reg textarea {
-		border:1px solid gray;
+		/* border:1px solid gray; */
 		margin-top:15px;
 		width:98%;
 		height:80px;
@@ -769,23 +769,26 @@
 	게시판 스타일 - 삭제
 	관리자 - 음악&뮤비 삭제
 */
-	form.board_delete, form.admin_movie_delete, form.admin_music_delete {
+	form.board_delete, form.admin_movie_delete, form.admin_music_delete, form.mypage_delete {
 		padding-top:50px;
 	}
-	form.board_delete img, form.admin_movie_delete img, form.admin_music_delete img {
+	form.board_delete img, form.admin_movie_delete img, form.admin_music_delete img,
+	form.mypage_delete img {
 		width:120px;
 		height:120px;
 		margin:20px 0;
 	}
 	form.board_delete div, form.board_delete, form.admin_movie_delete div,
-	form.admin_movie_delete, form.admin_music_delete div, form.admin_music_delete {
+	form.admin_movie_delete, form.admin_music_delete div, form.admin_music_delete, 
+	form.mypage_delete {
 		text-align:center;
 		margin:auto;
 	}
-	form.board_delete>div, form.admin_movie_delete, form.admin_music_delete {
+	form.board_delete>div, form.admin_movie_delete, form.admin_music_delete, form.mypage_delete>div {
 		padding-bottom:100px;
 	}
-	form.board_delete>div button, form.admin_movie_delete>div button, form.admin_music_delete>div button {
+	form.board_delete>div button, form.admin_movie_delete>div button, form.admin_music_delete>div button,
+	form.mypage_delete>div button {
 		font-size:13px;
 		width:100px;
 		padding:5px 0;
@@ -1166,6 +1169,11 @@
 	body.mypage_update input#phone3 {
 		padding:9px 10px;
 	}
+	body.mypage_update li:last-child a>button {
+		width:15%;
+		height:40px;
+	}
+	
 	
 /**
 	뮤비 리스트 - 스타일
