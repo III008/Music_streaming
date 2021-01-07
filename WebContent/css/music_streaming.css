@@ -669,9 +669,9 @@
 	form.admin_music_update, form.admin_music_register,form.magazine_wirte,form.magazine_update{
 		padding-top:50px;
 	}
-	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
-	form.board_write, form.board_update, form.admin_movie_update, form.admin_movie_register,
-	form.admin_music_update, form.admin_music_register,form.magazine_wirte,form.magazine_update{
+	form.board_write>ul>li:first-child, form.board_write, form.board_update,
+	form.admin_movie_update, form.admin_movie_register,
+	form.admin_music_update, form.admin_music_register, form.magazine_wirte, form.magazine_update{
 		padding-top:50px;
 	}
 	form.board_write>ul>li:first-child, form.board_write>ul>li:nth-child(2),
@@ -758,7 +758,7 @@
 		font-size:13px;
 		width:100px;
 		padding:5px 0;
-		margin:10px 0 100px 0;
+		margin:10px 0 200px 0;
 	}
 	form.board_write>ul>li:last-child, form.board_update>ul>li:last-child,
 	form.admin_movie_update>ul>li:last-child, form.admin_movie_register>ul>li:last-child,
@@ -767,7 +767,7 @@
 		text-align:center;
 	}
 
-	
+
 /**
 	게시판 스타일 - 삭제
 	관리자 - 음악&뮤비 삭제
@@ -892,12 +892,20 @@
 		font-size:12px;
 		padding:10px 0;
 	}
-	div.content_joinSuc h2 {
+	div.content_joinSuc form.join h1 {
 		text-align:center;
-		margin:80px 0 10px 0;
+		margin:150px 0 10px 0;
 	}
-	div.content_joinSuc h3 {
+	div.content_joinSuc form.join h3 {
 		text-align:center;
+	}
+	div.content_joinSuc form.join {
+		margin-bottom:300px;
+	}
+	div.content_joinSuc form.join button {
+		font-size:17px;
+		width:20%;
+		height:40px;
 	}
 	
 	

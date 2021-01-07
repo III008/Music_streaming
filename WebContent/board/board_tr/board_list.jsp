@@ -79,7 +79,7 @@
 		<div class="content_board">
 			<section class="section_1">
 				<div>
-					<h1>게시판</h1>
+					<h1>게시판 - 트롯</h1>
 					<table class="board">
 						<tr>
 							<td colspan="5">

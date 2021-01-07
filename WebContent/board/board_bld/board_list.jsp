@@ -39,7 +39,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>게시판</title>
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/music_streaming.css">
 		<link rel="stylesheet" href = "http://localhost:9000/Music_streaming/css/am-pagination.css">
 		<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
@@ -72,14 +72,14 @@
 		<!-- header -->
 		<jsp:include page="../../header.jsp"></jsp:include>
 		
-		<%-- <!-- player -->
-		<jsp:include page="../../musicplayer.jsp" /> --%>
+		<!-- player -->
+		<jsp:include page="../../musicplayer.jsp" />
 		
 		<!-- content -->
 		<div class="content_board">
 			<section class="section_1">
 				<div>
-					<h1>게시판 </h1>
+					<h1>게시판 - 댄스 </h1>
 					<table class="board">
 						<tr>
 							<td colspan="5">

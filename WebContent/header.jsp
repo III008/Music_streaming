@@ -13,18 +13,16 @@
 		<!-- <script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script> -->
 		<script>
 			$(document).ready(function(){
-			     $(".menu>a").click(function(){
-			         var submenu = $(this).next("ul");
-			
-			         if( submenu.is(":visible") ){
-			             submenu.slideUp();
-			         }else{
-			             submenu.slideDown();
-			         }
-			     }).mouseover(function(){
-			         $(this).next("ul").slideDown();
-			     });
-			});
+		        $(".menu>a").click(function(){
+		            var submenu = $(this).next("ul");
+	
+		            if( submenu.is(":visible") ){
+		                submenu.slideUp();
+		            }else{
+		                submenu.slideDown();
+		            }
+		        });
+		    });
 		</script>
 	</head>
 	<body>
@@ -123,7 +121,7 @@
 							</a>
 						</li>
 						 <li class="menu">
-				            <a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">
+				            <a>
 				            	<img src="http://localhost:9000/Music_streaming/images/board.png">
 				            	<span>게시판</span>
 				            </a>
@@ -176,7 +174,7 @@
 							</a>
 						</li>
 						 <li class="menu">
-				            <a href="http://localhost:9000/Music_streaming/board/board_bld/board_list.jsp">
+				            <a>
 				            	<img src="http://localhost:9000/Music_streaming/images/board.png">
 				            	<span>게시판</span>
 				            </a>
