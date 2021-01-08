@@ -12,8 +12,8 @@
 		.welcome{
 		text-align:center;
 		display:inline-block;
-		margin-left:290px;
-		margin-bottom:-83px;
+		margin-left:335px;
+		margin-bottom:-110px;
 		}
 		</style>
 	</head>

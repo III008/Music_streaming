@@ -30,7 +30,7 @@
 							<button type="button" id="btnLogin">로그인</button>
 						</li>
 						<li>
-							<a href="#"><span>아이디/비밀번호 찾기</span></a>
+							<a href="findId.jsp" onclick = "window.open(this.href, '_blank',' width=550,height= 400  left=230 top =200 resizeable=no'); return false"><span>아이디/비밀번호 찾기</span></a>
 							<a href="../join/join.jsp"><span>회원가입</span></a>
 						</li>
 					</ul>
