@@ -126,7 +126,7 @@
 					</tr>
 					<%} %>
 					<tr>
-						<td colspan="4"><div  id="ampaginationsm"></div></td>
+						<td colspan="5"><div  id="ampaginationsm"></div></td>
 					</tr>
 				</table>
 			</div>
