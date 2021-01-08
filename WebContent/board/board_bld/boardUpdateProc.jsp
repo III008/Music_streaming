@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import ="com.music.vo.*, com.music.dao.*" %>
-
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-
-<%-- <%	request.setCharacterEncoding("utf-8"); %>   
-<jsp:useBean id="vo" class="com.music.vo.MusicBoardVO" />
-<jsp:setProperty property="*" name="vo"/> --%>
 
 <%
 	//1. 파일이 저장되는 경로 설정 : upload폴더 주소
@@ -51,7 +46,7 @@
 	if(result){
 		response.sendRedirect("board_content.jsp?bid="+bid);
 	}else{
-		response.sendRedirect("../errorPage.jsp");
+		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");
 	}
 
 %> 

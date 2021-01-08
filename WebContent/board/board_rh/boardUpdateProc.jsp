@@ -17,6 +17,8 @@
 	
 	//4. VO 객체 생성
 	//4-1. 선택된 파일이 있는 경우 (새로운 파일 선택)
+	String rh_bid = multi.getParameter("rh_bid");
+	
 	MusicBoardRhVO vo = new MusicBoardRhVO();
 	MusicBoardRhDAO dao = new MusicBoardRhDAO();
 	boolean result = false;
@@ -42,9 +44,9 @@
 	}
 
 	if(result){
-		response.sendRedirect("board_list.jsp");
+		response.sendRedirect("board_content.jsp?rh_bid="+rh_bid);
 	}else{
-		response.sendRedirect("../../errorPage.jsp");
+		response.sendRedirect("http://localhost:9000/Music_streaming/errorPage.jsp");
 	}
 
 %> 
