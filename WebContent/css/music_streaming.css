@@ -803,7 +803,15 @@
 	form.mypage_delete {
 		padding-top:70px
 	}
+	.vfile_msg{
+		display:inline-block;
+		width:600px;
+		margin-left:-600px;
+		font-size:16px;
+		background-color:white;
+		padding: 6px 5px 4px 5px;
 	
+}
 	
 /**
 	회원가입 스타일
@@ -1675,6 +1683,18 @@
 	}
 	table.ad_notice tr td:nth-child(3){
 		width:200px;
+	}
+	/**
+		매거진수정,공지사항 수정
+	*/
+	div.content_board section.section_1 form.magazine_update ul li span#fname,
+	div.content_board section.section_1 form.board_update ul li span#fname{
+		display:inline-block;
+		width:600px;
+		margin-left:-595px;
+		font-size:16px;
+		background-color:white;
+		padding: 6px 5px 4px 5px;
 	}
 	
 

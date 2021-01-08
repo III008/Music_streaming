@@ -87,10 +87,10 @@
 						<li><label>영상소개</label> <textarea name="vintro" id="vintro"></textarea>
 						</li>
 						<li><label>뮤비사진</label> <input type="file" name="vfile1" id ="vfile1" value="">
-						<span id="vfile1_msg" class="vfile1_msg">뮤비사진을 등록해주세요</span>
+						<span id="vfile_msg" class="vfile_msg">뮤비사진을 등록해주세요</span>
 						</li>
 						<li><label>가수사진</label> <input type="file" name="vfile2" id = "vfile2" value = "">
-						<span id="vfile2_msg" class="vfile2_msg">가수사진을 등록해주세요</span>
+						<span id="vfile_msg" class="vfile_msg">가수사진을 등록해주세요</span>
 						</li>
 						<li>
 							<button type="button" class="btn_style" id="btnMovieRegister">등록</button>
