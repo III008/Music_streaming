@@ -4,10 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="http://localhost:9000/Music_streaming/css/music_streaming.css">
-<script
-	src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+<script src="http://localhost:9000/Music_streaming/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/Music_streaming/css/music_streaming.css">
 <script>
 	$(document).ready(function() {
 		
@@ -75,8 +73,7 @@
 			<div>
 				<h1>뮤비 등록</h1>
 				<form name="movieRegisterForm" action="movieRegisterProc.jsp"
-					method="post" class="admin_movie_register"
-					enctype="multipart/form-data"">
+					method="post" enctype="multipart/form-data" class="admin_movie_register">
 					<ul>
 						<li><label>가수명</label> <input type="text" name="vartist"
 							id="vartist"></li>
@@ -86,11 +83,13 @@
 							id="vcontent"></li>
 						<li><label>영상소개</label> <textarea name="vintro" id="vintro"></textarea>
 						</li>
-						<li><label>뮤비사진</label> <input type="file" name="vfile1" id ="vfile1" value="">
-						<span id="vfile_msg" class="vfile_msg">뮤비사진을 등록해주세요</span>
+						<li><label>뮤비사진</label> 
+							<input type="file" name="vfile1" id ="vfile1" value="">
+							<span id="vfile1_msg" class="vfile_msg">뮤비사진을 등록해주세요</span>
 						</li>
-						<li><label>가수사진</label> <input type="file" name="vfile2" id = "vfile2" value = "">
-						<span id="vfile_msg" class="vfile_msg">가수사진을 등록해주세요</span>
+						<li><label>가수사진</label> 
+							<input type="file" name="vfile2" id = "vfile2" value = "">
+							<span id="vfile2_msg" class="vfile_msg">가수사진을 등록해주세요</span>
 						</li>
 						<li>
 							<button type="button" class="btn_style" id="btnMovieRegister">등록</button>
